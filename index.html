@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FloraDB — Houseplant Care & Pet-Toxicity Dataset</title>
+  <meta name="description" content="A curated dataset of 270 houseplants: quantitative light (Lux) and watering metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy — with a source URL on every record." />
+  <meta name="keywords" content="houseplant dataset, plant care database, ASPCA pet toxicity, toxic plants cats dogs, lux light thresholds, watering schedule api, GBIF taxonomy, botanical dataset, plant care api" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" />
+  <link rel="canonical" href="https://houseplants-botanical-floradb.pages.dev/" />
+  <link rel="alternate" hreflang="en" href="https://houseplants-botanical-floradb.pages.dev/" />
+  <link rel="alternate" hreflang="x-default" href="https://houseplants-botanical-floradb.pages.dev/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="FloraDB — Houseplant Care & Pet-Toxicity Dataset" />
+  <meta property="og:description" content="270 houseplants with quantitative light/water metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy. Source URL on every record." />
+  <meta property="og:url" content="https://houseplants-botanical-floradb.pages.dev/" />
+  <meta property="og:site_name" content="FloraDB Houseplant Dataset" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://houseplants-botanical-floradb.pages.dev/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FloraDB — houseplant care dataset as botanical field records" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FloraDB — Houseplant Care & Pet-Toxicity Dataset" />
+  <meta name="twitter:description" content="Quantitative houseplant care + ASPCA pet toxicity + GBIF taxonomy, re-verifiable per record." />
+  <meta name="twitter:image" content="https://houseplants-botanical-floradb.pages.dev/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FloraDB",
+    "url": "https://houseplants-botanical-floradb.pages.dev",
+    "email": "floradb.hardhat456@simplelogin.com",
+    "description": "Houseplant care and pet-toxicity dataset provider."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "FloraDB Houseplant Care Dataset — Full Snapshot",
+    "description": "270 curated houseplants with quantitative light/water/temperature metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy, plus an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Relational SQLite plus CSV and JSON.",
+    "brand": {"@type": "Brand", "name": "FloraDB"},
+    "category": "Software > Data & Databases",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://houseplants-botanical-floradb.pages.dev/#pricing"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DataCatalog",
+    "name": "FloraDB Houseplant Care DataCatalog",
+    "description": "Houseplant care metrics normalized to Lux and watering-day intervals, joined to ASPCA pet toxicity and the GBIF taxonomic backbone, with a source URL on every record.",
+    "url": "https://houseplants-botanical-floradb.pages.dev",
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "keywords": ["houseplant dataset", "plant care database", "ASPCA pet toxicity", "GBIF taxonomy", "lux light thresholds"],
+    "creator": {"@type": "Organization", "name": "FloraDB"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "FloraDB — Houseplant Care & Pet-Toxicity Dataset",
+    "alternateName": "FloraDB Houseplant Dataset",
+    "description": "A curated dataset of 270 houseplants with quantitative care metrics — light (Lux) thresholds, watering-day intervals, temperature and humidity ranges — joined to ASPCA dog/cat toxicity and GBIF-verified taxonomy. Includes an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Every record carries a source URL for re-verification.",
+    "url": "https://houseplants-botanical-floradb.pages.dev/",
+    "sameAs": "https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample",
+    "keywords": ["houseplant care dataset", "plant care database", "ASPCA pet toxicity", "toxic plants for cats and dogs", "lux light requirements", "watering schedule", "GBIF taxonomy", "botanical dataset"],
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "isAccessibleForFree": true,
+    "creator": {"@type": "Organization", "name": "FloraDB", "url": "https://houseplants-botanical-floradb.pages.dev"},
+    "variableMeasured": ["scientific name (GBIF-accepted)", "common name", "botanical family", "min/max light in Lux", "watering frequency in days", "temperature range", "humidity", "toxic to dogs", "toxic to cats", "clinical toxicity symptoms"],
+    "distribution": [
+      {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://houseplants-botanical-floradb.pages.dev/samples/floradb_sample.csv"},
+      {"@type": "DataDownload", "encodingFormat": "application/zip", "contentUrl": "https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the FloraDB Houseplant Care & Pet-Toxicity Dataset?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FloraDB is a curated botanical field dataset of over 270 indoor houseplants combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are the light and watering requirements quantified in FloraDB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instead of subjective labels like 'medium light' or 'water when dry', FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., 1,500 to 5,000 Lux for Monstera deliciosa) and watering frequency intervals in days based on standard indoor climate profiles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are pet toxicity statuses verified against veterinary clinical data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database (aspca_verified), detailing whether the plant is toxic to dogs (is_toxic_to_dogs) or cats (is_toxic_to_cats), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What database formats and exports are included in the FloraDB snapshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The downloadable FloraDB snapshot includes a normalized relational SQLite database file (.db) alongside clean CSV and JSON exports (floradb_sample.csv), ready for direct import into Python pandas, R, SQL pipelines, or modern web applications."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FloraDB Featured Houseplants Sample",
+    "description": "Representative indoor houseplant determinations with quantitative care and pet safety metrics.",
+    "url": "https://houseplants-botanical-floradb.pages.dev/#explorer",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Monstera deliciosa (Swiss Cheese Plant)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Epipremnum aureum (Golden Pothos)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Philodendron hederaceum (Heartleaf Philodendron)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Spathiphyllum wallisii (Peace Lily)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Chlorophytum comosum (Spider Plant)"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://houseplants-botanical-floradb.pages.dev/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Specimen Explorer",
+        "item": "https://houseplants-botanical-floradb.pages.dev/#explorer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Collection Pricing",
+        "item": "https://houseplants-botanical-floradb.pages.dev/#pricing"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "FAQ",
+        "item": "https://houseplants-botanical-floradb.pages.dev/#faq"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root {
+      --bg-paper: #f4f1e8;
+      --bg-paper-2: #ebe6d8;
+      --text-ink: #26281f;
+      --text-muted: #6b6858;
+      --rule-color: rgba(38, 40, 31, 0.16);
+      --rule-dim: rgba(38, 40, 31, 0.07);
+      --accent: #4a6b2f;
+      --sepia: #8a6a44;
+      --card-bg: #fffdf7;
+      --card-border: #26281f;
+      --stamp-shadow: rgba(74, 107, 47, 0.18);
+    }
+    html.dark {
+      --bg-paper: #12140f;
+      --bg-paper-2: #191c14;
+      --text-ink: #ece7d9;
+      --text-muted: #9a9683;
+      --rule-color: rgba(236, 231, 217, 0.18);
+      --rule-dim: rgba(236, 231, 217, 0.07);
+      --accent: #9cbf6a;
+      --sepia: #c39a6b;
+      --card-bg: #191c14;
+      --card-border: #ece7d9;
+      --stamp-shadow: rgba(156, 191, 106, 0.16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-ink);
+      font-family: 'Spline Sans', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .serif { font-family: 'Fraunces', serif; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg-paper) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule-color);
+    }
+    .header-inner {
+      max-width: 1360px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px;
+    }
+    .brand { display: flex; align-items: baseline; gap: 14px; }
+    .brand-mark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .brand-mark .accent { color: var(--accent); }
+    .brand-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.6; border-left: 1px solid var(--rule-color); padding-left: 14px;
+    }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8;
+    }
+    nav a:hover { color: var(--accent); opacity: 1; }
+    .theme-toggle {
+      background: none; border: 1px solid var(--rule-color); color: var(--text-ink);
+      padding: 7px 13px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    @media (max-width: 820px) { nav .nav-link { display: none; } }
+
+    /* ── Sections ── */
+    .section { border-bottom: 1px solid var(--rule-color); padding: 76px 32px; }
+    .section-alt { background-color: var(--bg-paper-2); }
+    .container { max-width: 1360px; margin: 0 auto; }
+
+    .plate-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 44px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.8;
+    }
+    .plate-no { color: var(--accent); font-weight: 500; }
+    .plate-header h2 { font: inherit; margin: 0; color: inherit; font-weight: inherit; letter-spacing: inherit; }
+    .plate-line { flex: 1; height: 1px; background: var(--rule-dim); }
+    .plate-leaf { width: 9px; height: 9px; background: var(--accent); border-radius: 0 60% 60% 60%; transform: rotate(45deg); }
+
+    /* ── Hero ── */
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: start; }
+    @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 6.5vw, 5.4rem);
+      line-height: 0.96; font-weight: 600; letter-spacing: -0.035em;
+    }
+    h1 .accent { color: var(--accent); }
+    h1 em { font-weight: 400; }
+    .hero-sub {
+      margin-top: 26px; max-width: 30rem; font-size: 1.05rem; color: var(--text-muted);
+    }
+    .hero-sub strong { color: var(--text-ink); font-weight: 600; }
+
+    .hero-abstract {
+      margin-top: 26px; display: grid; grid-template-columns: auto 1fr; gap: 20px;
+      max-width: 34rem; border-top: 1px solid var(--rule-color); padding-top: 22px;
+    }
+    .abstract-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.55; padding-top: 3px;
+    }
+    .abstract-text { font-size: 0.86rem; color: var(--text-muted); }
+
+    .cta-group { margin-top: 34px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 460px) { .cta-group { grid-template-columns: 1fr; } }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 17px 22px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      border: 1px solid var(--text-ink); cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #12140f; border-color: var(--accent); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--stamp-shadow); }
+    .btn-outline { background: transparent; color: var(--text-ink); }
+    .btn-outline:hover { background: var(--rule-dim); }
+    .hero-fineprint {
+      margin-top: 16px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.55;
+    }
+
+    /* ── Signature: the herbarium determination label ── */
+    .specimen {
+      position: relative; background: var(--card-bg);
+      border: 1px solid var(--card-border); padding: 30px;
+      box-shadow: 10px 10px 0 var(--stamp-shadow);
+    }
+    .specimen::after {
+      content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule-color); pointer-events: none;
+    }
+    .specimen-inner { position: relative; z-index: 1; }
+    .specimen-eyebrow {
+      display: flex; justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.16em; color: var(--sepia);
+      border-bottom: 1px solid var(--rule-color); padding-bottom: 12px;
+    }
+    .specimen-name { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 2rem; margin-top: 20px; letter-spacing: -0.01em; }
+    .specimen-common { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.7; margin-top: 4px; }
+
+    .field-block { margin-top: 22px; display: grid; gap: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; }
+    .field-row { display: grid; grid-template-columns: 88px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--rule-color); }
+    .field-key { text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.55; font-size: 0.62rem; padding-top: 2px; }
+    .field-val { color: var(--text-ink); }
+    .field-val .accent { color: var(--accent); }
+
+    .determination {
+      margin-top: 24px; display: flex; align-items: center; gap: 18px; justify-content: space-between; flex-wrap: wrap;
+    }
+    .accession { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.55; }
+    .stamp {
+      font-family: 'JetBrains Mono', monospace; font-weight: 500;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--sepia); border: 2px solid var(--sepia); padding: 8px 12px;
+      transform: rotate(-6deg); text-align: center; line-height: 1.3;
+      box-shadow: inset 0 0 0 1px var(--sepia);
+    }
+
+    /* ── Method cards ── */
+    .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .method-card { border: 1px solid var(--rule-color); background: var(--bg-paper); padding: 32px; }
+    .method-index { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--sepia); text-transform: uppercase; }
+    .method-title { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 600; margin-top: 10px; }
+    .method-body { margin-top: 12px; font-size: 0.84rem; color: var(--text-muted); }
+    .method-body code { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.8em; }
+
+    .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule-color); border: 1px solid var(--rule-color); margin-top: 40px; }
+    .figure { background: var(--bg-paper); padding: 26px; }
+    .figure-num { font-family: 'Fraunces', serif; font-size: 2.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .figure-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-top: 8px; }
+
+    /* ── Explorer table ── */
+    .search-input {
+      width: 100%; padding: 14px 18px; background: transparent; border: 1px solid var(--rule-color);
+      color: var(--text-ink); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; margin-bottom: 16px;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .table-wrapper { overflow-x: auto; border: 1px solid var(--rule-color); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; text-align: left; }
+    th, td { padding: 14px 18px; border-bottom: 1px solid var(--rule-dim); white-space: nowrap; }
+    th { background: var(--bg-paper-2); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.75; }
+    td .sci { font-family: 'Fraunces', serif; font-style: italic; }
+    td .mono { font-size: 0.72rem; }
+    tr:hover td { background: var(--rule-dim); }
+    .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; padding: 3px 8px; border: 1px solid currentColor; text-transform: uppercase; letter-spacing: 0.06em; }
+    .tag-toxic { color: var(--sepia); }
+    .tag-safe { color: var(--accent); }
+    .tag-unknown { opacity: 0.5; }
+
+    /* ── Pricing ── */
+    .price-card {
+      max-width: 760px; margin: 0 auto; border: 1px solid var(--card-border); background: var(--card-bg);
+      padding: 48px; position: relative; box-shadow: 12px 12px 0 var(--stamp-shadow);
+    }
+    .price-card + .price-card { margin-top: 30px; }
+    .tier-label { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .price-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--rule-color); padding-bottom: 22px; margin-bottom: 26px; gap: 20px; flex-wrap: wrap; }
+    .price-title { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 600; }
+    .price-note { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-top: 6px; }
+    .price-amount { font-family: 'Fraunces', serif; font-size: 3.4rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 34px; font-size: 0.85rem; }
+    .feature-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .feature-list li::before { content: "❋"; color: var(--accent); flex-shrink: 0; }
+    .feature-list code { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; color: var(--sepia); }
+
+    .form { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--rule-color); padding-top: 24px; }
+    .form-title { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; }
+    .form-input, .form-select {
+      width: 100%; padding: 13px 15px; background: var(--bg-paper); border: 1px solid var(--rule-color);
+      color: var(--text-ink); font-family: 'Spline Sans', sans-serif; font-size: 0.85rem; transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--accent); }
+    .success-box { display: none; margin-top: 22px; padding: 28px; border: 1px solid var(--accent); background: var(--bg-paper); }
+    .success-title { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+
+    footer { border-top: 1px solid var(--rule-color); padding: 44px 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; opacity: 0.7; }
+    .footer-inner { max-width: 1360px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-inner a { text-decoration: underline; }
+    .safety-strip { max-width: 1360px; margin: 20px auto 0; font-size: 0.66rem; opacity: 0.6; }
+
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn-primary:hover { transform: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">Flora<span class="accent">DB</span></span>
+        <span class="brand-tag">Houseplant Herbarium · Data</span>
+      </a>
+      <nav>
+        <a href="#method" class="nav-link">Method</a>
+        <a href="#explorer" class="nav-link">Explorer</a>
+        <a href="#pricing" class="nav-link">Collection</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-label">Paper Mode</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Plate I · Specimen record (hero) -->
+  <section class="section" id="top">
+    <div class="container">
+      <div class="plate-header">
+        <span class="plate-leaf"></span>
+        <span><span class="plate-no">Plate I</span> · The Specimen Record</span>
+        <span class="plate-line"></span>
+        <span>270 Determinations</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>Houseplants,<br/>pressed into<br/><em class="accent">data</em>.</h1>
+          <p class="hero-sub">
+            The <strong>houseplant care dataset</strong> — <strong>270 species</strong> with quantitative light (Lux), watering, and temperature metrics, joined to <strong>ASPCA pet toxicity</strong> and <strong>GBIF-verified</strong> taxonomy.
+          </p>
+
+          <div class="hero-abstract">
+            <span class="abstract-label">Abstract</span>
+            <p class="abstract-text">
+              Like a herbarium sheet turns a living plant into a labelled record, FloraDB turns fuzzy care advice — <em>"bright indirect light," "water when dry"</em> — into machine-readable Lux bands and watering intervals. Every record is graded for confidence, its toxicity is ASPCA-sourced or honestly <em>unknown</em>, and its name links back to GBIF so any fact can be re-verified.
+            </p>
+          </div>
+
+          <div class="cta-group">
+            <a href="#pricing" class="btn btn-primary" onclick="resetCheckout()">
+              <span>Acquire the Collection</span><span>↗</span>
+            </a>
+            <a href="#explorer" class="btn btn-outline">
+              <span>↓ Browse Specimens</span><span>Free sample</span>
+            </a>
+          </div>
+          <p class="hero-fineprint">One-time snapshot · CSV / SQLite / JSON · No recurring fees</p>
+        </div>
+
+        <!-- Signature: herbarium determination label -->
+        <div class="specimen" aria-label="Example specimen record">
+          <div class="specimen-inner">
+            <div class="specimen-eyebrow"><span>FloraDB Herbarium</span><span>Accession № FDB-0001</span></div>
+            <div class="specimen-name">Monstera deliciosa</div>
+            <div class="specimen-common">Swiss Cheese Plant · Araceae</div>
+
+            <div class="field-block">
+              <div class="field-row"><span class="field-key">Light</span><span class="field-val"><span class="accent">1,500–5,000</span> lux · bright indirect</span></div>
+              <div class="field-row"><span class="field-key">Water</span><span class="field-val">every <span class="accent">7</span> days</span></div>
+              <div class="field-row"><span class="field-key">Climate</span><span class="field-val">18–30 °C · 60% humidity</span></div>
+              <div class="field-row"><span class="field-key">Confidence</span><span class="field-val">care = high · verified name</span></div>
+            </div>
+
+            <div class="determination">
+              <span class="accession">det. GBIF 2868241 · rev. 2026.07</span>
+              <span class="stamp">Toxic<br/>Dogs &amp; Cats<br/>· ASPCA ·</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plate II · How each record is built -->
+  <section class="section section-alt" id="method">
+    <div class="container">
+      <div class="plate-header">
+        <span class="plate-leaf"></span>
+        <h2><span class="plate-no">Plate II</span> · How Each Record Is Built</h2>
+        <span class="plate-line"></span>
+        <span>Three Layers</span>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="method-index">Layer i · Taxonomy</div>
+          <div class="method-title">GBIF-verified names</div>
+          <p class="method-body">Every name is matched to the <strong>GBIF Taxonomic Backbone</strong> — canonical accepted names, synonyms preserved (<code>Sansevieria → Dracaena</code>), and a <code>gbif_source_url</code> to re-verify each record.</p>
+        </div>
+        <div class="method-card">
+          <div class="method-index">Layer ii · Safety</div>
+          <div class="method-title">ASPCA pet toxicity</div>
+          <p class="method-body">Dog/cat determinations with clinical ingestion signs. <code>toxicity_status</code> is <code>aspca_verified</code>, conservatively <code>genus_inferred</code>, or <code>unknown</code> — we <strong>never guess "safe."</strong></p>
+        </div>
+        <div class="method-card">
+          <div class="method-index">Layer iii · Care</div>
+          <div class="method-title">Normalized metrics</div>
+          <p class="method-body">A light category maps to a standard <strong>Lux band</strong>; watering, temperature, and humidity come from plant-type norms. A <code>care_confidence</code> flag grades every row honestly.</p>
+        </div>
+      </div>
+
+      <div class="figures">
+        <div class="figure"><div class="figure-num">270</div><div class="figure-label">Curated care plants</div></div>
+        <div class="figure"><div class="figure-num">891</div><div class="figure-label">ASPCA toxicity records</div></div>
+        <div class="figure"><div class="figure-num">20k+</div><div class="figure-label">Species taxonomic index</div></div>
+        <div class="figure"><div class="figure-num">702</div><div class="figure-label">Enriched species</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plate III · Live specimen explorer -->
+  <section class="section" id="explorer">
+    <div class="container">
+      <div class="plate-header">
+        <span class="plate-leaf"></span>
+        <h2><span class="plate-no">Plate III</span> · Live Specimen Explorer</h2>
+        <span class="plate-line"></span>
+        <span>Free Sample</span>
+      </div>
+
+      <input type="text" id="searchBox" class="search-input" placeholder="Filter by name, family, or safety (e.g. Fern, Araceae, cat-safe)..." onkeyup="filterTable()" />
+
+      <div class="table-wrapper">
+        <table id="specimenTable">
+          <thead>
+            <tr><th>Scientific name</th><th>Common</th><th>Family</th><th>Light (lux)</th><th>Water</th><th>Dogs</th><th>Cats</th><th>Determination</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="sci">Monstera deliciosa</span></td><td>Swiss Cheese Plant</td><td>Araceae</td><td class="mono">1,500–5,000</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td><span class="sci">Chlorophytum comosum</span></td><td>Spider Plant</td><td>Asparagaceae</td><td class="mono">1,000–4,000</td><td class="mono">7d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td><span class="sci">Nephrolepis exaltata</span></td><td>Boston Fern</td><td>Nephrolepidaceae</td><td class="mono">1,000–3,500</td><td class="mono">4d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td><span class="sci">Dracaena trifasciata</span></td><td>Snake Plant</td><td>Asparagaceae</td><td class="mono">250–5,000</td><td class="mono">14d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td><span class="sci">Alocasia zebrina</span></td><td>Zebra Alocasia</td><td>Araceae</td><td class="mono">2,000–6,000</td><td class="mono">5d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">genus_inferred</td></tr>
+            <tr><td><span class="sci">Peperomia prostrata</span></td><td>String of Turtles</td><td>Piperaceae</td><td class="mono">1,000–3,500</td><td class="mono">6d</td><td><span class="tag tag-unknown">—</span></td><td><span class="tag tag-unknown">—</span></td><td class="mono">unknown</td></tr>
+            <tr><td><span class="sci">Kroenleinia grusonii</span></td><td>Golden Barrel Cactus</td><td>Cactaceae</td><td class="mono">6,000–18,000</td><td class="mono">21d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td><span class="sci">Spathiphyllum wallisii</span></td><td>Peace Lily</td><td>Araceae</td><td class="mono">500–1,500</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hero-fineprint" style="margin-top:16px;">Sample: 100 plants · CC-BY-NC-4.0 · full snapshot has 270 with every field documented</p>
+      <p style="text-align: center; margin-top: 24px; font-size: 0.85rem; color: var(--text-muted);">
+        Want to dig deeper? <a href="https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: 600;">Try the interactive Sample Explorer on 🤗 Hugging Face →</a> or <a href="https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: 600;">download the free 100-plant sample dataset</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Plate IV · Acquire the collection (pricing) -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="plate-header">
+        <span class="plate-leaf"></span>
+        <h2><span class="plate-no">Plate IV</span> · Acquire the Collection</h2>
+        <span class="plate-line"></span>
+        <span>Snapshot + Custom</span>
+      </div>
+
+      <div class="price-card">
+        <div class="tier-label">Tier 1 · Self-Serve Snapshot</div>
+        <div class="price-head">
+          <div>
+            <div class="price-title serif">Full Snapshot Dataset</div>
+            <div class="price-note">One-time download · 270 care plants · Snapshot 2026.07</div>
+          </div>
+          <div class="price-amount"><span class="js-snapshot-price">$49</span></div>
+        </div>
+        <ul class="feature-list">
+          <li><strong>270 curated houseplants</strong> across 54 families — quantitative light (Lux), watering days, temperature, and humidity.</li>
+          <li><strong>ASPCA pet toxicity</strong> — 891 determinations with clinical signs; dog/cat flags on the care core, never guessed "safe."</li>
+          <li><strong>GBIF-verified taxonomy</strong> + a <strong>20,000+ species</strong> taxonomic index and 702 enriched species (names, native range, image refs).</li>
+          <li><strong>Relational SQLite + CSV + JSON</strong> — tables for <code>plants</code>, <code>aspca_toxicity</code>, <code>species_index</code>, <code>species_enrichment</code>, ready for apps and ML.</li>
+          <li><strong>Honest quality flags</strong> — <code>care_confidence</code>, <code>toxicity_status</code>, and <code>image_commercial_safe</code> on every row.</li>
+          <li><strong>Snapshot 2026.07</strong> · one-time purchase, no recurring fees.</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/fZuaEY3kYgDA9vR2I838400" class="btn btn-primary" style="width:100%; justify-content:center; padding:20px; margin-top:6px;">
+          <span>Buy Now · Instant Download · <span class="js-snapshot-price">$49</span> →</span>
+        </a>
+        <div style="margin-top:18px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-muted);">
+          Secure card checkout via Stripe · Apple&nbsp;Pay / Google&nbsp;Pay · dataset delivered instantly after payment<br>
+          Need a company invoice or crypto payment? <a href="mailto:floradb.hardhat456@simplelogin.com?subject=FloraDB%20Snapshot%20%E2%80%94%20invoice%20%2F%20crypto%20request" style="text-decoration:underline;">email us</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="tier-label">Tier 2 · Custom &amp; Fresh Data</div>
+        <div class="price-head">
+          <div>
+            <div class="price-title serif">Custom &amp; Enterprise</div>
+            <div class="price-note">Built to your spec · per engagement</div>
+          </div>
+          <div class="price-amount" style="font-size:1.5rem;">$99+</div>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Custom plant lists:</strong> we curate and verify the specific species, families, or care fields you need.</li>
+          <li><strong>Expert-reviewed tier:</strong> horticulturist sign-off on care values and resolution of <code>unknown</code> toxicity for your target list.</li>
+          <li><strong>Recurring refreshes:</strong> re-verified against GBIF and ASPCA on your schedule.</li>
+          <li><strong>Delivery your way:</strong> flat files, a hosted API, or a schema mapped to your product — plus commercial terms and support.</li>
+        </ul>
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:16px;">This is where the deepest value is — a curated, expert-reviewed feed built to your requirements, not a one-off snapshot.</p>
+        <a href="#support" class="btn btn-primary" style="width:100%; justify-content:center; padding:20px;" onclick="openCustomQuote(event)"><span>Request a Custom Quote →</span></a>
+      </div>
+      <p style="text-align:center; margin-top:28px; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-muted);">
+        Prefer live, self-serve lookups? <a href="https://apify.com/dataengineered/houseplant-care-toxicity-lookup" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;">Run our actor on Apify →</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Snapshot price — single source of truth. If changed, also update the JSON-LD Product offer.
+    const SNAPSHOT_PRICE = "$49";
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".js-snapshot-price").forEach(function (el) { el.textContent = SNAPSHOT_PRICE; });
+    });
+  </script>
+
+  <!-- Plate V · FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="container" style="max-width: 900px;">
+      <div class="plate-header">
+        <span class="plate-leaf"></span>
+        <h2><span class="plate-no">Plate V</span> · Frequently Asked Questions</h2>
+        <div class="plate-line"></div>
+        <span>Botanical & Pet-Safety Knowledge Base</span>
+      </div>
+
+      <h3 class="serif" style="font-size: 1.8rem; font-weight: 600; margin-bottom: 28px;">Dataset & Taxonomy FAQ</h3>
+
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">What is the FloraDB Houseplant Care & Pet-Toxicity Dataset?</h4>
+          <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            FloraDB is a curated botanical field dataset of over <strong>270 indoor houseplants</strong> combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations.
+          </p>
+        </div>
+
+        <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">How are the light and watering requirements quantified in FloraDB?</h4>
+          <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Instead of subjective labels like <code>"medium light"</code> or <code>"water when dry"</code>, FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., 1,500 to 5,000 Lux for <em>Monstera deliciosa</em>) and watering frequency intervals in days based on standard indoor climate profiles.
+          </p>
+        </div>
+
+        <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Are pet toxicity statuses verified against veterinary clinical data?</h4>
+          <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database (<code>aspca_verified</code>), detailing whether the plant is toxic to dogs (<code>is_toxic_to_dogs</code>) or cats (<code>is_toxic_to_cats</code>), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects.
+          </p>
+        </div>
+
+        <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">What database formats and exports are included in the FloraDB snapshot?</h4>
+          <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            The downloadable FloraDB snapshot includes a normalized relational SQLite database file (<code>.db</code>) alongside clean CSV and JSON exports (<code>floradb_sample.csv</code>), ready for direct import into Python pandas, R, SQL pipelines, or modern web applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plate VI · Correspondence (support) -->
+  <section class="section" id="support">
+    <div class="container" style="max-width:720px; text-align:center;">
+      <div class="plate-header" style="justify-content:center;">
+        <span class="plate-leaf"></span>
+        <h2><span class="plate-no">Plate VI</span> · Correspondence</h2>
+        <span class="plate-line"></span>
+      </div>
+      <h3 class="serif" style="font-size:1.8rem; font-weight:600;">Questions, or need custom data?</h3>
+      <p style="font-size:0.86rem; color:var(--text-muted); margin-top:8px;">Custom schema, API access, an expert-reviewed tier, or enterprise invoicing — reach our desk at <code style="font-family:'JetBrains Mono',monospace;">floradb.hardhat456@simplelogin.com</code>.</p>
+      <button type="button" class="btn btn-outline" style="margin-top:22px; padding:15px 30px;" onclick="toggleSupportForm()"><span id="supportBtnText">✉ Open Contact Form</span></button>
+
+      <div id="supportFormContainer" style="display:none; margin-top:30px; text-align:left; border:1px solid var(--rule-color); background:var(--bg-paper-2); padding:36px;">
+        <form id="supportForm" action="https://api.web3forms.com/submit" method="POST" class="form" style="border-top:none; padding-top:0;" onsubmit="handleSupport(event)">
+          <input type="hidden" name="access_key" value="bf34ff48-fcc6-4823-b386-9ae3d0712797" />
+          <input type="hidden" name="subject" value="New Support Inquiry for FloraDB" />
+          <input type="hidden" name="from_name" value="FloraDB Contact Form" />
+          <div class="form-group">
+            <label class="form-label" for="suppName">Your Name / Company *</label>
+            <input type="text" id="suppName" name="name" class="form-input" placeholder="e.g. Alex Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="suppEmail">Your Email Address *</label>
+            <input type="email" id="suppEmail" name="email" class="form-input" placeholder="alex@company.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="suppTopic">Topic *</label>
+            <select id="suppTopic" name="topic" class="form-select" required>
+              <option value="Dataset Question / Sample Inquiry">Dataset Question / Sample Inquiry</option>
+              <option value="Payment / Crypto / Invoicing Support">Payment / Crypto / Invoicing Support</option>
+              <option value="Custom Curation / Enterprise Integration">Custom Curation / Enterprise Integration</option>
+              <option value="Data Correction / Toxicity Flag">Data Correction / Toxicity Flag</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="suppMsg">Message *</label>
+            <textarea id="suppMsg" name="message" class="form-input" rows="4" placeholder="Describe your question or custom requirement..." required style="resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;"><span>Send to floradb.hardhat456@simplelogin.com →</span></button>
+        </form>
+        <div id="supportSuccess" class="success-box" style="text-align:center;">
+          <div class="success-title">❋ Message dispatched</div>
+          <p style="margin-top:8px; font-size:0.85rem;">Your message went to <code>floradb.hardhat456@simplelogin.com</code>. We usually respond within 2–4 business hours.</p>
+          <button type="button" class="btn btn-outline" style="margin-top:16px; padding:12px 22px;" onclick="resetSupport()"><span>↻ Send another message</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>FLORADB</strong> — Houseplant Care &amp; Pet-Toxicity Dataset © 2026</div>
+      <div>
+        <a href="https://github.com/FloraaDB/houseplants-botanical-floradb">GitHub</a> ·
+        <a href="#method">Method</a> ·
+        <a href="#pricing">Collection</a> ·
+        <a href="#faq">FAQ</a> ·
+        <a href="#support">Support</a> ·
+        <a href="/sitemap.xml">Sitemap XML</a>
+      </div>
+    </div>
+    <div class="safety-strip mono">Toxicity data is informational, not veterinary advice. If a pet ingests a plant, contact a vet or ASPCA Animal Poison Control.</div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const label = document.getElementById('theme-label');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); label.innerText = 'Pressed Mode'; }
+      else { html.classList.add('dark'); label.innerText = 'Paper Mode'; }
+    }
+
+    function filterTable() {
+      const filter = document.getElementById('searchBox').value.toUpperCase();
+      const trs = document.getElementById('specimenTable').getElementsByTagName('tr');
+      for (let i = 1; i < trs.length; i++) {
+        const t = (trs[i].textContent || trs[i].innerText).toUpperCase();
+        // let "cat-safe" / "dog-safe" match Safe rows
+        const hay = t + (t.includes('SAFE') ? ' CAT-SAFE DOG-SAFE PET-SAFE' : '');
+        trs[i].style.display = hay.indexOf(filter) > -1 ? '' : 'none';
+      }
+    }
+
+    function postForm(payload, onOk, btn) {
+      if (btn) btn.disabled = true;
+      const abortController = new AbortController();
+      const timeoutId = setTimeout(() => abortController.abort(), 7000);
+
+      const body = Object.assign({}, payload);
+      delete body._subject;
+      body.access_key = 'bf34ff48-fcc6-4823-b386-9ae3d0712797';
+      body.subject = payload._subject || 'FloraDB Contact / Snapshot Request';
+      body.from_name = 'FloraDB Contact Form';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body),
+        signal: abortController.signal
+      }).then(r => {
+        clearTimeout(timeoutId);
+        if (!r.ok) throw new Error('Web3Forms response error: ' + r.status);
+        return r.json();
+      })
+      .then(data => {
+        if (!data || data.success !== true) throw new Error('Web3Forms did not confirm delivery');
+        onOk(data);
+      })
+      .catch(err => {
+        clearTimeout(timeoutId);
+        console.warn('Form provider outage or AJAX error — activating smart email fallback:', err);
+        if (btn) btn.disabled = false;
+
+        const subj = encodeURIComponent(payload._subject || 'FloraDB Contact / Snapshot Request');
+        let bodyText = "";
+        for (const [k, v] of Object.entries(payload)) {
+          if (k !== '_subject') bodyText += k + ": " + (v || '') + "\n";
+        }
+        bodyText += "\n(Sent via automatic fallback due to form provider timeout)";
+        window.location.href = "mailto:floradb.hardhat456@simplelogin.com?subject=" + subj + "&body=" + encodeURIComponent(bodyText);
+
+        alert("⚠️ Notice: Our third-party form provider is currently unreachable.\n\nWe have automatically launched your email client with your request pre-filled! If your email app didn't open, please email us directly at floradb.hardhat456@simplelogin.com.");
+      });
+    }
+
+    function handleCheckout(e) {
+      e.preventDefault();
+      const form = document.getElementById('checkoutForm');
+      postForm({
+        _subject: 'New FloraDB Snapshot Request: ' + document.getElementById('userName').value,
+        Name: document.getElementById('userName').value,
+        Email: document.getElementById('userEmail').value,
+        PaymentMethod: document.getElementById('payMethod').value,
+        UseCase: document.getElementById('useCase').value
+      }, () => { form.style.display = 'none'; document.getElementById('checkoutSuccess').style.display = 'block'; },
+      form.querySelector('button[type="submit"]'));
+    }
+
+    function resetCheckout() {
+      const s = document.getElementById('checkoutSuccess');
+      if (!s || s.style.display === 'none' || s.style.display === '') return;
+      const form = document.getElementById('checkoutForm');
+      form.reset(); const b = form.querySelector('button[type="submit"]'); if (b) b.disabled = false;
+      form.style.display = ''; s.style.display = 'none';
+    }
+
+    function resetSupport() {
+      const form = document.getElementById('supportForm');
+      form.reset(); const b = form.querySelector('button[type="submit"]'); if (b) b.disabled = false;
+      form.style.display = ''; document.getElementById('supportSuccess').style.display = 'none';
+    }
+
+    function toggleSupportForm() {
+      const c = document.getElementById('supportFormContainer');
+      const t = document.getElementById('supportBtnText');
+      if (c.style.display === 'none') {
+        if (document.getElementById('supportSuccess').style.display !== 'none') resetSupport();
+        c.style.display = 'block'; t.innerText = '✕ Close Contact Form';
+        c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else { c.style.display = 'none'; t.innerText = '✉ Open Contact Form'; }
+    }
+
+    function openCustomQuote(e) {
+      if (e) e.preventDefault();
+      if (document.getElementById('supportSuccess').style.display !== 'none') resetSupport();
+      const topic = document.getElementById('suppTopic');
+      if (topic) topic.value = 'Custom Curation / Enterprise Integration';
+      const c = document.getElementById('supportFormContainer');
+      c.style.display = 'block';
+      const t = document.getElementById('supportBtnText'); if (t) t.innerText = '✕ Close Contact Form';
+      c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function handleSupport(e) {
+      e.preventDefault();
+      const form = document.getElementById('supportForm');
+      postForm({
+        _subject: 'FloraDB Support: ' + document.getElementById('suppTopic').value,
+        Name: document.getElementById('suppName').value,
+        Email: document.getElementById('suppEmail').value,
+        Topic: document.getElementById('suppTopic').value,
+        Message: document.getElementById('suppMsg').value
+      }, () => { form.style.display = 'none'; document.getElementById('supportSuccess').style.display = 'block'; },
+      form.querySelector('button[type="submit"]'));
+    }
+
+    // Register Progressive Web App Service Worker with Auto-Update
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => {
+            console.log('FloraDB PWA Service Worker registered:', reg.scope);
+            reg.addEventListener('updatefound', () => {
+              const newWorker = reg.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    console.log('New FloraDB catalog update available offline.');
+                  }
+                });
+              }
+            });
+          })
+          .catch((err) => console.warn('FloraDB PWA Service Worker error:', err));
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://houseplants-botanical-floradb.pages.dev/sitemap.xml

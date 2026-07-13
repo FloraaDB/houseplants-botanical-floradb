@@ -1,0 +1,15 @@
+{
+  "id": "ahtiticheamine/floradb-starter-load-explore-houseplants",
+  "title": "FloraDB Starter: Load & Explore Houseplant Care",
+  "code_file": "floradb-starter-notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["ahtiticheamine/floradb-houseplants-care-sample"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

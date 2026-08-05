@@ -1,0 +1,25 @@
+{
+  "name": "FloraDB — Houseplant Care & Pet-Toxicity Dataset",
+  "short_name": "FloraDB",
+  "description": "Curated dataset of 270 indoor houseplants: quantitative Lux light thresholds, watering intervals, ASPCA dog/cat toxicity status, and GBIF-verified taxonomy.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#12140f",
+  "theme_color": "#12140f",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "reference", "lifestyle", "utilities"]
+}

@@ -1,0 +1,20 @@
+# FloraDB — Houseplant Care & Pet-Toxicity Dataset
+
+> A curated dataset of 270 houseplants that turns subjective care advice into quantitative metrics (Lux light thresholds, watering-day intervals, temperature and humidity ranges), joined to ASPCA dog/cat toxicity and grounded on the GBIF Taxonomic Backbone, with a source URL on every record.
+
+## What it is
+- One row per houseplant, with a light category mapped to a standard Lux range, watering interval in days, temperature range, and target humidity.
+- ASPCA pet toxicity (dog/cat) with clinical ingestion signs; `toxicity_status` is `aspca_verified`, `aspca_genus_inferred` (conservative), or `unknown` — never guessed "safe".
+- GBIF-accepted names with a `gbif_source_url` to re-verify each record; trade synonyms preserved.
+- Quality flags on every row: `care_confidence` and `image_commercial_safe`.
+
+## Key pages
+- [Landing & pricing](https://houseplants-botanical-floradb.pages.dev/): what's inside, honest field coverage, and how to buy.
+- [Free sample on Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample): 100-plant CSV plus a working starter notebook.
+
+## Pricing & licensing
+- Free sample: 100 plants, CC-BY-NC-4.0.
+- Full snapshot: $99 one-time (SQLite + CSV + JSON), commercial license — 270 care plants, 891 ASPCA toxicity records, 20,000+ species taxonomic index, 702 enriched species.
+- Custom & recurring feeds: from $1,000, quoted per engagement.
+- Contact: floradb.hardhat456@simplelogin.com
+- Toxicity data is informational, not veterinary advice.

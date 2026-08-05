@@ -1,0 +1,32 @@
+# This is the PUBLIC showcase repo — never commit the full dataset or any
+# pipeline source here. Only the sample, docs, and assets belong.
+
+# Full dataset / exports (paid deliverable — keep OUT of this repo)
+floradb_export.*
+floradb_core.sqlite
+floradb_enterprise.*
+*.sqlite
+*.sqlite3
+floradb_v*.*
+# ...but DO keep the public sample
+!samples/floradb_sample.csv
+!kaggle/dataset/floradb_sample.csv
+
+# Never bring the engine source into this repo
+src/
+seed_*.py
+curate_*.py
+ingest_*.py
+enrich_*.py
+link_*.py
+build_target_list.py
+phase3_*.py
+
+# OS / tooling
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Internal / Working documentation
+SEO Optimisation/

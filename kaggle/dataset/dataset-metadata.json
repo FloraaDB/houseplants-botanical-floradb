@@ -1,0 +1,43 @@
+{
+  "title": "FloraDB Houseplant Care & Pet Toxicity (Sample)",
+  "subtitle": "100 houseplants with quantitative light/water metrics and ASPCA pet toxicity",
+  "id": "ahtiticheamine/floradb-houseplants-care-sample",
+  "licenses": [{"name": "CC-BY-NC-4.0"}],
+  "keywords": ["biology", "agriculture", "animals"],
+  "description": "# FloraDB — Houseplant Care & Pet-Toxicity Dataset (Free Sample)\n\nA structured dataset that turns subjective houseplant care advice — *\"bright indirect light\"*, *\"water when dry\"* — into **quantitative engineering metrics** (Lux thresholds, watering-day intervals, temperature and humidity ranges), joined to **ASPCA dog/cat toxicity** and grounded on the **GBIF Taxonomic Backbone**, with a source URL on every record.\n\nThis Kaggle dataset is the **free 100-plant sample** across 28 families. The full dataset — **270 curated care plants, 891 ASPCA toxicity records, a 20,000+ species GBIF taxonomic index, and 702 enriched species** — is available at [floradb](https://houseplants-botanical-floradb.pages.dev).\n\n## What makes it useful\n\n- **Quantitative care** — every plant has a light category mapped to a standard Lux band, plus watering-day interval, temperature range, and target humidity. Machine-ready for IoT planters and care apps.\n- **ASPCA pet toxicity** — dog/cat determinations with clinical ingestion signs. `toxicity_status` is `aspca_verified`, conservatively `aspca_genus_inferred`, or `unknown` — **never guessed \"safe\"**.\n- **GBIF-verified taxonomy** — accepted canonical names + `gbif_source_url` to re-verify each record; trade synonyms preserved.\n- **Honest, graded quality** — `care_confidence` and `image_commercial_safe` flags let you filter to exactly the rows you trust.\n\n## Field coverage (full care core, 270 plants)\n\n| Field | Coverage | | Field | Coverage |\n| :--- | ---: | --- | :--- | ---: |\n| Scientific / common / family | 100% | | Native range | 96% |\n| Light + Lux range | 100% | | Vernacular names | 81% |\n| Watering / temp / humidity | 100% | | Toxicity determined | 63% |\n| Representative image ref | 99% | | — species-verified (ASPCA) | 125 |\n\n## Columns\n\nSee the column-descriptions tab — every field is documented. A starter notebook demonstrating loading, tabular preview, pet-safety filtering, and care-metric analysis is attached.\n\n## Use cases\n\n- Plant-ID and plant-care apps (structured care + pet-safety data)\n- IoT smart planters (Lux targets and watering intervals as machine values)\n- \"Is this plant safe for my cat?\" features backed by ASPCA determinations\n- ML / RAG corpora over houseplant care and botany\n\n## Sources & collection methodology\n\n**Sources**\n- **GBIF — Global Biodiversity Information Facility** (gbif.org) — Taxonomic Backbone for name verification, accepted names, family, vernacular names, and native range (GBIF Backbone is CC BY 4.0).\n- **ASPCA Animal Poison Control** — toxic/non-toxic plant list; source of the dog/cat/horse toxicity flags and clinical signs (facts credited to ASPCA).\n- **Image references** via GBIF occurrence media (e.g. iNaturalist) — one image URL per species under its own license (mostly CC BY-NC).\n- **Curated horticultural references** — the normalized care metrics.\n\n**Collection methodology**\n1. Each name is matched live against the GBIF backbone; synonyms resolve to the accepted name and a re-verifiable `gbif_source_url` is stored on every row.\n2. ASPCA toxicity was ingested honoring the site's robots.txt 10-second crawl-delay; `toxicity_status` records whether each determination is species-verified, conservatively genus-inferred, or unknown — never guessed \"safe\".\n3. Care metrics are category-normalized (light category to a standard Lux band; watering/temperature/humidity from family profiles), each graded by `care_confidence`.\n\nUpdated quarterly (snapshot 2026.07).\n\n## License & attribution\n\nThe **sample** is shared under **CC-BY-NC-4.0** (attribution, non-commercial). The **full commercial dataset** is licensed separately via [floradb](https://houseplants-botanical-floradb.pages.dev). Toxicity data is informational, not veterinary advice. Want a plant record corrected? Email floradb.hardhat456@simplelogin.com.\n\n**Full dataset & updates:** https://houseplants-botanical-floradb.pages.dev\n\nPrefer live, self-serve lookups instead of a snapshot? Run our actor on Apify: https://apify.com/dataengineered/houseplant-care-toxicity-lookup",
+  "resources": [
+    {
+      "path": "floradb_sample.csv",
+      "description": "100 curated houseplants across 33 families. One row per plant, with quantitative care metrics (Lux, watering days, temperature, humidity), ASPCA pet toxicity, GBIF-verified taxonomy, and enrichment (vernacular names, native range, image reference).",
+      "schema": {
+        "fields": [
+          {"name": "plant_id", "type": "integer", "description": "Stable identifier for the plant record."},
+          {"name": "scientific_name", "type": "string", "description": "GBIF-accepted canonical Latin binomial."},
+          {"name": "synonym_scientific_name", "type": "string", "description": "Widely-used horticultural/trade synonym, where it differs from the accepted name."},
+          {"name": "common_name", "type": "string", "description": "Primary English common name."},
+          {"name": "family", "type": "string", "description": "Botanical family (GBIF-verified)."},
+          {"name": "light_requirement_level", "type": "string", "description": "Standardized light category (Low to Direct Sun)."},
+          {"name": "min_lux", "type": "integer", "description": "Minimum light for active growth, in Lux (normalized from the light category)."},
+          {"name": "max_lux", "type": "integer", "description": "Maximum tolerated light before leaf scorch, in Lux."},
+          {"name": "watering_frequency_days", "type": "integer", "description": "Recommended watering interval, in days."},
+          {"name": "min_temp_celsius", "type": "number", "description": "Minimum healthy ambient temperature (Celsius)."},
+          {"name": "max_temp_celsius", "type": "number", "description": "Maximum healthy ambient temperature (Celsius)."},
+          {"name": "ideal_humidity_percent", "type": "integer", "description": "Target relative humidity (percent)."},
+          {"name": "is_toxic_to_dogs", "type": "boolean", "description": "1 toxic, 0 safe, blank when toxicity_status is unknown."},
+          {"name": "is_toxic_to_cats", "type": "boolean", "description": "1 toxic, 0 safe, blank when unknown."},
+          {"name": "toxicity_symptoms", "type": "string", "description": "Clinical ingestion signs (ASPCA) where determined."},
+          {"name": "toxicity_status", "type": "string", "description": "aspca_verified, aspca_genus_inferred, or unknown — never guessed 'safe'."},
+          {"name": "care_confidence", "type": "string", "description": "high (hand-authored), medium (family-normalized), or low (generic default)."},
+          {"name": "vernacular_names_en", "type": "string", "description": "Representative English common name from GBIF vernacular data."},
+          {"name": "native_range", "type": "string", "description": "Best-effort distribution / establishment locality (GBIF)."},
+          {"name": "image_url", "type": "string", "description": "Reference to one representative CC-licensed image (not redistributed)."},
+          {"name": "image_license", "type": "string", "description": "License of the referenced image."},
+          {"name": "image_commercial_safe", "type": "boolean", "description": "1 = CC0/CC-BY/CC-BY-SA (commercial OK); 0 = NC/ND/all-rights-reserved."},
+          {"name": "gbif_usage_key", "type": "integer", "description": "GBIF backbone usage key."},
+          {"name": "gbif_source_url", "type": "string", "description": "GBIF species page the taxonomy was verified against (re-verifiable provenance)."},
+          {"name": "dataset_version", "type": "string", "description": "Snapshot identifier, e.g. 2026.07."}
+        ]
+      }
+    }
+  ]
+}

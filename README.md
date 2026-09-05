@@ -12,9 +12,9 @@
 [![Care core: 270](https://img.shields.io/badge/Care%20core-270%20plants-2f5233.svg)](#whats-inside)
 [![Toxicity: ASPCA](https://img.shields.io/badge/Toxicity-ASPCA%20sourced-b0895f.svg)](#provenance)
 [![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](CHANGELOG.md)
-[![Get the data](https://img.shields.io/badge/Get%20the%20data-floradb-86a862.svg)](https://houseplants-botanical-floradb.pages.dev)
+[![Get the data](https://img.shields.io/badge/Get%20the%20data-floradb-86a862.svg)](https://floradb.dataengineered.io)
 
-**[→ Get the full dataset at floradb](https://houseplants-botanical-floradb.pages.dev)**
+**[→ Get the full dataset at floradb](https://floradb.dataengineered.io)**
 
 </div>
 
@@ -35,7 +35,7 @@ This is a **curated care + safety** dataset — strong on quantitative care, ver
 | Enriched species (names/images/range) | **702** | (joined) |
 | Formats | SQLite · CSV · JSON | CSV |
 
-The free [`samples/floradb_sample.csv`](samples/floradb_sample.csv) is 100 plants across 28 families — a real taste of the schema and quality (a deliberate mix of verified, genus-inferred, and unknown toxicity so you see the honest flags). Explore it interactively in the [🤗 Sample Explorer](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers), or load it straight from the [🤗 sample dataset](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample). The full dataset is available at **[floradb](https://houseplants-botanical-floradb.pages.dev)**.
+The free [`samples/floradb_sample.csv`](samples/floradb_sample.csv) is 100 plants across 28 families — a real taste of the schema and quality (a deliberate mix of verified, genus-inferred, and unknown toxicity so you see the honest flags). Explore it interactively in the [🤗 Sample Explorer](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers), or load it straight from the [🤗 sample dataset](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample). The full dataset is available at **[floradb](https://floradb.dataengineered.io)**.
 
 ## Field coverage (the honest numbers)
 
@@ -82,7 +82,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field.
 | **Custom & Enterprise** | Your target plant list · recurring refreshes · API | **$99+** |
 | **Live lookup** | On-demand, self-serve via Apify | pay-per-result |
 
-**[→ Get it at floradb](https://houseplants-botanical-floradb.pages.dev)** · or email **[floradb.hardhat456@simplelogin.com](mailto:floradb.hardhat456@simplelogin.com)** for custom work.
+**[→ Get it at floradb](https://floradb.dataengineered.io)** · or email **[floradb.hardhat456@simplelogin.com](mailto:floradb.hardhat456@simplelogin.com)** for custom work.
 
 > 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, GBIF-verified taxonomy + ASPCA toxicity on demand.
 
@@ -107,7 +107,7 @@ A fuller example is in [`examples/load_sample.py`](examples/load_sample.py).
 ## License
 
 - **Sample data & docs in this repo:** CC-BY-NC-4.0 — free to use with attribution, non-commercial (see [`LICENSE`](LICENSE)).
-- **Full dataset:** commercial license, available at [floradb](https://houseplants-botanical-floradb.pages.dev). Distributed as derived factual attributes with source attribution.
+- **Full dataset:** commercial license, available at [floradb](https://floradb.dataengineered.io). Distributed as derived factual attributes with source attribution.
 - **Safety note:** toxicity data is provided for informational use and is not veterinary advice. If a pet ingests a plant, contact a vet or the ASPCA Animal Poison Control Center.
 
 Want a plant record corrected? Email **[floradb.hardhat456@simplelogin.com](mailto:floradb.hardhat456@simplelogin.com)**.

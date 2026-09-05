@@ -85,7 +85,7 @@ def main():
         families[fam].append(p)
 
     sitemap_urls = [
-        ("https://houseplants-botanical-floradb.pages.dev/", "1.0", "weekly")
+        ("https://floradb.dataengineered.io/", "1.0", "weekly")
     ]
 
     # Generate Plant Specimen Pages
@@ -115,7 +115,7 @@ def main():
 
         pet_status_badge = '<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS</span>' if (dog_toxic or cat_toxic) else '<span style="background:rgba(74,107,47,0.18);color:var(--accent);padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(74,107,47,0.3);">🟢 PET SAFE</span>'
 
-        page_url = f"https://houseplants-botanical-floradb.pages.dev/plants/{slug}"
+        page_url = f"https://floradb.dataengineered.io/plants/{slug}"
         sitemap_urls.append((page_url, "0.8", "monthly"))
 
         html_content = f"""<!DOCTYPE html>
@@ -145,7 +145,7 @@ def main():
     "name": "{sci} ({common}) Botanical Care & Pet-Toxicity Record",
     "description": "Normalized botanical care parameters for {sci} ({common}): light requirements of {min_lux} to {max_lux} Lux, watering interval of {water_days} days, ideal humidity {humidity}%, and ASPCA dog/cat toxicity verification.",
     "url": "{page_url}",
-    "creator": {{"@type": "Organization", "name": "FloraDB", "url": "https://houseplants-botanical-floradb.pages.dev"}},
+    "creator": {{"@type": "Organization", "name": "FloraDB", "url": "https://floradb.dataengineered.io"}},
     "license": "https://creativecommons.org/licenses/by-nc/4.0/",
     "isAccessibleForFree": true,
     "variableMeasured": ["min/max Lux light", "watering frequency in days", "temperature range", "ideal humidity", "toxic to dogs", "toxic to cats", "clinical toxicity symptoms", "GBIF taxonomic key"]
@@ -156,8 +156,8 @@ def main():
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://houseplants-botanical-floradb.pages.dev/"}},
-      {{"@type": "ListItem", "position": 2, "name": "Families Hub", "item": "https://houseplants-botanical-floradb.pages.dev/families/{fam_slug}"}},
+      {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://floradb.dataengineered.io/"}},
+      {{"@type": "ListItem", "position": 2, "name": "Families Hub", "item": "https://floradb.dataengineered.io/families/{fam_slug}"}},
       {{"@type": "ListItem", "position": 3, "name": "{sci}", "item": "{page_url}"}}
     ]
   }}
@@ -308,7 +308,7 @@ def main():
     # Generate Family Hub Pages
     for fam_name, members in families.items():
         fam_slug = slugify(fam_name)
-        page_url = f"https://houseplants-botanical-floradb.pages.dev/families/{fam_slug}"
+        page_url = f"https://floradb.dataengineered.io/families/{fam_slug}"
         sitemap_urls.append((page_url, "0.9", "monthly"))
 
         total_members = len(members)

@@ -5,7 +5,7 @@
 We take the integrity of the FloraDB data seriously. If you discover any of the
 following, please report it privately:
 
-- A security vulnerability in the site ([floradb](https://houseplants-botanical-floradb.pages.dev))
+- A security vulnerability in the site ([floradb](https://floradb.dataengineered.io))
   or in anything published in this repository (e.g. the starter notebook).
 - A data concern — including an **incorrect pet-toxicity determination** that
   could mislead a plant owner about whether a plant is safe.

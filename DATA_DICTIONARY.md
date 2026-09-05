@@ -61,6 +61,6 @@ All collection was rate-limited and politely identified. **Update frequency: qua
 - **Provenance.** `gbif_source_url` re-verifies the taxonomy; the full dataset's `data_sources` ledger records the exact ASPCA/GBIF endpoints and timestamps for every record.
 - **Relational build (full dataset).** The SQLite export includes `plants`, `plant_families`, `data_sources`, `taxonomy_verifications`, `species_index` (20,000+), `aspca_toxicity` (891), and `species_enrichment` (702).
 
-Full dataset: **[floradb](https://houseplants-botanical-floradb.pages.dev)** · Questions: **[floradb.hardhat456@simplelogin.com](mailto:floradb.hardhat456@simplelogin.com)**
+Full dataset: **[floradb](https://floradb.dataengineered.io)** · Questions: **[floradb.hardhat456@simplelogin.com](mailto:floradb.hardhat456@simplelogin.com)**
 
 *Toxicity data is informational, not veterinary advice.*

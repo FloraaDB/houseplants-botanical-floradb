@@ -15,4 +15,4 @@ All notable changes to the FloraDB dataset snapshots.
 - Every record GBIF-verified with a `gbif_source_url`; per-record quality flags (`care_confidence`, `toxicity_status`, `image_commercial_safe`).
 - Care metrics are category-normalized; toxicity is ASPCA-sourced or explicitly `unknown` — never guessed safe.
 
-Full dataset & updates: [floradb](https://houseplants-botanical-floradb.pages.dev)
+Full dataset & updates: [floradb](https://floradb.dataengineered.io)

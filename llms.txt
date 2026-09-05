@@ -9,7 +9,7 @@
 - Quality flags on every row: `care_confidence` and `image_commercial_safe`.
 
 ## Key pages
-- [Landing & pricing](https://houseplants-botanical-floradb.pages.dev/): what's inside, honest field coverage, and how to buy.
+- [Landing & pricing](https://floradb.dataengineered.io/): what's inside, honest field coverage, and how to buy.
 - [Free sample on Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample): 100-plant CSV plus a working starter notebook.
 
 ## Pricing & licensing

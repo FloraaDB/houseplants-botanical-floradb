@@ -44,6 +44,6 @@ By contributing, you agree that your contributions to the sample and docs are
 licensed under **CC-BY-NC-4.0**, the same license as this repository (see
 [`LICENSE`](LICENSE)).
 
-Questions? **floradb.hardhat456@simplelogin.com** · full dataset: [floradb](https://houseplants-botanical-floradb.pages.dev)
+Questions? **floradb.hardhat456@simplelogin.com** · full dataset: [floradb](https://floradb.dataengineered.io)
 
 *Toxicity data is informational, not veterinary advice.*

@@ -3,7 +3,7 @@
     python examples/load_sample.py
 
 No dependencies beyond the Python standard library.
-Full dataset: https://houseplants-botanical-floradb.pages.dev
+Full dataset: https://floradb.dataengineered.io
 """
 
 import csv

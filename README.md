@@ -18,6 +18,8 @@
 
 **Free sample:** [100 plants](samples/floradb_sample.csv) · **Full dataset: $49 one-time** → [Buy on Stripe](https://buy.stripe.com/fZuaEY3kYgDA9vR2I838400)
 
+**Same sample on [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample)** · **[Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample)**
+
 </div>
 
 ---

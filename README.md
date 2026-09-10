@@ -16,6 +16,8 @@
 
 **[→ Get the full dataset at floradb](https://floradb.dataengineered.io)**
 
+**Free sample:** [100 plants](samples/floradb_sample.csv) · **Full dataset: $49 one-time** → [Buy on Stripe](https://buy.stripe.com/fZuaEY3kYgDA9vR2I838400)
+
 </div>
 
 ---

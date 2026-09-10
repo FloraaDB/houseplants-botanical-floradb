@@ -16,5 +16,5 @@
 - Free sample: 100 plants, CC-BY-NC-4.0.
 - Full snapshot: $99 one-time (SQLite + CSV + JSON), commercial license — 270 care plants, 891 ASPCA toxicity records, 20,000+ species taxonomic index, 702 enriched species.
 - Custom & recurring feeds: from $1,000, quoted per engagement.
-- Contact: floradb.hardhat456@simplelogin.com
+- Contact: floradb@dataengineered.io
 - Toxicity data is informational, not veterinary advice.

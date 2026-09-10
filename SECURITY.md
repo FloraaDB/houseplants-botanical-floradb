@@ -11,7 +11,7 @@ following, please report it privately:
   could mislead a plant owner about whether a plant is safe.
 - Any suspected leak of the full (paid) dataset or pipeline source.
 
-**Please email: floradb.hardhat456@simplelogin.com**
+**Please email: floradb@dataengineered.io**
 
 Do **not** open a public GitHub issue for security-sensitive reports.
 

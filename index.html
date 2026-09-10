@@ -37,7 +37,7 @@
     "@type": "Organization",
     "name": "FloraDB",
     "url": "https://floradb.dataengineered.io",
-    "email": "floradb.hardhat456@simplelogin.com",
+    "email": "floradb@dataengineered.io",
     "description": "Houseplant care and pet-toxicity dataset provider."
   }
   </script>
@@ -634,7 +634,7 @@
         </a>
         <div style="margin-top:18px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-muted);">
           Secure card checkout via Stripe · Apple&nbsp;Pay / Google&nbsp;Pay · dataset delivered instantly after payment<br>
-          Need a company invoice or crypto payment? <a href="mailto:floradb.hardhat456@simplelogin.com?subject=FloraDB%20Snapshot%20%E2%80%94%20invoice%20%2F%20crypto%20request" style="text-decoration:underline;">email us</a>
+          Need a company invoice or crypto payment? <a href="mailto:floradb@dataengineered.io?subject=FloraDB%20Snapshot%20%E2%80%94%20invoice%20%2F%20crypto%20request" style="text-decoration:underline;">email us</a>
         </div>
       </div>
 
@@ -723,7 +723,7 @@
         <span class="plate-line"></span>
       </div>
       <h3 class="serif" style="font-size:1.8rem; font-weight:600;">Questions, or need custom data?</h3>
-      <p style="font-size:0.86rem; color:var(--text-muted); margin-top:8px;">Custom schema, API access, an expert-reviewed tier, or enterprise invoicing — reach our desk at <code style="font-family:'JetBrains Mono',monospace;">floradb.hardhat456@simplelogin.com</code>.</p>
+      <p style="font-size:0.86rem; color:var(--text-muted); margin-top:8px;">Custom schema, API access, an expert-reviewed tier, or enterprise invoicing — reach our desk at <code style="font-family:'JetBrains Mono',monospace;">floradb@dataengineered.io</code>.</p>
       <button type="button" class="btn btn-outline" style="margin-top:22px; padding:15px 30px;" onclick="toggleSupportForm()"><span id="supportBtnText">✉ Open Contact Form</span></button>
 
       <div id="supportFormContainer" style="display:none; margin-top:30px; text-align:left; border:1px solid var(--rule-color); background:var(--bg-paper-2); padding:36px;">
@@ -752,11 +752,11 @@
             <label class="form-label" for="suppMsg">Message *</label>
             <textarea id="suppMsg" name="message" class="form-input" rows="4" placeholder="Describe your question or custom requirement..." required style="resize:vertical;"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;"><span>Send to floradb.hardhat456@simplelogin.com →</span></button>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;"><span>Send to floradb@dataengineered.io →</span></button>
         </form>
         <div id="supportSuccess" class="success-box" style="text-align:center;">
           <div class="success-title">❋ Message dispatched</div>
-          <p style="margin-top:8px; font-size:0.85rem;">Your message went to <code>floradb.hardhat456@simplelogin.com</code>. We usually respond within 2–4 business hours.</p>
+          <p style="margin-top:8px; font-size:0.85rem;">Your message went to <code>floradb@dataengineered.io</code>. We usually respond within 2–4 business hours.</p>
           <button type="button" class="btn btn-outline" style="margin-top:16px; padding:12px 22px;" onclick="resetSupport()"><span>↻ Send another message</span></button>
         </div>
       </div>
@@ -833,9 +833,9 @@
           if (k !== '_subject') bodyText += k + ": " + (v || '') + "\n";
         }
         bodyText += "\n(Sent via automatic fallback due to form provider timeout)";
-        window.location.href = "mailto:floradb.hardhat456@simplelogin.com?subject=" + subj + "&body=" + encodeURIComponent(bodyText);
+        window.location.href = "mailto:floradb@dataengineered.io?subject=" + subj + "&body=" + encodeURIComponent(bodyText);
 
-        alert("⚠️ Notice: Our third-party form provider is currently unreachable.\n\nWe have automatically launched your email client with your request pre-filled! If your email app didn't open, please email us directly at floradb.hardhat456@simplelogin.com.");
+        alert("⚠️ Notice: Our third-party form provider is currently unreachable.\n\nWe have automatically launched your email client with your request pre-filled! If your email app didn't open, please email us directly at floradb@dataengineered.io.");
       });
     }
 

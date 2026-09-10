@@ -634,7 +634,7 @@
         </a>
         <div style="margin-top:18px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-muted);">
           Secure card checkout via Stripe · Apple&nbsp;Pay / Google&nbsp;Pay · dataset delivered instantly after payment<br>
-          Need a company invoice or crypto payment? <a href="mailto:floradb@dataengineered.io?subject=FloraDB%20Snapshot%20%E2%80%94%20invoice%20%2F%20crypto%20request" style="text-decoration:underline;">email us</a>
+          Need a company invoice or crypto payment? <a href="#support" style="text-decoration:underline;">use the contact form</a> (floradb@dataengineered.io)
         </div>
       </div>
 
@@ -833,9 +833,7 @@
           if (k !== '_subject') bodyText += k + ": " + (v || '') + "\n";
         }
         bodyText += "\n(Sent via automatic fallback due to form provider timeout)";
-        window.location.href = "mailto:floradb@dataengineered.io?subject=" + subj + "&body=" + encodeURIComponent(bodyText);
-
-        alert("⚠️ Notice: Our third-party form provider is currently unreachable.\n\nWe have automatically launched your email client with your request pre-filled! If your email app didn't open, please email us directly at floradb@dataengineered.io.");
+        alert("Our form provider is unreachable right now. Please write to floradb@dataengineered.io with your request — we reply within 1 business day.");
       });
     }
 

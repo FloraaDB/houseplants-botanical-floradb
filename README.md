@@ -82,7 +82,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field.
 | **Custom & Enterprise** | Your target plant list · recurring refreshes · API | **$99+** |
 | **Live lookup** | On-demand, self-serve via Apify | pay-per-result |
 
-**[→ Get it at floradb](https://floradb.dataengineered.io)** · or email **[floradb@dataengineered.io](mailto:floradb@dataengineered.io)** for custom work.
+**[→ Get it at floradb](https://floradb.dataengineered.io)** · or use the [contact form](https://floradb.dataengineered.io/#support) (floradb@dataengineered.io) for custom work.
 
 > 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, GBIF-verified taxonomy + ASPCA toxicity on demand.
 
@@ -110,4 +110,4 @@ A fuller example is in [`examples/load_sample.py`](examples/load_sample.py).
 - **Full dataset:** commercial license, available at [floradb](https://floradb.dataengineered.io). Distributed as derived factual attributes with source attribution.
 - **Safety note:** toxicity data is provided for informational use and is not veterinary advice. If a pet ingests a plant, contact a vet or the ASPCA Animal Poison Control Center.
 
-Want a plant record corrected? Email **[floradb@dataengineered.io](mailto:floradb@dataengineered.io)**.
+Want a plant record corrected? Use the [contact form](https://floradb.dataengineered.io/#support) or write to floradb@dataengineered.io.

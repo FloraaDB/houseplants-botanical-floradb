@@ -83,7 +83,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field.
 | :--- | :--- | :--- |
 | **Sample** | 100 plants (this repo) | Free |
 | **Snapshot** | Full 270 care core + 891 toxicity + 20,000+ index · SQLite + CSV + JSON | **$49** one-time |
-| **Custom & Enterprise** | Your target plant list · recurring refreshes · API | **$99+** |
+| **Custom work** | Subsets, recurring refreshes, schema mapping — quoted per engagement | from $99, via the [contact form](https://floradb.dataengineered.io/#support) |
 | **Live lookup** | On-demand, self-serve via Apify | pay-per-result |
 
 **[→ Get it at floradb](https://floradb.dataengineered.io)** · or use the [contact form](https://floradb.dataengineered.io/#support) (floradb@dataengineered.io) for custom work.

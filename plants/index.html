@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant directory — FloraDB</title>
+<meta name="description" content="Every houseplant profile in FloraDB, each with light, water and humidity requirements plus verified pet-toxicity status.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://floradb.dataengineered.io/plants/">
+<link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/">
+<link rel="alternate" hreflang="x-default" href="https://floradb.dataengineered.io/plants/">
+<meta property="og:title" content="Plant directory — FloraDB">
+<meta property="og:description" content="Every houseplant profile in FloraDB, each with light, water and humidity requirements plus verified pet-toxicity status.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://floradb.dataengineered.io/plants/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Plant directory","description":"Every houseplant profile in FloraDB, each with light, water and humidity requirements plus verified pet-toxicity status.","url":"https://floradb.dataengineered.io/plants/","isPartOf":{"@type":"WebSite","url":"https://floradb.dataengineered.io"}}
+</script>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg-paper: #12140f;
+      --bg-paper-2: #191c14;
+      --text-ink: #ece7d9;
+      --text-muted: #9a9683;
+      --rule-color: rgba(236, 231, 217, 0.18);
+      --accent: #9cbf6a;
+      --sepia: #c39a6b;
+      --card-bg: #191c14;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Spline Sans', sans-serif; background: var(--bg-paper); color: var(--text-ink); line-height: 1.6; padding-bottom: 60px; }
+    .serif { font-family: 'Fraunces', serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    header { border-bottom: 1px solid var(--rule-color); padding: 20px 0; background: var(--bg-paper-2); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--text-ink); text-decoration: none; }
+    .brand .accent { color: var(--accent); }
+    .btn-link { color: var(--text-ink); text-decoration: none; font-size: 0.9rem; margin-left: 20px; border: 1px solid var(--rule-color); padding: 8px 16px; border-radius: 4px; transition: all 0.2s; }
+    .btn-link:hover { background: var(--accent); color: #12140f; border-color: var(--accent); }
+    .hero { padding: 40px 0; border-bottom: 1px solid var(--rule-color); }
+    .badge-strip { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .specimen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+    @media(max-width: 768px) { .specimen-grid { grid-template-columns: 1fr; } }
+    .card { background: var(--card-bg); border: 1px solid var(--rule-color); padding: 24px; border-radius: 6px; }
+    .metric-row { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--rule-color); padding: 12px 0; }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-label { color: var(--text-muted); font-size: 0.9rem; }
+    .metric-val { font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+    .img-box { width: 100%; max-height: 380px; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule-color); margin-bottom: 24px; }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    footer { margin-top: 60px; border-top: 1px solid var(--rule-color); padding: 30px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+  </style>
+<style>
+.dirhub-wrap{max-width:1000px;margin:0 auto;padding:36px 24px 64px}
+.dirhub-wrap h1{font-size:2rem;line-height:1.15;margin:0 0 8px}
+.dirhub-lede{opacity:.75;max-width:70ch;margin:0 0 6px}
+.dirhub-count{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin:14px 0 0}
+.dirhub-list{list-style:none;margin:26px 0 0;padding:0;display:grid;
+grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px}
+.dirhub-list a{display:block;padding:10px 12px;border-radius:6px;text-decoration:none;
+border:1px solid transparent}
+.dirhub-list a:hover{border-color:currentColor;opacity:.85}
+.dirhub-crumb{font-size:.8rem;opacity:.6;margin:0 0 18px}
+</style>
+</head>
+<body>
+<header>
+    <div class="container nav-bar">
+      <a href="/" class="brand">Flora<span class="accent">DB</span></a>
+      <div>
+        <a href="/#explorer" class="btn-link">← Explorer</a>
+        <a href="../families/gesneriaceae" class="btn-link">Family: Gesneriaceae</a>
+      </div>
+    </div>
+  </header>
+<main class="dirhub-wrap">
+<p class="dirhub-crumb"><a href="/">Home</a> &rsaquo; Plant directory</p>
+<h1>Plant directory</h1>
+<p class="dirhub-lede">Every houseplant profile in FloraDB, each with light, water and humidity requirements plus verified pet-toxicity status.</p>
+<p class="dirhub-count">100 plant profiles</p>
+<ul class="dirhub-list">
+<li><a href="aeschynanthus-radicans-lipstick-plant">Aeschynanthus radicans</a></li>
+<li><a href="agave-victoriae-reginae-queen-victoria-agave">Agave victoriae-reginae</a></li>
+<li><a href="aglaonema-commutatum-chinese-evergreen">Aglaonema commutatum</a></li>
+<li><a href="alocasia-cuprea-mirror-plant">Alocasia cuprea</a></li>
+<li><a href="alocasia-macrorrhizos-giant-taro">Alocasia macrorrhizos</a></li>
+<li><a href="alocasia-reginula-black-velvet-alocasia">Alocasia reginula</a></li>
+<li><a href="aloe-vera-aloe-vera">Aloe vera</a></li>
+<li><a href="anthurium-andraeanum-flamingo-lily">Anthurium andraeanum</a></li>
+<li><a href="anthurium-crystallinum-crystal-anthurium">Anthurium crystallinum</a></li>
+<li><a href="aphelandra-squarrosa-zebra-plant">Aphelandra squarrosa</a></li>
+<li><a href="asparagus-setaceus-asparagus-fern">Asparagus setaceus</a></li>
+<li><a href="beaucarnea-recurvata-ponytail-palm">Beaucarnea recurvata</a></li>
+<li><a href="begonia-bowerae-eyelash-begonia">Begonia bowerae</a></li>
+<li><a href="begonia-coccinea-angel-wing-begonia">Begonia coccinea</a></li>
+<li><a href="begonia-luxurians-palm-leaf-begonia">Begonia luxurians</a></li>
+<li><a href="begonia-maculata-polka-dot-begonia">Begonia maculata</a></li>
+<li><a href="begonia-rex-cultorum-rex-begonia">Begonia rex-cultorum</a></li>
+<li><a href="bougainvillea-glabra-paper-flower">Bougainvillea glabra</a></li>
+<li><a href="caryota-mitis-fishtail-palm">Caryota mitis</a></li>
+<li><a href="ceropegia-linearis-string-of-needles">Ceropegia linearis</a></li>
+<li><a href="ceropegia-woodii-string-of-hearts">Ceropegia woodii</a></li>
+<li><a href="chamaedorea-elegans-parlor-palm">Chamaedorea elegans</a></li>
+<li><a href="chamaedorea-seifrizii-bamboo-palm">Chamaedorea seifrizii</a></li>
+<li><a href="chlorophytum-comosum-spider-plant">Chlorophytum comosum</a></li>
+<li><a href="codiaeum-variegatum-croton">Codiaeum variegatum</a></li>
+<li><a href="coleus-scutellarioides-coleus">Coleus scutellarioides</a></li>
+<li><a href="crassula-ovata-jade-plant">Crassula ovata</a></li>
+<li><a href="cyclamen-persicum-florist-s-cyclamen">Cyclamen persicum</a></li>
+<li><a href="dieffenbachia-seguine-dumb-cane">Dieffenbachia seguine</a></li>
+<li><a href="dischidia-nummularia-string-of-nickels">Dischidia nummularia</a></li>
+<li><a href="dracaena-fragrans-corn-plant">Dracaena fragrans</a></li>
+<li><a href="dracaena-sanderiana-lucky-bamboo">Dracaena sanderiana</a></li>
+<li><a href="dracaena-trifasciata-snake-plant">Dracaena trifasciata</a></li>
+<li><a href="dypsis-lutescens-areca-palm">Dypsis lutescens</a></li>
+<li><a href="echeveria-elegans-mexican-snowball">Echeveria elegans</a></li>
+<li><a href="epipremnum-aureum-golden-pothos">Epipremnum aureum</a></li>
+<li><a href="epipremnum-pinnatum-cebu-blue-pothos">Epipremnum pinnatum</a></li>
+<li><a href="euphorbia-trigona-african-milk-tree">Euphorbia trigona</a></li>
+<li><a href="faucaria-tigrina-tiger-jaws">Faucaria tigrina</a></li>
+<li><a href="fenestraria-rhopalophylla-baby-toes">Fenestraria rhopalophylla</a></li>
+<li><a href="ficus-benjamina-weeping-fig">Ficus benjamina</a></li>
+<li><a href="ficus-elastica-rubber-tree">Ficus elastica</a></li>
+<li><a href="ficus-lyrata-fiddle-leaf-fig">Ficus lyrata</a></li>
+<li><a href="ficus-pumila-creeping-fig">Ficus pumila</a></li>
+<li><a href="fittonia-albivenis-nerve-plant">Fittonia albivenis</a></li>
+<li><a href="goeppertia-insignis-rattlesnake-plant">Goeppertia insignis</a></li>
+<li><a href="guzmania-lingulata-scarlet-star-bromeliad">Guzmania lingulata</a></li>
+<li><a href="hedera-canariensis-algerian-ivy">Hedera canariensis</a></li>
+<li><a href="hedera-helix-english-ivy">Hedera helix</a></li>
+<li><a href="hibiscus-rosa-sinensis-chinese-hibiscus">Hibiscus rosa-sinensis</a></li>
+<li><a href="hoya-carnosa-wax-plant">Hoya carnosa</a></li>
+<li><a href="hoya-kerrii-sweetheart-hoya">Hoya kerrii</a></li>
+<li><a href="hypoestes-phyllostachya-polka-dot-plant">Hypoestes phyllostachya</a></li>
+<li><a href="justicia-brandegeeana-shrimp-plant">Justicia brandegeeana</a></li>
+<li><a href="kalanchoe-tomentosa-panda-plant">Kalanchoe tomentosa</a></li>
+<li><a href="kroenleinia-grusonii-golden-barrel-cactus">Kroenleinia grusonii</a></li>
+<li><a href="licuala-grandis-ruffled-fan-palm">Licuala grandis</a></li>
+<li><a href="lithops-aucampiae-living-stones">Lithops aucampiae</a></li>
+<li><a href="ludisia-discolor-jewel-orchid">Ludisia discolor</a></li>
+<li><a href="mammillaria-hahniana-old-lady-cactus">Mammillaria hahniana</a></li>
+<li><a href="mandevilla-sanderi-brazilian-jasmine">Mandevilla sanderi</a></li>
+<li><a href="maranta-leuconeura-prayer-plant">Maranta leuconeura</a></li>
+<li><a href="monstera-adansonii-swiss-cheese-vine">Monstera adansonii</a></li>
+<li><a href="monstera-deliciosa-swiss-cheese-plant">Monstera deliciosa</a></li>
+<li><a href="monstera-obliqua-monstera-obliqua">Monstera obliqua</a></li>
+<li><a href="nephrolepis-exaltata-boston-fern">Nephrolepis exaltata</a></li>
+<li><a href="opuntia-microdasys-bunny-ears-cactus">Opuntia microdasys</a></li>
+<li><a href="oxalis-triangularis-false-shamrock">Oxalis triangularis</a></li>
+<li><a href="pachira-aquatica-money-tree">Pachira aquatica</a></li>
+<li><a href="peperomia-argyreia-watermelon-peperomia">Peperomia argyreia</a></li>
+<li><a href="peperomia-obtusifolia-baby-rubber-plant">Peperomia obtusifolia</a></li>
+<li><a href="philodendron-erubescens-blushing-philodendron">Philodendron erubescens</a></li>
+<li><a href="philodendron-hederaceum-heartleaf-philodendron">Philodendron hederaceum</a></li>
+<li><a href="philodendron-hederaceum-hederaceum-velvet-leaf-philodendron">Philodendron hederaceum hederaceum</a></li>
+<li><a href="philodendron-melanochrysum-black-gold-philodendron">Philodendron melanochrysum</a></li>
+<li><a href="phlebodium-aureum-blue-star-fern">Phlebodium aureum</a></li>
+<li><a href="pilea-involucrata-friendship-plant">Pilea involucrata</a></li>
+<li><a href="pilea-peperomioides-chinese-money-plant">Pilea peperomioides</a></li>
+<li><a href="platycerium-bifurcatum-staghorn-fern">Platycerium bifurcatum</a></li>
+<li><a href="plectranthus-verticillatus-swedish-ivy">Plectranthus verticillatus</a></li>
+<li><a href="polyscias-fruticosa-ming-aralia">Polyscias fruticosa</a></li>
+<li><a href="polyscias-scutellaria-shield-aralia">Polyscias scutellaria</a></li>
+<li><a href="ravenea-rivularis-majesty-palm">Ravenea rivularis</a></li>
+<li><a href="rhaphidophora-tetrasperma-mini-monstera">Rhaphidophora tetrasperma</a></li>
+<li><a href="ruellia-makoyana-monkey-plant">Ruellia makoyana</a></li>
+<li><a href="schlumbergera-truncata-christmas-cactus">Schlumbergera truncata</a></li>
+<li><a href="sedum-morganianum-burro-s-tail">Sedum morganianum</a></li>
+<li><a href="senecio-macroglossus-wax-ivy">Senecio macroglossus</a></li>
+<li><a href="spathiphyllum-floribundum-snowflower">Spathiphyllum floribundum</a></li>
+<li><a href="spathiphyllum-wallisii-peace-lily">Spathiphyllum wallisii</a></li>
+<li><a href="streptocarpus-ionanthus-african-violet">Streptocarpus ionanthus</a></li>
+<li><a href="strobilanthes-auriculata-dyeriana-persian-shield">Strobilanthes auriculata dyeriana</a></li>
+<li><a href="syngonium-podophyllum-arrowhead-vine">Syngonium podophyllum</a></li>
+<li><a href="tradescantia-fluminensis-small-leaf-spiderwort">Tradescantia fluminensis</a></li>
+<li><a href="tradescantia-pallida-purple-heart">Tradescantia pallida</a></li>
+<li><a href="tradescantia-zebrina-wandering-dude">Tradescantia zebrina</a></li>
+<li><a href="wallisia-cyanea-pink-quill">Wallisia cyanea</a></li>
+<li><a href="xanthosoma-sagittifolium-arrowleaf-elephant-ear">Xanthosoma sagittifolium</a></li>
+<li><a href="yucca-gigantea-spineless-yucca">Yucca gigantea</a></li>
+<li><a href="zamioculcas-zamiifolia-zz-plant">Zamioculcas zamiifolia</a></li>
+</ul>
+</main>
+<footer>
+    <div class="container">
+      <p>FloraDB — Botanical Houseplant Care & Pet-Toxicity Snapshot · <a href="/#pricing" style="color:var(--accent); text-decoration:none;">Get Full Relational Dataset ($49)</a></p>
+    </div>
+  </footer>
+</body>
+</html>

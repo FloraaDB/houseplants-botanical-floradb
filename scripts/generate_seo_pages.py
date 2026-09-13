@@ -1,8 +1,11 @@
 import csv
 import os
 import re
-import datetime
 import html
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from seo_common import fit_title, fit_desc, write_sitemap, related_block
 
 def _oxford(items):
     items = [i for i in items if i]
@@ -14,12 +17,13 @@ def _oxford(items):
         return f"{items[0]} and {items[1]}"
     return ", ".join(items[:-1]) + f", and {items[-1]}"
 
+def has(x):
+    return x not in (None, '', 'N/A', 'None reported.')
+
 def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
                  min_temp, max_temp, humidity, dog_toxic, cat_toxic, symptoms, native, vernacular):
     """Unique, data-derived care summary synthesised from a plant's own attributes."""
     esc = html.escape
-    def has(x):
-        return x not in (None, '', 'N/A', 'None reported.')
     p1 = f"{esc(common)} ({esc(sci)}) is a houseplant in the {esc(fam)} family"
     if has(native) and native != 'Various indoor/tropical regions':
         p1 += f", native to {esc(native.split(';')[0].strip())}"
@@ -49,10 +53,129 @@ def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
     body = " ".join(x for x in [p1, p2, p3] if x) + extra
     return f'<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; max-width:74ch; line-height:1.75;">{body}</p>'
 
+def toxicity_class(row):
+    """Coarse toxicity bucket derived only from the record's own ASPCA flags."""
+    dog = row.get('is_toxic_to_dogs', '0') == '1'
+    cat = row.get('is_toxic_to_cats', '0') == '1'
+    if dog and cat:
+        return 'toxic to both cats and dogs'
+    if dog:
+        return 'toxic to dogs'
+    if cat:
+        return 'toxic to cats'
+    return 'non-toxic to pets'
+
+def plant_description(p, tclass):
+    """First sentence = the record's most distinctive facts (light range, watering
+    interval, toxicity verdict); second sentence adds family/humidity when populated."""
+    common = p.get('common_name', '').strip()
+    sci = p.get('scientific_name', '').strip()
+    fam = (p.get('family') or '').strip()
+    min_lux = (p.get('min_lux') or '').strip()
+    max_lux = (p.get('max_lux') or '').strip()
+    water_days = (p.get('watering_frequency_days') or '').strip()
+    humidity = (p.get('ideal_humidity_percent') or '').strip()
+
+    facts = []
+    if min_lux and max_lux:
+        facts.append(f"needs {min_lux}–{max_lux} lux light")
+    if water_days:
+        facts.append(f"watering every {water_days} days")
+    facts.append(f"is {tclass}")
+    lead = f"{common} ({sci}) " + ", ".join(facts) + "."
+
+    extra = []
+    if fam:
+        extra.append(f"Part of the {fam} family")
+    if humidity:
+        extra.append(f"ideal humidity is about {humidity}%")
+    tail = (", ".join(extra) + ".") if extra else ""
+    return fit_desc(f"{lead} {tail}".strip())
+
+def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_n):
+    n = len(members)
+    facts = []
+    if lux_lo is not None and lux_hi is not None:
+        facts.append(f"{lux_lo}–{lux_hi} lux light range")
+    if water_lo is not None and water_hi is not None:
+        if water_lo == water_hi:
+            facts.append(f"watering every {water_lo} days")
+        else:
+            facts.append(f"watering every {water_lo}–{water_hi} days")
+    facts.append(f"{toxic_n} of {n} toxic to pets")
+    lead = f"{fam_name} spans {n} houseplant{'s' if n != 1 else ''} in FloraDB (" + ", ".join(facts) + ")."
+    return fit_desc(lead)
+
+def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_n):
+    """Unique, data-derived <p> profile computed only from the family's own member
+    records: count + representative species, light range, watering-interval range,
+    how many are ASPCA pet-toxic. Only populated fields are used; nothing invented."""
+    esc = html.escape
+    n = len(members)
+    reps = sorted({m.get('common_name', '').strip() for m in members if has(m.get('common_name'))})[:2]
+
+    sentences = []
+    s1 = f"{esc(fam_name)} is represented in FloraDB by {n} houseplant{'s' if n != 1 else ''}"
+    if reps:
+        s1 += f", including {esc(_oxford(reps))}"
+    s1 += "."
+    sentences.append(s1)
+
+    if lux_lo is not None and lux_hi is not None:
+        sentences.append(f"Light requirements across the family span {lux_lo}–{lux_hi} lux.")
+
+    if water_lo is not None and water_hi is not None:
+        if water_lo == water_hi:
+            sentences.append(f"Every member shares a watering interval of {water_lo} days.")
+        else:
+            sentences.append(f"Watering intervals range from every {water_lo} to every {water_hi} days.")
+
+    if n:
+        verb = "is" if toxic_n == 1 else "are"
+        sentences.append(f"{toxic_n} of {n} {verb} toxic to cats or dogs, per ASPCA data.")
+
+    return ('<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; '
+            'max-width:74ch; line-height:1.75;">' + " ".join(sentences) + '</p>')
+
 def slugify(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9]+', '-', text)
     return text.strip('-')
+
+def _num(v):
+    v = (v or '').strip()
+    try:
+        f = float(v)
+        return int(f) if f == int(f) else f
+    except (TypeError, ValueError):
+        return None
+
+def _pad_related(items, pool, index_of, self_key, href_of, label_of):
+    """Top up `items` (list of (href, label, reason_or_None)) to at least 3 entries
+    by walking outward from the record's own position in `pool` (sorted by name),
+    alternating previous/next and wrapping around. Only used when the field-based
+    related items fall short -- the padding links are real sibling records, never
+    invented, just labelled by their (real) adjacency rather than a shared field."""
+    if len(items) >= 3:
+        return items
+    have = {href for href, _, _ in items}
+    n = len(pool)
+    if n == 0:
+        return items
+    i = index_of[self_key]
+    dist = 1
+    while len(items) < 3 and dist < n:
+        for j in (i - dist, i + dist):
+            if len(items) >= 3:
+                break
+            cand = pool[j % n]
+            href = href_of(cand)
+            if href in have:
+                continue
+            items.append((href, label_of(cand), "neighbouring record"))
+            have.add(href)
+        dist += 1
+    return items
 
 def main():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,8 +207,19 @@ def main():
             families[fam] = []
         families[fam].append(p)
 
-    sitemap_urls = [
-        ("https://floradb.dataengineered.io/", "1.0", "weekly")
+    def href_of_plant(o):
+        return f"../plants/{slugify(o.get('scientific_name', '').strip() + '-' + o.get('common_name', '').strip())}"
+
+    def label_of_plant(o):
+        return f"{o.get('common_name', '').strip()} ({o.get('scientific_name', '').strip()})"
+
+    plants_by_name = sorted(plants, key=lambda o: (o.get('common_name') or '').lower())
+    plants_index = {id(o): idx for idx, o in enumerate(plants_by_name)}
+
+    sitemap_entries = [
+        ("https://floradb.dataengineered.io/", os.path.join(root_dir, "index.html"), "weekly", "1.0"),
+        ("https://floradb.dataengineered.io/plants/", os.path.join(plants_dir, "index.html"), "monthly", "0.8"),
+        ("https://floradb.dataengineered.io/families/", os.path.join(families_dir, "index.html"), "monthly", "0.8"),
     ]
 
     # Generate Plant Specimen Pages
@@ -104,7 +238,7 @@ def main():
         max_temp = p.get('max_temp_celsius', '30')
         humidity = p.get('ideal_humidity_percent', '50')
         light_level = p.get('light_requirement_level', 'Medium to Bright')
-        
+
         dog_toxic = p.get('is_toxic_to_dogs', '0') == '1'
         cat_toxic = p.get('is_toxic_to_cats', '0') == '1'
         symptoms = p.get('toxicity_symptoms', 'None reported.')
@@ -116,16 +250,77 @@ def main():
         pet_status_badge = '<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS</span>' if (dog_toxic or cat_toxic) else '<span style="background:rgba(74,107,47,0.18);color:var(--accent);padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(74,107,47,0.3);">🟢 PET SAFE</span>'
 
         page_url = f"https://floradb.dataengineered.io/plants/{slug}"
-        sitemap_urls.append((page_url, "0.8", "monthly"))
+        sitemap_entries.append((page_url, os.path.join(plants_dir, f"{slug}.html"), "monthly", "0.8"))
+
+        tclass = toxicity_class(p)
+
+        # Title: keep "common (sci)" whole when a shorter descriptor allows it;
+        # otherwise keep the common name whole and fold the scientific name into
+        # the descriptor instead (fit_title truncates the entity, never the common name).
+        entity = f"{common} ({sci})"
+        title = fit_title(entity, ["care & pet toxicity", "care guide", "houseplant"], "FloraDB")
+        if re.sub(r"\s+", " ", entity).strip() not in title:
+            title = fit_title(common, [f"({sci}) care & pet toxicity", "care & pet toxicity", "houseplant"], "FloraDB")
+
+        desc = plant_description(p, tclass)
+
+        # Related: own family (kept inside the block too) + 2 same-family plants +
+        # 2 plants in the same light band + 1 plant with the same toxicity class,
+        # capped at 5 field items before the hub link is appended.
+        related_items = []
+        seen_hrefs = {href_of_plant(p)}
+        related_items.append((f"../families/{fam_slug}", fam, f"family: {fam}"))
+
+        same_fam_cnt = 0
+        for o in plants:
+            if same_fam_cnt >= 2:
+                break
+            if o is p or (o.get('family', 'Unclassified').strip() or 'Unclassified') != fam:
+                continue
+            h = href_of_plant(o)
+            if h in seen_hrefs:
+                continue
+            related_items.append((h, label_of_plant(o), f"also {fam}"))
+            seen_hrefs.add(h)
+            same_fam_cnt += 1
+
+        band = (light_level or '').strip()
+        same_band_cnt = 0
+        if band:
+            for o in plants:
+                if same_band_cnt >= 2:
+                    break
+                if o is p or (o.get('light_requirement_level') or '').strip() != band:
+                    continue
+                h = href_of_plant(o)
+                if h in seen_hrefs:
+                    continue
+                related_items.append((h, label_of_plant(o), f"same light band: {band}"))
+                seen_hrefs.add(h)
+                same_band_cnt += 1
+
+        for o in plants:
+            if o is p or toxicity_class(o) != tclass:
+                continue
+            h = href_of_plant(o)
+            if h in seen_hrefs:
+                continue
+            related_items.append((h, label_of_plant(o), tclass))
+            seen_hrefs.add(h)
+            break
+
+        related_items = related_items[:5]  # leave room for the hub link below
+        related_items = _pad_related(related_items, plants_by_name, plants_index, id(p),
+                                      href_of_plant, label_of_plant)
+        related_items.append(("../plants/", "All plant profiles", None))
 
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{sci} ({common}) Care Metrics & ASPCA Pet Toxicity — FloraDB</title>
-  <meta name="description" content="Quantitative care threshold for {sci} ({common}): {min_lux}–{max_lux} Lux light, watering every {water_days} days, ASPCA dog/cat toxicity verified ({symptoms}). GBIF key {gbif_key}." />
-  <meta name="keywords" content="{sci}, {common}, {fam}, houseplant care, lux thresholds, watering frequency, ASPCA pet toxicity, toxic to cats dogs, GBIF taxonomy {gbif_key}" />
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(desc)}" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="{page_url}" />
   <link rel="alternate" hreflang="en" href="{page_url}" />
@@ -202,6 +397,7 @@ def main():
     .img-box {{ width: 100%; max-height: 380px; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule-color); margin-bottom: 24px; }}
     .img-box img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
     footer {{ margin-top: 60px; border-top: 1px solid var(--rule-color); padding: 30px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }}
+    .related ul{{list-style:none;padding:0}}.related li{{padding:6px 0}}.related-why{{color:var(--text-muted);font-size:.9em}}
   </style>
 </head>
 <body>
@@ -293,6 +489,8 @@ def main():
         </div>
       </div>
     </div>
+
+    {related_block(related_items, "Related plants and families")}
   </main>
 
   <footer>
@@ -305,15 +503,34 @@ def main():
         with open(os.path.join(plants_dir, f"{slug}.html"), mode='w', encoding='utf-8') as f_out:
             f_out.write(html_content)
 
+    families_by_name = sorted(families.keys(), key=lambda k: k.lower())
+    families_index = {k: idx for idx, k in enumerate(families_by_name)}
+
     # Generate Family Hub Pages
     for fam_name, members in families.items():
         fam_slug = slugify(fam_name)
         page_url = f"https://floradb.dataengineered.io/families/{fam_slug}"
-        sitemap_urls.append((page_url, "0.9", "monthly"))
+        sitemap_entries.append((page_url, os.path.join(families_dir, f"{fam_slug}.html"), "monthly", "0.9"))
 
         total_members = len(members)
         toxic_count = sum(1 for m in members if m.get('is_toxic_to_dogs', '0') == '1' or m.get('is_toxic_to_cats', '0') == '1')
         avg_water = round(sum(int(m.get('watering_frequency_days', 7)) for m in members if m.get('watering_frequency_days', '').isdigit()) / max(1, total_members), 1)
+
+        lux_los = [_num(m.get('min_lux')) for m in members]
+        lux_los = [v for v in lux_los if v is not None]
+        lux_his = [_num(m.get('max_lux')) for m in members]
+        lux_his = [v for v in lux_his if v is not None]
+        lux_lo = min(lux_los) if lux_los else None
+        lux_hi = max(lux_his) if lux_his else None
+
+        water_vals = [_num(m.get('watering_frequency_days')) for m in members]
+        water_vals = [v for v in water_vals if v is not None]
+        water_lo = min(water_vals) if water_vals else None
+        water_hi = max(water_vals) if water_vals else None
+
+        title = fit_title(fam_name, [f"{total_members} houseplants", "plant family"], "FloraDB")
+        desc = family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
+        profile_html = family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
 
         cards_html = ""
         for m in members:
@@ -351,14 +568,27 @@ def main():
           </div>
         </div>"""
 
+        # Related: every member plant (reciprocal with each plant's family link, so
+        # limit=None keeps them all) + the 2 families with the closest member count,
+        # then the families hub.
+        related_items = []
+        for m in sorted(members, key=lambda o: (o.get('common_name') or '').lower()):
+            related_items.append((href_of_plant(m), label_of_plant(m), None))
+
+        others = [(fn, len(families[fn])) for fn in families if fn != fam_name]
+        others.sort(key=lambda t: (abs(t[1] - total_members), t[0].lower()))
+        for fn, cnt in others[:2]:
+            related_items.append((f"../families/{slugify(fn)}", fn, f"{cnt} houseplant{'s' if cnt != 1 else ''}"))
+
+        related_items.append(("../families/", "All botanical families", None))
+
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Botanical Family {fam_name} — Houseplant Care & Pet Toxicity — FloraDB</title>
-  <meta name="description" content="Explore {total_members} houseplants in the {fam_name} botanical family. Quantitative care thresholds (Lux, watering intervals) and ASPCA pet-toxicity statuses." />
-  <meta name="keywords" content="{fam_name}, houseplant family, botanical family care, ASPCA toxicity {fam_name}, lux requirements" />
+  <title>{html.escape(title)}</title>
+  <meta name="description" content="{html.escape(desc)}" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="{page_url}" />
   <link rel="alternate" hreflang="en" href="{page_url}" />
@@ -417,6 +647,7 @@ def main():
     .card {{ background: var(--card-bg); border: 1px solid var(--rule-color); padding: 20px; border-radius: 6px; transition: transform 0.2s; }}
     .card:hover {{ transform: translateY(-3px); border-color: var(--accent); }}
     footer {{ margin-top: 60px; border-top: 1px solid var(--rule-color); padding: 30px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }}
+    .related ul{{list-style:none;padding:0}}.related li{{padding:6px 0}}.related-why{{color:var(--text-muted);font-size:.9em}}
   </style>
 </head>
 <body>
@@ -452,9 +683,13 @@ def main():
       </div>
     </section>
 
+    {profile_html}
+
     <div class="grid">
       {cards_html}
     </div>
+
+    {related_block(related_items, "Related plants and families", limit=None)}
   </main>
 
   <footer>
@@ -467,18 +702,9 @@ def main():
         with open(os.path.join(families_dir, f"{fam_slug}.html"), mode='w', encoding='utf-8') as f_out:
             f_out.write(html_content)
 
-    # Generate updated sitemap.xml
-    sitemap_path = os.path.join(root_dir, 'sitemap.xml')
-    today_str = datetime.date.today().isoformat()
-    sitemap_xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, prio, freq in sitemap_urls:
-        sitemap_xml.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today_str}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>")
-    sitemap_xml.append('</urlset>')
+    n = write_sitemap(root_dir, sitemap_entries)
 
-    with open(sitemap_path, mode='w', encoding='utf-8') as f_sitemap:
-        f_sitemap.write("\n".join(sitemap_xml) + "\n")
-
-    print(f"Successfully generated {len(plants)} specimen pages (`plants/*.html`), {len(families)} family hubs (`families/*.html`), and updated sitemap.xml with {len(sitemap_urls)} URLs!")
+    print(f"Successfully generated {len(plants)} specimen pages (`plants/*.html`), {len(families)} family hubs (`families/*.html`), and updated sitemap.xml with {n} URLs!")
 
 if __name__ == '__main__':
     main()

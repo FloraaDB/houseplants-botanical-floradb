@@ -503,9 +503,6 @@ def main():
         with open(os.path.join(plants_dir, f"{slug}.html"), mode='w', encoding='utf-8') as f_out:
             f_out.write(html_content)
 
-    families_by_name = sorted(families.keys(), key=lambda k: k.lower())
-    families_index = {k: idx for idx, k in enumerate(families_by_name)}
-
     # Generate Family Hub Pages
     for fam_name, members in families.items():
         fam_slug = slugify(fam_name)

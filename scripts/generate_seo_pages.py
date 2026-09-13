@@ -25,7 +25,8 @@ def _plural(n, word):
     return f"{n} {word}" if n == 1 else f"{n} {word}s"
 
 def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
-                 min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, symptoms, native, vernacular):
+                 min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, genus_inferred,
+                 symptoms, native, vernacular):
     """Unique, data-derived care summary synthesised from a plant's own attributes."""
     esc = html.escape
     p1 = f"{esc(common)} ({esc(sci)}) is a houseplant in the {esc(fam)} family"
@@ -45,7 +46,11 @@ def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
     if has(humidity):
         care.append(f"about {esc(str(humidity))}% humidity")
     p2 = f"Optimal indoor care calls for {_oxford(care)}." if care else ""
-    if dog_toxic or cat_toxic:
+    if genus_inferred and (dog_toxic or cat_toxic):
+        genus = sci.split()[0] if sci else sci
+        p3 = (f"Toxicity is inferred from the ASPCA listing for the genus {esc(genus)}; "
+              f"species-level confirmation is pending.")
+    elif dog_toxic or cat_toxic:
         who = _oxford([w for w, flag in [("dogs", dog_toxic), ("cats", cat_toxic)] if flag])
         p3 = f"According to ASPCA data, it is toxic to {who}"
         if has(symptoms):
@@ -74,10 +79,18 @@ def toxicity_class(row):
     explicit false value (only '0'/'false'/'no' observed in this CSV) -- a verified
     negative, not an absence of data. Anything else (both flags blank, e.g. this
     dataset's 15 'toxicity_status=unknown' rows) is 'unverified': we never infer
-    safety from missing data."""
+    safety from missing data.
+
+    A row whose toxicity_status is 'aspca_genus_inferred' was never verified at the
+    species level -- ASPCA lists the genus, not this species -- so it never gets a
+    dog/cat-specific verdict, only the qualified 'toxic to pets (genus-level
+    inference)' bucket, everywhere a verdict is rendered (description, badge, metric
+    rows, related-block reason)."""
     dog_raw = row.get('is_toxic_to_dogs')
     cat_raw = row.get('is_toxic_to_cats')
     dog, cat = _is_true_flag(dog_raw), _is_true_flag(cat_raw)
+    if (dog or cat) and (row.get('toxicity_status') or '').strip() == 'aspca_genus_inferred':
+        return 'toxic to pets (genus-level inference)'
     if dog and cat:
         return 'toxic to both cats and dogs'
     if dog:
@@ -103,10 +116,12 @@ def _toxic_fact(n, toxic_n, unverified_n):
 
 def toxicity_badge(tclass):
     """Three-state pill badge for the plant hero strip -- never renders a
-    'safe'/'toxic' verdict for a record whose flags are unverified."""
+    'safe'/'toxic' verdict for a record whose flags are unverified. A genus-level
+    inference is still flagged toxic, but the badge text says so."""
     if tclass.startswith('toxic'):
-        return ('<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;'
-                 'border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS</span>')
+        qualifier = ' (GENUS-LEVEL INFERENCE)' if 'genus-level inference' in tclass else ''
+        return (f'<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;'
+                 f'border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS{qualifier}</span>')
     if tclass == 'unverified':
         return ('<span style="background:rgba(195,154,107,0.18);color:var(--sepia);padding:4px 10px;'
                  'border-radius:4px;font-weight:600;border:1px solid rgba(195,154,107,0.3);">⚠️ TOXICITY NOT VERIFIED</span>')
@@ -117,16 +132,19 @@ def toxicity_badge_small(tclass):
     """Plain colored-text badge for the family card grid (matches the pre-fix
     inline style -- no background pill). Same three-state rule as toxicity_badge."""
     if tclass.startswith('toxic'):
-        return '<span style="color:#ff6b6b;">⚠️ Toxic to Pets</span>'
+        qualifier = ' (Genus-Level Inference)' if 'genus-level inference' in tclass else ''
+        return f'<span style="color:#ff6b6b;">⚠️ Toxic to Pets{qualifier}</span>'
     if tclass == 'unverified':
         return '<span style="color:var(--sepia);">⚠️ Not Verified</span>'
     return '<span style="color:var(--accent);">🟢 Pet Safe</span>'
 
-def _flag_display(raw):
+def _flag_display(raw, genus_inferred=False):
     """('YES (Toxic)'|'NO (Safe)'|'Not Verified', color) for one dog/cat flag cell --
-    only an explicit false value renders 'Safe'; a blank flag renders 'Not Verified'."""
+    only an explicit false value renders 'Safe'; a blank flag renders 'Not Verified'.
+    A genus-level inference is qualified so the metric row never reads as a verified
+    species-level determination."""
     if _is_true_flag(raw):
-        return 'YES (Toxic)', '#ff6b6b'
+        return ('YES (Toxic, genus-level inference)' if genus_inferred else 'YES (Toxic)'), '#ff6b6b'
     if _is_false_flag(raw):
         return 'NO (Safe)', 'var(--accent)'
     return 'Not Verified', 'var(--sepia)'
@@ -339,11 +357,18 @@ def main():
 
         tclass = toxicity_class(p)
         unverified = tclass == 'unverified'
+        genus_inferred = (p.get('toxicity_status') or '').strip() == 'aspca_genus_inferred'
         dog_toxic = _is_true_flag(p.get('is_toxic_to_dogs'))
         cat_toxic = _is_true_flag(p.get('is_toxic_to_cats'))
-        dog_display, dog_color = _flag_display(p.get('is_toxic_to_dogs'))
-        cat_display, cat_color = _flag_display(p.get('is_toxic_to_cats'))
+        dog_display, dog_color = _flag_display(p.get('is_toxic_to_dogs'), genus_inferred)
+        cat_display, cat_color = _flag_display(p.get('is_toxic_to_cats'), genus_inferred)
         pet_status_badge = toxicity_badge(tclass)
+        if genus_inferred and (dog_toxic or cat_toxic):
+            genus = sci.split()[0] if sci else sci
+            symptoms_display = (f"Toxicity is inferred from the ASPCA listing for the genus {genus}; "
+                                 f"species-level confirmation is pending.")
+        else:
+            symptoms_display = symptoms
 
         page_url = f"https://floradb.dataengineered.io/plants/{slug}"
         sitemap_entries.append((page_url, os.path.join(plants_dir, f"{slug}.html"), "monthly", "0.8"))
@@ -511,7 +536,7 @@ def main():
       <h1 class="serif" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 8px;">{sci}</h1>
       <h2 style="font-size: 1.3rem; font-weight: 400; color: var(--text-muted);">Common Name: {common}</h2>
     </section>
-    {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, symptoms, native, p.get('vernacular_names_en', '').strip())}
+    {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, genus_inferred, symptoms, native, p.get('vernacular_names_en', '').strip())}
     <div class="specimen-grid">
       <div>
         <div class="img-box">
@@ -529,7 +554,7 @@ def main():
           </div>
           <div style="margin-top: 16px;">
             <strong style="font-size:0.88rem; color:var(--sepia);">Clinical Symptoms:</strong>
-            <p style="font-size:0.86rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">{symptoms}</p>
+            <p style="font-size:0.86rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">{symptoms_display}</p>
           </div>
         </div>
       </div>

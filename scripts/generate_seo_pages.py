@@ -20,6 +20,10 @@ def _oxford(items):
 def has(x):
     return x not in (None, '', 'N/A', 'None reported.')
 
+def _plural(n, word):
+    """'<n> <word>' or '<n> <word>s' -- the one place member-count grammar lives."""
+    return f"{n} {word}" if n == 1 else f"{n} {word}s"
+
 def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
                  min_temp, max_temp, humidity, dog_toxic, cat_toxic, symptoms, native, vernacular):
     """Unique, data-derived care summary synthesised from a plant's own attributes."""
@@ -103,7 +107,7 @@ def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, to
         else:
             facts.append(f"watering every {water_lo}–{water_hi} days")
     facts.append(f"{toxic_n} of {n} toxic to pets")
-    lead = f"{fam_name} spans {n} houseplant{'s' if n != 1 else ''} in FloraDB (" + ", ".join(facts) + ")."
+    lead = f"{fam_name} spans {_plural(n, 'houseplant')} in FloraDB (" + ", ".join(facts) + ")."
     return fit_desc(lead)
 
 def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_n):
@@ -115,7 +119,7 @@ def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_
     reps = sorted({m.get('common_name', '').strip() for m in members if has(m.get('common_name'))})[:2]
 
     sentences = []
-    s1 = f"{esc(fam_name)} is represented in FloraDB by {n} houseplant{'s' if n != 1 else ''}"
+    s1 = f"{esc(fam_name)} is represented in FloraDB by {_plural(n, 'houseplant')}"
     if reps:
         s1 += f", including {esc(_oxford(reps))}"
     s1 += "."
@@ -525,7 +529,7 @@ def main():
         water_lo = min(water_vals) if water_vals else None
         water_hi = max(water_vals) if water_vals else None
 
-        title = fit_title(fam_name, [f"{total_members} houseplants", "plant family"], "FloraDB")
+        title = fit_title(fam_name, [_plural(total_members, "houseplant"), "plant family"], "FloraDB")
         desc = family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
         profile_html = family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
 
@@ -575,7 +579,7 @@ def main():
         others = [(fn, len(families[fn])) for fn in families if fn != fam_name]
         others.sort(key=lambda t: (abs(t[1] - total_members), t[0].lower()))
         for fn, cnt in others[:2]:
-            related_items.append((f"../families/{slugify(fn)}", fn, f"{cnt} houseplant{'s' if cnt != 1 else ''}"))
+            related_items.append((f"../families/{slugify(fn)}", fn, _plural(cnt, "houseplant")))
 
         related_items.append(("../families/", "All botanical families", None))
 

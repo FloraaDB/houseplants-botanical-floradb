@@ -25,7 +25,7 @@ def _plural(n, word):
     return f"{n} {word}" if n == 1 else f"{n} {word}s"
 
 def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
-                 min_temp, max_temp, humidity, dog_toxic, cat_toxic, symptoms, native, vernacular):
+                 min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, symptoms, native, vernacular):
     """Unique, data-derived care summary synthesised from a plant's own attributes."""
     esc = html.escape
     p1 = f"{esc(common)} ({esc(sci)}) is a houseplant in the {esc(fam)} family"
@@ -51,23 +51,85 @@ def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
         if has(symptoms):
             p3 += f"; reported symptoms include {esc(symptoms.rstrip('.').lower())}"
         p3 += "."
+    elif unverified:
+        p3 = "ASPCA pet-toxicity data has not been verified for this species; treat it as unknown."
     else:
         p3 = "According to ASPCA data, it is non-toxic and considered pet-safe for cats and dogs."
     extra = f" It is also known as {esc(vernacular)}." if has(vernacular) else ""
     body = " ".join(x for x in [p1, p2, p3] if x) + extra
     return f'<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; max-width:74ch; line-height:1.75;">{body}</p>'
 
+_FALSE_VALS = {'0', 'false', 'no'}
+
+def _is_true_flag(raw):
+    return (raw or '').strip() == '1'
+
+def _is_false_flag(raw):
+    return (raw or '').strip().lower() in _FALSE_VALS
+
 def toxicity_class(row):
-    """Coarse toxicity bucket derived only from the record's own ASPCA flags."""
-    dog = row.get('is_toxic_to_dogs', '0') == '1'
-    cat = row.get('is_toxic_to_cats', '0') == '1'
+    """Three-state toxicity bucket derived only from the record's own ASPCA flags.
+
+    'toxic' requires an explicit '1'. 'non-toxic to pets' requires BOTH flags to be an
+    explicit false value (only '0'/'false'/'no' observed in this CSV) -- a verified
+    negative, not an absence of data. Anything else (both flags blank, e.g. this
+    dataset's 15 'toxicity_status=unknown' rows) is 'unverified': we never infer
+    safety from missing data."""
+    dog_raw = row.get('is_toxic_to_dogs')
+    cat_raw = row.get('is_toxic_to_cats')
+    dog, cat = _is_true_flag(dog_raw), _is_true_flag(cat_raw)
     if dog and cat:
         return 'toxic to both cats and dogs'
     if dog:
         return 'toxic to dogs'
     if cat:
         return 'toxic to cats'
-    return 'non-toxic to pets'
+    if _is_false_flag(dog_raw) and _is_false_flag(cat_raw):
+        return 'non-toxic to pets'
+    return 'unverified'
+
+def _toxicity_counts(members):
+    """(verified-toxic count, unverified count) across a list of member rows."""
+    toxic = sum(1 for m in members if toxicity_class(m).startswith('toxic'))
+    unverified = sum(1 for m in members if toxicity_class(m) == 'unverified')
+    return toxic, unverified
+
+def _toxic_fact(n, toxic_n, unverified_n):
+    """'<a> of <n> toxic to pets' -- extended with the unverified count whenever it's
+    non-zero, so an unverified plant is never silently folded into 'not toxic'."""
+    if unverified_n:
+        return f"{toxic_n} of {n} verified toxic to pets, {unverified_n} unverified"
+    return f"{toxic_n} of {n} toxic to pets"
+
+def toxicity_badge(tclass):
+    """Three-state pill badge for the plant hero strip -- never renders a
+    'safe'/'toxic' verdict for a record whose flags are unverified."""
+    if tclass.startswith('toxic'):
+        return ('<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;'
+                 'border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS</span>')
+    if tclass == 'unverified':
+        return ('<span style="background:rgba(195,154,107,0.18);color:var(--sepia);padding:4px 10px;'
+                 'border-radius:4px;font-weight:600;border:1px solid rgba(195,154,107,0.3);">⚠️ TOXICITY NOT VERIFIED</span>')
+    return ('<span style="background:rgba(74,107,47,0.18);color:var(--accent);padding:4px 10px;'
+             'border-radius:4px;font-weight:600;border:1px solid rgba(74,107,47,0.3);">🟢 PET SAFE</span>')
+
+def toxicity_badge_small(tclass):
+    """Plain colored-text badge for the family card grid (matches the pre-fix
+    inline style -- no background pill). Same three-state rule as toxicity_badge."""
+    if tclass.startswith('toxic'):
+        return '<span style="color:#ff6b6b;">⚠️ Toxic to Pets</span>'
+    if tclass == 'unverified':
+        return '<span style="color:var(--sepia);">⚠️ Not Verified</span>'
+    return '<span style="color:var(--accent);">🟢 Pet Safe</span>'
+
+def _flag_display(raw):
+    """('YES (Toxic)'|'NO (Safe)'|'Not Verified', color) for one dog/cat flag cell --
+    only an explicit false value renders 'Safe'; a blank flag renders 'Not Verified'."""
+    if _is_true_flag(raw):
+        return 'YES (Toxic)', '#ff6b6b'
+    if _is_false_flag(raw):
+        return 'NO (Safe)', 'var(--accent)'
+    return 'Not Verified', 'var(--sepia)'
 
 def plant_description(p, tclass):
     """First sentence = the record's most distinctive facts (light range, watering
@@ -85,7 +147,7 @@ def plant_description(p, tclass):
         facts.append(f"needs {min_lux}–{max_lux} lux light")
     if water_days:
         facts.append(f"watering every {water_days} days")
-    facts.append(f"is {tclass}")
+    facts.append("pet toxicity not verified" if tclass == 'unverified' else f"is {tclass}")
     lead = f"{common} ({sci}) " + ", ".join(facts) + "."
 
     extra = []
@@ -96,8 +158,9 @@ def plant_description(p, tclass):
     tail = (", ".join(extra) + ".") if extra else ""
     return fit_desc(f"{lead} {tail}".strip())
 
-def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_n):
+def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     n = len(members)
+    toxic_n, unverified_n = _toxicity_counts(members)
     facts = []
     if lux_lo is not None and lux_hi is not None:
         facts.append(f"{lux_lo}–{lux_hi} lux light range")
@@ -106,16 +169,17 @@ def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, to
             facts.append(f"watering every {water_lo} days")
         else:
             facts.append(f"watering every {water_lo}–{water_hi} days")
-    facts.append(f"{toxic_n} of {n} toxic to pets")
+    facts.append(_toxic_fact(n, toxic_n, unverified_n))
     lead = f"{fam_name} spans {_plural(n, 'houseplant')} in FloraDB (" + ", ".join(facts) + ")."
     return fit_desc(lead)
 
-def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_n):
+def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     """Unique, data-derived <p> profile computed only from the family's own member
     records: count + representative species, light range, watering-interval range,
     how many are ASPCA pet-toxic. Only populated fields are used; nothing invented."""
     esc = html.escape
     n = len(members)
+    toxic_n, unverified_n = _toxicity_counts(members)
     reps = sorted({m.get('common_name', '').strip() for m in members if has(m.get('common_name'))})[:2]
 
     sentences = []
@@ -134,12 +198,16 @@ def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_
         else:
             sentences.append(f"Watering intervals range from every {water_lo} to every {water_hi} days.")
 
-    if n:
+    if unverified_n:
+        sentences.append(f"{toxic_n} of {n} members verified toxic to pets, {unverified_n} unverified.")
+    else:
         verb = "is" if toxic_n == 1 else "are"
         sentences.append(f"{toxic_n} of {n} {verb} toxic to cats or dogs, per ASPCA data.")
 
     return ('<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; '
             'max-width:74ch; line-height:1.75;">' + " ".join(sentences) + '</p>')
+
+RELATED_CSS = '.related ul{list-style:none;padding:0}.related li{padding:6px 0}.related-why{color:var(--text-muted);font-size:.9em}'
 
 def slugify(text):
     text = text.lower()
@@ -154,13 +222,15 @@ def _num(v):
     except (TypeError, ValueError):
         return None
 
-def _pad_related(items, pool, index_of, self_key, href_of, label_of):
-    """Top up `items` (list of (href, label, reason_or_None)) to at least 3 entries
-    by walking outward from the record's own position in `pool` (sorted by name),
-    alternating previous/next and wrapping around. Only used when the field-based
-    related items fall short -- the padding links are real sibling records, never
-    invented, just labelled by their (real) adjacency rather than a shared field."""
-    if len(items) >= 3:
+def _pad_related(items, pool, index_of, self_key, href_of, label_of, target=3):
+    """Top up `items` (list of (href, label, reason_or_None)) to at least `target`
+    entries by walking outward from the record's own position in `pool` (sorted by
+    name), alternating previous/next and wrapping around. Only used when the
+    field-based related items fall short -- the padding links are real sibling
+    records, never invented, just labelled by their (real) adjacency rather than a
+    shared field. `self_key` is a stable, deterministic key into `index_of` (a slug,
+    not an `id()` -- object identity isn't a meaningful key across a rebuilt pool)."""
+    if len(items) >= target:
         return items
     have = {href for href, _, _ in items}
     n = len(pool)
@@ -168,9 +238,9 @@ def _pad_related(items, pool, index_of, self_key, href_of, label_of):
         return items
     i = index_of[self_key]
     dist = 1
-    while len(items) < 3 and dist < n:
+    while len(items) < target and dist < n:
         for j in (i - dist, i + dist):
-            if len(items) >= 3:
+            if len(items) >= target:
                 break
             cand = pool[j % n]
             href = href_of(cand)
@@ -180,6 +250,24 @@ def _pad_related(items, pool, index_of, self_key, href_of, label_of):
             have.add(href)
         dist += 1
     return items
+
+def _take(pool, exclude, cond, count, seen, href_of, label_of, reason_fn):
+    """Pick up to `count` records from `pool` matching `cond`, skipping `exclude`
+    (the record's own row) and any href already in `seen` (mutated in place as
+    picks are made, so a later category never re-links a record used by an earlier
+    one). Returns a list of (href, label, reason) tuples."""
+    out = []
+    for o in pool:
+        if len(out) >= count:
+            break
+        if o is exclude or not cond(o):
+            continue
+        h = href_of(o)
+        if h in seen:
+            continue
+        out.append((h, label_of(o), reason_fn(o)))
+        seen.add(h)
+    return out
 
 def main():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -218,7 +306,7 @@ def main():
         return f"{o.get('common_name', '').strip()} ({o.get('scientific_name', '').strip()})"
 
     plants_by_name = sorted(plants, key=lambda o: (o.get('common_name') or '').lower())
-    plants_index = {id(o): idx for idx, o in enumerate(plants_by_name)}
+    plants_index = {href_of_plant(o): idx for idx, o in enumerate(plants_by_name)}
 
     sitemap_entries = [
         ("https://floradb.dataengineered.io/", os.path.join(root_dir, "index.html"), "weekly", "1.0"),
@@ -243,79 +331,77 @@ def main():
         humidity = p.get('ideal_humidity_percent', '50')
         light_level = p.get('light_requirement_level', 'Medium to Bright')
 
-        dog_toxic = p.get('is_toxic_to_dogs', '0') == '1'
-        cat_toxic = p.get('is_toxic_to_cats', '0') == '1'
         symptoms = p.get('toxicity_symptoms', 'None reported.')
         gbif_key = p.get('gbif_usage_key', '')
         gbif_url = p.get('gbif_source_url', f"https://www.gbif.org/species/{gbif_key}" if gbif_key else "#")
         img_url = p.get('image_url', '../og-image.png')
         native = p.get('native_range', 'Various indoor/tropical regions')
 
-        pet_status_badge = '<span style="background:rgba(217,83,79,0.18);color:#ff6b6b;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(217,83,79,0.3);">⚠️ TOXIC TO PETS</span>' if (dog_toxic or cat_toxic) else '<span style="background:rgba(74,107,47,0.18);color:var(--accent);padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(74,107,47,0.3);">🟢 PET SAFE</span>'
+        tclass = toxicity_class(p)
+        unverified = tclass == 'unverified'
+        dog_toxic = _is_true_flag(p.get('is_toxic_to_dogs'))
+        cat_toxic = _is_true_flag(p.get('is_toxic_to_cats'))
+        dog_display, dog_color = _flag_display(p.get('is_toxic_to_dogs'))
+        cat_display, cat_color = _flag_display(p.get('is_toxic_to_cats'))
+        pet_status_badge = toxicity_badge(tclass)
 
         page_url = f"https://floradb.dataengineered.io/plants/{slug}"
         sitemap_entries.append((page_url, os.path.join(plants_dir, f"{slug}.html"), "monthly", "0.8"))
 
-        tclass = toxicity_class(p)
-
         # Title: keep "common (sci)" whole when a shorter descriptor allows it;
         # otherwise keep the common name whole and fold the scientific name into
         # the descriptor instead (fit_title truncates the entity, never the common name).
+        # Unverified plants drop "pet toxicity" from the descriptor entirely -- the
+        # title never implies a toxicity determination that doesn't exist.
+        if unverified:
+            primary_opts = ["care guide", "houseplant"]
+            fallback_opts = [f"({sci}) care guide", "care guide", "houseplant"]
+        else:
+            primary_opts = ["care & pet toxicity", "care guide", "houseplant"]
+            fallback_opts = [f"({sci}) care & pet toxicity", "care & pet toxicity", "houseplant"]
         entity = f"{common} ({sci})"
-        title = fit_title(entity, ["care & pet toxicity", "care guide", "houseplant"], "FloraDB")
+        title = fit_title(entity, primary_opts, "FloraDB")
         if re.sub(r"\s+", " ", entity).strip() not in title:
-            title = fit_title(common, [f"({sci}) care & pet toxicity", "care & pet toxicity", "houseplant"], "FloraDB")
+            title = fit_title(common, fallback_opts, "FloraDB")
 
         desc = plant_description(p, tclass)
 
-        # Related: own family (kept inside the block too) + 2 same-family plants +
-        # 2 plants in the same light band + 1 plant with the same toxicity class,
-        # capped at 5 field items before the hub link is appended.
+        # Related: own family (kept inside the block too) + up to 2 same-family plants
+        # + 1 plant in the same light band + 1 plant with the same toxicity class --
+        # composed to exactly 5 field items (not appended-then-sliced, which used to
+        # silently drop the toxicity link on most pages) before the hub link is
+        # appended. Unverified plants link to another unverified plant ("also
+        # unverified") rather than a fabricated toxic/non-toxic match; if no
+        # toxicity-class match is available at all, that slot is backfilled with a
+        # second same-light-band plant instead of being left empty.
         related_items = []
         seen_hrefs = {href_of_plant(p)}
         related_items.append((f"../families/{fam_slug}", fam, f"family: {fam}"))
 
-        same_fam_cnt = 0
-        for o in plants:
-            if same_fam_cnt >= 2:
-                break
-            if o is p or (o.get('family', 'Unclassified').strip() or 'Unclassified') != fam:
-                continue
-            h = href_of_plant(o)
-            if h in seen_hrefs:
-                continue
-            related_items.append((h, label_of_plant(o), f"also {fam}"))
-            seen_hrefs.add(h)
-            same_fam_cnt += 1
+        related_items += _take(plants, p,
+                                lambda o: (o.get('family', 'Unclassified').strip() or 'Unclassified') == fam,
+                                2, seen_hrefs, href_of_plant, label_of_plant, lambda o: f"also {fam}")
 
         band = (light_level or '').strip()
-        same_band_cnt = 0
-        if band:
-            for o in plants:
-                if same_band_cnt >= 2:
-                    break
-                if o is p or (o.get('light_requirement_level') or '').strip() != band:
-                    continue
-                h = href_of_plant(o)
-                if h in seen_hrefs:
-                    continue
-                related_items.append((h, label_of_plant(o), f"same light band: {band}"))
-                seen_hrefs.add(h)
-                same_band_cnt += 1
+        related_items += _take(plants, p,
+                                lambda o: bool(band) and (o.get('light_requirement_level') or '').strip() == band,
+                                1, seen_hrefs, href_of_plant, label_of_plant, lambda o: f"same light band: {band}")
 
-        for o in plants:
-            if o is p or toxicity_class(o) != tclass:
-                continue
-            h = href_of_plant(o)
-            if h in seen_hrefs:
-                continue
-            related_items.append((h, label_of_plant(o), tclass))
-            seen_hrefs.add(h)
-            break
+        if not unverified:
+            tox_items = _take(plants, p, lambda o: toxicity_class(o) == tclass,
+                               1, seen_hrefs, href_of_plant, label_of_plant, lambda o: tclass)
+        else:
+            tox_items = _take(plants, p, lambda o: toxicity_class(o) == 'unverified',
+                               1, seen_hrefs, href_of_plant, label_of_plant, lambda o: "also unverified")
+        if tox_items:
+            related_items += tox_items
+        else:
+            related_items += _take(plants, p,
+                                    lambda o: bool(band) and (o.get('light_requirement_level') or '').strip() == band,
+                                    1, seen_hrefs, href_of_plant, label_of_plant, lambda o: f"same light band: {band}")
 
-        related_items = related_items[:5]  # leave room for the hub link below
-        related_items = _pad_related(related_items, plants_by_name, plants_index, id(p),
-                                      href_of_plant, label_of_plant)
+        related_items = _pad_related(related_items, plants_by_name, plants_index, href_of_plant(p),
+                                      href_of_plant, label_of_plant, target=5)
         related_items.append(("../plants/", "All plant profiles", None))
 
         html_content = f"""<!DOCTYPE html>
@@ -401,7 +487,7 @@ def main():
     .img-box {{ width: 100%; max-height: 380px; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule-color); margin-bottom: 24px; }}
     .img-box img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
     footer {{ margin-top: 60px; border-top: 1px solid var(--rule-color); padding: 30px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }}
-    .related ul{{list-style:none;padding:0}}.related li{{padding:6px 0}}.related-why{{color:var(--text-muted);font-size:.9em}}
+    {RELATED_CSS}
   </style>
 </head>
 <body>
@@ -425,7 +511,7 @@ def main():
       <h1 class="serif" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 8px;">{sci}</h1>
       <h2 style="font-size: 1.3rem; font-weight: 400; color: var(--text-muted);">Common Name: {common}</h2>
     </section>
-    {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, symptoms, native, p.get('vernacular_names_en', '').strip())}
+    {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, symptoms, native, p.get('vernacular_names_en', '').strip())}
     <div class="specimen-grid">
       <div>
         <div class="img-box">
@@ -435,11 +521,11 @@ def main():
           <h3 class="serif" style="font-size:1.3rem; margin-bottom:16px; border-bottom:1px solid var(--rule-color); padding-bottom:10px;">ASPCA Pet Toxicity Determination</h3>
           <div class="metric-row">
             <span class="metric-label">Toxic to Dogs?</span>
-            <span class="metric-val" style="color:{'#ff6b6b' if dog_toxic else 'var(--accent)'};">{'YES (Toxic)' if dog_toxic else 'NO (Safe)'}</span>
+            <span class="metric-val" style="color:{dog_color};">{dog_display}</span>
           </div>
           <div class="metric-row">
             <span class="metric-label">Toxic to Cats?</span>
-            <span class="metric-val" style="color:{'#ff6b6b' if cat_toxic else 'var(--accent)'};">{'YES (Toxic)' if cat_toxic else 'NO (Safe)'}</span>
+            <span class="metric-val" style="color:{cat_color};">{cat_display}</span>
           </div>
           <div style="margin-top: 16px;">
             <strong style="font-size:0.88rem; color:var(--sepia);">Clinical Symptoms:</strong>
@@ -514,7 +600,7 @@ def main():
         sitemap_entries.append((page_url, os.path.join(families_dir, f"{fam_slug}.html"), "monthly", "0.9"))
 
         total_members = len(members)
-        toxic_count = sum(1 for m in members if m.get('is_toxic_to_dogs', '0') == '1' or m.get('is_toxic_to_cats', '0') == '1')
+        toxic_count, unverified_count = _toxicity_counts(members)
         avg_water = round(sum(int(m.get('watering_frequency_days', 7)) for m in members if m.get('watering_frequency_days', '').isdigit()) / max(1, total_members), 1)
 
         lux_los = [_num(m.get('min_lux')) for m in members]
@@ -530,8 +616,8 @@ def main():
         water_hi = max(water_vals) if water_vals else None
 
         title = fit_title(fam_name, [_plural(total_members, "houseplant"), "plant family"], "FloraDB")
-        desc = family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
-        profile_html = family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi, toxic_count)
+        desc = family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi)
+        profile_html = family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi)
 
         cards_html = ""
         for m in members:
@@ -541,8 +627,7 @@ def main():
             min_l = m.get('min_lux', '1000')
             max_l = m.get('max_lux', '4000')
             w_days = m.get('watering_frequency_days', '7')
-            is_tox = m.get('is_toxic_to_dogs', '0') == '1' or m.get('is_toxic_to_cats', '0') == '1'
-            badge = '<span style="color:#ff6b6b;">⚠️ Toxic to Pets</span>' if is_tox else '<span style="color:var(--accent);">🟢 Pet Safe</span>'
+            badge = toxicity_badge_small(toxicity_class(m))
 
             cards_html += f"""
         <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
@@ -648,7 +733,7 @@ def main():
     .card {{ background: var(--card-bg); border: 1px solid var(--rule-color); padding: 20px; border-radius: 6px; transition: transform 0.2s; }}
     .card:hover {{ transform: translateY(-3px); border-color: var(--accent); }}
     footer {{ margin-top: 60px; border-top: 1px solid var(--rule-color); padding: 30px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }}
-    .related ul{{list-style:none;padding:0}}.related li{{padding:6px 0}}.related-why{{color:var(--text-muted);font-size:.9em}}
+    {RELATED_CSS}
   </style>
 </head>
 <body>
@@ -679,7 +764,7 @@ def main():
         </div>
         <div class="stat-box">
           <div class="stat-num" style="color:{'#ff6b6b' if toxic_count > 0 else 'var(--accent)'};">{toxic_count}/{total_members}</div>
-          <div class="stat-label">Specimens Toxic to Pets</div>
+          <div class="stat-label">Specimens Toxic to Pets{f' ({unverified_count} unverified)' if unverified_count else ''}</div>
         </div>
       </div>
     </section>

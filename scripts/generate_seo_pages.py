@@ -611,6 +611,7 @@ def main():
   <footer>
     <div class="container">
       <p>FloraDB — Botanical Houseplant Care & Pet-Toxicity Snapshot · <a href="/#pricing" style="color:var(--accent); text-decoration:none;">Get Full Relational Dataset ($49)</a></p>
+      <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog →</a> · <a href="https://dataengineered.io/about">About</a> · <a href="https://dataengineered.io/terms">Terms</a> · <a href="https://dataengineered.io/privacy">Privacy</a> · <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
     </div>
   </footer>
 </body>
@@ -806,6 +807,7 @@ def main():
   <footer>
     <div class="container">
       <p>FloraDB — Houseplant Care & Pet-Toxicity Dataset · <a href="/" style="color:var(--accent); text-decoration:none;">Back to Main Catalog</a></p>
+      <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog →</a> · <a href="https://dataengineered.io/about">About</a> · <a href="https://dataengineered.io/terms">Terms</a> · <a href="https://dataengineered.io/privacy">Privacy</a> · <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
     </div>
   </footer>
 </body>

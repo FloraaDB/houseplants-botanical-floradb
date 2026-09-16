@@ -20,6 +20,17 @@ def _oxford(items):
 def has(x):
     return x not in (None, '', 'N/A', 'None reported.')
 
+# Data values carry translate="no" (see scripts/i18n_common.py): localized copies keep them
+# verbatim and translate only the copy around them. Upstream English prose (ASPCA symptom
+# text) also carries lang="en". Neither attribute changes how the English page renders.
+def data(value):
+    """Escaped data value wrapped in a translate="no" span."""
+    return f'<span translate="no">{html.escape(str(value))}</span>'
+
+def data_raw(value):
+    """Like data(), for a value the page has always rendered unescaped."""
+    return f'<span translate="no">{value}</span>'
+
 def _plural(n, word):
     """'<n> <word>' or '<n> <word>s' -- the one place member-count grammar lives."""
     return f"{n} {word}" if n == 1 else f"{n} {word}s"
@@ -29,15 +40,17 @@ def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
                  symptoms, native, vernacular):
     """Unique, data-derived care summary synthesised from a plant's own attributes."""
     esc = html.escape
-    p1 = f"{esc(common)} ({esc(sci)}) is a houseplant in the {esc(fam)} family"
+    # one <span> per sentence: each optional clause is its own translation segment
+    p1 = f"{data(common)} ({data(sci)}) is a houseplant in the {data(fam)} family"
     if has(native) and native != 'Various indoor/tropical regions':
-        p1 += f", native to {esc(native.split(';')[0].strip())}"
+        p1 += f", native to {data(native.split(';')[0].strip())}"
     p1 += "."
+    p1 = f"<span>{p1}</span>"
     if has(min_lux) and has(max_lux):
         lvl = f"{esc(str(light_level)).lower()}-light " if light_level else ""
-        p1 += f" It is a {lvl}species that thrives between {esc(str(min_lux))} and {esc(str(max_lux))} lux."
+        p1 += f" <span>It is a {lvl}species that thrives between {esc(str(min_lux))} and {esc(str(max_lux))} lux.</span>"
     elif light_level:
-        p1 += f" It prefers {esc(str(light_level)).lower()} light."
+        p1 += f" <span>It prefers {esc(str(light_level)).lower()} light.</span>"
     care = []
     if has(water_days):
         care.append(f"watering roughly every {esc(str(water_days))} days")
@@ -45,22 +58,24 @@ def care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days,
         care.append(f"temperatures of {esc(str(min_temp))}–{esc(str(max_temp))}°C")
     if has(humidity):
         care.append(f"about {esc(str(humidity))}% humidity")
-    p2 = f"Optimal indoor care calls for {_oxford(care)}." if care else ""
+    p2 = f"<span>Optimal indoor care calls for {_oxford(care)}.</span>" if care else ""
     if genus_inferred and (dog_toxic or cat_toxic):
         genus = sci.split()[0] if sci else sci
-        p3 = (f"Toxicity is inferred from the ASPCA listing for the genus {esc(genus)}; "
+        p3 = (f"Toxicity is inferred from the ASPCA listing for the genus {data(genus)}; "
               f"species-level confirmation is pending.")
     elif dog_toxic or cat_toxic:
         who = _oxford([w for w, flag in [("dogs", dog_toxic), ("cats", cat_toxic)] if flag])
         p3 = f"According to ASPCA data, it is toxic to {who}"
         if has(symptoms):
-            p3 += f"; reported symptoms include {esc(symptoms.rstrip('.').lower())}"
+            p3 += (f'; reported symptoms include <span translate="no" lang="en">'
+                   f"{esc(symptoms.rstrip('.').lower())}</span>")
         p3 += "."
     elif unverified:
         p3 = "ASPCA pet-toxicity data has not been verified for this species; treat it as unknown."
     else:
         p3 = "According to ASPCA data, it is non-toxic and considered pet-safe for cats and dogs."
-    extra = f" It is also known as {esc(vernacular)}." if has(vernacular) else ""
+    p3 = f"<span>{p3}</span>"
+    extra = f" <span>It is also known as {data(vernacular)}.</span>" if has(vernacular) else ""
     body = " ".join(x for x in [p1, p2, p3] if x) + extra
     return f'<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; max-width:74ch; line-height:1.75;">{body}</p>'
 
@@ -201,9 +216,9 @@ def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     reps = sorted({m.get('common_name', '').strip() for m in members if has(m.get('common_name'))})[:2]
 
     sentences = []
-    s1 = f"{esc(fam_name)} is represented in FloraDB by {_plural(n, 'houseplant')}"
+    s1 = f"{data(fam_name)} is represented in FloraDB by {_plural(n, 'houseplant')}"
     if reps:
-        s1 += f", including {esc(_oxford(reps))}"
+        s1 += f", including {_oxford([data(r) for r in reps])}"
     s1 += "."
     sentences.append(s1)
 
@@ -223,9 +238,21 @@ def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
         sentences.append(f"{toxic_n} of {n} {verb} toxic to cats or dogs, per ASPCA data.")
 
     return ('<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; '
-            'max-width:74ch; line-height:1.75;">' + " ".join(sentences) + '</p>')
+            'max-width:74ch; line-height:1.75;">' + " ".join(f"<span>{s}</span>" for s in sentences) + '</p>')
 
 RELATED_CSS = '.related ul{list-style:none;padding:0}.related li{padding:6px 0}.related-why{color:var(--text-muted);font-size:.9em}'
+
+def _mark_related_reasons(block, reasons, value):
+    """related_block escapes each reason; a reason that embeds a data value ("family: Araceae",
+    "also Araceae") gets that value wrapped in translate="no" after the fact."""
+    ev = html.escape(str(value))
+    for reason in reasons:
+        er = html.escape(str(reason))
+        if not er.endswith(ev):
+            continue
+        marked = er[: len(er) - len(ev)] + f'<span translate="no">{ev}</span>'
+        block = block.replace(f'— {er}</span>', f'— {marked}</span>')
+    return block
 
 def slugify(text):
     text = text.lower()
@@ -365,10 +392,13 @@ def main():
         pet_status_badge = toxicity_badge(tclass)
         if genus_inferred and (dog_toxic or cat_toxic):
             genus = sci.split()[0] if sci else sci
-            symptoms_display = (f"Toxicity is inferred from the ASPCA listing for the genus {genus}; "
+            symptoms_display = (f"Toxicity is inferred from the ASPCA listing for the genus {data_raw(genus)}; "
                                  f"species-level confirmation is pending.")
+            symptoms_attrs = ""
         else:
             symptoms_display = symptoms
+            # ASPCA/pipeline symptom text is source data, not site copy
+            symptoms_attrs = ' translate="no" lang="en"'
 
         page_url = f"https://floradb.dataengineered.io/plants/{slug}"
         sitemap_entries.append((page_url, os.path.join(plants_dir, f"{slug}.html"), "monthly", "0.8"))
@@ -427,7 +457,11 @@ def main():
 
         related_items = _pad_related(related_items, plants_by_name, plants_index, href_of_plant(p),
                                       href_of_plant, label_of_plant, target=5)
+        # every field item's label is a family or plant name: data (4th flag False)
+        related_items = [(h, l, r, False) for h, l, r in related_items]
         related_items.append(("../plants/", "All plant profiles", None))
+        related_html = _mark_related_reasons(related_block(related_items, "Related plants and families"),
+                                             [f"family: {fam}", f"also {fam}"], fam)
 
         html_content = f"""<!DOCTYPE html>
 <html lang="en" class="dark">
@@ -521,7 +555,7 @@ def main():
       <a href="/" class="brand">Flora<span class="accent">DB</span></a>
       <div>
         <a href="/#explorer" class="btn-link">← Explorer</a>
-        <a href="../families/{fam_slug}" class="btn-link">Family: {fam}</a>
+        <a href="../families/{fam_slug}" class="btn-link">Family: {data_raw(fam)}</a>
       </div>
     </div>
   </header>
@@ -531,16 +565,16 @@ def main():
       <div class="badge-strip">
         <span class="mono" style="font-size:0.8rem; color:var(--sepia);">SPECIMEN NO. #{plant_id}</span>
         {pet_status_badge}
-        <span class="mono" style="font-size:0.8rem; background:rgba(236,231,217,0.08); padding:4px 10px; border-radius:4px;">Family: {fam}</span>
+        <span class="mono" style="font-size:0.8rem; background:rgba(236,231,217,0.08); padding:4px 10px; border-radius:4px;">Family: {data_raw(fam)}</span>
       </div>
-      <h1 class="serif" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 8px;">{sci}</h1>
-      <h2 style="font-size: 1.3rem; font-weight: 400; color: var(--text-muted);">Common Name: {common}</h2>
+      <h1 class="serif" translate="no" style="font-size: 2.6rem; font-weight: 700; margin-bottom: 8px;">{sci}</h1>
+      <h2 style="font-size: 1.3rem; font-weight: 400; color: var(--text-muted);">Common Name: {data_raw(common)}</h2>
     </section>
     {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, genus_inferred, symptoms, native, p.get('vernacular_names_en', '').strip())}
     <div class="specimen-grid">
       <div>
         <div class="img-box">
-          <img src="{img_url}" alt="{sci} ({common}) botanical field specimen photograph" onerror="this.src='../og-image.png'" />
+          <img src="{img_url}" alt="{sci} ({common}) botanical field specimen photograph" onerror="this.src='/og-image.png'" />
         </div>
         <div class="card">
           <h3 class="serif" style="font-size:1.3rem; margin-bottom:16px; border-bottom:1px solid var(--rule-color); padding-bottom:10px;">ASPCA Pet Toxicity Determination</h3>
@@ -554,7 +588,7 @@ def main():
           </div>
           <div style="margin-top: 16px;">
             <strong style="font-size:0.88rem; color:var(--sepia);">Clinical Symptoms:</strong>
-            <p style="font-size:0.86rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">{symptoms_display}</p>
+            <p{symptoms_attrs} style="font-size:0.86rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">{symptoms_display}</p>
           </div>
         </div>
       </div>
@@ -596,7 +630,7 @@ def main():
           </div>
           <div class="metric-row">
             <span class="metric-label">Native Biogeographical Range</span>
-            <span class="metric-val" style="text-align:right; max-width:60%;">{native[:80] + ('...' if len(native) > 80 else '')}</span>
+            <span class="metric-val" translate="no" style="text-align:right; max-width:60%;">{native[:80] + ('...' if len(native) > 80 else '')}</span>
           </div>
           <div style="margin-top: 20px; text-align: center;">
             <a href="{gbif_url}" target="_blank" rel="noopener noreferrer" class="btn-link" style="display:inline-block; margin:0;">🔬 Verify on GBIF Species Portal</a>
@@ -605,7 +639,7 @@ def main():
       </div>
     </div>
 
-    {related_block(related_items, "Related plants and families")}
+    {related_html}
   </main>
 
   <footer>
@@ -662,8 +696,8 @@ def main():
               <span class="mono" style="font-size:0.75rem; color:var(--sepia);">SPECIMEN #{m.get('plant_id', '')}</span>
               {badge}
             </div>
-            <h3 class="serif" style="font-size:1.2rem; font-weight:700;"><a href="../plants/{m_slug}" style="color:var(--text-ink); text-decoration:none;">{sci}</a></h3>
-            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">{common}</p>
+            <h3 class="serif" translate="no" style="font-size:1.2rem; font-weight:700;"><a href="../plants/{m_slug}" style="color:var(--text-ink); text-decoration:none;">{sci}</a></h3>
+            <p translate="no" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">{common}</p>
           </div>
           <div style="border-top:1px dashed var(--rule-color); padding-top:12px; font-size:0.85rem;">
             <div style="display:flex; justify-content:space-between;">
@@ -685,12 +719,12 @@ def main():
         # then the families hub.
         related_items = []
         for m in sorted(members, key=lambda o: (o.get('common_name') or '').lower()):
-            related_items.append((href_of_plant(m), label_of_plant(m), None))
+            related_items.append((href_of_plant(m), label_of_plant(m), None, False))
 
         others = [(fn, len(families[fn])) for fn in families if fn != fam_name]
         others.sort(key=lambda t: (abs(t[1] - total_members), t[0].lower()))
         for fn, cnt in others[:2]:
-            related_items.append((f"../families/{slugify(fn)}", fn, _plural(cnt, "houseplant")))
+            related_items.append((f"../families/{slugify(fn)}", fn, _plural(cnt, "houseplant"), False))
 
         related_items.append(("../families/", "All botanical families", None))
 
@@ -776,7 +810,7 @@ def main():
   <main class="container">
     <section class="hero">
       <span class="mono" style="font-size:0.8rem; color:var(--sepia);">BOTANICAL FAMILY HUB</span>
-      <h1 class="serif" style="font-size: 2.8rem; font-weight: 700; margin-top: 6px;">{fam_name}</h1>
+      <h1 class="serif" translate="no" style="font-size: 2.8rem; font-weight: 700; margin-top: 6px;">{fam_name}</h1>
       <p style="color: var(--text-muted); max-width: 700px; margin-top: 8px;">Taxonomic classification grouping verified indoor houseplant specimens with standardized quantitative care profiles and clinical pet toxicity thresholds.</p>
 
       <div class="stat-bar">

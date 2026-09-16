@@ -1,0 +1,1778 @@
+{
+ "009446cc7552cb02": {
+  "src": "Paper Mode",
+  "t": "Modo papel",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "02bd4fc96f44c4cd": {
+  "src": "Dataset Question / Sample Inquiry",
+  "t": "Pregunta sobre el conjunto de datos / solicitud de muestra",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "03688ba6aa340b87": {
+  "src": "FAQ",
+  "t": "Preguntas frecuentes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "03709e78d0b15c3e": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, pet toxicity not verified. Part of the {4}…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días; toxicidad para mascotas no verificada. De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "046fddfd83638201": {
+  "src": "alex@company.com",
+  "t": "laura@empresa.com",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "05198cf9b2d76c7c": {
+  "src": "e.g. Alex Smith",
+  "t": "p. ej., Laura Gómez",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "064cc4e6c932d211": {
+  "src": "Three Layers",
+  "t": "Tres capas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0714a401bba3ac0f": {
+  "src": "↻ Send another message",
+  "t": "↻ Enviar otro mensaje",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "07f8a0cad2481eaa": {
+  "src": "{0} ({1}) botanical field specimen photograph",
+  "t": "Fotografía botánica de campo del espécimen {0} ({1})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "088a505f59f402d5": {
+  "src": "Sitemap XML",
+  "t": "Mapa del sitio XML",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "092a4ed658f69ecb": {
+  "src": "⚠️ TOXIC TO PETS (GENUS-LEVEL INFERENCE)",
+  "t": "⚠️ TÓXICA PARA MASCOTAS (INFERENCIA A NIVEL DE GÉNERO)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "09d92fe92df07d51": {
+  "src": "A curated dataset of {0} houseplants with quantitative care metrics — light (Lux) thresholds, watering-day intervals, temperature and humidity ranges — joined to ASPCA dog/cat toxicity and GBIF-verified taxonomy. Includes an {1}-record ASPCA toxicity layer and a {2} species taxonomic index. Every record carries a source URL for re-verification.",
+  "t": "Conjunto de datos curado de {0} plantas de interior con métricas cuantitativas de cuidado —umbrales de luz (lux), intervalos de riego en días, rangos de temperatura y humedad— vinculadas a la toxicidad para perros y gatos de la ASPCA y a una taxonomía verificada con GBIF. Incluye una capa de toxicidad de la ASPCA con {1} registros y un índice taxonómico de {2} especies. Cada registro incluye una URL de origen para volver a verificarlo.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0ad93fe4921abd25": {
+  "src": "Every member shares a watering interval of {0} days.",
+  "t": "Todos los miembros comparten un intervalo de riego de {0} días.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0b6dc7af96a9d7c5": {
+  "src": "Taxonomic classification grouping verified indoor houseplant specimens with standardized quantitative care profiles and clinical pet toxicity thresholds.",
+  "t": "Clasificación taxonómica que agrupa especímenes verificados de plantas de interior con perfiles de cuidado cuantitativos estandarizados y umbrales clínicos de toxicidad para mascotas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0bfb064725a764d2": {
+  "src": "<0>Plate VI</0> · Correspondence",
+  "t": "<0>Lámina VI</0> · Correspondencia",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0d12495e35159dc3": {
+  "src": "Ideal Ambient Humidity",
+  "t": "Humedad ambiental ideal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0d3cc444f9679276": {
+  "src": "Specimens Toxic to Pets",
+  "t": "Especímenes tóxicos para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0d58547a10d5d55e": {
+  "src": "Acquire the Collection",
+  "t": "Adquiere la colección",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0dbeec64f069e1a5": {
+  "src": "The <0>houseplant care dataset</0> — <1>{2} species</1> with quantitative light (Lux), watering, and temperature metrics, joined to <3>ASPCA pet toxicity</3> and <4>GBIF-verified</4> taxonomy.",
+  "t": "El <0>conjunto de datos de cuidado de plantas de interior</0>: <1>{2} especies</1> con métricas cuantitativas de luz (lux), riego y temperatura, vinculadas a la <3>toxicidad para mascotas de la ASPCA</3> y a una taxonomía <4>verificada con GBIF</4>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0f8e518ed5c1927a": {
+  "src": "Want to dig deeper? <0>Try the interactive Sample Explorer on 🤗 Hugging Face →</0> or <1>download the free {2}-plant sample dataset</1>.",
+  "t": "¿Quieres profundizar? <0>Prueba el Sample Explorer interactivo en 🤗 Hugging Face →</0> o <1>descarga la muestra gratuita de {2} plantas</1>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "11940c954fc35326": {
+  "src": "{0} ({1}) is a houseplant in the {2} family.",
+  "t": "{0} ({1}) es una planta de interior de la familia {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "11aabbbbf62df436": {
+  "src": "Exact Lux light requirements ({0} Lux), watering intervals ({1} days), and ASPCA pet safety clinical symptoms.",
+  "t": "Requisitos exactos de luz en lux ({0} lux), intervalos de riego ({1} días) y síntomas clínicos de seguridad para mascotas según la ASPCA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "11fbd13cca5dcdab": {
+  "src": "det. GBIF {0} · rev. {1}",
+  "t": "det. GBIF {0} · rev. {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "126626bf0c70bc81": {
+  "src": "🔬 Verify on GBIF Species Portal",
+  "t": "🔬 Verificar en el portal de especies de GBIF",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "12e45a555f08971a": {
+  "src": "FloraDB is a curated botanical field dataset of over {0} indoor houseplants combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations.",
+  "t": "FloraDB es un conjunto de datos botánico de campo, curado, con más de {0} plantas de interior que combina parámetros cuantitativos de cuidado (umbrales de luz en lux, intervalos de riego en días, rangos de temperatura y humedad) con estados verificados de toxicidad para perros y gatos de la ASPCA, síntomas clínicos y citas taxonómicas de GBIF.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "13497a4a0ee7e09a": {
+  "src": "{0} °C · {1} humidity",
+  "t": "{0} °C · {1} de humedad",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "13c1bad5df19aebb": {
+  "src": "Representative indoor houseplant determinations with quantitative care and pet safety metrics.",
+  "t": "Determinaciones representativas de plantas de interior con métricas cuantitativas de cuidado y de seguridad para mascotas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1569c6b2c5b1c13b": {
+  "src": "❋ Message dispatched",
+  "t": "❋ Mensaje enviado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "170a475487d0c3a6": {
+  "src": "— also {0}",
+  "t": "— también {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "172bd518f2504988": {
+  "src": "Specimens in Sample",
+  "t": "Especímenes en la muestra",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1858334f101bb958": {
+  "src": "Specimens Toxic to Pets ({0} unverified)",
+  "t": "Especímenes tóxicos para mascotas ({0} sin verificar)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "19106ea7317011b9": {
+  "src": "← Explorer",
+  "t": "← Explorador",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1ae22ea93ceb84f2": {
+  "src": "— {0} houseplants",
+  "t": "— {0} plantas de interior",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1daa57dc1162eae9": {
+  "src": "Data Correction / Toxicity Flag",
+  "t": "Corrección de datos / aviso de toxicidad",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1fa942f6f4c35e67": {
+  "src": "It is a medium-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz media que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2376b14487ad78c2": {
+  "src": "Houseplant Herbarium · Data",
+  "t": "Herbario de plantas de interior · Datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "23915476e0847365": {
+  "src": "According to ASPCA data, it is non-toxic and considered pet-safe for cats and dogs.",
+  "t": "Según los datos de la ASPCA, no es tóxica y se considera segura para gatos y perros.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "23ba709c07dab51e": {
+  "src": "Curated dataset of {0} houseplants: quantitative light (Lux) and watering metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy.",
+  "t": "Conjunto de datos curado de {0} plantas de interior: métricas cuantitativas de luz (lux) y riego, toxicidad para perros y gatos (ASPCA) y taxonomía verificada con GBIF.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "24473831c441fd13": {
+  "src": "Every houseplant profile in FloraDB, each with light, water and humidity requirements plus verified pet-toxicity status.",
+  "t": "Todas las fichas de plantas de interior de FloraDB, cada una con requisitos de luz, riego y humedad y su estado verificado de toxicidad para mascotas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "24f5695eff15c5d5": {
+  "src": "<0>Home</0> › Plant directory",
+  "t": "<0>Inicio</0> › Directorio de plantas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2596924d23851bad": {
+  "src": "Layer iii · Care",
+  "t": "Capa iii · Cuidados",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "273a63fa3bd1edcd": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to pets (genus-level inference).",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para mascotas (inferencia a nivel de género).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "27c2be4ee7d77114": {
+  "src": "Avg. Watering Interval",
+  "t": "Intervalo medio de riego",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "28d8121093bb7910": {
+  "src": "{0} curated houseplants with quantitative light/water/temperature metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy, plus an {1}-record ASPCA toxicity layer and a {2} species taxonomic index. Relational SQLite plus CSV and JSON.",
+  "t": "{0} plantas de interior curadas con métricas cuantitativas de luz, riego y temperatura, toxicidad para perros y gatos de la ASPCA y taxonomía verificada con GBIF, además de una capa de toxicidad de la ASPCA con {1} registros y un índice taxonómico de {2} especies. SQLite relacional más CSV y JSON.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "295975803fd1897e": {
+  "src": "{0} spans {1} houseplants in FloraDB ({2} lux light range, watering every {3} days, {4} of {5} verified toxic to pets, {6} unverified).",
+  "t": "{0} abarca {1} plantas de interior en FloraDB (rango de luz de {2} lux, riego cada {3} días, {4} de {5} con toxicidad para mascotas verificada, {6} sin verificar).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2ca7ebeda4a9e084": {
+  "src": "✕ Close Contact Form",
+  "t": "✕ Cerrar formulario de contacto",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2d3bd6d275c76426": {
+  "src": "{0} of {1} members verified toxic to pets, {2} unverified.",
+  "t": "{0} de {1} miembros con toxicidad para mascotas verificada, {2} sin verificar.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2d9e1a6815da23c9": {
+  "src": "Layer ii · Safety",
+  "t": "Capa ii · Seguridad",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2dcb4ad24cd28908": {
+  "src": "Botanical Family: {0} — FloraDB Collection",
+  "t": "Familia botánica: {0} — Colección FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2f805d8c15b7597a": {
+  "src": "ASPCA toxicity records",
+  "t": "Registros de toxicidad de la ASPCA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "30731f3a2867046f": {
+  "src": "{0} plant profiles",
+  "t": "{0} fichas de plantas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "30c54a96f8011b39": {
+  "src": "Collection",
+  "t": "Colección",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "311078c1a01c2bdf": {
+  "src": "Your Name / Company *",
+  "t": "Tu nombre / empresa *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "34547c12d5a58796": {
+  "src": "every <0>{1}</0> days",
+  "t": "cada <0>{1}</0> días",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "34ac37f56e147bf6": {
+  "src": "Back to home",
+  "t": "Volver al inicio",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "37d83b9dd135025b": {
+  "src": "↓ Browse Specimens",
+  "t": "↓ Explorar especímenes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "37e10405f62e4d03": {
+  "src": "According to ASPCA data, it is toxic to dogs and cats; reported symptoms include {0}.",
+  "t": "Según los datos de la ASPCA, es tóxica para perros y gatos; los síntomas descritos incluyen {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "383d4734c5d5fbe9": {
+  "src": "Clinical Symptoms:",
+  "t": "Síntomas clínicos:",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "388956eb740b1574": {
+  "src": "GBIF-verified names",
+  "t": "Nombres verificados con GBIF",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "38c6a67bd66a0e4b": {
+  "src": "← Specimen Explorer",
+  "t": "← Explorador de especímenes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "38d46fc8e0cb7e31": {
+  "src": "lux light requirements",
+  "t": "requisitos de luz en lux",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "390385d24482888f": {
+  "src": "Philodendron hederaceum (Heartleaf Philodendron)",
+  "t": "Philodendron hederaceum (filodendro de hoja acorazonada)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "39cb9531ed1af665": {
+  "src": "Every botanical family in FloraDB, each with the houseplants it contains, their care requirements and pet-toxicity status.",
+  "t": "Todas las familias botánicas de FloraDB, cada una con las plantas de interior que contiene, sus requisitos de cuidado y su toxicidad para mascotas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3b4358a79a07b053": {
+  "src": "ASPCA pet-toxicity data has not been verified for this species; treat it as unknown.",
+  "t": "Los datos de toxicidad para mascotas de la ASPCA no se han verificado para esta especie; considérala desconocida.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3b5f1c8be95b6141": {
+  "src": "care = high · verified name",
+  "t": "cuidados = alta · nombre verificado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3b65ce6cc76e1ba4": {
+  "src": "Send to {0} →",
+  "t": "Enviar a {0} →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3b9651f618c989ba": {
+  "src": "{0} of {1} are toxic to cats or dogs, per ASPCA data.",
+  "t": "{0} de {1} son tóxicas para gatos o perros, según los datos de la ASPCA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3cd15a6245d7a184": {
+  "src": "Every {0} Days",
+  "t": "Cada {0} días",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3cf2d426abd6f16c": {
+  "src": "SPECIMEN {0}",
+  "t": "ESPÉCIMEN {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3eb6390a7d09835a": {
+  "src": "Free sample",
+  "t": "Muestra gratuita",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3f203994990d0b02": {
+  "src": "— same light band: Direct Sun",
+  "t": "— misma banda de luz: sol directo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3fa50c0aaa82f45c": {
+  "src": "— also unverified",
+  "t": "— tampoco verificada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3fddbdc07b1e415e": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to pets (genus-level inference). Part of the {4}…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para mascotas (inferencia a nivel de género). De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "40215ad1f85fb6f9": {
+  "src": "✉ Open Contact Form",
+  "t": "✉ Abrir formulario de contacto",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "40ea86e38002254d": {
+  "src": "<0>Plate V</0> · Frequently Asked Questions",
+  "t": "<0>Lámina V</0> · Preguntas frecuentes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "417a5a06d4d92323": {
+  "src": "Are pet toxicity statuses verified against veterinary clinical data?",
+  "t": "¿Se verifican los estados de toxicidad para mascotas con datos clínicos veterinarios?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "41bd875a15760cdb": {
+  "src": "Specimen Explorer",
+  "t": "Explorador de especímenes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4257474f8d850346": {
+  "src": "watering schedule",
+  "t": "calendario de riego",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "426503ad7e4dbb77": {
+  "src": "<0>GBIF-verified taxonomy</0> + a <1>{2} species</1> taxonomic index and {3} enriched species (names, native range, image refs).",
+  "t": "<0>Taxonomía verificada con GBIF</0> + un índice taxonómico de <1>{2} especies</1> y {3} especies enriquecidas (nombres, área nativa, referencias de imagen).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "43c7d56efb0908b2": {
+  "src": "Family: {0}",
+  "t": "Familia: {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4443cb4958249b88": {
+  "src": "Maximum Light Tolerance",
+  "t": "Tolerancia máxima de luz",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "447fdf0d45008d64": {
+  "src": "{0} ({1}) — care &amp; pet toxicity | FloraDB",
+  "t": "{0} ({1}) — cuidados y toxicidad para mascotas | FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "454504a0d822e25b": {
+  "src": "YES (Toxic)",
+  "t": "SÍ (tóxica)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "45bbc9266fe29a25": {
+  "src": "Direct Sun",
+  "t": "Sol directo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "45ea2c6a135e50fa": {
+  "src": "Custom Curation / Enterprise Integration",
+  "t": "Curación a medida / integración Enterprise",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "460eb0b35f6e4a2c": {
+  "src": "It is a bright indirect-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz brillante indirecta que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "46732f45708f6e6b": {
+  "src": "Custom schema, API access, an expert-reviewed tier, or enterprise invoicing — reach our desk at {0}.",
+  "t": "Esquema a medida, acceso por API, un nivel revisado por expertos o facturación empresarial: escríbenos a {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "46cba8335fddb299": {
+  "src": "Botanical family directory — FloraDB",
+  "t": "Directorio de familias botánicas — FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "475dbea7a2a6ec64": {
+  "src": "Families Hub",
+  "t": "Índice de familias",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "485786017dbe154a": {
+  "src": "Climate",
+  "t": "Clima",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4bc385384f8792a1": {
+  "src": "{0} ({1}) Botanical Care &amp; Pet-Toxicity Record",
+  "t": "{0} ({1}): registro botánico de cuidados y toxicidad para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4c2a640744abec29": {
+  "src": "{0} ({1}) — care guide | FloraDB",
+  "t": "{0} ({1}) — guía de cuidados | FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4efb6cb7c018f0c6": {
+  "src": "Family",
+  "t": "Familia",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4f2827637061457d": {
+  "src": "FloraDB — houseplant care dataset as botanical field records",
+  "t": "FloraDB — conjunto de datos de cuidado de plantas de interior como registros botánicos de campo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "503fb4ac1f5761c5": {
+  "src": "— toxic to both cats and dogs",
+  "t": "— tóxica para gatos y perros",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5043b336e117e61e": {
+  "src": "Plant directory",
+  "t": "Directorio de plantas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "50c54250999ebd73": {
+  "src": "One-time snapshot · CSV / SQLite / JSON · No recurring fees",
+  "t": "Snapshot de pago único · CSV / SQLite / JSON · Sin cuotas recurrentes",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "514f7ce2a8d2ba11": {
+  "src": "Questions, or need custom data?",
+  "t": "¿Tienes preguntas o necesitas datos a medida?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "519f489bbdf1f694": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family, ideal humidity is…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y no es tóxica para mascotas. De la familia {4}, la humedad ideal es…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "53d4c9120b9c9d8a": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y no es tóxica para mascotas. De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "53e069994338f8e1": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4} family, ideal humidity…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para gatos y perros. De la familia {4}, humedad ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5424a15efc13e4de": {
+  "src": "Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database ({0}), detailing whether the plant is toxic to dogs (is_toxic_to_dogs) or cats (is_toxic_to_cats), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects.",
+  "t": "Sí. Cada planta se coteja con la base de datos de plantas tóxicas del ASPCA Animal Poison Control Center ({0}), indicando si la planta es tóxica para perros (is_toxic_to_dogs) o gatos (is_toxic_to_cats), junto con síntomas clínicos de toxicidad concretos, como irritación oral o efectos de glucósidos cardíacos.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "54828072e1b07642": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para gatos y perros. De…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5536858f83886c5b": {
+  "src": "Related plants and families",
+  "t": "Plantas y familias relacionadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "564f4d46014943f7": {
+  "src": "Our form provider is unreachable right now. Please write to {0} with your request — we reply within {1} business day.",
+  "t": "Nuestro proveedor de formularios no está disponible en este momento. Escribe a {0} con tu solicitud; respondemos en {1} día hábil.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "568740429031262e": {
+  "src": "All plant profiles",
+  "t": "Todas las fichas de plantas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "57643c72d3c9c532": {
+  "src": "{0} — care &amp; pet toxicity | FloraDB",
+  "t": "{0} — cuidados y toxicidad para mascotas | FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "577f274b69babca3": {
+  "src": "Taxonomic houseplant collection containing {0} determinations within the {1} family.",
+  "t": "Colección taxonómica de plantas de interior con {0} determinaciones dentro de la familia {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "58f71b18efda8ed3": {
+  "src": "ASPCA Pet Toxicity Determination",
+  "t": "Determinación de toxicidad para mascotas de la ASPCA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "592221d6351ed897": {
+  "src": "— neighbouring record",
+  "t": "— registro contiguo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "59812174d3237680": {
+  "src": "It is a low-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz baja que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "59bd44ae1c9b3bdf": {
+  "src": "A light category maps to a standard <0>Lux band</0>; watering, temperature, and humidity come from plant-type norms. A {1} flag grades every row honestly.",
+  "t": "Cada categoría de luz se corresponde con una <0>banda de lux</0> estándar; el riego, la temperatura y la humedad proceden de normas por tipo de planta. Un indicador {1} califica cada fila con honestidad.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5a5dcca1304b27e7": {
+  "src": "— toxic to pets (genus-level inference)",
+  "t": "— tóxica para mascotas (inferencia a nivel de género)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5a643d00e541e0eb": {
+  "src": "Optimal indoor care calls for watering roughly every {0} days, temperatures of {1}, and about {2} humidity.",
+  "t": "El cuidado óptimo en interior requiere regar aproximadamente cada {0} días, temperaturas de {1} y una humedad de alrededor del {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b413510bb952c13": {
+  "src": "Minimum Light Requirement",
+  "t": "Requisito mínimo de luz",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b8d2481ae4f0b44": {
+  "src": "Part of the DataEngineered catalog →",
+  "t": "Parte del catálogo DataEngineered →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5c30595b64a5b360": {
+  "src": "Secure card checkout via Stripe · Apple Pay / Google Pay · dataset delivered instantly after payment{0} Need a company invoice or crypto payment? <1>use the contact form</1> ({2})",
+  "t": "Pago seguro con tarjeta a través de Stripe · Apple Pay / Google Pay · el conjunto de datos se entrega inmediatamente después del pago{0} ¿Necesitas una factura de empresa o pagar con criptomonedas? <1>usa el formulario de contacto</1> ({2})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5c7f9cd29a1fcde3": {
+  "src": "{0} ({1}) is a houseplant in the {2} family, native to {3}.",
+  "t": "{0} ({1}) es una planta de interior de la familia {2}, nativa de {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5e878d1830c183b5": {
+  "src": "Toxic{0}Dogs &amp; Cats{1}· ASPCA ·",
+  "t": "Tóxica{0}Perros y gatos{1}· ASPCA ·",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5f4d26c794939279": {
+  "src": "Common Name: {0}",
+  "t": "Nombre común: {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5fa5dd83740eec72": {
+  "src": "It is a direct sun-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de sol directo que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "605a2d2a311c9330": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family, ideal humidity…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y no es tóxica para mascotas. De la familia {4}, humedad ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "60d5f3b7a487f02f": {
+  "src": "{0} verified determinations with quantitative light/water parameters and ASPCA pet safety profiles.",
+  "t": "{0} determinaciones verificadas con parámetros cuantitativos de luz y riego y perfiles de seguridad para mascotas de la ASPCA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "61e93c8c6cbc14cc": {
+  "src": "Watering:",
+  "t": "Riego:",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "62fd473b0d57e84d": {
+  "src": "Filter by name, family, or safety (e.g. Fern, {0}, cat-safe)...",
+  "t": "Filtra por nombre, familia o seguridad (p. ej., helecho, {0}, segura para gatos)...",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "648ad311f84c7af8": {
+  "src": "Every {0} days",
+  "t": "Cada {0} días",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6853762b013d8f2c": {
+  "src": "All botanical families",
+  "t": "Todas las familias botánicas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "695740fefe73bf43": {
+  "src": "Page not found — FloraDB",
+  "t": "Página no encontrada — FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6a290f41aadc1658": {
+  "src": "{0} — {1} houseplant | FloraDB",
+  "t": "{0} — {1} planta de interior | FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6a2e90e133eeab95": {
+  "src": "{0} houseplants with quantitative light/water metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy. Source URL on every record.",
+  "t": "{0} plantas de interior con métricas cuantitativas de luz y riego, toxicidad para perros y gatos (ASPCA) y taxonomía verificada con GBIF. URL de origen en cada registro.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b21fb791ac05170": {
+  "src": "About",
+  "t": "Acerca de",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6fbdaa0fa4537961": {
+  "src": "⚠️ TOXICITY NOT VERIFIED",
+  "t": "⚠️ TOXICIDAD NO VERIFICADA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6fcf7dd6e104e2da": {
+  "src": "— non-toxic to pets",
+  "t": "— no tóxica para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "70cf2c63616f40b8": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4} family, ideal…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para gatos y perros. De la familia {4}, ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "70f8bb9a8a5393ef": {
+  "src": "Home",
+  "t": "Inicio",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "73bc85092dc9ef5b": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, pet toxicity not verified. Part of the {4} family, ideal humidity…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días; toxicidad para mascotas no verificada. De la familia {4}, humedad ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "74075e2fa3e11cd3": {
+  "src": "FloraDB — Houseplant Care &amp; Pet-Toxicity Dataset",
+  "t": "FloraDB — Conjunto de datos de cuidados y toxicidad para mascotas de plantas de interior",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7476fdabdfac9f59": {
+  "src": "Toxic",
+  "t": "Tóxica",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "75c48f3789388e70": {
+  "src": "FloraDB is a curated botanical field dataset of over <0>{1} indoor houseplants</0> combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations.",
+  "t": "FloraDB es un conjunto de datos botánico de campo, curado, con más de <0>{1} plantas de interior</0> que combina parámetros cuantitativos de cuidado (umbrales de luz en lux, intervalos de riego en días, rangos de temperatura y humedad) con estados verificados de toxicidad para perros y gatos de la ASPCA, síntomas clínicos y citas taxonómicas de GBIF.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7735e2e0bff50ea9": {
+  "src": "Houseplant care metrics normalized to Lux and watering-day intervals, joined to ASPCA pet toxicity and the GBIF taxonomic backbone, with a source URL on every record.",
+  "t": "Métricas de cuidado de plantas de interior normalizadas a lux e intervalos de riego en días, vinculadas a la toxicidad para mascotas de la ASPCA y al GBIF Taxonomic Backbone, con una URL de origen en cada registro.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "777603fb8f84751d": {
+  "src": "<0>Relational SQLite + CSV + JSON</0> — tables for {1}, {2}, {3}, {4}, ready for apps and ML.",
+  "t": "<0>SQLite relacional + CSV + JSON</0>: tablas {1}, {2}, {3} y {4}, listas para aplicaciones y ML.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "78f9df08aea6f1b1": {
+  "src": "Temperature Envelope",
+  "t": "Rango de temperatura",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7b041742eaf57aa1": {
+  "src": "Toxicity data is informational, not veterinary advice. If a pet ingests a plant, contact a vet or ASPCA Animal Poison Control.",
+  "t": "Los datos de toxicidad son informativos, no constituyen consejo veterinario. Si una mascota ingiere una planta, contacta con un veterinario o con el ASPCA Animal Poison Control.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7b732d1599a5a0e6": {
+  "src": "FloraDB Featured Houseplants Sample",
+  "t": "Muestra de plantas de interior destacadas de FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7c668ff5aaa56db3": {
+  "src": "{0} spans {1} houseplants in FloraDB ({2} lux light range, watering every {3} days, {4} of {5} toxic to pets).",
+  "t": "{0} abarca {1} plantas de interior en FloraDB (rango de luz de {2} lux, riego cada {3} días, {4} de {5} tóxicas para mascotas).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7d2fe24762ee896a": {
+  "src": "🟢 Pet Safe",
+  "t": "🟢 Segura para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7de90a65241a6cdb": {
+  "src": "Common",
+  "t": "Común",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7f470c9731f4a777": {
+  "src": "Toxic to Cats?",
+  "t": "¿Tóxica para gatos?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "80ac6b4063c43bc8": {
+  "src": "Houseplants,{0}pressed into{1}<2>data</2>.",
+  "t": "Plantas de interior,{0}prensadas en{1}<2>datos</2>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "80e21ed46b63d3f0": {
+  "src": "<0>Snapshot {1}</0> · one-time purchase, no recurring fees.",
+  "t": "<0>Snapshot {1}</0> · compra única, sin cuotas recurrentes.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "82ebe2acfa338045": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4}…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para gatos y perros. De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "82fa7d52c89df896": {
+  "src": "Confidence",
+  "t": "Confianza",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "832fba258b2e00ef": {
+  "src": "Collection Pricing",
+  "t": "Precios de la colección",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "832fc72cfb4fb3f4": {
+  "src": "Full Snapshot Dataset",
+  "t": "Snapshot completo del conjunto de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "83f3dbc5b3527803": {
+  "src": "Dogs",
+  "t": "Perros",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "84774579b7134b2e": {
+  "src": "FloraDB Houseplant Care Dataset — Full Snapshot",
+  "t": "Conjunto de datos de cuidado de plantas de interior FloraDB — Snapshot completo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "851fdac8bd50196d": {
+  "src": "Scientific name",
+  "t": "Nombre científico",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "869b624f356db000": {
+  "src": "Accession № {0}",
+  "t": "Registro n.º {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "86b0db81d24e1483": {
+  "src": "Snapshot + Custom",
+  "t": "Snapshot + a medida",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "87e2102bd593902e": {
+  "src": "{0} botanical families",
+  "t": "{0} familias botánicas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "88306943fea7e76f": {
+  "src": "Method",
+  "t": "Método",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "88dfbfc29bf4b22e": {
+  "src": "Get the dataset",
+  "t": "Obtener el conjunto de datos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "899da2f2dce6551f": {
+  "src": "FloraDB Herbarium",
+  "t": "Herbario FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8addb891254ad8a1": {
+  "src": "Message *",
+  "t": "Mensaje *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8b3ee45765e546a0": {
+  "src": "Explorer",
+  "t": "Explorador",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8b57522cfa6ae25c": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4} family…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para gatos y perros. De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8c195baa0091b2c6": {
+  "src": "Low to Bright",
+  "t": "Baja a brillante",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8db6e38c9ab2953c": {
+  "src": "GBIF Usage Key",
+  "t": "Clave de uso de GBIF",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e072025366d8304": {
+  "src": "Refund policy",
+  "t": "Política de reembolso",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e7d312a6fad58e7": {
+  "src": "Houseplant care and pet-toxicity dataset provider.",
+  "t": "Proveedor de conjuntos de datos de cuidado de plantas de interior y toxicidad para mascotas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e90cdacfa15b83b": {
+  "src": "FloraDB — Houseplant Care &amp; Pet-Toxicity Dataset · <0>Back to Main Catalog</0>",
+  "t": "FloraDB — Conjunto de datos de cuidados y toxicidad para mascotas de plantas de interior · <0>Volver al catálogo principal</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8fd6756022cac95a": {
+  "src": "Tier {0} · Self-Serve Snapshot",
+  "t": "Nivel {0} · Snapshot de autoservicio",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "90041a8d1b084048": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family, ideal…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y no es tóxica para mascotas. De la familia {4}, ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "90888adc471e630c": {
+  "src": "plant care database",
+  "t": "base de datos de cuidado de plantas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9228c0a7ea10ee2b": {
+  "src": "Flora<0>DB</0>",
+  "t": "Flora<0>DB</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9329799914b48736": {
+  "src": "⚠️ Toxic to Pets",
+  "t": "⚠️ Tóxica para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "932c76de4ea35487": {
+  "src": "— family: {0}",
+  "t": "— familia: {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9409899da806b355": {
+  "src": "FloraDB Houseplant Care DataCatalog",
+  "t": "DataCatalog de cuidado de plantas de interior FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "951889edf86a9082": {
+  "src": "{0} RH",
+  "t": "{0} HR",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9525ae1781bb71fc": {
+  "src": "Safe",
+  "t": "Segura",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9528ebb28f732a38": {
+  "src": "Bright Indirect",
+  "t": "Brillante indirecta",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "973d15cc240ea7c6": {
+  "src": "Medium to Bright",
+  "t": "Media a brillante",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "98ff2266ec1655db": {
+  "src": "Your message went to {0}. We usually respond within {1} business hours.",
+  "t": "Tu mensaje se envió a {0}. Solemos responder en {1} horas hábiles.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "99da9e4570f8252e": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, pet toxicity not verified. Part of the {4} family, ideal…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días; toxicidad para mascotas no verificada. De la familia {4}, ideal…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9a07bf1c56177b42": {
+  "src": "Your Email Address *",
+  "t": "Tu correo electrónico *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9a0a432c55dd0ae7": {
+  "src": "Light (lux)",
+  "t": "Luz (lux)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9cd3dacb0a8ff754": {
+  "src": "— same light band: Bright Indirect",
+  "t": "— misma banda de luz: brillante indirecta",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9cd66e1f1c1cabd3": {
+  "src": "Normalized metrics",
+  "t": "Métricas normalizadas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9ee4f2d545651e7a": {
+  "src": "Cats",
+  "t": "Gatos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a11040192bed5946": {
+  "src": "<0>{1} curated houseplants</0> across {2} families — quantitative light (Lux), watering days, temperature, and humidity.",
+  "t": "<0>{1} plantas de interior curadas</0> en {2} familias: luz cuantitativa (lux), días de riego, temperatura y humedad.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a124947cbd2d1d92": {
+  "src": "Low",
+  "t": "Baja",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a16e000fd5c774ae": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family, ideal humidity is about…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y no es tóxica para mascotas. De la familia {4}, la humedad ideal es de alrededor de…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a23c2f6466909802": {
+  "src": "Botanical Family: {0}",
+  "t": "Familia botánica: {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a3235271faaa3edf": {
+  "src": "{0} spans {1} houseplant in FloraDB ({2} lux light range, watering every {3} days, {4} of {5} toxic to pets).",
+  "t": "{0} abarca {1} planta de interior en FloraDB (rango de luz de {2} lux, riego cada {3} días, {4} de {5} tóxica para mascotas).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a36ef8aba22905e2": {
+  "src": "Light",
+  "t": "Luz",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a49f046aa761efde": {
+  "src": "Instead of subjective labels like {0} or {1}, FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., {2} to {3} Lux for {4}) and watering frequency intervals in days based on standard indoor climate profiles.",
+  "t": "En lugar de etiquetas subjetivas como {0} o {1}, FloraDB ofrece rangos cuantitativos exactos: requisitos mínimos y máximos de luz en lux (p. ej., de {2} a {3} lux para {4}) e intervalos de frecuencia de riego en días basados en perfiles climáticos de interior estándar.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a4a75cd5665596ad": {
+  "src": "Describe your question or custom requirement...",
+  "t": "Describe tu pregunta o requisito a medida...",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a55403158e90f7e1": {
+  "src": "It is a medium to bright-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz media a brillante que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a55a275aa676930d": {
+  "src": "Terms",
+  "t": "Términos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a5d310900a7f53e2": {
+  "src": "Payment / Crypto / Invoicing Support",
+  "t": "Soporte de pagos / criptomonedas / facturación",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a60a8eee9611e62f": {
+  "src": "— same light band: Medium to Low",
+  "t": "— misma banda de luz: media a baja",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a750f8707cad23e8": {
+  "src": "Layer i · Taxonomy",
+  "t": "Capa i · Taxonomía",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a75e41498277338a": {
+  "src": "GBIF taxonomy",
+  "t": "taxonomía GBIF",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a8ffb94234851811": {
+  "src": "Botanical &amp; Pet-Safety Knowledge Base",
+  "t": "Base de conocimiento botánica y de seguridad para mascotas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a97008d96a4ce132": {
+  "src": "The downloadable FloraDB snapshot includes a normalized relational SQLite database file (.db) alongside clean CSV and JSON exports (floradb_sample.csv), ready for direct import into Python pandas, R, SQL pipelines, or modern web applications.",
+  "t": "El snapshot descargable de FloraDB incluye un archivo de base de datos SQLite relacional normalizada (.db) junto con exportaciones limpias en CSV y JSON (floradb_sample.csv), listas para importar directamente en Python pandas, R, pipelines SQL o aplicaciones web modernas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a9e96ef09931edb6": {
+  "src": "{0} ({1}) Care &amp; Toxicity Record — FloraDB",
+  "t": "{0} ({1}): registro de cuidados y toxicidad — FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aa59c090b9686b16": {
+  "src": "{0} is represented in FloraDB by {1} houseplants, including {2} and {3}.",
+  "t": "{0} está representada en FloraDB por {1} plantas de interior, entre ellas {2} y {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aa70931baa8c54da": {
+  "src": "What is the FloraDB Houseplant Care &amp; Pet-Toxicity Dataset?",
+  "t": "¿Qué es el conjunto de datos FloraDB de cuidado de plantas de interior y toxicidad para mascotas?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aadec5ca0f4ea506": {
+  "src": "Toxic to Dogs?",
+  "t": "¿Tóxica para perros?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ab40260f151936ef": {
+  "src": "<0>Honest quality flags</0> — {1}, {2}, and {3} on every row.",
+  "t": "<0>Indicadores de calidad honestos</0>: {1}, {2} y {3} en cada fila.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ab95a3dac8b41099": {
+  "src": "toxic plants for cats and dogs",
+  "t": "plantas tóxicas para gatos y perros",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ae1e30fa33906100": {
+  "src": "Custom work (subsets, recurring feeds, schema mapping): from {0} — <1>contact the desk</1>",
+  "t": "Trabajos a medida (subconjuntos, entregas recurrentes, mapeo de esquemas): desde {0} — <1>contacta con nosotros</1>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ae8b6138433771e5": {
+  "src": "houseplant care dataset",
+  "t": "conjunto de datos de cuidado de plantas de interior",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aeee596b682c7df0": {
+  "src": "Topic *",
+  "t": "Tema *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b049265bf6597985": {
+  "src": "— same light band: Medium",
+  "t": "— misma banda de luz: media",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b15eee1ec14ffcef": {
+  "src": "ASPCA pet toxicity",
+  "t": "toxicidad para mascotas ASPCA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b21143f29833ca98": {
+  "src": "{0} Lux",
+  "t": "{0} lux",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b248acd572218798": {
+  "src": "<0>{1}</0> lux · bright indirect",
+  "t": "<0>{1}</0> lux · brillante indirecta",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b28893c312ab305c": {
+  "src": "Browse every page",
+  "t": "Ver todas las páginas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b45da86982e81e77": {
+  "src": "— same light band: Medium to Bright",
+  "t": "— misma banda de luz: media a brillante",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b4cdf852d2c17924": {
+  "src": "<0>Plate II</0> · How Each Record Is Built",
+  "t": "<0>Lámina II</0> · Cómo se construye cada registro",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b543db5cb0f2368c": {
+  "src": "Every name is matched to the <0>GBIF Taxonomic Backbone</0> — canonical accepted names, synonyms preserved ({1}), and a {2} to re-verify each record.",
+  "t": "Cada nombre se coteja con el <0>GBIF Taxonomic Backbone</0>: nombres aceptados canónicos, sinónimos conservados ({1}) y un {2} para volver a verificar cada registro.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b56daba44333acaf": {
+  "src": "⚠️ TOXIC TO PETS",
+  "t": "⚠️ TÓXICA PARA MASCOTAS",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b57a03d15f53dc9e": {
+  "src": "Botanical family directory",
+  "t": "Directorio de familias botánicas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b7af3cc99f041169": {
+  "src": "lux light thresholds",
+  "t": "umbrales de luz en lux",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b7be64b3cb85918a": {
+  "src": "Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database ({0}), detailing whether the plant is toxic to dogs ({1}) or cats ({2}), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects.",
+  "t": "Sí. Cada planta se coteja con la base de datos de plantas tóxicas del ASPCA Animal Poison Control Center ({0}), indicando si la planta es tóxica para perros ({1}) o gatos ({2}), junto con síntomas clínicos de toxicidad concretos, como irritación oral o efectos de glucósidos cardíacos.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b8e0822b1e33fc8f": {
+  "src": "Watering intervals range from every {0} to every {1} days.",
+  "t": "Los intervalos de riego van de cada {0} a cada {1} días.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc0a340f31c90f9c": {
+  "src": "— {0} houseplant",
+  "t": "— {0} planta de interior",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc3023b36063a768": {
+  "src": "Page not found",
+  "t": "Página no encontrada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc7f541a5f747689": {
+  "src": "Sample: {0} plants · {1} · full snapshot has {2} with every field documented",
+  "t": "Muestra: {0} plantas · {1} · el snapshot completo tiene {2} con todos los campos documentados",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bd66feb1b2983b1b": {
+  "src": "How are the light and watering requirements quantified in FloraDB?",
+  "t": "¿Cómo se cuantifican los requisitos de luz y riego en FloraDB?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "be3178bd76a1fe01": {
+  "src": "Enriched species",
+  "t": "Especies enriquecidas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bece9221817d83a9": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to pets (genus-level inference). Part…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para mascotas (inferencia a nivel de género). De…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c112028b2632e2e9": {
+  "src": "Native Biogeographical Range",
+  "t": "Área de distribución nativa",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c1d0026a7dfdf6df": {
+  "src": "Normalized botanical care parameters for {0} ({1}): light requirements of {2} to {3} Lux, watering interval of {4} days, ideal humidity {5}, and ASPCA dog/cat toxicity verification.",
+  "t": "Parámetros botánicos de cuidado normalizados para {0} ({1}): requisitos de luz de {2} a {3} lux, intervalo de riego de {4} días, humedad ideal del {5} y verificación de toxicidad para perros y gatos según la ASPCA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c230c488e9a5c7b1": {
+  "src": "Taxonomic &amp; Field Verification",
+  "t": "Verificación taxonómica y de campo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c451cb92a724790a": {
+  "src": "<0>Plate I</0> · The Specimen Record",
+  "t": "<0>Lámina I</0> · El registro del espécimen",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c605fa14d66f968a": {
+  "src": "The page you're looking for doesn't exist or may have moved.",
+  "t": "La página que buscas no existe o puede haberse movido.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c88169dfda449cf2": {
+  "src": "BOTANICAL FAMILY HUB",
+  "t": "ÍNDICE DE FAMILIA BOTÁNICA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ca31685409669c60": {
+  "src": "Example specimen record",
+  "t": "Ejemplo de registro de espécimen",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ca7d80fd512e9d60": {
+  "src": "Curated care plants",
+  "t": "Plantas con cuidados curados",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc2b72ddc2988eb4": {
+  "src": "It is a low to bright-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz baja a brillante que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc2d6a3a795341bb": {
+  "src": "⚠️ Toxic to Pets (Genus-Level Inference)",
+  "t": "⚠️ Tóxica para mascotas (inferencia a nivel de género)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc88446070bac164": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to pets (genus-level inference). Part of the {4} family…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días y es tóxica para mascotas (inferencia a nivel de género). De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ccb8f7aba2e6bb9d": {
+  "src": "Instead of subjective labels like 'medium light' or 'water when dry', FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., {0} to {1} Lux for {2}) and watering frequency intervals in days based on standard indoor climate profiles.",
+  "t": "En lugar de etiquetas subjetivas como 'luz media' o 'regar cuando esté seca', FloraDB ofrece rangos cuantitativos exactos: requisitos mínimos y máximos de luz en lux (p. ej., de {0} a {1} lux para {2}) e intervalos de frecuencia de riego en días basados en perfiles climáticos de interior estándar.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cd6cb2718d6e2828": {
+  "src": "FloraDB — Botanical Houseplant Care &amp; Pet-Toxicity Snapshot · <0>Get Full Relational Dataset ({1})</0>",
+  "t": "FloraDB — Snapshot botánico de cuidados y toxicidad para mascotas de plantas de interior · <0>Obtén el conjunto de datos relacional completo ({1})</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cf01481f626d5127": {
+  "src": "Privacy",
+  "t": "Privacidad",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cf1a0fa0088e50a0": {
+  "src": "Not Verified",
+  "t": "No verificada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d1e949ccf2f15946": {
+  "src": "{0} is represented in FloraDB by {1} houseplant, including {2}.",
+  "t": "{0} está representada en FloraDB por {1} planta de interior: {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d25027cd88165ec6": {
+  "src": "It is a medium to low-light species that thrives between {0} and {1} lux.",
+  "t": "Es una especie de luz media a baja que prospera entre {0} y {1} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d2511e80cd88cbf5": {
+  "src": "🟢 PET SAFE",
+  "t": "🟢 SEGURA PARA MASCOTAS",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d404968ea90b07f1": {
+  "src": "Medium",
+  "t": "Media",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d45725dda08f1f59": {
+  "src": "Quantitative houseplant care + ASPCA pet toxicity + GBIF taxonomy, re-verifiable per record.",
+  "t": "Cuidado cuantitativo de plantas de interior + toxicidad para mascotas de la ASPCA + taxonomía GBIF, verificable registro a registro.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d4f7d970f009dd59": {
+  "src": "One-time download · {0} care plants · Snapshot {1}",
+  "t": "Descarga de pago único · {0} plantas con cuidados · Snapshot {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d7383b69a7008f7b": {
+  "src": "Watering Frequency",
+  "t": "Frecuencia de riego",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d74a17ca62a6239a": {
+  "src": "houseplant dataset",
+  "t": "conjunto de datos de plantas de interior",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d79da395b5d7a09c": {
+  "src": "Abstract",
+  "t": "Resumen",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "db13dde818106c9a": {
+  "src": "<0>Plate III</0> · Live Specimen Explorer",
+  "t": "<0>Lámina III</0> · Explorador de especímenes en vivo",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dcb055e26f1031d9": {
+  "src": "<0>ASPCA pet toxicity</0> — {1} determinations with clinical signs; dog/cat flags on the care core, never guessed \"safe.\"",
+  "t": "<0>Toxicidad para mascotas de la ASPCA</0>: {1} determinaciones con signos clínicos; indicadores de perro/gato en el núcleo de cuidados, nunca se supone \"segura\".",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dd3329b9f2db758c": {
+  "src": "<0>Home</0> › Botanical family directory",
+  "t": "<0>Inicio</0> › Directorio de familias botánicas",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ddc93d701c1ba109": {
+  "src": "{0} of {1} is toxic to cats or dogs, per ASPCA data.",
+  "t": "{0} de {1} es tóxica para gatos o perros, según los datos de la ASPCA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "de4b49fa50befc2b": {
+  "src": "Toxicity is inferred from the ASPCA listing for the genus {0}; species-level confirmation is pending.",
+  "t": "La toxicidad se infiere de la ficha de la ASPCA para el género {0}; la confirmación a nivel de especie está pendiente.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "de9b1be49dae27ef": {
+  "src": "Water",
+  "t": "Riego",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e02f7e76aeee7d08": {
+  "src": "Species taxonomic index",
+  "t": "Índice taxonómico de especies",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e11aa1d405ea5605": {
+  "src": "Determination",
+  "t": "Determinación",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e214a988e246c45d": {
+  "src": "YES (Toxic, genus-level inference)",
+  "t": "SÍ (tóxica, inferencia a nivel de género)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e219b1cd138e6450": {
+  "src": "Light requirements across the family span {0} lux.",
+  "t": "Los requisitos de luz en la familia abarcan {0} lux.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e3f702486bcec4cf": {
+  "src": "Pressed Mode",
+  "t": "Modo prensado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e4c303ebe62de4e2": {
+  "src": "Epipremnum aureum (Golden Pothos)",
+  "t": "Epipremnum aureum (poto dorado)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e4fda94b1e8980a8": {
+  "src": "⚠️ Not Verified",
+  "t": "⚠️ No verificada",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e513c15fcb815540": {
+  "src": "View Specimen Details →",
+  "t": "Ver detalles del espécimen →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e5bf5b1f439304cf": {
+  "src": "{0} Determinations",
+  "t": "{0} determinaciones",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e6420c5b168b9810": {
+  "src": "The downloadable FloraDB snapshot includes a normalized relational SQLite database file ({0}) alongside clean CSV and JSON exports ({1}), ready for direct import into Python pandas, R, SQL pipelines, or modern web applications.",
+  "t": "El snapshot descargable de FloraDB incluye un archivo de base de datos SQLite relacional normalizada ({0}) junto con exportaciones limpias en CSV y JSON ({1}), listas para importar directamente en Python pandas, R, pipelines SQL o aplicaciones web modernas.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e697c861512b9bac": {
+  "src": "Full Dataset Snapshot ({0})",
+  "t": "Snapshot completo del conjunto de datos ({0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e6d9ae2e7ff4001c": {
+  "src": "<0>FLORADB</0> — Houseplant Care &amp; Pet-Toxicity Dataset © {1}",
+  "t": "<0>FLORADB</0> — Conjunto de datos de cuidados y toxicidad para mascotas de plantas de interior © {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e6e3fc719fe17f94": {
+  "src": "Buy Now · Instant Download · <0>{1}</0> →",
+  "t": "Comprar ahora · Descarga inmediata · <0>{1}</0> →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e9953f687c8dab6c": {
+  "src": "Medium to Low",
+  "t": "Media a baja",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ecdbf6d88010af2a": {
+  "src": "Free Sample",
+  "t": "Muestra gratuita",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ece996d4cf08a736": {
+  "src": "{0} ({1}) needs {2} lux light, watering every {3} days, pet toxicity not verified. Part of the {4} family…",
+  "t": "{0} ({1}) necesita {2} lux de luz, riego cada {3} días; toxicidad para mascotas no verificada. De la familia {4}…",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eeb3c93f68ab71c7": {
+  "src": "Lux Range:",
+  "t": "Rango de lux:",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eecb3c5467ae9bb0": {
+  "src": "Dataset &amp; Taxonomy FAQ",
+  "t": "Preguntas frecuentes sobre el conjunto de datos y la taxonomía",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f2e0eeab107580cf": {
+  "src": "It is also known as {0}.",
+  "t": "También se conoce como {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f32d5a3b17e61429": {
+  "src": "Support",
+  "t": "Soporte",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f3eba7f0d9ed11af": {
+  "src": "{0} — {1} houseplants | FloraDB",
+  "t": "{0} — {1} plantas de interior | FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f455794f0c2c81cb": {
+  "src": "SPECIMEN NO. {0}",
+  "t": "ESPÉCIMEN N.º {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f533572864e65f92": {
+  "src": "NO (Safe)",
+  "t": "NO (segura)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f7f4ac15e4445153": {
+  "src": "Quantitative Care Thresholds",
+  "t": "Umbrales cuantitativos de cuidado",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f875147f5125dbed": {
+  "src": "Light Level Profile",
+  "t": "Perfil de nivel de luz",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f9548e514d3684b9": {
+  "src": "What database formats and exports are included in the FloraDB snapshot?",
+  "t": "¿Qué formatos de base de datos y exportaciones incluye el snapshot de FloraDB?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f9f5e219055db1dd": {
+  "src": "botanical dataset",
+  "t": "conjunto de datos botánico",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fb0995110c0b506d": {
+  "src": "Like a herbarium sheet turns a living plant into a labelled record, FloraDB turns fuzzy care advice — <0>\"bright indirect light,\" \"water when dry\"</0> — into machine-readable Lux bands and watering intervals. Every record is graded for confidence, its toxicity is ASPCA-sourced or honestly <1>unknown</1>, and its name links back to GBIF so any fact can be re-verified.",
+  "t": "Igual que un pliego de herbario convierte una planta viva en un registro etiquetado, FloraDB convierte los consejos de cuidado imprecisos —<0>\"luz brillante indirecta\", \"regar cuando esté seca\"</0>— en bandas de lux e intervalos de riego legibles por máquina. Cada registro tiene una calificación de confianza, su toxicidad procede de la ASPCA o figura honestamente como <1>desconocida</1>, y su nombre enlaza con GBIF para que cualquier dato pueda volver a verificarse.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fba0516c6478346e": {
+  "src": "Plant directory — FloraDB",
+  "t": "Directorio de plantas — FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "fd23ce09a22b9345": {
+  "src": "Prefer live, self-serve lookups? <0>Run our actor on Apify →</0>",
+  "t": "¿Prefieres consultas en vivo y de autoservicio? <0>Ejecuta nuestro actor en Apify →</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ff63174cf26c8da4": {
+  "src": "FloraDB Houseplant Dataset",
+  "t": "Conjunto de datos de plantas de interior FloraDB",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ffc0bbad7f48fa25": {
+  "src": "Dog/cat determinations with clinical ingestion signs. {0} is {1}, conservatively {2}, or {3} — we <4>never guess \"safe.\"</4>",
+  "t": "Determinaciones para perros y gatos con signos clínicos de ingestión. {0} es {1}, de forma conservadora {2}, o {3}: <4>nunca suponemos \"segura\".</4>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ffe3ee78646e248c": {
+  "src": "<0>Plate IV</0> · Acquire the Collection",
+  "t": "<0>Lámina IV</0> · Adquiere la colección",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ }
+}

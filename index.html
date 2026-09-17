@@ -461,6 +461,20 @@
     .safety-strip { max-width: 1360px; margin: 20px auto 0; font-size: 0.66rem; opacity: 0.6; }
 
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn-primary:hover { transform: none; } }
+
+    /* phones: let the header and nav rows wrap instead of widening the page */
+    @media (max-width: 760px) {
+      .header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
+      .brand { flex-wrap: wrap; gap: 4px 12px; }
+      nav { flex-wrap: wrap; gap: 10px 16px; }
+      /* long translated words (de/fr) must not stretch the hero column */
+      .hero-grid > * { min-width: 0; }
+      h1 { hyphens: auto; overflow-wrap: break-word; }
+      .price-card { padding: 32px 20px; }
+      /* a flex li makes every text run and <code> its own unwrappable item; use a block with a hanging mark */
+      .feature-list li { display: block; position: relative; padding-left: 24px; }
+      .feature-list li::before { position: absolute; left: 0; }
+    }
   </style>
 </head>
 <body>

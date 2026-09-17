@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior</title>
+<meta content="Conjunto de dados curado de 270 plantas de interior: métricas quantitativas de luz (lux) e rega, toxicidade para cães e gatos (ASPCA) e taxonomia verificada pelo GBIF." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
+<link href="https://floradb.dataengineered.io/pt-br/" rel="canonical"/>
+<!-- i18n:alternates -->
+<link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/">
+<link rel="alternate" hreflang="es" href="https://floradb.dataengineered.io/es/">
+<link rel="alternate" hreflang="de" href="https://floradb.dataengineered.io/de/">
+<link rel="alternate" hreflang="fr" href="https://floradb.dataengineered.io/fr/">
+<link rel="alternate" hreflang="pt-BR" href="https://floradb.dataengineered.io/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://floradb.dataengineered.io/">
+<style>th,td{overflow-wrap:anywhere;hyphens:auto}h1,h2,h3,h4,button,.btn{overflow-wrap:break-word}</style>
+<style>.i18n-menu{position:relative;display:inline-block;align-self:center;font-size:.85rem;line-height:1;font-weight:500;text-transform:none;letter-spacing:normal}.i18n-menu.i18n-menu>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .65rem;border:1px solid currentColor;border-color:color-mix(in srgb,currentColor 40%,transparent);border-radius:999px;white-space:nowrap;user-select:none;color:inherit;background:transparent}.i18n-menu>summary::-webkit-details-marker{display:none}.i18n-menu>summary:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}.i18n-menu.i18n-menu>ul{display:block;position:absolute;right:0;top:calc(100% + 6px);z-index:2147482000;min-width:10rem;margin:0;padding:.35rem;list-style:none;background:#111827;border:1px solid #374151;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.35);text-align:left}.i18n-menu.i18n-menu li{display:block;margin:0;padding:0;list-style:none}.i18n-menu.i18n-menu li>a,.i18n-menu.i18n-menu li>span{display:block;padding:.5rem .75rem;border-radius:6px;color:#f9fafb;background:transparent;text-decoration:none;white-space:nowrap;font-size:.9rem;font-weight:400;line-height:1.2;border:0;box-shadow:none}.i18n-menu.i18n-menu li>a:hover,.i18n-menu.i18n-menu li>a:focus-visible{background:#1f2937;color:#fff}.i18n-menu.i18n-menu li>span{font-weight:600;color:#93c5fd}.i18n-menu--row{margin-left:auto}:is(nav,a,button):has(+ .i18n-menu--row){margin-left:auto}:is(nav,a,button):has(+ .i18n-menu--row)+.i18n-menu--row{margin-left:.75rem}.i18n-menu--float{position:absolute;top:14px;right:16px;z-index:2147481000;color:#e5e7eb}</style>
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<script src="/i18n/i18n.js?v=5" defer></script>
+<!-- /i18n:alternates -->
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Open Graph / Social Meta -->
+<meta content="FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior" property="og:title"/>
+<meta content="270 plantas de interior com métricas quantitativas de luz e rega, toxicidade para cães e gatos (ASPCA) e taxonomia verificada pelo GBIF. URL de origem em cada registro." property="og:description"/>
+<meta content="https://floradb.dataengineered.io/pt-br/" property="og:url"/>
+<meta content="Conjunto de dados de plantas de interior FloraDB" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="https://floradb.dataengineered.io/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="FloraDB — conjunto de dados de cuidados com plantas de interior como registros botânicos de campo" property="og:image:alt"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior" name="twitter:title"/>
+<meta content="Cuidados quantitativos com plantas de interior + toxicidade para pets da ASPCA + taxonomia GBIF, verificável registro a registro." name="twitter:description"/>
+<meta content="https://floradb.dataengineered.io/og-image.png" name="twitter:image"/>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FloraDB",
+  "url": "https://floradb.dataengineered.io/pt-br/",
+  "email": "floradb@dataengineered.io",
+  "description": "Fornecedor de conjuntos de dados de cuidados com plantas de interior e toxicidade para pets."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "image": "https://floradb.dataengineered.io/og-image.png",
+  "name": "Conjunto de dados de cuidados com plantas de interior FloraDB — Snapshot completo",
+  "description": "270 plantas de interior curadas com métricas quantitativas de luz, rega e temperatura, toxicidade para cães e gatos da ASPCA e taxonomia verificada pelo GBIF, além de uma camada de toxicidade da ASPCA com 891 registros e um índice taxonômico de 20.000+ espécies. SQLite relacional mais CSV e JSON.",
+  "brand": {
+    "@type": "Brand",
+    "name": "FloraDB"
+  },
+  "category": "Software > Data & Databases",
+  "offers": {
+    "@type": "Offer",
+    "price": "49.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://floradb.dataengineered.io/pt-br/#pricing",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "GB"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "CA"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AU"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": [
+        "US",
+        "GB",
+        "CA",
+        "AU"
+      ],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "name": "DataCatalog de cuidados com plantas de interior FloraDB",
+  "description": "Métricas de cuidados com plantas de interior normalizadas em lux e intervalos de rega em dias, vinculadas à toxicidade para pets da ASPCA e ao GBIF Taxonomic Backbone, com uma URL de origem em cada registro.",
+  "url": "https://floradb.dataengineered.io/pt-br/",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "keywords": [
+    "conjunto de dados de plantas de interior",
+    "banco de dados de cuidados com plantas",
+    "toxicidade para pets ASPCA",
+    "taxonomia GBIF",
+    "limites de luz em lux"
+  ],
+  "creator": {
+    "@type": "Organization",
+    "name": "FloraDB"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior",
+  "alternateName": "FloraDB Houseplant Dataset",
+  "description": "Conjunto de dados curado de 270 plantas de interior com métricas quantitativas de cuidado — limites de luz (lux), intervalos de rega em dias, faixas de temperatura e umidade — vinculadas à toxicidade para cães e gatos da ASPCA e a uma taxonomia verificada pelo GBIF. Inclui uma camada de toxicidade da ASPCA com 891 registros e um índice taxonômico de 20.000+ espécies. Cada registro traz uma URL de origem para nova verificação.",
+  "url": "https://floradb.dataengineered.io/pt-br/",
+  "sameAs": "https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample",
+  "keywords": [
+    "conjunto de dados de cuidados com plantas de interior",
+    "banco de dados de cuidados com plantas",
+    "toxicidade para pets ASPCA",
+    "plantas tóxicas para gatos e cães",
+    "necessidades de luz em lux",
+    "cronograma de rega",
+    "taxonomia GBIF",
+    "conjunto de dados botânico"
+  ],
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "FloraDB",
+    "url": "https://floradb.dataengineered.io/pt-br/"
+  },
+  "variableMeasured": [
+    "scientific name (GBIF-accepted)",
+    "common name",
+    "botanical family",
+    "min/max light in Lux",
+    "watering frequency in days",
+    "temperature range",
+    "humidity",
+    "toxic to dogs",
+    "toxic to cats",
+    "clinical toxicity symptoms"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://floradb.dataengineered.io/samples/floradb_sample.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/zip",
+      "contentUrl": "https://www.kaggle.com/datasets/ahtiticheamine/floradb-houseplants-care-sample"
+    }
+  ],
+  "inLanguage": "pt-BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o conjunto de dados FloraDB de cuidados com plantas de interior e toxicidade para pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O FloraDB é um conjunto de dados botânico de campo, curado, com mais de 270 plantas de interior, que combina parâmetros quantitativos de cuidado (limites de luz em lux, intervalos de rega em dias, faixas de temperatura e umidade) com status verificados de toxicidade para cães e gatos da ASPCA, sintomas clínicos e citações taxonômicas do GBIF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como as necessidades de luz e rega são quantificadas no FloraDB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Em vez de rótulos subjetivos como 'luz média' ou 'regar quando secar', o FloraDB fornece faixas quantitativas exatas: necessidades mínima e máxima de luz em lux (ex.: 1.500 a 5.000 lux para Monstera deliciosa) e intervalos de frequência de rega em dias com base em perfis climáticos internos padrão."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Os status de toxicidade para pets são verificados com dados clínicos veterinários?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Cada planta é cruzada com o banco de dados de plantas tóxicas do ASPCA Animal Poison Control Center (aspca_verified), indicando se a planta é tóxica para cães (is_toxic_to_dogs) ou gatos (is_toxic_to_cats), junto com sintomas clínicos específicos de toxicidade, como irritação oral ou efeitos de glicosídeos cardíacos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais formatos de banco de dados e exportações estão incluídos no snapshot do FloraDB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O snapshot do FloraDB para download inclui um arquivo de banco de dados SQLite relacional normalizado (.db) junto com exportações limpas em CSV e JSON (floradb_sample.csv), prontas para importação direta em Python pandas, R, pipelines SQL ou aplicações web modernas."
+      }
+    }
+  ],
+  "inLanguage": "pt-BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Amostra de plantas de interior em destaque do FloraDB",
+  "description": "Determinações representativas de plantas de interior com métricas quantitativas de cuidado e de segurança para pets.",
+  "url": "https://floradb.dataengineered.io/pt-br/#explorer",
+  "numberOfItems": 5,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Monstera deliciosa (Swiss Cheese Plant)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Epipremnum aureum (jiboia)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Philodendron hederaceum (filodendro-coração)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Spathiphyllum wallisii (Peace Lily)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Chlorophytum comosum (Spider Plant)"
+    }
+  ],
+  "inLanguage": "pt-BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://floradb.dataengineered.io/pt-br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Explorador de espécimes",
+      "item": "https://floradb.dataengineered.io/pt-br/#explorer"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Preços da coleção",
+      "item": "https://floradb.dataengineered.io/pt-br/#pricing"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Perguntas frequentes",
+      "item": "https://floradb.dataengineered.io/pt-br/#faq"
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500&amp;family=Spline+Sans:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&amp;family=JetBrains+Mono:wght@400;500&amp;family=Spline+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/></noscript>
+<style>
+    :root {
+      --bg-paper: #f4f1e8;
+      --bg-paper-2: #ebe6d8;
+      --text-ink: #26281f;
+      --text-muted: #6b6858;
+      --rule-color: rgba(38, 40, 31, 0.16);
+      --rule-dim: rgba(38, 40, 31, 0.07);
+      --accent: #4a6b2f;
+      --sepia: #8a6a44;
+      --card-bg: #fffdf7;
+      --card-border: #26281f;
+      --stamp-shadow: rgba(74, 107, 47, 0.18);
+    }
+    html.dark {
+      --bg-paper: #12140f;
+      --bg-paper-2: #191c14;
+      --text-ink: #ece7d9;
+      --text-muted: #9a9683;
+      --rule-color: rgba(236, 231, 217, 0.18);
+      --rule-dim: rgba(236, 231, 217, 0.07);
+      --accent: #9cbf6a;
+      --sepia: #c39a6b;
+      --card-bg: #191c14;
+      --card-border: #ece7d9;
+      --stamp-shadow: rgba(156, 191, 106, 0.16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-ink);
+      font-family: 'Spline Sans', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    em { font-style: italic; }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .serif { font-family: 'Fraunces', serif; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg-paper) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule-color);
+    }
+    .header-inner {
+      max-width: 1360px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px;
+    }
+    .brand { display: flex; align-items: baseline; gap: 14px; }
+    .brand-mark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .brand-mark .accent { color: var(--accent); }
+    .brand-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em;
+      opacity: 0.6; border-left: 1px solid var(--rule-color); padding-left: 14px;
+    }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8;
+    }
+    nav a:hover { color: var(--accent); opacity: 1; }
+    .theme-toggle {
+      background: none; border: 1px solid var(--rule-color); color: var(--text-ink);
+      padding: 7px 13px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    @media (max-width: 820px) { nav .nav-link { display: none; } }
+
+    /* ── Sections ── */
+    .section { border-bottom: 1px solid var(--rule-color); padding: 76px 32px; }
+    .section-alt { background-color: var(--bg-paper-2); }
+    .container { max-width: 1360px; margin: 0 auto; }
+
+    .plate-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 44px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.8;
+    }
+    .plate-no { color: var(--accent); font-weight: 500; }
+    .plate-header h2 { font: inherit; margin: 0; color: inherit; font-weight: inherit; letter-spacing: inherit; }
+    .plate-line { flex: 1; height: 1px; background: var(--rule-dim); }
+    .plate-leaf { width: 9px; height: 9px; background: var(--accent); border-radius: 0 60% 60% 60%; transform: rotate(45deg); }
+
+    /* ── Hero ── */
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: start; }
+    @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 6.5vw, 5.4rem);
+      line-height: 0.96; font-weight: 600; letter-spacing: -0.035em;
+    }
+    h1 .accent { color: var(--accent); }
+    h1 em { font-weight: 400; }
+    .hero-sub {
+      margin-top: 26px; max-width: 30rem; font-size: 1.05rem; color: var(--text-muted);
+    }
+    .hero-sub strong { color: var(--text-ink); font-weight: 600; }
+
+    .hero-abstract {
+      margin-top: 26px; display: grid; grid-template-columns: auto 1fr; gap: 20px;
+      max-width: 34rem; border-top: 1px solid var(--rule-color); padding-top: 22px;
+    }
+    .abstract-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.55; padding-top: 3px;
+    }
+    .abstract-text { font-size: 0.86rem; color: var(--text-muted); }
+
+    .cta-group { margin-top: 34px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 460px) { .cta-group { grid-template-columns: 1fr; } }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 17px 22px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      border: 1px solid var(--text-ink); cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #12140f; border-color: var(--accent); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--stamp-shadow); }
+    .btn-outline { background: transparent; color: var(--text-ink); }
+    .btn-outline:hover { background: var(--rule-dim); }
+    .hero-fineprint {
+      margin-top: 16px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.55;
+    }
+
+    /* ── Signature: the herbarium determination label ── */
+    .specimen {
+      position: relative; background: var(--card-bg);
+      border: 1px solid var(--card-border); padding: 30px;
+      box-shadow: 10px 10px 0 var(--stamp-shadow);
+    }
+    .specimen::after {
+      content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule-color); pointer-events: none;
+    }
+    .specimen-inner { position: relative; z-index: 1; }
+    .specimen-eyebrow {
+      display: flex; justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.16em; color: var(--sepia);
+      border-bottom: 1px solid var(--rule-color); padding-bottom: 12px;
+    }
+    .specimen-name { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 2rem; margin-top: 20px; letter-spacing: -0.01em; }
+    .specimen-common { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.7; margin-top: 4px; }
+
+    .field-block { margin-top: 22px; display: grid; gap: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; }
+    .field-row { display: grid; grid-template-columns: 88px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--rule-color); }
+    .field-key { text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.55; font-size: 0.62rem; padding-top: 2px; }
+    .field-val { color: var(--text-ink); }
+    .field-val .accent { color: var(--accent); }
+
+    .determination {
+      margin-top: 24px; display: flex; align-items: center; gap: 18px; justify-content: space-between; flex-wrap: wrap;
+    }
+    .accession { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.55; }
+    .stamp {
+      font-family: 'JetBrains Mono', monospace; font-weight: 500;
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--sepia); border: 2px solid var(--sepia); padding: 8px 12px;
+      transform: rotate(-6deg); text-align: center; line-height: 1.3;
+      box-shadow: inset 0 0 0 1px var(--sepia);
+    }
+
+    /* ── Method cards ── */
+    .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .method-card { border: 1px solid var(--rule-color); background: var(--bg-paper); padding: 32px; }
+    .method-index { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--sepia); text-transform: uppercase; }
+    .method-title { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 600; margin-top: 10px; }
+    .method-body { margin-top: 12px; font-size: 0.84rem; color: var(--text-muted); }
+    .method-body code { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.8em; }
+
+    .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule-color); border: 1px solid var(--rule-color); margin-top: 40px; }
+    .figure { background: var(--bg-paper); padding: 26px; }
+    .figure-num { font-family: 'Fraunces', serif; font-size: 2.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .figure-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-top: 8px; }
+
+    /* ── Explorer table ── */
+    .search-input {
+      width: 100%; padding: 14px 18px; background: transparent; border: 1px solid var(--rule-color);
+      color: var(--text-ink); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; margin-bottom: 16px;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .table-wrapper { overflow-x: auto; border: 1px solid var(--rule-color); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; text-align: left; }
+    th, td { padding: 14px 18px; border-bottom: 1px solid var(--rule-dim); white-space: nowrap; }
+    th { background: var(--bg-paper-2); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.75; }
+    td .sci { font-family: 'Fraunces', serif; font-style: italic; }
+    td .mono { font-size: 0.72rem; }
+    tr:hover td { background: var(--rule-dim); }
+    .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; padding: 3px 8px; border: 1px solid currentColor; text-transform: uppercase; letter-spacing: 0.06em; }
+    .tag-toxic { color: var(--sepia); }
+    .tag-safe { color: var(--accent); }
+    .tag-unknown { opacity: 0.5; }
+
+    /* ── Pricing ── */
+    .price-card {
+      max-width: 760px; margin: 0 auto; border: 1px solid var(--card-border); background: var(--card-bg);
+      padding: 48px; position: relative; box-shadow: 12px 12px 0 var(--stamp-shadow);
+    }
+    .price-card + .price-card { margin-top: 30px; }
+    .tier-label { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+    .price-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--rule-color); padding-bottom: 22px; margin-bottom: 26px; gap: 20px; flex-wrap: wrap; }
+    .price-title { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 600; }
+    .price-note { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-top: 6px; }
+    .price-amount { font-family: 'Fraunces', serif; font-size: 3.4rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 34px; font-size: 0.85rem; }
+    .feature-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .feature-list li::before { content: "❋"; color: var(--accent); flex-shrink: 0; }
+    .feature-list code { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; color: var(--sepia); }
+
+    .form { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--rule-color); padding-top: 24px; }
+    .form-title { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; }
+    .form-input, .form-select {
+      width: 100%; padding: 13px 15px; background: var(--bg-paper); border: 1px solid var(--rule-color);
+      color: var(--text-ink); font-family: 'Spline Sans', sans-serif; font-size: 0.85rem; transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--accent); }
+    .success-box { display: none; margin-top: 22px; padding: 28px; border: 1px solid var(--accent); background: var(--bg-paper); }
+    .success-title { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+
+    footer { border-top: 1px solid var(--rule-color); padding: 44px 32px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; opacity: 0.7; }
+    .footer-inner { max-width: 1360px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-inner a { text-decoration: underline; }
+    .safety-strip { max-width: 1360px; margin: 20px auto 0; font-size: 0.66rem; opacity: 0.6; }
+
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .btn-primary:hover { transform: none; } }
+  </style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a class="brand" href="#top">
+<span class="brand-mark">Flora<span class="accent">DB</span></span>
+<span class="brand-tag">Herbário de plantas de interior · Dados</span>
+</a>
+<nav>
+<a class="nav-link" href="#method">Método</a>
+<a class="nav-link" href="#explorer">Explorador</a>
+<a class="nav-link" href="#pricing">Coleção</a>
+<a class="nav-link" href="#faq">Perguntas frequentes</a>
+<button class="theme-toggle" onclick="toggleTheme()"><span id="theme-label">Modo papel</span></button>
+<!-- i18n:header --><details class="i18n-menu i18n-menu--nav" translate="no"><summary aria-label="Idioma: Português" title="Idioma: Português"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>PT</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a></li><li><span aria-current="true" lang="pt-BR">Português</span></li></ul></details><!-- /i18n:header --></nav>
+</div>
+</header>
+<!-- Plate I · Specimen record (hero) -->
+<section class="section" id="top">
+<div class="container">
+<div class="plate-header">
+<span class="plate-leaf"></span>
+<span><span class="plate-no">Prancha I</span> · O registro do espécime</span>
+<span class="plate-line"></span>
+<span>270 determinações</span>
+</div>
+<div class="hero-grid">
+<div>
+<h1>Plantas de interior,<br/>prensadas em<br/><em class="accent">dados</em>.</h1>
+<p class="hero-sub">
+            O <strong>conjunto de dados de cuidados com plantas de interior</strong>: <strong>270 espécies</strong> com métricas quantitativas de luz (lux), rega e temperatura, vinculadas à <strong>toxicidade para pets da ASPCA</strong> e a uma taxonomia <strong>verificada pelo GBIF</strong>.
+          </p>
+<div class="hero-abstract">
+<span class="abstract-label">Resumo</span>
+<p class="abstract-text">
+              Assim como uma exsicata de herbário transforma uma planta viva em um registro etiquetado, o FloraDB transforma conselhos de cuidado vagos — <em>"luz indireta intensa", "regar quando secar"</em> — em faixas de lux e intervalos de rega legíveis por máquina. Cada registro recebe uma nota de confiança, sua toxicidade vem da ASPCA ou aparece honestamente como <em>desconhecida</em>, e seu nome remete ao GBIF para que qualquer fato possa ser verificado novamente.
+            </p>
+</div>
+<div class="cta-group">
+<a class="btn btn-primary" href="#pricing" onclick="resetCheckout()">
+<span>Adquira a coleção</span><span>↗</span>
+</a>
+<a class="btn btn-outline" href="#explorer">
+<span>↓ Explorar espécimes</span><span>Amostra gratuita</span>
+</a>
+</div>
+<p class="hero-fineprint">Snapshot com pagamento único · CSV / SQLite / JSON · Sem cobranças recorrentes</p>
+</div>
+<!-- Signature: herbarium determination label -->
+<div aria-label="Exemplo de registro de espécime" class="specimen">
+<div class="specimen-inner">
+<div class="specimen-eyebrow"><span>Herbário FloraDB</span><span>Registro n.º FDB-0001</span></div>
+<div class="specimen-name" translate="no">Monstera deliciosa</div>
+<div class="specimen-common" translate="no">Swiss Cheese Plant · Araceae</div>
+<div class="field-block">
+<div class="field-row"><span class="field-key">Luz</span><span class="field-val"><span class="accent">1.500–5.000</span> lux · indireta intensa</span></div>
+<div class="field-row"><span class="field-key">Rega</span><span class="field-val">a cada <span class="accent">7</span> dias</span></div>
+<div class="field-row"><span class="field-key">Clima</span><span class="field-val">18–30 °C · 60% de umidade</span></div>
+<div class="field-row"><span class="field-key">Confiança</span><span class="field-val">cuidados = alta · nome verificado</span></div>
+</div>
+<div class="determination">
+<span class="accession">det. GBIF 2868241 · rev. 2026.07</span>
+<span class="stamp">Tóxica<br/>Cães e gatos<br/>· ASPCA ·</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Plate II · How each record is built -->
+<section class="section section-alt" id="method">
+<div class="container">
+<div class="plate-header">
+<span class="plate-leaf"></span>
+<h2><span class="plate-no">Prancha II</span> · Como cada registro é construído</h2>
+<span class="plate-line"></span>
+<span>Três camadas</span>
+</div>
+<div class="method-grid">
+<div class="method-card">
+<div class="method-index">Camada i · Taxonomia</div>
+<div class="method-title">Nomes verificados pelo GBIF</div>
+<p class="method-body">Cada nome é associado ao <strong>GBIF Taxonomic Backbone</strong>: nomes aceitos canônicos, sinônimos preservados (<code>Sansevieria → Dracaena</code>) e um <code>gbif_source_url</code> para verificar novamente cada registro.</p>
+</div>
+<div class="method-card">
+<div class="method-index">Camada ii · Segurança</div>
+<div class="method-title">toxicidade para pets ASPCA</div>
+<p class="method-body">Determinações para cães e gatos com sinais clínicos de ingestão. <code>toxicity_status</code> é <code>aspca_verified</code>, de forma conservadora <code>genus_inferred</code>, ou <code>unknown</code> — <strong>nunca presumimos "segura".</strong></p>
+</div>
+<div class="method-card">
+<div class="method-index">Camada iii · Cuidados</div>
+<div class="method-title">Métricas normalizadas</div>
+<p class="method-body">Cada categoria de luz corresponde a uma <strong>faixa de lux</strong> padrão; rega, temperatura e umidade vêm de normas por tipo de planta. Um indicador <code>care_confidence</code> classifica cada linha com honestidade.</p>
+</div>
+</div>
+<div class="figures">
+<div class="figure"><div class="figure-num">270</div><div class="figure-label">Plantas com cuidados curados</div></div>
+<div class="figure"><div class="figure-num">891</div><div class="figure-label">Registros de toxicidade da ASPCA</div></div>
+<div class="figure"><div class="figure-num">20k+</div><div class="figure-label">Índice taxonômico de espécies</div></div>
+<div class="figure"><div class="figure-num">702</div><div class="figure-label">Espécies enriquecidas</div></div>
+</div>
+</div>
+</section>
+<!-- Plate III · Live specimen explorer -->
+<section class="section" id="explorer">
+<div class="container">
+<div class="plate-header">
+<span class="plate-leaf"></span>
+<h2><span class="plate-no">Prancha III</span> · Explorador de espécimes ao vivo</h2>
+<span class="plate-line"></span>
+<span>Amostra gratuita</span>
+</div>
+<input class="search-input" id="searchBox" onkeyup="filterTable()" placeholder="Filtre por nome, família ou segurança (ex.: samambaia, Araceae, segura para gatos)..." type="text"/>
+<div class="table-wrapper">
+<table id="specimenTable">
+<thead>
+<tr><th>Nome científico</th><th>Popular</th><th>Família</th><th>Luz (lux)</th><th>Rega</th><th>Cães</th><th>Gatos</th><th>Determinação</th></tr>
+</thead>
+<tbody>
+<tr><td translate="no"><span class="sci">Monstera deliciosa</span></td><td translate="no">Swiss Cheese Plant</td><td translate="no">Araceae</td><td class="mono">1.500–5.000</td><td class="mono">7d</td><td><span class="tag tag-toxic">Tóxica</span></td><td><span class="tag tag-toxic">Tóxica</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+<tr><td translate="no"><span class="sci">Chlorophytum comosum</span></td><td translate="no">Spider Plant</td><td translate="no">Asparagaceae</td><td class="mono">1.000–4.000</td><td class="mono">7d</td><td><span class="tag tag-safe">Segura</span></td><td><span class="tag tag-safe">Segura</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+<tr><td translate="no"><span class="sci">Nephrolepis exaltata</span></td><td translate="no">Boston Fern</td><td translate="no">Nephrolepidaceae</td><td class="mono">1.000–3.500</td><td class="mono">4d</td><td><span class="tag tag-safe">Segura</span></td><td><span class="tag tag-safe">Segura</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+<tr><td translate="no"><span class="sci">Dracaena trifasciata</span></td><td translate="no">Snake Plant</td><td translate="no">Asparagaceae</td><td class="mono">250–5.000</td><td class="mono">14d</td><td><span class="tag tag-toxic">Tóxica</span></td><td><span class="tag tag-toxic">Tóxica</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+<tr><td translate="no"><span class="sci">Alocasia zebrina</span></td><td translate="no">Zebra Alocasia</td><td translate="no">Araceae</td><td class="mono">2.000–6.000</td><td class="mono">5d</td><td><span class="tag tag-toxic">Tóxica</span></td><td><span class="tag tag-toxic">Tóxica</span></td><td class="mono" translate="no">genus_inferred</td></tr>
+<tr><td translate="no"><span class="sci">Peperomia prostrata</span></td><td translate="no">String of Turtles</td><td translate="no">Piperaceae</td><td class="mono">1.000–3.500</td><td class="mono">6d</td><td><span class="tag tag-unknown">—</span></td><td><span class="tag tag-unknown">—</span></td><td class="mono" translate="no">unknown</td></tr>
+<tr><td translate="no"><span class="sci">Kroenleinia grusonii</span></td><td translate="no">Golden Barrel Cactus</td><td translate="no">Cactaceae</td><td class="mono">6.000–18.000</td><td class="mono">21d</td><td><span class="tag tag-safe">Segura</span></td><td><span class="tag tag-safe">Segura</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+<tr><td translate="no"><span class="sci">Spathiphyllum wallisii</span></td><td translate="no">Peace Lily</td><td translate="no">Araceae</td><td class="mono">500–1.500</td><td class="mono">7d</td><td><span class="tag tag-toxic">Tóxica</span></td><td><span class="tag tag-toxic">Tóxica</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+</tbody>
+</table>
+</div>
+<p class="hero-fineprint" style="margin-top:16px;">Amostra: 100 plantas · CC-BY-NC-4.0 · o snapshot completo tem 270 com todos os campos documentados</p>
+<p style="text-align: center; margin-top: 24px; font-size: 0.85rem; color: var(--text-muted);">
+        Quer se aprofundar? <a href="https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: 600;" target="_blank">Experimente o Sample Explorer interativo no 🤗 Hugging Face →</a> ou <a href="https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: 600;" target="_blank">baixe a amostra gratuita de 100 plantas</a>.
+      </p>
+</div>
+</section>
+<!-- Plate IV · Acquire the collection (pricing) -->
+<section class="section section-alt" id="pricing">
+<div class="container">
+<div class="plate-header">
+<span class="plate-leaf"></span>
+<h2><span class="plate-no">Prancha IV</span> · Adquira a coleção</h2>
+<span class="plate-line"></span>
+<span>Snapshot + sob medida</span>
+</div>
+<div class="price-card">
+<div class="tier-label">Nível 1 · Snapshot self-service</div>
+<div class="price-head">
+<div>
+<div class="price-title serif">Snapshot completo do conjunto de dados</div>
+<div class="price-note">Download com pagamento único · 270 plantas com cuidados · Snapshot 2026.07</div>
+</div>
+<div class="price-amount"><span class="js-snapshot-price">$49</span></div>
+</div>
+<ul class="feature-list">
+<li><strong>270 plantas de interior curadas</strong> em 54 famílias: luz quantitativa (lux), dias de rega, temperatura e umidade.</li>
+<li><strong>Toxicidade para pets da ASPCA</strong>: 891 determinações com sinais clínicos; indicadores de cão/gato no núcleo de cuidados, nunca presumidos como "segura".</li>
+<li><strong>Taxonomia verificada pelo GBIF</strong> + um índice taxonômico de <strong>20.000+ espécies</strong> e 702 espécies enriquecidas (nomes, área nativa, referências de imagem).</li>
+<li><strong>SQLite relacional + CSV + JSON</strong>: tabelas <code>plants</code>, <code>aspca_toxicity</code>, <code>species_index</code> e <code>species_enrichment</code>, prontas para aplicativos e ML.</li>
+<li><strong>Indicadores de qualidade honestos</strong>: <code>care_confidence</code>, <code>toxicity_status</code> e <code>image_commercial_safe</code> em cada linha.</li>
+<li><strong>Snapshot 2026.07</strong> · compra única, sem cobranças recorrentes.</li>
+</ul>
+<a class="btn btn-primary" href="https://buy.stripe.com/fZuaEY3kYgDA9vR2I838400" style="width:100%; justify-content:center; padding:20px; margin-top:6px;">
+<span>Comprar agora · Download imediato · <span class="js-snapshot-price">$49</span> →</span>
+</a>
+<div style="margin-top:18px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-muted);">
+          Pagamento seguro com cartão via Stripe · Apple Pay / Google Pay · conjunto de dados entregue imediatamente após o pagamento<br/> Precisa de nota fiscal para empresa ou pagamento em cripto? <a href="#support" style="text-decoration:underline;">use o formulário de contato</a> (<span translate="no">floradb@dataengineered.io</span>)
+        </div>
+</div>
+<p class="custom-line" style="margin-top:24px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text-muted);">Trabalhos sob medida (subconjuntos, feeds recorrentes, mapeamento de esquema): a partir de $99 — <a href="#support" style="text-decoration:underline;">fale com a equipe</a></p>
+<p style="text-align:center; margin-top:28px; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-muted);">
+        Prefere consultas ao vivo e self-service? <a href="https://apify.com/dataengineered/houseplant-care-toxicity-lookup" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">Execute nosso actor no Apify →</a>
+</p>
+</div>
+</section>
+<script>
+    // Snapshot price — single source of truth. If changed, also update the JSON-LD Product offer.
+    const SNAPSHOT_PRICE = "$49";
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".js-snapshot-price").forEach(function (el) { el.textContent = SNAPSHOT_PRICE; });
+    });
+  </script>
+<!-- Plate V · FAQ -->
+<section class="section section-alt" id="faq">
+<div class="container" style="max-width: 900px;">
+<div class="plate-header">
+<span class="plate-leaf"></span>
+<h2><span class="plate-no">Prancha V</span> · Perguntas frequentes</h2>
+<div class="plate-line"></div>
+<span>Base de conhecimento botânica e de segurança para pets</span>
+</div>
+<h3 class="serif" style="font-size: 1.8rem; font-weight: 600; margin-bottom: 28px;">Perguntas frequentes sobre o conjunto de dados e a taxonomia</h3>
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">O que é o conjunto de dados FloraDB de cuidados com plantas de interior e toxicidade para pets?</h4>
+<p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            O FloraDB é um conjunto de dados botânico de campo, curado, com mais de <strong>270 plantas de interior</strong>, que combina parâmetros quantitativos de cuidado (limites de luz em lux, intervalos de rega em dias, faixas de temperatura e umidade) com status verificados de toxicidade para cães e gatos da ASPCA, sintomas clínicos e citações taxonômicas do GBIF.
+          </p>
+</div>
+<div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Como as necessidades de luz e rega são quantificadas no FloraDB?</h4>
+<p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Em vez de rótulos subjetivos como <code>"medium light"</code> ou <code>"water when dry"</code>, o FloraDB fornece faixas quantitativas exatas: necessidades mínima e máxima de luz em lux (ex.: 1.500 a 5.000 lux para <em translate="no">Monstera deliciosa</em>) e intervalos de frequência de rega em dias com base em perfis climáticos internos padrão.
+          </p>
+</div>
+<div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Os status de toxicidade para pets são verificados com dados clínicos veterinários?</h4>
+<p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Sim. Cada planta é cruzada com o banco de dados de plantas tóxicas do ASPCA Animal Poison Control Center (<code>aspca_verified</code>), indicando se a planta é tóxica para cães (<code>is_toxic_to_dogs</code>) ou gatos (<code>is_toxic_to_cats</code>), junto com sintomas clínicos específicos de toxicidade, como irritação oral ou efeitos de glicosídeos cardíacos.
+          </p>
+</div>
+<div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Quais formatos de banco de dados e exportações estão incluídos no snapshot do FloraDB?</h4>
+<p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            O snapshot do FloraDB para download inclui um arquivo de banco de dados SQLite relacional normalizado (<code>.db</code>) junto com exportações limpas em CSV e JSON (<code>floradb_sample.csv</code>), prontas para importação direta em Python pandas, R, pipelines SQL ou aplicações web modernas.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Plate VI · Correspondence (support) -->
+<section class="section" id="support">
+<div class="container" style="max-width:720px; text-align:center;">
+<div class="plate-header" style="justify-content:center;">
+<span class="plate-leaf"></span>
+<h2><span class="plate-no">Prancha VI</span> · Correspondência</h2>
+<span class="plate-line"></span>
+</div>
+<h3 class="serif" style="font-size:1.8rem; font-weight:600;">Dúvidas ou precisa de dados sob medida?</h3>
+<p style="font-size:0.86rem; color:var(--text-muted); margin-top:8px;">Esquema sob medida, acesso via API, um nível revisado por especialistas ou faturamento empresarial: fale com a nossa equipe em <code style="font-family:'JetBrains Mono',monospace;">floradb@dataengineered.io</code>.</p>
+<button class="btn btn-outline" onclick="toggleSupportForm()" style="margin-top:22px; padding:15px 30px;" type="button"><span id="supportBtnText">✉ Abrir formulário de contato</span></button>
+<div id="supportFormContainer" style="display:none; margin-top:30px; text-align:left; border:1px solid var(--rule-color); background:var(--bg-paper-2); padding:36px;">
+<form action="https://api.web3forms.com/submit" class="form" id="supportForm" method="POST" onsubmit="handleSupport(event)" style="border-top:none; padding-top:0;"><input name="lang" type="hidden" value="pt-BR"/>
+<input name="access_key" type="hidden" value="bf34ff48-fcc6-4823-b386-9ae3d0712797"/>
+<input name="subject" type="hidden" value="New Support Inquiry for FloraDB"/>
+<input name="from_name" type="hidden" value="FloraDB Contact Form"/>
+<div class="form-group">
+<label class="form-label" for="suppName">Seu nome / empresa *</label>
+<input class="form-input" id="suppName" name="name" placeholder="ex.: Ana Souza" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="suppEmail">Seu e-mail *</label>
+<input class="form-input" id="suppEmail" name="email" placeholder="ana@empresa.com.br" required="" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="suppTopic">Assunto *</label>
+<select class="form-select" id="suppTopic" name="topic" required="">
+<option value="Dataset Question / Sample Inquiry">Dúvida sobre o conjunto de dados / pedido de amostra</option>
+<option value="Payment / Crypto / Invoicing Support">Suporte a pagamento / cripto / faturamento</option>
+<option value="Custom Curation / Enterprise Integration">Curadoria sob medida / integração Enterprise</option>
+<option value="Data Correction / Toxicity Flag">Correção de dados / alerta de toxicidade</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label" for="suppMsg">Mensagem *</label>
+<textarea class="form-input" id="suppMsg" name="message" placeholder="Descreva sua dúvida ou necessidade específica..." required="" rows="4" style="resize:vertical;"></textarea>
+</div>
+<button class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;" type="submit"><span>Enviar para <span translate="no">floradb@dataengineered.io</span> →</span></button>
+</form>
+<div class="success-box" id="supportSuccess" style="text-align:center;">
+<div class="success-title">❋ Mensagem enviada</div>
+<p style="margin-top:8px; font-size:0.85rem;">Sua mensagem foi enviada para <code>floradb@dataengineered.io</code>. Costumamos responder em até 2–4 horas úteis.</p>
+<button class="btn btn-outline" onclick="resetSupport()" style="margin-top:16px; padding:12px 22px;" type="button"><span>↻ Enviar outra mensagem</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- BEGIN:hub-browse -->
+<section id="browse" style="max-width:1000px;margin:0 auto;padding:30px 24px;border-top:1px solid rgba(128,128,128,.28)">
+<h2 style="font-size:1.05rem;margin:0 0 8px">Ver todas as páginas</h2>
+<p style="margin:0;opacity:.85"><a href="/pt-br/families/">28 famílias botânicas</a> · <a href="/pt-br/plants/">100 fichas de plantas</a></p>
+</section>
+<!-- END:hub-browse -->
+<footer>
+<div class="footer-inner">
+<div><strong>FLORADB</strong> — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior © 2026</div>
+<div>
+<a href="https://github.com/FloraaDB/houseplants-botanical-floradb">GitHub</a> ·
+        <a href="#method">Método</a> ·
+        <a href="#pricing">Coleção</a> ·
+        <a href="#faq">Perguntas frequentes</a> ·
+        <a href="#support">Suporte</a> ·
+        <a href="/sitemap.xml">Sitemap XML</a>
+</div>
+</div>
+<div class="safety-strip mono">Os dados de toxicidade são informativos e não constituem orientação veterinária. Se um pet ingerir uma planta, procure um veterinário ou o ASPCA Animal Poison Control.</div>
+<div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Parte do catálogo DataEngineered →</a> · <a href="https://dataengineered.io/about">Sobre</a> · <a href="https://dataengineered.io/terms">Termos</a> · <a href="https://dataengineered.io/privacy">Privacidade</a> · <a href="https://dataengineered.io/refund-policy">Política de reembolso</a></div>
+<!-- i18n:switcher --><nav class="i18n-switch" translate="no" aria-label="Idioma" style="text-align:center;margin:14px auto;font-size:0.85rem;opacity:0.85;"><a href="/" hreflang="en" lang="en" data-i18n-lang="en">English</a> · <a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a> · <a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a> · <a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a> · <span aria-current="true" style="font-weight:600">Português</span></nav><!-- /i18n:switcher --></footer>
+<script data-i18n="" id="i18n-strings" type="application/json">
+{
+  "themePressed": "Modo prensado",
+  "themePaper": "Modo papel",
+  "closeForm": "✕ Fechar formulário de contato",
+  "openForm": "✉ Abrir formulário de contato",
+  "messagePlaceholder": "Descreva sua dúvida ou necessidade específica...",
+  "formUnreachable": "Nosso provedor de formulários está indisponível no momento. Escreva para floradb@dataengineered.io com a sua solicitação — respondemos em até 1 dia útil."
+}
+</script>
+<script>
+    const I18N = JSON.parse(document.getElementById('i18n-strings').textContent);
+    // <textarea> attributes are not picked up from the markup: the placeholder comes from the table
+    document.getElementById('suppMsg').placeholder = I18N.messagePlaceholder;
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const label = document.getElementById('theme-label');
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); label.innerText = I18N.themePressed; }
+      else { html.classList.add('dark'); label.innerText = I18N.themePaper; }
+    }
+
+    function filterTable() {
+      const filter = document.getElementById('searchBox').value.toUpperCase();
+      const trs = document.getElementById('specimenTable').getElementsByTagName('tr');
+      for (let i = 1; i < trs.length; i++) {
+        const t = (trs[i].textContent || trs[i].innerText).toUpperCase();
+        // let "cat-safe" / "dog-safe" match Safe rows
+        const hay = t + (t.includes('SAFE') ? ' CAT-SAFE DOG-SAFE PET-SAFE' : '');
+        trs[i].style.display = hay.indexOf(filter) > -1 ? '' : 'none';
+      }
+    }
+
+    function postForm(payload, onOk, btn) {
+      if (btn) btn.disabled = true;
+      const abortController = new AbortController();
+      const timeoutId = setTimeout(() => abortController.abort(), 7000);
+
+      const body = Object.assign({}, payload);
+      delete body._subject;
+      body.access_key = 'bf34ff48-fcc6-4823-b386-9ae3d0712797';
+      body.subject = payload._subject || 'FloraDB Contact / Snapshot Request';
+      body.from_name = 'FloraDB Contact Form';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body),
+        signal: abortController.signal
+      }).then(r => {
+        clearTimeout(timeoutId);
+        if (!r.ok) throw new Error('Web3Forms response error: ' + r.status);
+        return r.json();
+      })
+      .then(data => {
+        if (!data || data.success !== true) throw new Error('Web3Forms did not confirm delivery');
+        onOk(data);
+      })
+      .catch(err => {
+        clearTimeout(timeoutId);
+        console.warn('Form provider outage or AJAX error — activating smart email fallback:', err);
+        if (btn) btn.disabled = false;
+
+        const subj = encodeURIComponent(payload._subject || 'FloraDB Contact / Snapshot Request');
+        let bodyText = "";
+        for (const [k, v] of Object.entries(payload)) {
+          if (k !== '_subject') bodyText += k + ": " + (v || '') + "\n";
+        }
+        bodyText += "\n(Sent via automatic fallback due to form provider timeout)";
+        alert(I18N.formUnreachable);
+      });
+    }
+
+    function handleCheckout(e) {
+      e.preventDefault();
+      const form = document.getElementById('checkoutForm');
+      postForm({
+        _subject: 'New FloraDB Snapshot Request: ' + document.getElementById('userName').value,
+        Name: document.getElementById('userName').value,
+        Email: document.getElementById('userEmail').value,
+        PaymentMethod: document.getElementById('payMethod').value,
+        UseCase: document.getElementById('useCase').value
+      }, () => { form.style.display = 'none'; document.getElementById('checkoutSuccess').style.display = 'block'; },
+      form.querySelector('button[type="submit"]'));
+    }
+
+    function resetCheckout() {
+      const s = document.getElementById('checkoutSuccess');
+      if (!s || s.style.display === 'none' || s.style.display === '') return;
+      const form = document.getElementById('checkoutForm');
+      form.reset(); const b = form.querySelector('button[type="submit"]'); if (b) b.disabled = false;
+      form.style.display = ''; s.style.display = 'none';
+    }
+
+    function resetSupport() {
+      const form = document.getElementById('supportForm');
+      form.reset(); const b = form.querySelector('button[type="submit"]'); if (b) b.disabled = false;
+      form.style.display = ''; document.getElementById('supportSuccess').style.display = 'none';
+    }
+
+    function toggleSupportForm() {
+      const c = document.getElementById('supportFormContainer');
+      const t = document.getElementById('supportBtnText');
+      if (c.style.display === 'none') {
+        if (document.getElementById('supportSuccess').style.display !== 'none') resetSupport();
+        c.style.display = 'block'; t.innerText = I18N.closeForm;
+        c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else { c.style.display = 'none'; t.innerText = I18N.openForm; }
+    }
+
+    function openCustomQuote(e) {
+      if (e) e.preventDefault();
+      if (document.getElementById('supportSuccess').style.display !== 'none') resetSupport();
+      const topic = document.getElementById('suppTopic');
+      if (topic) topic.value = 'Custom Curation / Enterprise Integration';
+      const c = document.getElementById('supportFormContainer');
+      c.style.display = 'block';
+      const t = document.getElementById('supportBtnText'); if (t) t.innerText = I18N.closeForm;
+      c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function handleSupport(e) {
+      e.preventDefault();
+      const form = document.getElementById('supportForm');
+      postForm({
+        _subject: 'FloraDB Support: ' + document.getElementById('suppTopic').value,
+        Name: document.getElementById('suppName').value,
+        Email: document.getElementById('suppEmail').value,
+        Topic: document.getElementById('suppTopic').value,
+        Message: document.getElementById('suppMsg').value
+      }, () => { form.style.display = 'none'; document.getElementById('supportSuccess').style.display = 'block'; },
+      form.querySelector('button[type="submit"]'));
+    }
+
+    // Register Progressive Web App Service Worker with Auto-Update
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => {
+            console.log('FloraDB PWA Service Worker registered:', reg.scope);
+            reg.addEventListener('updatefound', () => {
+              const newWorker = reg.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    console.log('New FloraDB catalog update available offline.');
+                  }
+                });
+              }
+            });
+          })
+          .catch((err) => console.warn('FloraDB PWA Service Worker error:', err));
+      });
+    }
+  </script>
+</body>
+</html>

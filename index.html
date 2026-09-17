@@ -8,8 +8,21 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" />
   <link rel="canonical" href="https://floradb.dataengineered.io/" />
-  <link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/" />
-  <link rel="alternate" hreflang="x-default" href="https://floradb.dataengineered.io/" />
+  <!-- i18n:alternates -->
+  <link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/">
+  <link rel="alternate" hreflang="es" href="https://floradb.dataengineered.io/es/">
+  <link rel="alternate" hreflang="de" href="https://floradb.dataengineered.io/de/">
+  <link rel="alternate" hreflang="fr" href="https://floradb.dataengineered.io/fr/">
+  <link rel="alternate" hreflang="pt-BR" href="https://floradb.dataengineered.io/pt-br/">
+  <link rel="alternate" hreflang="x-default" href="https://floradb.dataengineered.io/">
+  <style>.i18n-menu{position:relative;display:inline-block;align-self:center;font-size:.85rem;line-height:1;font-weight:500;text-transform:none;letter-spacing:normal}.i18n-menu.i18n-menu>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .65rem;border:1px solid currentColor;border-color:color-mix(in srgb,currentColor 40%,transparent);border-radius:999px;white-space:nowrap;user-select:none;color:inherit;background:transparent}.i18n-menu>summary::-webkit-details-marker{display:none}.i18n-menu>summary:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}.i18n-menu.i18n-menu>ul{display:block;position:absolute;right:0;top:calc(100% + 6px);z-index:2147482000;min-width:10rem;margin:0;padding:.35rem;list-style:none;background:#111827;border:1px solid #374151;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.35);text-align:left}.i18n-menu.i18n-menu li{display:block;margin:0;padding:0;list-style:none}.i18n-menu.i18n-menu li>a,.i18n-menu.i18n-menu li>span{display:block;padding:.5rem .75rem;border-radius:6px;color:#f9fafb;background:transparent;text-decoration:none;white-space:nowrap;font-size:.9rem;font-weight:400;line-height:1.2;border:0;box-shadow:none}.i18n-menu.i18n-menu li>a:hover,.i18n-menu.i18n-menu li>a:focus-visible{background:#1f2937;color:#fff}.i18n-menu.i18n-menu li>span{font-weight:600;color:#93c5fd}.i18n-menu--row{margin-left:auto}:is(nav,a,button):has(+ .i18n-menu--row){margin-left:auto}:is(nav,a,button):has(+ .i18n-menu--row)+.i18n-menu--row{margin-left:.75rem}.i18n-menu--float{position:absolute;top:14px;right:16px;z-index:2147481000;color:#e5e7eb}</style>
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <script src="/i18n/i18n.js?v=5" defer></script>
+  <!-- /i18n:alternates -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <!-- Open Graph / Social Meta -->
@@ -464,7 +477,7 @@
         <a href="#pricing" class="nav-link">Collection</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-label">Paper Mode</span></button>
-      </nav>
+      <!-- i18n:header --><details class="i18n-menu i18n-menu--nav" translate="no"><summary aria-label="Language: English" title="Language: English"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>EN</span></summary><ul><li><span aria-current="true" lang="en">English</span></li><li><a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-i18n-lang="pt-br">Português</a></li></ul></details><!-- /i18n:header --></nav>
     </div>
   </header>
 
@@ -507,8 +520,8 @@
         <div class="specimen" aria-label="Example specimen record">
           <div class="specimen-inner">
             <div class="specimen-eyebrow"><span>FloraDB Herbarium</span><span>Accession № FDB-0001</span></div>
-            <div class="specimen-name">Monstera deliciosa</div>
-            <div class="specimen-common">Swiss Cheese Plant · Araceae</div>
+            <div class="specimen-name" translate="no">Monstera deliciosa</div>
+            <div class="specimen-common" translate="no">Swiss Cheese Plant · Araceae</div>
 
             <div class="field-block">
               <div class="field-row"><span class="field-key">Light</span><span class="field-val"><span class="accent">1,500–5,000</span> lux · bright indirect</span></div>
@@ -582,14 +595,14 @@
             <tr><th>Scientific name</th><th>Common</th><th>Family</th><th>Light (lux)</th><th>Water</th><th>Dogs</th><th>Cats</th><th>Determination</th></tr>
           </thead>
           <tbody>
-            <tr><td><span class="sci">Monstera deliciosa</span></td><td>Swiss Cheese Plant</td><td>Araceae</td><td class="mono">1,500–5,000</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
-            <tr><td><span class="sci">Chlorophytum comosum</span></td><td>Spider Plant</td><td>Asparagaceae</td><td class="mono">1,000–4,000</td><td class="mono">7d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
-            <tr><td><span class="sci">Nephrolepis exaltata</span></td><td>Boston Fern</td><td>Nephrolepidaceae</td><td class="mono">1,000–3,500</td><td class="mono">4d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
-            <tr><td><span class="sci">Dracaena trifasciata</span></td><td>Snake Plant</td><td>Asparagaceae</td><td class="mono">250–5,000</td><td class="mono">14d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
-            <tr><td><span class="sci">Alocasia zebrina</span></td><td>Zebra Alocasia</td><td>Araceae</td><td class="mono">2,000–6,000</td><td class="mono">5d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">genus_inferred</td></tr>
-            <tr><td><span class="sci">Peperomia prostrata</span></td><td>String of Turtles</td><td>Piperaceae</td><td class="mono">1,000–3,500</td><td class="mono">6d</td><td><span class="tag tag-unknown">—</span></td><td><span class="tag tag-unknown">—</span></td><td class="mono">unknown</td></tr>
-            <tr><td><span class="sci">Kroenleinia grusonii</span></td><td>Golden Barrel Cactus</td><td>Cactaceae</td><td class="mono">6,000–18,000</td><td class="mono">21d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono">aspca_verified</td></tr>
-            <tr><td><span class="sci">Spathiphyllum wallisii</span></td><td>Peace Lily</td><td>Araceae</td><td class="mono">500–1,500</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Monstera deliciosa</span></td><td translate="no">Swiss Cheese Plant</td><td translate="no">Araceae</td><td class="mono">1,500–5,000</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Chlorophytum comosum</span></td><td translate="no">Spider Plant</td><td translate="no">Asparagaceae</td><td class="mono">1,000–4,000</td><td class="mono">7d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Nephrolepis exaltata</span></td><td translate="no">Boston Fern</td><td translate="no">Nephrolepidaceae</td><td class="mono">1,000–3,500</td><td class="mono">4d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Dracaena trifasciata</span></td><td translate="no">Snake Plant</td><td translate="no">Asparagaceae</td><td class="mono">250–5,000</td><td class="mono">14d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Alocasia zebrina</span></td><td translate="no">Zebra Alocasia</td><td translate="no">Araceae</td><td class="mono">2,000–6,000</td><td class="mono">5d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono" translate="no">genus_inferred</td></tr>
+            <tr><td translate="no"><span class="sci">Peperomia prostrata</span></td><td translate="no">String of Turtles</td><td translate="no">Piperaceae</td><td class="mono">1,000–3,500</td><td class="mono">6d</td><td><span class="tag tag-unknown">—</span></td><td><span class="tag tag-unknown">—</span></td><td class="mono" translate="no">unknown</td></tr>
+            <tr><td translate="no"><span class="sci">Kroenleinia grusonii</span></td><td translate="no">Golden Barrel Cactus</td><td translate="no">Cactaceae</td><td class="mono">6,000–18,000</td><td class="mono">21d</td><td><span class="tag tag-safe">Safe</span></td><td><span class="tag tag-safe">Safe</span></td><td class="mono" translate="no">aspca_verified</td></tr>
+            <tr><td translate="no"><span class="sci">Spathiphyllum wallisii</span></td><td translate="no">Peace Lily</td><td translate="no">Araceae</td><td class="mono">500–1,500</td><td class="mono">7d</td><td><span class="tag tag-toxic">Toxic</span></td><td><span class="tag tag-toxic">Toxic</span></td><td class="mono" translate="no">aspca_verified</td></tr>
           </tbody>
         </table>
       </div>
@@ -633,7 +646,7 @@
         </a>
         <div style="margin-top:18px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-muted);">
           Secure card checkout via Stripe · Apple&nbsp;Pay / Google&nbsp;Pay · dataset delivered instantly after payment<br>
-          Need a company invoice or crypto payment? <a href="#support" style="text-decoration:underline;">use the contact form</a> (floradb@dataengineered.io)
+          Need a company invoice or crypto payment? <a href="#support" style="text-decoration:underline;">use the contact form</a> (<span translate="no">floradb@dataengineered.io</span>)
         </div>
       </div>
 
@@ -675,7 +688,7 @@
         <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
           <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">How are the light and watering requirements quantified in FloraDB?</h4>
           <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            Instead of subjective labels like <code>"medium light"</code> or <code>"water when dry"</code>, FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., 1,500 to 5,000 Lux for <em>Monstera deliciosa</em>) and watering frequency intervals in days based on standard indoor climate profiles.
+            Instead of subjective labels like <code>"medium light"</code> or <code>"water when dry"</code>, FloraDB provides exact quantitative ranges: minimum and maximum light requirements in Lux (e.g., 1,500 to 5,000 Lux for <em translate="no">Monstera deliciosa</em>) and watering frequency intervals in days based on standard indoor climate profiles.
           </p>
         </div>
 
@@ -734,7 +747,7 @@
             <label class="form-label" for="suppMsg">Message *</label>
             <textarea id="suppMsg" name="message" class="form-input" rows="4" placeholder="Describe your question or custom requirement..." required style="resize:vertical;"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;"><span>Send to floradb@dataengineered.io →</span></button>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; margin-top:6px;"><span>Send to <span translate="no">floradb@dataengineered.io</span> →</span></button>
         </form>
         <div id="supportSuccess" class="success-box" style="text-align:center;">
           <div class="success-title">❋ Message dispatched</div>
@@ -765,14 +778,19 @@
     </div>
     <div class="safety-strip mono">Toxicity data is informational, not veterinary advice. If a pet ingests a plant, contact a vet or ASPCA Animal Poison Control.</div>
   <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog →</a> · <a href="https://dataengineered.io/about">About</a> · <a href="https://dataengineered.io/terms">Terms</a> · <a href="https://dataengineered.io/privacy">Privacy</a> · <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
-</footer>
+<!-- i18n:switcher --><nav class="i18n-switch" translate="no" aria-label="Language" style="text-align:center;margin:14px auto;font-size:0.85rem;opacity:0.85;"><span aria-current="true" style="font-weight:600">English</span> · <a href="/es/" hreflang="es" lang="es" data-i18n-lang="es">Español</a> · <a href="/de/" hreflang="de" lang="de" data-i18n-lang="de">Deutsch</a> · <a href="/fr/" hreflang="fr" lang="fr" data-i18n-lang="fr">Français</a> · <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-i18n-lang="pt-br">Português</a></nav><!-- /i18n:switcher --></footer>
 
+  <script type="application/json" id="i18n-strings" data-i18n>{"themePressed": "Pressed Mode", "themePaper": "Paper Mode", "closeForm": "✕ Close Contact Form", "openForm": "✉ Open Contact Form", "messagePlaceholder": "Describe your question or custom requirement...", "formUnreachable": "Our form provider is unreachable right now. Please write to floradb@dataengineered.io with your request — we reply within 1 business day."}</script>
   <script>
+    const I18N = JSON.parse(document.getElementById('i18n-strings').textContent);
+    // <textarea> attributes are not picked up from the markup: the placeholder comes from the table
+    document.getElementById('suppMsg').placeholder = I18N.messagePlaceholder;
+
     function toggleTheme() {
       const html = document.documentElement;
       const label = document.getElementById('theme-label');
-      if (html.classList.contains('dark')) { html.classList.remove('dark'); label.innerText = 'Pressed Mode'; }
-      else { html.classList.add('dark'); label.innerText = 'Paper Mode'; }
+      if (html.classList.contains('dark')) { html.classList.remove('dark'); label.innerText = I18N.themePressed; }
+      else { html.classList.add('dark'); label.innerText = I18N.themePaper; }
     }
 
     function filterTable() {
@@ -822,7 +840,7 @@
           if (k !== '_subject') bodyText += k + ": " + (v || '') + "\n";
         }
         bodyText += "\n(Sent via automatic fallback due to form provider timeout)";
-        alert("Our form provider is unreachable right now. Please write to floradb@dataengineered.io with your request — we reply within 1 business day.");
+        alert(I18N.formUnreachable);
       });
     }
 
@@ -858,9 +876,9 @@
       const t = document.getElementById('supportBtnText');
       if (c.style.display === 'none') {
         if (document.getElementById('supportSuccess').style.display !== 'none') resetSupport();
-        c.style.display = 'block'; t.innerText = '✕ Close Contact Form';
+        c.style.display = 'block'; t.innerText = I18N.closeForm;
         c.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else { c.style.display = 'none'; t.innerText = '✉ Open Contact Form'; }
+      } else { c.style.display = 'none'; t.innerText = I18N.openForm; }
     }
 
     function openCustomQuote(e) {
@@ -870,7 +888,7 @@
       if (topic) topic.value = 'Custom Curation / Enterprise Integration';
       const c = document.getElementById('supportFormContainer');
       c.style.display = 'block';
-      const t = document.getElementById('supportBtnText'); if (t) t.innerText = '✕ Close Contact Form';
+      const t = document.getElementById('supportBtnText'); if (t) t.innerText = I18N.closeForm;
       c.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 

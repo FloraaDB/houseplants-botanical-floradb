@@ -10,7 +10,8 @@
     "index.html",
     "404.html",
     "plants/*.html",
-    "families/*.html"
+    "families/*.html",
+    "stats/index.html"
   ],
   "exclude": [],
   "not_found": "404.html",

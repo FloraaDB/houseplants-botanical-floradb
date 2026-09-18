@@ -1,0 +1,600 @@
+{
+ "dataset": "FloraDB",
+ "page": "https://floradb.dataengineered.io/stats/",
+ "generated": "2026-09-18",
+ "snapshot": "2026-09-03",
+ "aspca_crawled": "2026-07-06",
+ "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) - attribute with a link to the page",
+ "totals": {
+  "plants": 270,
+  "families": 54,
+  "aspca_entries": 891,
+  "species_index": 20000,
+  "enriched": 702
+ },
+ "pet_toxicity_care_core": {
+  "determined": 170,
+  "toxic_to_cats_or_dogs": 98,
+  "toxic_pct_of_determined": 57.6,
+  "non_toxic": 72,
+  "no_determination": 100,
+  "cat_dog_verdicts_differ": 0,
+  "by_determination": [
+   {
+    "determination": "Toxic, ASPCA-verified",
+    "plants": 53
+   },
+   {
+    "determination": "Toxic, inferred from the genus",
+    "plants": 45
+   },
+   {
+    "determination": "Non-toxic, ASPCA-verified",
+    "plants": 72
+   },
+   {
+    "determination": "No determination",
+    "plants": 100
+   }
+  ]
+ },
+ "aspca_index": {
+  "entries": 891,
+  "with_both_verdicts": 859,
+  "toxic_to_cats_or_dogs": 373,
+  "toxic_pct": 43.4,
+  "toxic_to_both": 364,
+  "cats_only": 8,
+  "dogs_only": 1,
+  "non_toxic_to_both": 486,
+  "by_animal": [
+   {
+    "animal": "cats",
+    "with_verdict": 861,
+    "toxic": 374
+   },
+   {
+    "animal": "dogs",
+    "with_verdict": 863,
+    "toxic": 369
+   },
+   {
+    "animal": "horses",
+    "with_verdict": 694,
+    "toxic": 317
+   }
+  ],
+  "families": [
+   {
+    "family": "Araceae",
+    "entries": 58,
+    "with_both_verdicts": 58,
+    "toxic": 58,
+    "toxic_pct": 100.0
+   },
+   {
+    "family": "Asparagaceae",
+    "entries": 51,
+    "with_both_verdicts": 51,
+    "toxic": 28,
+    "toxic_pct": 54.9
+   },
+   {
+    "family": "Asteraceae",
+    "entries": 51,
+    "with_both_verdicts": 48,
+    "toxic": 21,
+    "toxic_pct": 43.8
+   },
+   {
+    "family": "Arecaceae",
+    "entries": 26,
+    "with_both_verdicts": 26,
+    "toxic": 0,
+    "toxic_pct": 0.0
+   },
+   {
+    "family": "Apocynaceae",
+    "entries": 22,
+    "with_both_verdicts": 22,
+    "toxic": 12,
+    "toxic_pct": 54.5
+   },
+   {
+    "family": "Crassulaceae",
+    "entries": 22,
+    "with_both_verdicts": 22,
+    "toxic": 9,
+    "toxic_pct": 40.9
+   },
+   {
+    "family": "Orchidaceae",
+    "entries": 22,
+    "with_both_verdicts": 22,
+    "toxic": 0,
+    "toxic_pct": 0.0
+   },
+   {
+    "family": "Smilacaceae",
+    "entries": 21,
+    "with_both_verdicts": 21,
+    "toxic": 0,
+    "toxic_pct": 0.0
+   },
+   {
+    "family": "Rosaceae",
+    "entries": 20,
+    "with_both_verdicts": 20,
+    "toxic": 8,
+    "toxic_pct": 40.0
+   },
+   {
+    "family": "Fabaceae",
+    "entries": 19,
+    "with_both_verdicts": 17,
+    "toxic": 9,
+    "toxic_pct": 52.9
+   },
+   {
+    "family": "Lamiaceae",
+    "entries": 19,
+    "with_both_verdicts": 18,
+    "toxic": 9,
+    "toxic_pct": 50.0
+   },
+   {
+    "family": "Apiaceae",
+    "entries": 18,
+    "with_both_verdicts": 18,
+    "toxic": 13,
+    "toxic_pct": 72.2
+   },
+   {
+    "family": "Araliaceae",
+    "entries": 18,
+    "with_both_verdicts": 18,
+    "toxic": 15,
+    "toxic_pct": 83.3
+   },
+   {
+    "family": "Gesneriaceae",
+    "entries": 18,
+    "with_both_verdicts": 18,
+    "toxic": 0,
+    "toxic_pct": 0.0
+   },
+   {
+    "family": "Piperaceae",
+    "entries": 18,
+    "with_both_verdicts": 18,
+    "toxic": 0,
+    "toxic_pct": 0.0
+   }
+  ]
+ },
+ "families": [
+  {
+   "family": "Araceae",
+   "plants": 36,
+   "share_pct": 13.3,
+   "determined": 31,
+   "toxic": 31
+  },
+  {
+   "family": "Asparagaceae",
+   "plants": 17,
+   "share_pct": 6.3,
+   "determined": 15,
+   "toxic": 12
+  },
+  {
+   "family": "Crassulaceae",
+   "plants": 16,
+   "share_pct": 5.9,
+   "determined": 8,
+   "toxic": 6
+  },
+  {
+   "family": "Cactaceae",
+   "plants": 15,
+   "share_pct": 5.6,
+   "determined": 6,
+   "toxic": 0
+  },
+  {
+   "family": "Marantaceae",
+   "plants": 13,
+   "share_pct": 4.8,
+   "determined": 4,
+   "toxic": 0
+  },
+  {
+   "family": "Apocynaceae",
+   "plants": 11,
+   "share_pct": 4.1,
+   "determined": 5,
+   "toxic": 0
+  },
+  {
+   "family": "Bromeliaceae",
+   "plants": 10,
+   "share_pct": 3.7,
+   "determined": 3,
+   "toxic": 0
+  },
+  {
+   "family": "Arecaceae",
+   "plants": 9,
+   "share_pct": 3.3,
+   "determined": 6,
+   "toxic": 0
+  },
+  {
+   "family": "Gesneriaceae",
+   "plants": 9,
+   "share_pct": 3.3,
+   "determined": 4,
+   "toxic": 0
+  },
+  {
+   "family": "Moraceae",
+   "plants": 9,
+   "share_pct": 3.3,
+   "determined": 8,
+   "toxic": 8
+  },
+  {
+   "family": "Piperaceae",
+   "plants": 9,
+   "share_pct": 3.3,
+   "determined": 5,
+   "toxic": 0
+  },
+  {
+   "family": "Araliaceae",
+   "plants": 8,
+   "share_pct": 3.0,
+   "determined": 7,
+   "toxic": 5
+  },
+  {
+   "family": "Orchidaceae",
+   "plants": 8,
+   "share_pct": 3.0,
+   "determined": 5,
+   "toxic": 0
+  },
+  {
+   "family": "Commelinaceae",
+   "plants": 7,
+   "share_pct": 2.6,
+   "determined": 4,
+   "toxic": 4
+  },
+  {
+   "family": "Acanthaceae",
+   "plants": 6,
+   "share_pct": 2.2,
+   "determined": 3,
+   "toxic": 0
+  }
+ ],
+ "light": [
+  {
+   "category": "Bright Indirect",
+   "plants": 125,
+   "share_pct": 46.3,
+   "median_min_lux": 2000,
+   "median_max_lux": 6000,
+   "median_watering_days": 7,
+   "median_humidity_pct": 55
+  },
+  {
+   "category": "Medium to Bright",
+   "plants": 86,
+   "share_pct": 31.9,
+   "median_min_lux": 1000.0,
+   "median_max_lux": 3500.0,
+   "median_watering_days": 7.0,
+   "median_humidity_pct": 65.0
+  },
+  {
+   "category": "Direct Sun",
+   "plants": 37,
+   "share_pct": 13.7,
+   "median_min_lux": 5000,
+   "median_max_lux": 15000,
+   "median_watering_days": 18,
+   "median_humidity_pct": 25
+  },
+  {
+   "category": "Medium to Low",
+   "plants": 15,
+   "share_pct": 5.6,
+   "median_min_lux": 500,
+   "median_max_lux": 2500,
+   "median_watering_days": 7,
+   "median_humidity_pct": 55
+  },
+  {
+   "category": "Low to Bright",
+   "plants": 3,
+   "share_pct": 1.1,
+   "median_min_lux": 250,
+   "median_max_lux": 5000,
+   "median_watering_days": 7,
+   "median_humidity_pct": 55
+  },
+  {
+   "category": "Low",
+   "plants": 2,
+   "share_pct": 0.7,
+   "median_min_lux": 250.0,
+   "median_max_lux": 2000.0,
+   "median_watering_days": 10.5,
+   "median_humidity_pct": 47.5
+  },
+  {
+   "category": "Medium",
+   "plants": 2,
+   "share_pct": 0.7,
+   "median_min_lux": 900.0,
+   "median_max_lux": 3000.0,
+   "median_watering_days": 8.5,
+   "median_humidity_pct": 50.0
+  }
+ ],
+ "watering": {
+  "median_days": 7.0,
+  "rows": [
+   {
+    "days": 2,
+    "plants": 4,
+    "share_pct": 1.5
+   },
+   {
+    "days": 4,
+    "plants": 1,
+    "share_pct": 0.4
+   },
+   {
+    "days": 5,
+    "plants": 34,
+    "share_pct": 12.6
+   },
+   {
+    "days": 6,
+    "plants": 26,
+    "share_pct": 9.6
+   },
+   {
+    "days": 7,
+    "plants": 141,
+    "share_pct": 52.2
+   },
+   {
+    "days": 10,
+    "plants": 8,
+    "share_pct": 3.0
+   },
+   {
+    "days": 14,
+    "plants": 11,
+    "share_pct": 4.1
+   },
+   {
+    "days": 18,
+    "plants": 31,
+    "share_pct": 11.5
+   },
+   {
+    "days": 21,
+    "plants": 14,
+    "share_pct": 5.2
+   }
+  ]
+ },
+ "care_metrics": [
+  {
+   "metric": "Minimum light",
+   "unit": "lux",
+   "median": 2000.0,
+   "mean": 1974.3,
+   "min": 250,
+   "max": 6000,
+   "mode": 2000,
+   "mode_n": 103,
+   "mode_pct": 38.1
+  },
+  {
+   "metric": "Maximum light",
+   "unit": "lux",
+   "median": 6000.0,
+   "mean": 6187.0,
+   "min": 1500,
+   "max": 18000,
+   "mode": 6000,
+   "mode_n": 102,
+   "mode_pct": 37.8
+  },
+  {
+   "metric": "Watering interval",
+   "unit": "days",
+   "median": 7.0,
+   "mean": 8.9,
+   "min": 2,
+   "max": 21,
+   "mode": 7,
+   "mode_n": 141,
+   "mode_pct": 52.2
+  },
+  {
+   "metric": "Minimum temperature",
+   "unit": "°C",
+   "median": 16.0,
+   "mean": 14.7,
+   "min": 10,
+   "max": 18,
+   "mode": 16,
+   "mode_n": 122,
+   "mode_pct": 45.2
+  },
+  {
+   "metric": "Maximum temperature",
+   "unit": "°C",
+   "median": 30.0,
+   "mean": 30.3,
+   "min": 20,
+   "max": 40,
+   "mode": 30,
+   "mode_n": 115,
+   "mode_pct": 42.6
+  },
+  {
+   "metric": "Ideal humidity",
+   "unit": "%",
+   "median": 55.0,
+   "mean": 51.5,
+   "min": 20,
+   "max": 75,
+   "mode": 55,
+   "mode_n": 78,
+   "mode_pct": 28.9
+  }
+ ],
+ "humidity": [
+  {
+   "humidity_pct": 20,
+   "plants": 14,
+   "share_pct": 5.2
+  },
+  {
+   "humidity_pct": 25,
+   "plants": 31,
+   "share_pct": 11.5
+  },
+  {
+   "humidity_pct": 30,
+   "plants": 10,
+   "share_pct": 3.7
+  },
+  {
+   "humidity_pct": 40,
+   "plants": 5,
+   "share_pct": 1.9
+  },
+  {
+   "humidity_pct": 50,
+   "plants": 40,
+   "share_pct": 14.8
+  },
+  {
+   "humidity_pct": 55,
+   "plants": 78,
+   "share_pct": 28.9
+  },
+  {
+   "humidity_pct": 60,
+   "plants": 22,
+   "share_pct": 8.1
+  },
+  {
+   "humidity_pct": 65,
+   "plants": 37,
+   "share_pct": 13.7
+  },
+  {
+   "humidity_pct": 70,
+   "plants": 29,
+   "share_pct": 10.7
+  },
+  {
+   "humidity_pct": 75,
+   "plants": 4,
+   "share_pct": 1.5
+  }
+ ],
+ "temperature": {
+  "min": [
+   {
+    "celsius": 10,
+    "plants": 56
+   },
+   {
+    "celsius": 12,
+    "plants": 1
+   },
+   {
+    "celsius": 13,
+    "plants": 2
+   },
+   {
+    "celsius": 15,
+    "plants": 61
+   },
+   {
+    "celsius": 16,
+    "plants": 122
+   },
+   {
+    "celsius": 18,
+    "plants": 28
+   }
+  ],
+  "max": [
+   {
+    "celsius": 20,
+    "plants": 1
+   },
+   {
+    "celsius": 25,
+    "plants": 1
+   },
+   {
+    "celsius": 26,
+    "plants": 3
+   },
+   {
+    "celsius": 28,
+    "plants": 97
+   },
+   {
+    "celsius": 30,
+    "plants": 115
+   },
+   {
+    "celsius": 32,
+    "plants": 4
+   },
+   {
+    "celsius": 35,
+    "plants": 36
+   },
+   {
+    "celsius": 38,
+    "plants": 12
+   },
+   {
+    "celsius": 40,
+    "plants": 1
+   }
+  ]
+ },
+ "care_confidence": [
+  {
+   "level": "medium",
+   "plants": 137,
+   "share_pct": 50.7
+  },
+  {
+   "level": "high",
+   "plants": 69,
+   "share_pct": 25.6
+  },
+  {
+   "level": "low",
+   "plants": 64,
+   "share_pct": 23.7
+  }
+ ]
+}

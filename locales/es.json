@@ -83,6 +83,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "0bbfafc77bed0bac": {
+  "src": "Plant statistics",
+  "t": "Estadísticas de plantas",
+  "by": "claude-fable-5-1",
+  "at": "2026-09-18"
+ },
  "0bfb064725a764d2": {
   "src": "<0>Plate VI</0> · Correspondence",
   "t": "<0>Lámina VI</0> · Correspondencia",
@@ -208,6 +214,12 @@
   "t": "Es una especie de luz media que prospera entre {0} y {1} lux.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "2086b21f8f492741": {
+  "src": "Statistics",
+  "t": "Estadísticas",
+  "by": "claude-fable-5-1",
+  "at": "2026-09-18"
  },
  "2376b14487ad78c2": {
   "src": "Houseplant Herbarium · Data",

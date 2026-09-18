@@ -358,6 +358,8 @@ def main():
         ("https://floradb.dataengineered.io/plants/", os.path.join(plants_dir, "index.html"), "monthly", "0.8"),
         ("https://floradb.dataengineered.io/families/", os.path.join(families_dir, "index.html"), "monthly", "0.8"),
     ]
+    if os.path.exists(os.path.join(root_dir, "stats", "index.html")):  # scripts/generate_stats.py -- citable, embeddable asset
+        sitemap_entries.append(("https://floradb.dataengineered.io/stats/", os.path.join(root_dir, "stats", "index.html"), "monthly", "0.9"))
 
     # Generate Plant Specimen Pages
     for p in plants:

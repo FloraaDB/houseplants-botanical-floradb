@@ -6,6 +6,10 @@ All notable changes to the FloraDB dataset snapshots.
 > on a recurring schedule, so the live figures only grow — the numbers below
 > stay accurate between snapshots.
 
+## Site update — 2026-09-28
+
+- **Repository files off the website**: the translation catalogs (`/locales/`), the build scripts (`/scripts/`), `i18n.config.json`, `README.md`, `vercel.json` and the dotfiles belong to this repository, not to the website, but the site served them as plain files. They now answer the site's normal 404 page (also when requested as `/locales%2Fes.json` or `//locales/es.json`) and stay available here on GitHub. Pages, data files, samples, `llms.txt` and the sitemap are unchanged (2026-09-28).
+
 ## Site update — 2026-09-27
 
 - **Edition string**: the pricing card, README badge and data dictionary named Snapshot 2026.07; buyers have had the 2026.09 edition since the 2026-09-03 refresh. The dictionary's update frequency now says monthly (ASPCA toxicity re-crawled quarterly).

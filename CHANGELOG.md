@@ -9,6 +9,7 @@ All notable changes to the FloraDB dataset snapshots.
 ## Site update — 2026-09-27
 
 - **Edition string**: the pricing card, README badge and data dictionary named Snapshot 2026.07; buyers have had the 2026.09 edition since the 2026-09-03 refresh. The dictionary's update frequency now says monthly (ASPCA toxicity re-crawled quarterly).
+- **Section links**: links to a part of a page (`/#pricing`, `/#faq`, `/es/#explorer`, …) now land with the heading clear of the sticky site header, including on phones where the header wraps, and a visitor arriving from another page is put back on the section once the web fonts have loaded and moved the page (a small shared script after the header of the home page, its four language copies and `/stats/`). The "Embed this chart" snippets on `/stats/` now link to the chart itself (`#fig-<chart>`); three of them (pet toxicity, ASPCA families, humidity) pointed at an anchor that did not exist. Figures, charts and visible text are unchanged (2026-09-27).
 - **Translated Dataset markup**: on the Spanish, German, French and Portuguese pages the Dataset structured data now names its English original in `sameAs` (next to any existing `sameAs` links), so dataset search can tie the language copies to one canonical entry. English pages and all visible text are unchanged (2026-09-27).
 
 ## Site update — 2026-09-20

@@ -1,6 +1,6 @@
 # FloraDB — Data Dictionary
 
-Field reference for the FloraDB houseplant care dataset (snapshot `2026.07`).
+Field reference for the FloraDB houseplant care dataset (snapshot `2026.09`).
 The free sample (`samples/floradb_sample.csv`) uses the columns below. The full
 dataset ships the same fields in CSV and JSON, plus a relational SQLite build with
 the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
@@ -51,7 +51,7 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 2. **Toxicity (ASPCA).** Ingested politely, honoring the site's `robots.txt` 10-second crawl-delay with a descriptive User-Agent. `toxicity_status` records the origin of each determination — `aspca_verified` (species listed), `aspca_genus_inferred` (conservative, safe-direction only), or `unknown` — and toxicity is **never guessed "safe."**
 3. **Care (category-normalized).** A standardized light category maps to a fixed Lux band; watering interval, temperature range, and humidity come from plant-type and family profiles. Every row is graded by `care_confidence`.
 
-All collection was rate-limited and politely identified. **Update frequency: quarterly** (snapshot `2026.07`).
+All collection was rate-limited and politely identified. **Update frequency: monthly** (GBIF re-verification each month; ASPCA toxicity re-crawled quarterly; snapshot `2026.09`).
 
 ## Notes
 

@@ -11,7 +11,7 @@
 [![🤗 Explorer](https://img.shields.io/badge/%F0%9F%A4%97%20Spaces-sample%20explorer-ffd21e.svg)](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers)
 [![Care core: 270](https://img.shields.io/badge/Care%20core-270%20plants-2f5233.svg)](#whats-inside)
 [![Toxicity: ASPCA](https://img.shields.io/badge/Toxicity-ASPCA%20sourced-b0895f.svg)](#provenance)
-[![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](CHANGELOG.md)
+[![Snapshot: 2026.09](https://img.shields.io/badge/Snapshot-2026.09-blue.svg)](CHANGELOG.md)
 [![Get the data](https://img.shields.io/badge/Get%20the%20data-floradb-86a862.svg)](https://floradb.dataengineered.io)
 
 **[→ Get the full dataset at floradb](https://floradb.dataengineered.io)**

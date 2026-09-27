@@ -6,6 +6,10 @@ All notable changes to the FloraDB dataset snapshots.
 > on a recurring schedule, so the live figures only grow — the numbers below
 > stay accurate between snapshots.
 
+## Site update — 2026-09-28
+
+- **Directory pages render sooner**: the botanical family and plant directories (`/families/`, `/plants/` and their Spanish, German, French and Portuguese copies) loaded the Google Fonts stylesheet twice: once without blocking, and once as a render-blocking copy of the no-JavaScript fallback, which had lost its `<noscript>` wrapper. The fallback is wrapped again, so these pages no longer wait for the font file before they render. Nothing visible changes (2026-09-28).
+
 ## Site update — 2026-09-27
 
 - **Edition string**: the pricing card, README badge and data dictionary named Snapshot 2026.07; buyers have had the 2026.09 edition since the 2026-09-03 refresh. The dictionary's update frequency now says monthly (ASPCA toxicity re-crawled quarterly).

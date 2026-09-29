@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 222" width="720" height="222" role="img" aria-labelledby="t d" font-family="'Spline Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">
-<title id="t">Pet toxicity of the care-core houseplants</title><desc id="d">270 plants by ASPCA determination</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 222" width="720" height="222" role="img" aria-labelledby="t-toxicity-status d-toxicity-status" font-family="'Spline Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12">
+<title id="t-toxicity-status">Pet toxicity of the care-core houseplants</title><desc id="d-toxicity-status">270 plants by ASPCA determination</desc>
 <rect width="720" height="222" fill="#12140f"/>
 <text x="20" y="26" font-size="15" font-weight="600" fill="#ece7d9">Pet toxicity of the care-core houseplants</text>
 <text x="20" y="44" font-size="12" fill="#9a9683">270 plants by ASPCA determination</text>

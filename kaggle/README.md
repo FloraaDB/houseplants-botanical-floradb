@@ -50,5 +50,11 @@ $env:PYTHONUTF8=1; python -m kaggle kernels push -p kaggle/notebook
 - The dataset `id` and the notebook's `dataset_sources` both use
   `dataengineered/floradb-houseplants-care-sample`. If you change the slug, change it in
   **both** files.
+- The notebook `id` in `notebook/kernel-metadata.json` is the published notebook,
+  `dataengineered/floradb-starter-load-explore-houseplant-care`
+  (https://www.kaggle.com/code/dataengineered/floradb-starter-load-explore-houseplant-care).
+  Kaggle made that slug from the title, so keep the `title` as it is too. A `kernels push`
+  with an `id` that does not exist creates a second notebook instead of a new version of
+  this one.
 - Kaggle occasionally needs column descriptions confirmed once in the web **Data** tab if the
   CSV was ingested asynchronously — open the dataset after publish and verify the 10.0 score.

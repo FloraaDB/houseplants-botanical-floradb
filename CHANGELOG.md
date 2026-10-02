@@ -6,6 +6,10 @@ All notable changes to the FloraDB dataset snapshots.
 > on a recurring schedule, so the live figures only grow — the numbers below
 > stay accurate between snapshots.
 
+## Site update — 2026-10-02
+
+- **Kaggle notebook id**: `kaggle/notebook/kernel-metadata.json` named the starter notebook `floradb-starter-load-explore-houseplants`, an address that does not exist on Kaggle. The published notebook is `floradb-starter-load-explore-houseplant-care`, so pushing from this folder would have created a second notebook instead of updating it. The file now carries the published id, and `kaggle/README.md` says which notebook it is. No notebook or data change (2026-10-02).
+
 ## Site update — 2026-10-01
 
 - **Sitemap dates follow page content**: `scripts/seo_common.py` (shared by the DataEngineered sites) dates each sitemap entry by the last commit that changed the page itself. It compares pages without line-ending differences and without the markup the translation build owns (language alternates and the header and footer language menus), and skips commits that only moved that markup, so regenerating an unchanged page keeps its date instead of taking the day of the run. No page or sitemap change in this update (2026-10-01).

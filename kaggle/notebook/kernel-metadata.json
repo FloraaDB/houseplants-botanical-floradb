@@ -1,5 +1,5 @@
 {
-  "id": "dataengineered/floradb-starter-load-explore-houseplants",
+  "id": "dataengineered/floradb-starter-load-explore-houseplant-care",
   "title": "FloraDB Starter: Load & Explore Houseplant Care",
   "code_file": "floradb-starter-notebook.ipynb",
   "language": "python",

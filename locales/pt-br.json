@@ -11,6 +11,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "030b3fef8a5b54d1": {
+  "src": "Houseplants in numbers — FloraDB statistics {0}",
+  "t": "Plantas de interior em números — estatísticas FloraDB {0}",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "03688ba6aa340b87": {
   "src": "FAQ",
   "t": "Perguntas frequentes",
@@ -41,6 +47,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "06a00a41bd0d9753": {
+  "src": "Houseplants in numbers: {0} of {1} determined care-core plants are toxic to cats or dogs (ASPCA), {2} of the ASPCA index; light and watering distributions, families with the most plants, care medians. Free to cite and embed.",
+  "t": "Plantas de interior em números: {0} de {1} plantas do núcleo de cuidados com determinação são tóxicas para gatos ou cães (ASPCA), {2} do índice da ASPCA; distribuições de luz e rega, famílias com mais plantas, medianas de cuidados. Livre para citar e incorporar.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "0714a401bba3ac0f": {
   "src": "↻ Send another message",
   "t": "↻ Enviar outra mensagem",
@@ -65,11 +77,29 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "09ca55ca52d207f2": {
+  "src": "Share",
+  "t": "Participação",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "09d92fe92df07d51": {
   "src": "A curated dataset of {0} houseplants with quantitative care metrics — light (Lux) thresholds, watering-day intervals, temperature and humidity ranges — joined to ASPCA dog/cat toxicity and GBIF-verified taxonomy. Includes an {1}-record ASPCA toxicity layer and a {2} species taxonomic index. Every record carries a source URL for re-verification.",
   "t": "Conjunto de dados curado de {0} plantas de interior com métricas quantitativas de cuidado — limites de luz (lux), intervalos de rega em dias, faixas de temperatura e umidade — vinculadas à toxicidade para cães e gatos da ASPCA e a uma taxonomia verificada pelo GBIF. Inclui uma camada de toxicidade da ASPCA com {1} registros e um índice taxonômico de {2} espécies. Cada registro traz uma URL de origem para nova verificação.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "0a29de4694bfa12e": {
+  "src": "Get the full dataset ({0})",
+  "t": "Obter o conjunto de dados completo ({0})",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "0a844022b4835e67": {
+  "src": "Each plant carries one light category and a lux band (min_lux_threshold, max_lux_threshold) taken from the curated care sources listed on the plant's record. Medians are computed within the category over all its plants. Lux values are indoor reading thresholds, not measured field values.",
+  "t": "Cada planta tem uma categoria de luz e uma faixa de lux (min_lux_threshold, max_lux_threshold) extraídas das fontes de cuidados curadas listadas no registro da planta. As medianas são calculadas dentro de cada categoria, sobre todas as suas plantas. Os valores de lux são limites de leitura para ambientes internos, não valores medidos em campo.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "0ad93fe4921abd25": {
   "src": "Every member shares a watering interval of {0} days.",
@@ -119,6 +149,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "0ec160c9fdf43be1": {
+  "src": "Share toxic",
+  "t": "Percentual de tóxicas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "0f8e518ed5c1927a": {
   "src": "Want to dig deeper? <0>Try the interactive Sample Explorer on 🤗 Hugging Face →</0> or <1>download the free {2}-plant sample dataset</1>.",
   "t": "Quer se aprofundar? <0>Experimente o Sample Explorer interativo no 🤗 Hugging Face →</0> ou <1>baixe a amostra gratuita de {2} plantas</1>.",
@@ -137,6 +173,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "11ccf3ec83cbc63f": {
+  "src": "{0} plants",
+  "t": "{0} plantas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "11fbd13cca5dcdab": {
   "src": "det. GBIF {0} · rev. {1}",
   "t": "det. GBIF {0} · rev. {1}",
@@ -154,6 +196,12 @@
   "t": "O FloraDB é um conjunto de dados botânico de campo, curado, com mais de {0} plantas de interior, que combina parâmetros quantitativos de cuidado (limites de luz em lux, intervalos de rega em dias, faixas de temperatura e umidade) com status verificados de toxicidade para cães e gatos da ASPCA, sintomas clínicos e citações taxonômicas do GBIF.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "1325d5b6a9da717c": {
+  "src": "Light category",
+  "t": "Categoria de luz",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "13497a4a0ee7e09a": {
   "src": "{0} °C · {1} humidity",
@@ -197,6 +245,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "19f5e5dc3625e3cd": {
+  "src": "{0} contributes the most plants to the care core: <1>{2} of {3} ({4})</1>, and {5} of its {6} determined plants are toxic to cats or dogs. {7} follows with {8} and {9} with {10}. The {11} largest families hold {12} of the plants; {13} families are represented in all.",
+  "t": "{0} é a família que mais contribui com plantas para o núcleo de cuidados: <1>{2} de {3} ({4})</1>, e {5} das suas {6} plantas com determinação são tóxicas para gatos ou cães. Em seguida vêm {7}, com {8}, e {9}, com {10}. As {11} maiores famílias reúnem {12} das plantas; ao todo, {13} famílias estão representadas.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "1ae22ea93ceb84f2": {
   "src": "— {0} houseplants",
   "t": "— {0} plantas de interior",
@@ -220,6 +274,12 @@
   "t": "Estatísticas",
   "by": "claude-fable-5-1",
   "at": "2026-09-18"
+ },
+ "230b7757ef81efcd": {
+  "src": "Paste the snippet into your post. It links the chart back to this page, which is the only attribution we ask for.",
+  "t": "Cole o trecho na sua publicação. Ele vincula o gráfico a esta página, a única atribuição que pedimos.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "2376b14487ad78c2": {
   "src": "Houseplant Herbarium · Data",
@@ -281,6 +341,18 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "2ab169453a9ffead": {
+  "src": "<0>{1} of {2} plants ({3})</0> are on a {4}-day watering interval; the median interval is {5} days and the range {6} to {7} days. {8} plants ({9}) go {10} days or longer between waterings, {11} of them direct-sun plants.",
+  "t": "<0>{1} de {2} plantas ({3})</0> têm intervalo de rega de {4} dias; o intervalo mediano é de {5} dias, e a faixa vai de {6} a {7} dias. {8} plantas ({9}) ficam {10} dias ou mais entre uma rega e outra, das quais {11} são plantas de sol direto.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "2c9dc626d80cff88": {
+  "src": "Which plant families the houseplants come from",
+  "t": "De quais famílias botânicas vêm as plantas de interior",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "2ca7ebeda4a9e084": {
   "src": "✕ Close Contact Form",
   "t": "✕ Fechar formulário de contato",
@@ -292,6 +364,12 @@
   "t": "{0} de {1} membros com toxicidade para pets verificada, {2} não verificados.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "2d99f37bdfc584e2": {
+  "src": "Statistics · snapshot {0}",
+  "t": "Estatísticas · snapshot {0}",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "2d9e1a6815da23c9": {
   "src": "Layer ii · Safety",
@@ -322,6 +400,12 @@
   "t": "Coleção",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "310f56f5e01f4b6a": {
+  "src": "Houseplants in numbers",
+  "t": "Plantas de interior em números",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "311078c1a01c2bdf": {
   "src": "Your Name / Company *",
@@ -359,6 +443,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "37e616d40565679b": {
+  "src": "Families",
+  "t": "Famílias",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "383d4734c5d5fbe9": {
   "src": "Clinical Symptoms:",
   "t": "Sintomas clínicos:",
@@ -370,6 +460,12 @@
   "t": "Nomes verificados pelo GBIF",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "38912b98c5215f28": {
+  "src": "What the ASPCA plant index says overall",
+  "t": "O que o índice de plantas da ASPCA diz no geral",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "38c6a67bd66a0e4b": {
   "src": "← Specimen Explorer",
@@ -431,6 +527,18 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "3df47e767cd01697": {
+  "src": "Entries with a verdict",
+  "t": "Entradas com veredito",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "3e0102430833aae6": {
+  "src": "Plants",
+  "t": "Plantas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "3eb6390a7d09835a": {
   "src": "Free sample",
   "t": "Amostra gratuita",
@@ -485,6 +593,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "425a2e7cec6322d6": {
+  "src": "Of the {0} care-core houseplants with an ASPCA determination, <1>{2} ({3})</1> are toxic to cats or dogs: {4} verified against the ASPCA entry for the species and {5} inferred from an ASPCA entry for the genus. {6} are recorded as non-toxic. The other {7} of {8} plants have no determination and are excluded from the share, not assumed safe. In every determined record the cat and dog verdicts coincide.",
+  "t": "Das {0} plantas de interior do núcleo de cuidados com determinação da ASPCA, <1>{2} ({3})</1> são tóxicas para gatos ou cães: {4} verificadas com a entrada da ASPCA para a espécie e {5} inferidas a partir de uma entrada da ASPCA para o gênero. {6} estão registradas como não tóxicas. As outras {7} de {8} plantas não têm determinação e ficam excluídas do percentual; não são presumidas seguras. Em todos os registros com determinação, os vereditos para gatos e para cães coincidem.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "426503ad7e4dbb77": {
   "src": "<0>GBIF-verified taxonomy</0> + a <1>{2} species</1> taxonomic index and {3} enriched species (names, native range, image refs).",
   "t": "<0>Taxonomia verificada pelo GBIF</0> + um índice taxonômico de <1>{2} espécies</1> e {3} espécies enriquecidas (nomes, área nativa, referências de imagem).",
@@ -496,6 +610,12 @@
   "t": "Família: {0}",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "442ab5b55d54be8d": {
+  "src": "One row per plant in the care core. <0>ASPCA-verified</0>: the species has its own entry in the ASPCA toxic and non-toxic plant index. <1>Inferred from the genus</1>: no species entry exists, but every ASPCA entry for the genus carries the same verdict, so it is applied with {2}. Plants with neither are stored as NULL. Denominator for the headline share: {3} determined plants. ASPCA index crawled {4}.",
+  "t": "Uma linha por planta do núcleo de cuidados. <0>Verificada pela ASPCA</0>: a espécie tem sua própria entrada no índice de plantas tóxicas e não tóxicas da ASPCA. <1>Inferida do gênero</1>: não existe entrada para a espécie, mas todas as entradas da ASPCA para o gênero têm o mesmo veredito, que então é aplicado com {2}. As plantas sem nenhum dos dois são armazenadas como NULL. Denominador do percentual principal: {3} plantas com determinação. Índice da ASPCA coletado em {4}.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "4443cb4958249b88": {
   "src": "Maximum Light Tolerance",
@@ -569,6 +689,18 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "4c3cd45c41f555f4": {
+  "src": "<0>Nothing is estimated.</0> Toxicity is the ASPCA verdict for the species or, when every entry of the genus agrees, for the genus, and is otherwise NULL and excluded from the share. Care values are the curated guideline per plant. Where a denominator is smaller than {1}, the section says so.",
+  "t": "<0>Nada é estimado.</0> A toxicidade é o veredito da ASPCA para a espécie ou, quando todas as entradas do gênero concordam, para o gênero; caso contrário, é NULL e fica excluída do percentual. Os valores de cuidados são a recomendação curada de cada planta. Quando um denominador é menor que {1}, a seção informa isso.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "4d05c3295e831220": {
+  "src": "Family per plant is the GBIF backbone family of the accepted name, re-verified against GBIF on each monthly refresh. The toxicity columns use the same ASPCA determination as the headline section; plants without one count in the family total but not in the toxic column.",
+  "t": "A família de cada planta é a família do nome aceito no backbone taxonômico do GBIF, verificada novamente no GBIF a cada atualização mensal. As colunas de toxicidade usam a mesma determinação da ASPCA da seção principal; as plantas sem determinação contam no total da família, mas não na coluna de tóxicas.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "4efb6cb7c018f0c6": {
   "src": "Family",
   "t": "Família",
@@ -611,6 +743,18 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "51cda54aed2354d8": {
+  "src": "Mean",
+  "t": "Média",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "525958ba03595ffa": {
+  "src": "Family (GBIF)",
+  "t": "Família (GBIF)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "53d4c9120b9c9d8a": {
   "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family…",
   "t": "{0} ({1}) precisa de {2} lux de luz, rega a cada {3} dias e não é tóxica para pets. Da família {4}…",
@@ -640,6 +784,12 @@
   "t": "Plantas e famílias relacionadas",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "5637933aa79393ed": {
+  "src": "How often the houseplants are watered",
+  "t": "Com que frequência as plantas de interior são regadas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "564f4d46014943f7": {
   "src": "Our form provider is unreachable right now. Please write to {0} with your request — we reply within {1} business day.",
@@ -725,6 +875,24 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "5d398eef3ecc3ea6": {
+  "src": "Minimum",
+  "t": "Mínimo",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "5e29384a0734ecc0": {
+  "src": "Temperature range",
+  "t": "Faixa de temperatura",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "5e8470906e7bd395": {
+  "src": "ASPCA index entries",
+  "t": "Entradas do índice da ASPCA",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "5e878d1830c183b5": {
   "src": "Toxic{0}Dogs &amp; Cats{1}· ASPCA ·",
   "t": "Tóxica{0}Cães e gatos{1}· ASPCA ·",
@@ -743,11 +911,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "5fce18bbfb73e0e9": {
+  "src": "<0>Source.</0> The full FloraDB snapshot of {1} care-core plants, {2} ASPCA index entries (crawled {3}), {4} GBIF-accepted species in the taxonomic index and {5} enriched species. Every row keeps its source URL and retrieval time; see the <6>data dictionary</6>.",
+  "t": "<0>Fonte.</0> O snapshot completo do FloraDB de {1} plantas do núcleo de cuidados, {2} entradas do índice da ASPCA (coletadas em {3}), {4} espécies aceitas pelo GBIF no índice taxonômico e {5} espécies enriquecidas. Cada linha mantém sua URL de origem e a data e hora da coleta; veja o <6>dicionário de dados</6>.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "605a2d2a311c9330": {
   "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is non-toxic to pets. Part of the {4} family, ideal humidity…",
   "t": "{0} ({1}) precisa de {2} lux de luz, rega a cada {3} dias e não é tóxica para pets. Da família {4}, umidade ideal…",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "6081c1357b9298f1": {
+  "src": "Plant families",
+  "t": "Famílias botânicas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "60d5f3b7a487f02f": {
   "src": "{0} verified determinations with quantitative light/water parameters and ASPCA pet safety profiles.",
@@ -755,11 +935,35 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "611b13f79fb4a4e4": {
+  "src": "The median care-core houseplant wants <0>{1} to {2} lux</0>, water every {3} days, {4} to {5} °C and {6} humidity. {7} plants ({8}) target {9} humidity; {10} ({11}) target {12} or less.",
+  "t": "A planta de interior mediana do núcleo de cuidados pede <0>{1} a {2} lux</0>, rega a cada {3} dias, {4} a {5} °C e {6} de umidade. {7} plantas ({8}) têm como alvo {9} de umidade; {10} ({11}) têm como alvo {12} ou menos.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "6190db10926e439e": {
+  "src": "top {0} of {1} families",
+  "t": "as {0} primeiras de {1} famílias",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "61e4a2dcdc012f46": {
+  "src": "Most common value",
+  "t": "Valor mais comum",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "61e93c8c6cbc14cc": {
   "src": "Watering:",
   "t": "Rega:",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "6213655ebfa7b108": {
+  "src": "Light requirements",
+  "t": "Necessidades de luz",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "62fd473b0d57e84d": {
   "src": "Filter by name, family, or safety (e.g. Fern, {0}, cat-safe)...",
@@ -797,11 +1001,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "6afaa4a163da95fa": {
+  "src": "Minimum temperature (°C)",
+  "t": "Temperatura mínima (°C)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "6b21fb791ac05170": {
   "src": "About",
   "t": "Sobre",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "6ba0fc8b55f75c3a": {
+  "src": "With a determination",
+  "t": "Com determinação",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "6fbdaa0fa4537961": {
   "src": "⚠️ TOXICITY NOT VERIFIED",
@@ -815,6 +1031,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "70730e9be3c150b1": {
+  "src": "With ASPCA determination",
+  "t": "Com determinação da ASPCA",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "70cf2c63616f40b8": {
   "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4} family, ideal…",
   "t": "{0} ({1}) precisa de {2} lux de luz, rega a cada {3} dias e é tóxica para gatos e cães. Da família {4}, ideal…",
@@ -827,6 +1049,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "7389b3b752fac40a": {
+  "src": "Animal",
+  "t": "Animal",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "73bc85092dc9ef5b": {
   "src": "{0} ({1}) needs {2} lux light, watering every {3} days, pet toxicity not verified. Part of the {4} family, ideal humidity…",
   "t": "{0} ({1}) precisa de {2} lux de luz, rega a cada {3} dias; toxicidade para pets não verificada. Da família {4}, umidade ideal…",
@@ -838,6 +1066,12 @@
   "t": "FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "7471fce8530d7bd0": {
+  "src": "excluded",
+  "t": "excluídas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "7476fdabdfac9f59": {
   "src": "Toxic",
@@ -899,6 +1133,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "7e439c353ec807e1": {
+  "src": "On this page",
+  "t": "Nesta página",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "7f470c9731f4a777": {
   "src": "Toxic to Cats?",
   "t": "Tóxica para gatos?",
@@ -916,6 +1156,18 @@
   "t": "<0>Snapshot {1}</0> · compra única, sem cobranças recorrentes.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "810c896db5b91d53": {
+  "src": "Every plant with its lux band, watering interval, temperature and humidity targets, ASPCA verdict and clinical signs, GBIF key and source URL, as SQLite, CSV and JSON.",
+  "t": "Cada planta com sua faixa de lux, intervalo de rega, valores-alvo de temperatura e umidade, veredito e sinais clínicos da ASPCA, chave GBIF e URL de origem, em SQLite, CSV e JSON.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "8138581684548905": {
+  "src": "Houseplant Statistics {0} — Pet Toxicity, Light, Watering, Families | FloraDB",
+  "t": "Estatísticas de plantas de interior {0} — toxicidade para pets, luz, rega, famílias | FloraDB",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "82ebe2acfa338045": {
   "src": "{0} ({1}) needs {2} lux light, watering every {3} days, is toxic to both cats and dogs. Part of the {4}…",
@@ -959,6 +1211,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "86514acba273d6c9": {
+  "src": "Toxic to cats or dogs",
+  "t": "Tóxicas para gatos ou cães",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "869b624f356db000": {
   "src": "Accession № {0}",
   "t": "Registro n.º {0}",
@@ -988,6 +1246,18 @@
   "t": "Obter o conjunto de dados",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "88f9870b6f1b06d0": {
+  "src": "Verdicts by animal",
+  "t": "Vereditos por animal",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "8938ea4c93194c9d": {
+  "src": "Across the {0} ASPCA index entries with both a cat and a dog verdict, <1>{2} ({3})</1> are toxic to at least one of them: {4} to both, {5} to cats only and {6} to dogs only. {7} of the {8} entries with a horse verdict are toxic to horses. Among the largest families, every determined entry of {9} is toxic; none of {10}, {11}, {12}, {13}, {14} is.",
+  "t": "Nas {0} entradas do índice da ASPCA com veredito tanto para gatos quanto para cães, <1>{2} ({3})</1> são tóxicas para pelo menos um dos dois: {4} para ambos, {5} só para gatos e {6} só para cães. {7} das {8} entradas com veredito para cavalos são tóxicas para cavalos. Entre as maiores famílias, todas as entradas com determinação de {9} são tóxicas; nas de {10}, {11}, {12}, {13} e {14}, nenhuma é.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "899da2f2dce6551f": {
   "src": "FloraDB Herbarium",
@@ -1037,6 +1307,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "8e8e8bc53ba6b0a0": {
+  "src": "ASPCA entries",
+  "t": "Entradas da ASPCA",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "8e90cdacfa15b83b": {
   "src": "FloraDB — Houseplant Care &amp; Pet-Toxicity Dataset · <0>Back to Main Catalog</0>",
   "t": "FloraDB — Conjunto de dados de cuidados e toxicidade para pets de plantas de interior · <0>Voltar ao catálogo principal</0>",
@@ -1061,11 +1337,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "910b3854a71bc4eb": {
+  "src": "Species index",
+  "t": "Índice de espécies",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "9228c0a7ea10ee2b": {
   "src": "Flora<0>DB</0>",
   "t": "Flora<0>DB</0>",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "9297913eea881537": {
+  "src": "Copy snippet",
+  "t": "Copiar trecho",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "9329799914b48736": {
   "src": "⚠️ Toxic to Pets",
@@ -1103,11 +1391,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "95408c9a1076f8c3": {
+  "src": "Care requirements: medians and ranges",
+  "t": "Necessidades de cuidado: medianas e faixas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "973d15cc240ea7c6": {
   "src": "Medium to Bright",
   "t": "Média a intensa",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "97d49f8d7ce9635d": {
+  "src": "Share of determined plants",
+  "t": "Percentual das plantas com determinação",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "98ff2266ec1655db": {
   "src": "Your message went to {0}. We usually respond within {1} business hours.",
@@ -1169,6 +1469,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "a1da3044473f12fc": {
+  "src": "<0>Not veterinary advice.</0> Toxicity data is informational. If a pet ingests a plant, contact a veterinarian or ASPCA Animal Poison Control.",
+  "t": "<0>Não constitui orientação veterinária.</0> Os dados de toxicidade são informativos. Se um pet ingerir uma planta, procure um veterinário ou o ASPCA Animal Poison Control.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "a23c2f6466909802": {
   "src": "Botanical Family: {0}",
   "t": "Família botânica: {0}",
@@ -1180,6 +1486,12 @@
   "t": "{0} abrange {1} planta de interior no FloraDB (faixa de luz de {2} lux, rega a cada {3} dias, {4} de {5} tóxica para pets).",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "a353a6819e589282": {
+  "src": "Interval (days)",
+  "t": "Intervalo (dias)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "a36ef8aba22905e2": {
   "src": "Light",
@@ -1235,6 +1547,18 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "a80a475b9a7454c1": {
+  "src": "The full ASPCA toxic and non-toxic plant index as crawled on {0} entries covering garden, wild and indoor plants, not only houseplants. Each entry is matched to the GBIF backbone; the family shown is GBIF's, which merges older names such as Liliaceae and Compositae into current circumscriptions. Entries without a GBIF family ({1}) are left out of the family table only.",
+  "t": "O índice completo de plantas tóxicas e não tóxicas da ASPCA, conforme coletado em {0} entradas que abrangem plantas de jardim, silvestres e de interior, não apenas plantas de interior. Cada entrada é associada ao backbone taxonômico do GBIF; a família mostrada é a do GBIF, que incorpora nomes mais antigos, como Liliaceae e Compositae, às circunscrições atuais. As entradas sem família no GBIF ({1}) ficam de fora apenas da tabela de famílias.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "a8df2fec28d8948a": {
+  "src": "Maximum",
+  "t": "Máximo",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "a8ffb94234851811": {
   "src": "Botanical &amp; Pet-Safety Knowledge Base",
   "t": "Base de conhecimento botânica e de segurança para pets",
@@ -1283,11 +1607,35 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "aba805f5e11ee1b1": {
+  "src": "With both verdicts",
+  "t": "Com ambos os vereditos",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "accb6d37584a7d67": {
+  "src": "<0>Refresh.</0> The care core is re-verified against GBIF monthly; the ASPCA index is re-crawled on a manual, roughly quarterly cadence. This page and its charts are regenerated with each snapshot, so figures move. Cite the snapshot date.",
+  "t": "<0>Atualização.</0> O núcleo de cuidados é verificado novamente no GBIF todo mês; o índice da ASPCA é coletado de novo manualmente, em cadência aproximadamente trimestral. Esta página e seus gráficos são regenerados a cada snapshot, então os números mudam. Cite a data do snapshot.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "ad88b358bf182770": {
+  "src": "Share of all plants",
+  "t": "Percentual do total de plantas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "ae1e30fa33906100": {
   "src": "Custom work (subsets, recurring feeds, schema mapping): from {0} — <1>contact the desk</1>",
   "t": "Trabalhos sob medida (subconjuntos, feeds recorrentes, mapeamento de esquema): a partir de {0} — <1>fale com a equipe</1>",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "ae3981a840bf849a": {
+  "src": "Plants at that value",
+  "t": "Plantas com esse valor",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "ae8b6138433771e5": {
   "src": "houseplant care dataset",
@@ -1306,6 +1654,12 @@
   "t": "— mesma faixa de luz: média",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "b08ae37ed0218a85": {
+  "src": "Snapshot",
+  "t": "Snapshot",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "b15eee1ec14ffcef": {
   "src": "ASPCA pet toxicity",
@@ -1331,6 +1685,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "b2bb7604c825f95a": {
+  "src": "Metric",
+  "t": "Métrica",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "b45da86982e81e77": {
   "src": "— same light band: Medium to Bright",
   "t": "— mesma faixa de luz: média a intensa",
@@ -1342,6 +1702,12 @@
   "t": "<0>Prancha II</0> · Como cada registro é construído",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "b508009d82fa532a": {
+  "src": "Aggregate statistics computed from the full FloraDB snapshot: {0} care-core houseplants with quantitative light, watering, temperature and humidity requirements, joined to the {1}-entry ASPCA toxicity index and verified against the GBIF backbone. Every figure states its denominator and is free to cite, quote and embed with a link to this page.",
+  "t": "Estatísticas agregadas calculadas a partir do snapshot completo do FloraDB: {0} plantas de interior do núcleo de cuidados com necessidades quantitativas de luz, rega, temperatura e umidade, vinculadas ao índice de toxicidade da ASPCA com {1} entradas e verificadas no backbone taxonômico do GBIF. Cada número indica seu denominador e pode ser citado, reproduzido e incorporado livremente com um link para esta página.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "b543db5cb0f2368c": {
   "src": "Every name is matched to the <0>GBIF Taxonomic Backbone</0> — canonical accepted names, synonyms preserved ({1}), and a {2} to re-verify each record.",
@@ -1361,6 +1727,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "b585e809473469f7": {
+  "src": "Care-core plants",
+  "t": "Plantas do núcleo de cuidados",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "b7af3cc99f041169": {
   "src": "lux light thresholds",
   "t": "limites de luz em lux",
@@ -1373,11 +1745,35 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "b82d8ee484e0229c": {
+  "src": "Care medians and ranges",
+  "t": "Medianas e faixas de cuidados",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "b887ba2a5f48de43": {
+  "src": "Median",
+  "t": "Mediana",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "b8e0822b1e33fc8f": {
   "src": "Watering intervals range from every {0} to every {1} days.",
   "t": "Os intervalos de rega variam de a cada {0} a a cada {1} dias.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "bb07773b54394694": {
+  "src": "Watering intervals",
+  "t": "Intervalos de rega",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "bb8197818afd4907": {
+  "src": "<0>Questions or corrections:</0> <1>contact form</1> or floradb@dataengineered.io.",
+  "t": "<0>Dúvidas ou correções:</0> <1>formulário de contato</1> ou floradb@dataengineered.io.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "bc0a340f31c90f9c": {
   "src": "— {0} houseplant",
@@ -1427,11 +1823,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "c1f6ba271197aa0f": {
+  "src": "watering_frequency_days is a single indoor guideline value per plant from the curated care sources; seasonal or pot-size adjustments are not modelled and no plant carries a range.",
+  "t": "watering_frequency_days é um único valor de recomendação por planta para ambiente interno, extraído das fontes de cuidados curadas; ajustes por estação do ano ou tamanho do vaso não são modelados, e nenhuma planta tem uma faixa.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "c230c488e9a5c7b1": {
   "src": "Taxonomic &amp; Field Verification",
   "t": "Verificação taxonômica e de campo",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "c34e1af2fef9bc56": {
+  "src": "Download SVG",
+  "t": "Baixar SVG",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "c451cb92a724790a": {
   "src": "<0>Plate I</0> · The Specimen Record",
@@ -1439,11 +1847,23 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "c58aa83fd84d7184": {
+  "src": "Median max lux",
+  "t": "Lux máximo mediano",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "c605fa14d66f968a": {
   "src": "The page you're looking for doesn't exist or may have moved.",
   "t": "A página que você procura não existe ou pode ter sido movida.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "c64f4be1f63b643f": {
+  "src": "Need the plant-level records behind these numbers?",
+  "t": "Precisa dos registros por planta por trás desses números?",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "c88169dfda449cf2": {
   "src": "BOTANICAL FAMILY HUB",
@@ -1492,6 +1912,12 @@
   "t": "FloraDB — Snapshot botânico de cuidados e toxicidade para pets de plantas de interior · <0>Obtenha o conjunto de dados relacional completo ({1})</0>",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "cec3e9678ff0a30c": {
+  "src": "Embed this chart",
+  "t": "Incorporar este gráfico",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "cf01481f626d5127": {
   "src": "Privacy",
@@ -1559,6 +1985,24 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "d841df844ea9ac08": {
+  "src": "The ASPCA index overall",
+  "t": "O índice da ASPCA no geral",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "d8a978ab41296074": {
+  "src": "Median humidity (%)",
+  "t": "Umidade mediana (%)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "d96fbed934876133": {
+  "src": "Suggested citation.",
+  "t": "Citação sugerida.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "db13dde818106c9a": {
   "src": "<0>Plate III</0> · Live Specimen Explorer",
   "t": "<0>Prancha III</0> · Explorador de espécimes ao vivo",
@@ -1570,6 +2014,12 @@
   "t": "<0>Toxicidade para pets da ASPCA</0>: {1} determinações com sinais clínicos; indicadores de cão/gato no núcleo de cuidados, nunca presumidos como \"segura\".",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "dce7aa195eb22c2c": {
+  "src": "<0>Reuse.</0> The figures and charts on this page are published under <1>CC BY {2}</1>: use them in articles, slides and posts with a link to {3}. The machine-readable version is <4>data.json</4>. The underlying row-level dataset is a separate <5>commercial product</5>; a free {6}-plant sample is in the <7>public repository</7>.",
+  "t": "<0>Reutilização.</0> Os números e gráficos desta página são publicados sob <1>CC BY {2}</1>: use-os em artigos, slides e publicações com um link para {3}. A versão legível por máquina é <4>data.json</4>. O conjunto de dados linha a linha subjacente é um <5>produto comercial</5> separado; uma amostra gratuita de {6} plantas está no <7>repositório público</7>.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "dd3329b9f2db758c": {
   "src": "<0>Home</0> › Botanical family directory",
@@ -1583,6 +2033,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "de39f4653e0c7009": {
+  "src": "Method, reuse and citation",
+  "t": "Método, reutilização e citação",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "de4b49fa50befc2b": {
   "src": "Toxicity is inferred from the ASPCA listing for the genus {0}; species-level confirmation is pending.",
   "t": "A toxicidade é inferida da ficha da ASPCA para o gênero {0}; a confirmação no nível de espécie está pendente.",
@@ -1595,6 +2051,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "dfd9fdee61105131": {
+  "src": "Houseplants in numbers: statistics from the FloraDB care core and the ASPCA index",
+  "t": "Plantas de interior em números: estatísticas do núcleo de cuidados do FloraDB e do índice da ASPCA",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "e02f7e76aeee7d08": {
   "src": "Species taxonomic index",
   "t": "Índice taxonômico de espécies",
@@ -1606,6 +2068,12 @@
   "t": "Determinação",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "e2033a53f7b07287": {
+  "src": "All {0} plants carry every care metric, so each denominator is {1}. Values are the curated indoor guideline per plant; care_confidence records how well the sources agree: {2} medium, {3} high, {4} low.",
+  "t": "Todas as {0} plantas têm todas as métricas de cuidado, então cada denominador é {1}. Os valores são a recomendação curada de cada planta para ambiente interno; care_confidence registra o grau de concordância entre as fontes: média em {2} plantas, alta em {3} e baixa em {4}.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "e214a988e246c45d": {
   "src": "YES (Toxic, genus-level inference)",
@@ -1673,11 +2141,29 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "e7e096452353a34d": {
+  "src": "Maximum temperature (°C)",
+  "t": "Temperatura máxima (°C)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "e9953f687c8dab6c": {
   "src": "Medium to Low",
   "t": "Média a baixa",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "e99f5f49264b0567": {
+  "src": "Median min lux",
+  "t": "Lux mínimo mediano",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "ebaaade16c5915d6": {
+  "src": "top {0} families by entries",
+  "t": "as {0} primeiras famílias por número de entradas",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "ecdbf6d88010af2a": {
   "src": "Free Sample",
@@ -1691,6 +2177,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "eea36a416006e8f0": {
+  "src": "Median watering (days)",
+  "t": "Rega mediana (dias)",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "eeb3c93f68ab71c7": {
   "src": "Lux Range:",
   "t": "Faixa de lux:",
@@ -1703,11 +2195,29 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "f2193f60befc3ddf": {
+  "src": "{0} plants, {1} with a determination",
+  "t": "{0} plantas, {1} com determinação",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "f2e0eeab107580cf": {
   "src": "It is also known as {0}.",
   "t": "Também é conhecida como {0}.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "f2ec55e6c9e23c62": {
+  "src": "How much light the houseplants need",
+  "t": "De quanta luz as plantas de interior precisam",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
+ "f2f30bd09cb867a8": {
+  "src": "How many common houseplants are toxic to cats or dogs",
+  "t": "Quantas plantas de interior comuns são tóxicas para gatos ou cães",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "f32d5a3b17e61429": {
   "src": "Support",
@@ -1721,6 +2231,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "f4486cdd2fcf77a1": {
+  "src": "<0>{1}</0> is the most common light requirement, {2} of {3} plants ({4}), followed by {5} ({6}) and {7} ({8}). The median lux band of a bright-indirect plant is {9} to {10} lux; of a direct-sun plant {11} to {12} lux, with a median watering interval of {13} days against {14} for bright-indirect plants.",
+  "t": "<0>{1}</0> é a necessidade de luz mais comum, com {2} de {3} plantas ({4}), seguida de {5} ({6}) e {7} ({8}). A faixa de lux mediana de uma planta de luz indireta intensa vai de {9} a {10} lux; a de uma planta de sol direto, de {11} a {12} lux, com intervalo de rega mediano de {13} dias, contra {14} das plantas de luz indireta intensa.",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "f455794f0c2c81cb": {
   "src": "SPECIMEN NO. {0}",
   "t": "ESPÉCIME N.º {0}",
@@ -1732,6 +2248,12 @@
   "t": "NÃO (segura)",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "f5cbdf6bfb51439b": {
+  "src": "Contents",
+  "t": "Conteúdo",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
  },
  "f7f4ac15e4445153": {
   "src": "Quantitative Care Thresholds",

@@ -42,7 +42,7 @@ $env:PYTHONUTF8=1; python -m kaggle kernels push -p kaggle/notebook
 | :--- | :--- |
 | `dataset/floradb_sample.csv` | The 100-plant sample (identical to `../samples/`) |
 | `dataset/dataset-metadata.json` | Title, subtitle, tags, license, description, **all 25 column descriptions** |
-| `notebook/floradb-starter-notebook.ipynb` | Working, pre-executed starter (load → preview → pet-safety filter → care analysis → provenance) |
+| `notebook/floradb-starter-notebook.ipynb` | Working starter (load → preview → pet-safety filter → care analysis → provenance); stored without outputs, Kaggle runs it on push |
 | `notebook/kernel-metadata.json` | Kernel config; sources the dataset above |
 
 ## Notes

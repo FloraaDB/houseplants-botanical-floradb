@@ -84,11 +84,11 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field.
 | **Sample** | 100 plants (this repo) | Free |
 | **Snapshot** | Full 270 care core + 891 toxicity + 20,000+ index · SQLite + CSV + JSON | **$49** one-time |
 | **Custom work** | Subsets, recurring refreshes, schema mapping — quoted per engagement | from $99, via the [contact form](https://floradb.dataengineered.io/#support) |
-| **Live lookup** | On-demand, self-serve via Apify | pay-per-result |
+| **Live lookup** | Apify actor: GBIF taxonomy + ASPCA toxicity by scientific name; care metrics for the 100 sample plants | pay-per-result |
 
 **[→ Get it at floradb](https://floradb.dataengineered.io)** · or use the [contact form](https://floradb.dataengineered.io/#support) (floradb@dataengineered.io) for custom work.
 
-> 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, GBIF-verified taxonomy + ASPCA toxicity on demand.
+> 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, GBIF-verified taxonomy + ASPCA toxicity on demand, with care metrics for the 100 sample plants.
 
 ## Use cases
 

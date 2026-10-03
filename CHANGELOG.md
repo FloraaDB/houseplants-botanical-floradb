@@ -8,6 +8,8 @@ All notable changes to the FloraDB dataset snapshots.
 
 ## Site update — 2026-10-03
 
+- **Apify actor wording**: the actor now publishes care metrics only for the 100 plants of this free sample; any other scientific name gets GBIF taxonomy and ASPCA toxicity without care metrics. The README pricing row and Apify note, and the Kaggle description (`kaggle/dataset/dataset-metadata.json`), now say so instead of offering the actor as an alternative to the snapshot. The site's "Prefer live, self-serve lookups?" link is unchanged.
+- **Kaggle description corrections** (same file): "Updated quarterly" now matches `DATA_DICTIONARY.md` (monthly GBIF re-verification, quarterly ASPCA re-crawl; the sample is snapshot 2026.07), and the sample file's resource description says 28 families, as the CSV has, not 33.
 - **Kaggle starter notebook re-run**: the notebook on Kaggle still linked the retired `houseplants-botanical-floradb.pages.dev` address, and Kaggle's API listed no data source for it. `kaggle/notebook/` was pushed as version 2 with the sample attached (`dataengineered/floradb-houseplants-care-sample`). The run completed and the notebook now links `floradb.dataengineered.io`; its code is unchanged and it prints no file path. `kaggle/README.md` no longer calls the repository copy "pre-executed": it carries no outputs, and Kaggle shows the run's (2026-10-03).
 
 ## Site update — 2026-10-02

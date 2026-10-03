@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://floradb.dataengineered.io/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/es/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/de/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/fr/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/pt-br/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/families/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/families/"/>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/es/families/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/families/"/>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/de/families/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/families/"/>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/fr/families/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/families/"/>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/pt-br/families/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/families/"/>
@@ -1802,7 +1802,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/plants/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/"/>
@@ -1814,7 +1814,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/es/plants/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/"/>
@@ -1826,7 +1826,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/de/plants/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/"/>
@@ -1838,7 +1838,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/fr/plants/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/"/>
@@ -1850,7 +1850,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/pt-br/plants/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://floradb.dataengineered.io/plants/"/>
@@ -7862,7 +7862,7 @@
   </url>
   <url>
     <loc>https://floradb.dataengineered.io/stats/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -1769,12 +1769,6 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
- "fd23ce09a22b9345": {
-  "src": "Prefer live, self-serve lookups? <0>Run our actor on Apify →</0>",
-  "t": "Prefere consultas ao vivo e self-service? <0>Execute nosso actor no Apify →</0>",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
  "ff63174cf26c8da4": {
   "src": "FloraDB Houseplant Dataset",
   "t": "Conjunto de dados de plantas de interior FloraDB",

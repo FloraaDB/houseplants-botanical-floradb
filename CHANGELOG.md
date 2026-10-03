@@ -6,6 +6,10 @@ All notable changes to the FloraDB dataset snapshots.
 > on a recurring schedule, so the live figures only grow — the numbers below
 > stay accurate between snapshots.
 
+## Site update — 2026-10-03
+
+- **Kaggle starter notebook re-run**: the notebook on Kaggle still linked the retired `houseplants-botanical-floradb.pages.dev` address, and Kaggle's API listed no data source for it. `kaggle/notebook/` was pushed as version 2 with the sample attached (`dataengineered/floradb-houseplants-care-sample`). The run completed and the notebook now links `floradb.dataengineered.io`; its code is unchanged and it prints no file path. `kaggle/README.md` no longer calls the repository copy "pre-executed": it carries no outputs, and Kaggle shows the run's (2026-10-03).
+
 ## Site update — 2026-10-02
 
 - **Kaggle notebook id**: `kaggle/notebook/kernel-metadata.json` named the starter notebook `floradb-starter-load-explore-houseplants`, an address that does not exist on Kaggle. The published notebook is `floradb-starter-load-explore-houseplant-care`, so pushing from this folder would have created a second notebook instead of updating it. The file now carries the published id, and `kaggle/README.md` says which notebook it is. No notebook or data change (2026-10-02).

@@ -329,6 +329,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "328a380e6f2893ba": {
+  "src": "Need live lookups? Our Apify actor checks any scientific name against GBIF and ASPCA pet-toxicity data; care metrics cover the {0} plants of the free sample only. <1>Run it on Apify →</1>",
+  "t": "Besoin de recherches en direct ? Notre actor Apify vérifie tout nom scientifique auprès de GBIF et des données de toxicité pour les animaux de l’ASPCA ; les métriques d’entretien ne couvrent que les {0} plantes de l’échantillon gratuit. <1>Lancez-le sur Apify →</1>",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-03"
+ },
  "34547c12d5a58796": {
   "src": "every <0>{1}</0> days",
   "t": "tous les <0>{1}</0> jours",

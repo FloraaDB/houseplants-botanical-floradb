@@ -329,6 +329,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "328a380e6f2893ba": {
+  "src": "Need live lookups? Our Apify actor checks any scientific name against GBIF and ASPCA pet-toxicity data; care metrics cover the {0} plants of the free sample only. <1>Run it on Apify →</1>",
+  "t": "Brauchen Sie Live-Abfragen? Unser Apify-Actor gleicht jeden wissenschaftlichen Namen mit GBIF und den ASPCA-Daten zur Giftigkeit für Haustiere ab; Pflegekennzahlen gibt es nur für die {0} Pflanzen der kostenlosen Beispieldaten. <1>Auf Apify ausführen →</1>",
+  "by": "claude-opus-5-5",
+  "at": "2026-10-04"
+ },
  "34547c12d5a58796": {
   "src": "every <0>{1}</0> days",
   "t": "alle <0>{1}</0> Tage",
@@ -1760,12 +1766,6 @@
  "fba0516c6478346e": {
   "src": "Plant directory — FloraDB",
   "t": "Pflanzenverzeichnis — FloraDB",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "fd23ce09a22b9345": {
-  "src": "Prefer live, self-serve lookups? <0>Run our actor on Apify →</0>",
-  "t": "Lieber live und selbst abfragen? <0>Nutzen Sie unseren Actor auf Apify →</0>",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },

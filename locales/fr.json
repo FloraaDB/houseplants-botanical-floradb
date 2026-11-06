@@ -1835,6 +1835,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "c2e071a2a989dac3": {
+  "src": "<0>Latest monthly snapshot</0> · one-time purchase, no recurring fees.",
+  "t": "<0>Snapshot mensuel le plus récent</0> · achat unique, aucun frais récurrent.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-06"
+ },
  "c34e1af2fef9bc56": {
   "src": "Download SVG",
   "t": "Télécharger le SVG",
@@ -2068,6 +2074,12 @@
   "t": "Détermination",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "e1e7e885e15c3dae": {
+  "src": "One-time purchase · {0} care plants · Monthly snapshot",
+  "t": "Achat unique · {0} plantes avec données d’entretien · Snapshot mensuel",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-06"
  },
  "e2033a53f7b07287": {
   "src": "All {0} plants carry every care metric, so each denominator is {1}. Values are the curated indoor guideline per plant; care_confidence records how well the sources agree: {2} medium, {3} high, {4} low.",

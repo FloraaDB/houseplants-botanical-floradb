@@ -36,7 +36,7 @@ This is a **curated care + safety** dataset — strong on quantitative care, ver
 | Botanical families | **54** | 28 |
 | ASPCA toxicity records | **891** | (linked) |
 | Species taxonomic index (GBIF) | **20,000+** | — |
-| Enriched species (names/images/range) | **702** | (joined) |
+| Enriched species (names/images/range) | **683** | (joined) |
 | Formats | SQLite · CSV · JSON | CSV |
 
 The free [`samples/floradb_sample.csv`](samples/floradb_sample.csv) is 100 plants across 28 families — a real taste of the schema and quality (a deliberate mix of verified, genus-inferred, and unknown toxicity so you see the honest flags). Explore it interactively in the [🤗 Sample Explorer](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers), or load it straight from the [🤗 sample dataset](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample). The full dataset is available at **[floradb](https://floradb.dataengineered.io)**.

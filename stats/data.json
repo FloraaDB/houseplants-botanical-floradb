@@ -1,8 +1,8 @@
 {
  "dataset": "FloraDB",
  "page": "https://floradb.dataengineered.io/stats/",
- "generated": "2026-09-18",
- "snapshot": "2026-09-03",
+ "generated": "2026-11-06",
+ "snapshot": "2026-11-06",
  "aspca_crawled": "2026-07-06",
  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) - attribute with a link to the page",
  "totals": {
@@ -10,14 +10,14 @@
   "families": 54,
   "aspca_entries": 891,
   "species_index": 20000,
-  "enriched": 702
+  "enriched": 683
  },
  "pet_toxicity_care_core": {
-  "determined": 170,
+  "determined": 169,
   "toxic_to_cats_or_dogs": 98,
-  "toxic_pct_of_determined": 57.6,
-  "non_toxic": 72,
-  "no_determination": 100,
+  "toxic_pct_of_determined": 58.0,
+  "non_toxic": 71,
+  "no_determination": 101,
   "cat_dog_verdicts_differ": 0,
   "by_determination": [
    {
@@ -30,11 +30,11 @@
    },
    {
     "determination": "Non-toxic, ASPCA-verified",
-    "plants": 72
+    "plants": 71
    },
    {
     "determination": "No determination",
-    "plants": 100
+    "plants": 101
    }
   ]
  },
@@ -205,7 +205,7 @@
    "family": "Marantaceae",
    "plants": 13,
    "share_pct": 4.8,
-   "determined": 4,
+   "determined": 3,
    "toxic": 0
   },
   {

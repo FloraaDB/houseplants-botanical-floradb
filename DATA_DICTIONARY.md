@@ -59,7 +59,7 @@ All collection was rate-limited and politely identified. **Update frequency: mon
 - **Toxicity is safety-first.** `aspca_verified` is a species-level ASPCA determination; `aspca_genus_inferred` means the species' genus has ASPCA-listed toxic members (conservative over-warning, pending review); `unknown` is never treated as "safe".
 - **Images are references only.** We store a URL + license + attribution, not the pixels. Filter on `image_commercial_safe = 1` before any commercial use.
 - **Provenance.** `gbif_source_url` re-verifies the taxonomy; the full dataset's `data_sources` ledger records the exact ASPCA/GBIF endpoints and timestamps for every record.
-- **Relational build (full dataset).** The SQLite export includes `plants`, `plant_families`, `data_sources`, `taxonomy_verifications`, `species_index` (20,000+), `aspca_toxicity` (891), and `species_enrichment` (702).
+- **Relational build (full dataset).** The SQLite export includes `plants`, `plant_families`, `data_sources`, `taxonomy_verifications`, `species_index` (20,000+), `aspca_toxicity` (891), and `species_enrichment` (683).
 
 Full dataset: **[floradb](https://floradb.dataengineered.io)** · Questions: floradb@dataengineered.io
 

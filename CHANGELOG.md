@@ -6,6 +6,11 @@ All notable changes to the FloraDB dataset snapshots.
 > on a recurring schedule, so the live figures only grow — the numbers below
 > stay accurate between snapshots.
 
+## Site update — 2026-11-06
+
+- **Pricing card no longer names an edition**: the homepage pricing card and licence note said "Snapshot 2026.09", but buyers get the newest monthly build, so the label fell behind with every refresh. They now read "Monthly snapshot" and "Latest monthly snapshot" (English and the four translations); the README badge and the data dictionary (heading and update-frequency note) no longer name an edition either.
+- **"One-time download" became "One-time purchase"**: the download page stays valid for re-downloads, so the download is not one-time; the payment is.
+
 ## Site update — 2026-10-04
 
 - **/stats/ in four more languages**: the statistics page was published in English only (87 untranslated segments per language, so the i18n build skipped it). It now exists at /es/stats/, /de/stats/, /fr/stats/ and /pt-br/stats/: 11 segments reused word for word from the INCIDB and MechanicDB stats pages (same id and English), 76 translated per language and reviewed by a second, independent translator (10 corrections applied). As on the other sites' stats pages, chart text (SVG titles, labels, legends) and the data labels marked translate="no" stay in English. The four localized home pages now link to their own /stats/, the English /stats/ lists its language versions, and sitemap.xml gains the four URLs. `i18n_common.py check`: 665 pages, 0 errors; every language publishes 133/133 pages.

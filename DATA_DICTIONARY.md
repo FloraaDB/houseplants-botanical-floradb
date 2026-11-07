@@ -11,7 +11,7 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 | :--- | :--- | :--- | ---: |
 | `plant_id` | integer | Stable identifier for the plant record | 100% |
 | `scientific_name` | string | GBIF-accepted canonical Latin binomial | 100% |
-| `synonym_scientific_name` | string | Widely-used horticultural/trade synonym, where it differs | 22% |
+| `synonym_scientific_name` | string | Widely-used horticultural/trade synonym, where it differs | 11% |
 | `common_name` | string | Primary English common name | 100% |
 | `family` | string | Botanical family (GBIF-verified) | 100% |
 | `light_requirement_level` | enum | `Low` · `Medium to Low` · `Medium` · `Medium to Bright` · `Bright Indirect` · `Direct Sun` · `Low to Bright` | 100% |
@@ -26,11 +26,11 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 | `toxicity_symptoms` | string | Clinical ingestion signs (ASPCA) where determined | 63% |
 | `toxicity_status` | enum | `aspca_verified` · `aspca_genus_inferred` · `unknown` — never guessed "safe" | 100% |
 | `care_confidence` | enum | `high` (hand-authored) · `medium` (family-normalized) · `low` (generic default) | 100% |
-| `vernacular_names_en` | string | Representative English common name from GBIF vernacular data | 81% |
+| `vernacular_names_en` | string | Representative English common name from GBIF vernacular data | 80% |
 | `native_range` | string | Best-effort distribution / establishment locality (GBIF) | 96% |
 | `image_url` | string | Reference to one representative CC-licensed image (not redistributed) | 99% |
-| `image_license` | string | License of the referenced image | 99% |
-| `image_commercial_safe` | boolean | `1` = CC0/CC-BY/CC-BY-SA (commercial OK); `0` = NC/ND/all-rights-reserved | 99% |
+| `image_license` | string | License of the referenced image | 98% |
+| `image_commercial_safe` | boolean | `1` = CC0/CC-BY/CC-BY-SA (commercial OK); `0` = NC/ND/all-rights-reserved | 98% |
 | `gbif_usage_key` | integer | GBIF backbone usage key; blank when GBIF matches the name only above species rank | 100% |
 | `gbif_source_url` | string | GBIF species page the taxonomy was verified against; blank with `gbif_usage_key` | 100% |
 | `dataset_version` | string | Snapshot id, e.g. `2026.07` | 100% |

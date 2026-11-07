@@ -71,6 +71,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "08d2e98e6754af94": {
+  "src": "N/A",
+  "t": "k. A.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
+ },
  "092a4ed658f69ecb": {
   "src": "⚠️ TOXIC TO PETS (GENUS-LEVEL INFERENCE)",
   "t": "⚠️ GIFTIG FÜR HAUSTIERE (ABLEITUNG AUF GATTUNGSEBENE)",
@@ -1912,6 +1918,12 @@
   "t": "Statt subjektiver Angaben wie „mittleres Licht“ oder „gießen, wenn trocken“ liefert FloraDB exakte quantitative Bereiche: minimalen und maximalen Lichtbedarf in Lux (z. B. {0} bis {1} Lux für {2}) sowie Gießintervalle in Tagen auf Basis standardisierter Innenraum-Klimaprofile.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "cd0fed71c040bfc2": {
+  "src": "Every name is matched to the <0>GBIF Taxonomic Backbone</0> — canonical accepted names, synonyms preserved ({1}), and a {2} to re-verify each species-level match.",
+  "t": "Jeder Name wird mit dem <0>GBIF Taxonomic Backbone</0> abgeglichen — kanonisch akzeptierte Namen, erhaltene Synonyme ({1}) und eine {2} zur erneuten Überprüfung jedes Treffers auf Artebene.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
  },
  "cd6cb2718d6e2828": {
   "src": "FloraDB — Botanical Houseplant Care &amp; Pet-Toxicity Snapshot · <0>Get Full Relational Dataset ({1})</0>",

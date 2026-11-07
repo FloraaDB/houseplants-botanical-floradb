@@ -380,9 +380,18 @@ def main():
 
         symptoms = p.get('toxicity_symptoms', 'None reported.')
         gbif_key = p.get('gbif_usage_key', '')
-        gbif_url = p.get('gbif_source_url', f"https://www.gbif.org/species/{gbif_key}" if gbif_key else "#")
-        img_url = p.get('image_url', '../og-image.png')
+        gbif_url = p.get('gbif_source_url') or (f"https://www.gbif.org/species/{gbif_key}" if gbif_key else "")
+        img_url = p.get('image_url') or ''
         native = p.get('native_range', 'Various indoor/tropical regions')
+        # A plant GBIF matches only above species rank (plant 50) has no key, photo or
+        # range of its own: no photo box, no GBIF button, the site image as og:image.
+        og_image = img_url or "https://floradb.dataengineered.io/og-image.png"
+        img_html = f"""<div class="img-box">
+          <img src="{img_url}" alt="{sci} ({common}) botanical field specimen photograph" onerror="this.src='/og-image.png'" />
+        </div>""" if img_url else ""
+        gbif_html = f"""<div style="margin-top: 20px; text-align: center;">
+            <a href="{gbif_url}" target="_blank" rel="noopener noreferrer" class="btn-link" style="display:inline-block; margin:0;">🔬 Verify on GBIF Species Portal</a>
+          </div>""" if gbif_url else ""
 
         tclass = toxicity_class(p)
         unverified = tclass == 'unverified'
@@ -482,7 +491,7 @@ def main():
   <meta property="og:description" content="Exact Lux light requirements ({min_lux}–{max_lux} Lux), watering intervals ({water_days} days), and ASPCA pet safety clinical symptoms." />
   <meta property="og:url" content="{page_url}" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="{img_url}" />
+  <meta property="og:image" content="{og_image}" />
 
   <script type="application/ld+json">
   {{
@@ -575,9 +584,7 @@ def main():
     {care_profile(sci, common, fam, light_level, min_lux, max_lux, water_days, min_temp, max_temp, humidity, dog_toxic, cat_toxic, unverified, genus_inferred, symptoms, native, p.get('vernacular_names_en', '').strip())}
     <div class="specimen-grid">
       <div>
-        <div class="img-box">
-          <img src="{img_url}" alt="{sci} ({common}) botanical field specimen photograph" onerror="this.src='/og-image.png'" />
-        </div>
+        {img_html}
         <div class="card">
           <h3 class="serif" style="font-size:1.3rem; margin-bottom:16px; border-bottom:1px solid var(--rule-color); padding-bottom:10px;">ASPCA Pet Toxicity Determination</h3>
           <div class="metric-row">
@@ -634,9 +641,7 @@ def main():
             <span class="metric-label">Native Biogeographical Range</span>
             <span class="metric-val" translate="no" style="text-align:right; max-width:60%;">{native[:80] + ('...' if len(native) > 80 else '')}</span>
           </div>
-          <div style="margin-top: 20px; text-align: center;">
-            <a href="{gbif_url}" target="_blank" rel="noopener noreferrer" class="btn-link" style="display:inline-block; margin:0;">🔬 Verify on GBIF Species Portal</a>
-          </div>
+          {gbif_html}
         </div>
       </div>
     </div>

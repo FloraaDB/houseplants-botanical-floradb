@@ -48,19 +48,19 @@ Measured across all **270** care-core plants. Published up front so you can deci
 | Field | Coverage | | Field | Coverage |
 | :--- | ---: | --- | :--- | ---: |
 | Scientific name (GBIF-accepted) | 100% | | Native range | 96% |
-| Common name / family | 100% | | Vernacular names (multilingual) | 81% |
+| Common name / family | 100% | | Vernacular name (English) | 80% |
 | Light category + Lux range | 100% | | Pet toxicity determined | 63% |
-| Watering / temp / humidity | 100% | | — species-verified (ASPCA) | 125 |
+| Watering / temp / humidity | 100% | | — species-verified (ASPCA) | 124 |
 | Representative image ref | 99% | | — genus-inferred (conservative) | 45 |
 
 **Two quality tiers** (both in the full dataset):
 - **Full care core** — all **270** plants with quantitative care metrics.
-- **Verified tier** — **125** plants with species-level **ASPCA** toxicity determinations and GBIF-verified names.
+- **Verified tier** — **124** plants with species-level **ASPCA** toxicity determinations and GBIF-verified names (all but *Pilea involucrata*, which GBIF matches only to its genus).
 
 ### Data-quality flags — the honest part
 Every row is self-describing so you can filter on confidence:
 - `care_confidence` — `high` (69 hand-authored) · `medium` (137 family-normalized) · `low` (64 generic default).
-- `toxicity_status` — `aspca_verified` (125) · `aspca_genus_inferred` (45, conservative, never "safe") · `unknown` (100).
+- `toxicity_status` — `aspca_verified` (124) · `aspca_genus_inferred` (45, conservative, never "safe") · `unknown` (101).
 - `image_commercial_safe` — only **28** image references are CC-BY/CC0; the rest are non-commercial. Filter before commercial use.
 
 ## Provenance

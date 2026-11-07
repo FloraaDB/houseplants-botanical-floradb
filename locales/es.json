@@ -71,6 +71,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "08d2e98e6754af94": {
+  "src": "N/A",
+  "t": "N/D",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
+ },
  "092a4ed658f69ecb": {
   "src": "⚠️ TOXIC TO PETS (GENUS-LEVEL INFERENCE)",
   "t": "⚠️ TÓXICA PARA MASCOTAS (INFERENCIA A NIVEL DE GÉNERO)",
@@ -1912,6 +1918,12 @@
   "t": "En lugar de etiquetas subjetivas como 'luz media' o 'regar cuando esté seca', FloraDB ofrece rangos cuantitativos exactos: requisitos mínimos y máximos de luz en lux (p. ej., de {0} a {1} lux para {2}) e intervalos de frecuencia de riego en días basados en perfiles climáticos de interior estándar.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "cd0fed71c040bfc2": {
+  "src": "Every name is matched to the <0>GBIF Taxonomic Backbone</0> — canonical accepted names, synonyms preserved ({1}), and a {2} to re-verify each species-level match.",
+  "t": "Cada nombre se coteja con el <0>GBIF Taxonomic Backbone</0>: nombres aceptados canónicos, sinónimos conservados ({1}) y un {2} para volver a verificar cada coincidencia a nivel de especie.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
  },
  "cd6cb2718d6e2828": {
   "src": "FloraDB — Botanical Houseplant Care &amp; Pet-Toxicity Snapshot · <0>Get Full Relational Dataset ({1})</0>",

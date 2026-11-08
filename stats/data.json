@@ -1,7 +1,7 @@
 {
  "dataset": "FloraDB",
  "page": "https://floradb.dataengineered.io/stats/",
- "generated": "2026-11-06",
+ "generated": "2026-11-08",
  "snapshot": "2026-11-06",
  "aspca_crawled": "2026-07-06",
  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) - attribute with a link to the page",
@@ -21,7 +21,7 @@
   "cat_dog_verdicts_differ": 0,
   "by_determination": [
    {
-    "determination": "Toxic, ASPCA-verified",
+    "determination": "Toxic, ASPCA species entry",
     "plants": 53
    },
    {
@@ -29,7 +29,7 @@
     "plants": 45
    },
    {
-    "determination": "Non-toxic, ASPCA-verified",
+    "determination": "Non-toxic, ASPCA species entry",
     "plants": 71
    },
    {

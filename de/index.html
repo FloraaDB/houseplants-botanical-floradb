@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FloraDB — Datensatz zu Zimmerpflanzenpflege &amp; Giftigkeit für Haustiere</title>
-<meta content="Kuratierter Datensatz mit 270 Zimmerpflanzen: quantitative Licht- (Lux) und Gießkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen, GBIF-verifizierte Taxonomie." name="description"/>
+<meta content="Kuratierter Datensatz mit 270 Zimmerpflanzen: quantitative Licht- (Lux) und Gießkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen, mit GBIF abgeglichene Namen." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
 <link href="https://floradb.dataengineered.io/de/" rel="canonical"/>
@@ -28,7 +28,7 @@
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <!-- Open Graph / Social Meta -->
 <meta content="FloraDB — Datensatz zu Zimmerpflanzenpflege &amp; Giftigkeit für Haustiere" property="og:title"/>
-<meta content="270 Zimmerpflanzen mit quantitativen Licht- und Wasserkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen und GBIF-verifizierter Taxonomie. Quell-URL in jedem Datensatz." property="og:description"/>
+<meta content="270 Zimmerpflanzen mit quantitativen Licht- und Wasserkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen und mit GBIF abgeglichenen Namen. Quell-URL in jedem Datensatz." property="og:description"/>
 <meta content="https://floradb.dataengineered.io/de/" property="og:url"/>
 <meta content="FloraDB-Datensatz zu Zimmerpflanzen" property="og:site_name"/>
 <meta content="website" property="og:type"/>
@@ -58,7 +58,7 @@
   "@type": "Product",
   "image": "https://floradb.dataengineered.io/og-image.png",
   "name": "FloraDB-Datensatz zur Zimmerpflanzenpflege — vollständiger Snapshot",
-  "description": "270 kuratierte Zimmerpflanzen mit quantitativen Licht-, Wasser- und Temperaturkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen und GBIF-verifizierter Taxonomie, dazu eine ASPCA-Giftigkeitsebene mit 891 Datensätzen und ein taxonomischer Index mit 20.000+ Arten. Relationales SQLite plus CSV und JSON.",
+  "description": "270 kuratierte Zimmerpflanzen mit quantitativen Licht-, Wasser- und Temperaturkennzahlen, ASPCA-Giftigkeit für Hunde und Katzen und mit GBIF abgeglichenen Namen, dazu eine ASPCA-Giftigkeitsebene mit 891 Datensätzen und ein taxonomischer Index mit 20.000+ Arten. Relationales SQLite plus CSV und JSON.",
   "brand": {
     "@type": "Brand",
     "name": "FloraDB"
@@ -151,7 +151,7 @@
   "@type": "Dataset",
   "name": "FloraDB — Datensatz zu Zimmerpflanzenpflege & Giftigkeit für Haustiere",
   "alternateName": "FloraDB Houseplant Dataset",
-  "description": "Ein kuratierter Datensatz mit 270 Zimmerpflanzen und quantitativen Pflegekennzahlen — Lichtschwellen (Lux), Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche —, verknüpft mit der ASPCA-Giftigkeit für Hunde und Katzen und einer GBIF-verifizierten Taxonomie. Enthält eine ASPCA-Giftigkeitsebene mit 891 Datensätzen und einen taxonomischen Index mit 20.000+ Arten. Jeder Datensatz enthält eine Quell-URL zur erneuten Überprüfung.",
+  "description": "Ein kuratierter Datensatz mit 270 Zimmerpflanzen und quantitativen Pflegekennzahlen — Lichtschwellen (Lux), Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche —, verknüpft mit der ASPCA-Giftigkeit für Hunde und Katzen und mit Namen, die mit dem GBIF-Backbone abgeglichen sind. Enthält eine ASPCA-Giftigkeitsebene mit 891 Datensätzen und einen taxonomischen Index mit 20.000+ Arten. Jeder Datensatz enthält eine Quell-URL zur erneuten Überprüfung.",
   "url": "https://floradb.dataengineered.io/de/",
   "sameAs": [
     "https://www.kaggle.com/datasets/dataengineered/floradb-houseplants-care-sample",
@@ -211,7 +211,7 @@
       "name": "Was ist der FloraDB-Datensatz zu Zimmerpflanzenpflege & Giftigkeit für Haustiere?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FloraDB ist ein kuratierter botanischer Felddatensatz mit über 270 Zimmerpflanzen, der quantitative Pflegeparameter (Lichtschwellen in Lux, Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche) mit verifizierten ASPCA-Giftigkeitsstatus für Hunde und Katzen, klinischen Symptomen und taxonomischen GBIF-Zitaten kombiniert."
+        "text": "FloraDB ist ein kuratierter botanischer Datensatz mit 270 Zimmerpflanzen, der quantitative Pflegeparameter (Lichtschwellen in Lux, Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche) mit Giftigkeitsstatus für Hunde und Katzen aus den ASPCA-Listen (oder unbekannt, nie als unbedenklich angenommen), klinischen Symptomen und taxonomischen GBIF-Verweisen kombiniert."
       }
     },
     {
@@ -224,10 +224,10 @@
     },
     {
       "@type": "Question",
-      "name": "Werden die Giftigkeitsstatus für Haustiere anhand klinischer veterinärmedizinischer Daten verifiziert?",
+      "name": "Woher stammen die Giftigkeitsstatus für Haustiere?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Jeder Pflanzeneintrag wird mit der Giftpflanzen-Datenbank des ASPCA Animal Poison Control Center (aspca_verified) abgeglichen und gibt an, ob die Pflanze für Hunde (is_toxic_to_dogs) oder Katzen (is_toxic_to_cats) giftig ist, zusammen mit konkreten klinischen Vergiftungssymptomen wie Reizungen im Maul oder Wirkungen herzwirksamer Glykoside."
+        "text": "Aus den Listen giftiger und ungiftiger Pflanzen des ASPCA Animal Poison Control Center. Hat die ASPCA einen Eintrag für die Art (aspca_verified), übernimmt der Datensatz daraus die Hunde- und Katzen-Flags (is_toxic_to_dogs, is_toxic_to_cats) und die klinischen Anzeichen, etwa Reizungen im Maul oder Wirkungen herzwirksamer Glykoside. Hat sie keinen, führt aber giftige Vertreter der Gattung, wird die Pflanze durch Ableitung auf Gattungsebene als giftig markiert (aspca_genus_inferred). Andernfalls ist ihr Status unknown; sie wird nie als unbedenklich angenommen. Kein Tierarzt hat den Abgleich durch FloraDB oder die Ableitungen auf Gattungsebene geprüft."
       }
     },
     {
@@ -649,7 +649,7 @@
 <div>
 <h1>Zimmerpflanzen,<br/>gepresst zu<br/><em class="accent">Daten</em>.</h1>
 <p class="hero-sub">
-            Der <strong>Datensatz zur Zimmerpflanzenpflege</strong> — <strong>270 Arten</strong> mit quantitativen Kennzahlen zu Licht (Lux), Gießen und Temperatur, verknüpft mit <strong>ASPCA-Giftigkeit für Haustiere</strong> und <strong>GBIF-verifizierter</strong> Taxonomie.
+            Der <strong>Datensatz zur Zimmerpflanzenpflege</strong> — <strong>270 Arten</strong> mit quantitativen Kennzahlen zu Licht (Lux), Gießen und Temperatur, verknüpft mit <strong>ASPCA-Giftigkeit für Haustiere</strong> und einer <strong>mit GBIF abgeglichenen</strong> Taxonomie.
           </p>
 <div class="hero-abstract">
 <span class="abstract-label">Zusammenfassung</span>
@@ -677,7 +677,7 @@
 <div class="field-row"><span class="field-key">Licht</span><span class="field-val"><span class="accent">1.500–5.000</span> Lux · hell, indirekt</span></div>
 <div class="field-row"><span class="field-key">Wasser</span><span class="field-val">alle <span class="accent">7</span> Tage</span></div>
 <div class="field-row"><span class="field-key">Klima</span><span class="field-val">18–30 °C · 60% Luftfeuchtigkeit</span></div>
-<div class="field-row"><span class="field-key">Konfidenz</span><span class="field-val">care = high · verifizierter Name</span></div>
+<div class="field-row"><span class="field-key">Konfidenz</span><span class="field-val">care = high · Name mit GBIF-Treffer</span></div>
 </div>
 <div class="determination">
 <span class="accession">det. GBIF 2868241 · rev. 2026.07</span>
@@ -700,7 +700,7 @@
 <div class="method-grid">
 <div class="method-card">
 <div class="method-index">Ebene i · Taxonomie</div>
-<div class="method-title">GBIF-verifizierte Namen</div>
+<div class="method-title">Mit GBIF abgeglichene Namen</div>
 <p class="method-body">Jeder Name wird mit dem <strong>GBIF Taxonomic Backbone</strong> abgeglichen — kanonisch akzeptierte Namen, erhaltene Synonyme (<code>Sansevieria → Dracaena</code>) und eine <code>gbif_source_url</code> zur erneuten Überprüfung jedes Treffers auf Artebene.</p>
 </div>
 <div class="method-card">
@@ -776,7 +776,7 @@
 <ul class="feature-list">
 <li><strong>270 kuratierte Zimmerpflanzen</strong> aus 54 Familien — quantitative Werte zu Licht (Lux), Gießtagen, Temperatur und Luftfeuchtigkeit.</li>
 <li><strong>ASPCA-Giftigkeit für Haustiere</strong> — 891 Bestimmungen mit klinischen Anzeichen; Hunde-/Katzen-Flags im Pflegekern, niemals geratenes „unbedenklich“.</li>
-<li><strong>GBIF-verifizierte Taxonomie</strong> + ein taxonomischer Index mit <strong>20.000+ Arten</strong> und 683 angereicherte Arten (Namen, natürliches Verbreitungsgebiet, Bildverweise).</li>
+<li><strong>Mit GBIF abgeglichene Taxonomie</strong> + ein taxonomischer Index mit <strong>20.000+ Arten</strong> und 683 angereicherte Arten (Namen, natürliches Verbreitungsgebiet, Bildverweise).</li>
 <li><strong>Relationales SQLite + CSV + JSON</strong> — Tabellen für <code>plants</code>, <code>aspca_toxicity</code>, <code>species_index</code>, <code>species_enrichment</code>, bereit für Apps und ML.</li>
 <li><strong>Ehrliche Qualitäts-Flags</strong> — <code>care_confidence</code>, <code>toxicity_status</code> und <code>image_commercial_safe</code> in jeder Zeile.</li>
 <li><strong>Neuester monatlicher Snapshot</strong> · einmaliger Kauf, keine wiederkehrenden Gebühren.</li>
@@ -815,7 +815,7 @@
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
 <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Was ist der FloraDB-Datensatz zu Zimmerpflanzenpflege &amp; Giftigkeit für Haustiere?</h4>
 <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            FloraDB ist ein kuratierter botanischer Felddatensatz mit über <strong>270 Zimmerpflanzen</strong>, der quantitative Pflegeparameter (Lichtschwellen in Lux, Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche) mit verifizierten ASPCA-Giftigkeitsstatus für Hunde und Katzen, klinischen Symptomen und taxonomischen GBIF-Zitaten kombiniert.
+            FloraDB ist ein kuratierter botanischer Datensatz mit <strong>270 Zimmerpflanzen</strong>, der quantitative Pflegeparameter (Lichtschwellen in Lux, Gießintervalle in Tagen, Temperatur- und Luftfeuchtigkeitsbereiche) mit Giftigkeitsstatus für Hunde und Katzen aus den ASPCA-Listen (oder unbekannt, nie als unbedenklich angenommen), klinischen Symptomen und taxonomischen GBIF-Verweisen kombiniert.
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
@@ -825,9 +825,9 @@
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
-<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Werden die Giftigkeitsstatus für Haustiere anhand klinischer veterinärmedizinischer Daten verifiziert?</h4>
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Woher stammen die Giftigkeitsstatus für Haustiere?</h4>
 <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            Ja. Jeder Pflanzeneintrag wird mit der Giftpflanzen-Datenbank des ASPCA Animal Poison Control Center (<code>aspca_verified</code>) abgeglichen und gibt an, ob die Pflanze für Hunde (<code>is_toxic_to_dogs</code>) oder Katzen (<code>is_toxic_to_cats</code>) giftig ist, zusammen mit konkreten klinischen Vergiftungssymptomen wie Reizungen im Maul oder Wirkungen herzwirksamer Glykoside.
+            Aus den Listen giftiger und ungiftiger Pflanzen des ASPCA Animal Poison Control Center. Hat die ASPCA einen Eintrag für die Art (<code>aspca_verified</code>), übernimmt der Datensatz daraus die Hunde- und Katzen-Flags (<code>is_toxic_to_dogs</code>, <code>is_toxic_to_cats</code>) und die klinischen Anzeichen, etwa Reizungen im Maul oder Wirkungen herzwirksamer Glykoside. Hat sie keinen, führt aber giftige Vertreter der Gattung, wird die Pflanze durch Ableitung auf Gattungsebene als giftig markiert (<code>aspca_genus_inferred</code>). Andernfalls ist ihr Status <code>unknown</code>; sie wird nie als unbedenklich angenommen. Kein Tierarzt hat den Abgleich durch FloraDB oder die Ableitungen auf Gattungsebene geprüft.
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FloraDB — Houseplant Care & Pet-Toxicity Dataset</title>
-  <meta name="description" content="Curated dataset of 270 houseplants: quantitative light (Lux) and watering metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy." />
+  <meta name="description" content="Curated dataset of 270 houseplants: quantitative light (Lux) and watering metrics, ASPCA dog/cat toxicity, and names checked against GBIF." />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" />
   <link rel="canonical" href="https://floradb.dataengineered.io/" />
@@ -27,7 +27,7 @@
 
   <!-- Open Graph / Social Meta -->
   <meta property="og:title" content="FloraDB — Houseplant Care & Pet-Toxicity Dataset" />
-  <meta property="og:description" content="270 houseplants with quantitative light/water metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy. Source URL on every record." />
+  <meta property="og:description" content="270 houseplants with quantitative light/water metrics, ASPCA dog/cat toxicity, and names checked against GBIF. Source URL on every record." />
   <meta property="og:url" content="https://floradb.dataengineered.io/" />
   <meta property="og:site_name" content="FloraDB Houseplant Dataset" />
   <meta property="og:type" content="website" />
@@ -59,7 +59,7 @@
     "@type": "Product",
     "image": "https://floradb.dataengineered.io/og-image.png",
     "name": "FloraDB Houseplant Care Dataset — Full Snapshot",
-    "description": "270 curated houseplants with quantitative light/water/temperature metrics, ASPCA dog/cat toxicity, and GBIF-verified taxonomy, plus an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Relational SQLite plus CSV and JSON.",
+    "description": "270 curated houseplants with quantitative light/water/temperature metrics, ASPCA dog/cat toxicity, and names checked against GBIF, plus an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Relational SQLite plus CSV and JSON.",
     "brand": {"@type": "Brand", "name": "FloraDB"},
     "category": "Software > Data & Databases",
     "offers": {
@@ -91,7 +91,7 @@
     "@type": "Dataset",
     "name": "FloraDB — Houseplant Care & Pet-Toxicity Dataset",
     "alternateName": "FloraDB Houseplant Dataset",
-    "description": "A curated dataset of 270 houseplants with quantitative care metrics — light (Lux) thresholds, watering-day intervals, temperature and humidity ranges — joined to ASPCA dog/cat toxicity and GBIF-verified taxonomy. Includes an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Every record carries a source URL for re-verification.",
+    "description": "A curated dataset of 270 houseplants with quantitative care metrics — light (Lux) thresholds, watering-day intervals, temperature and humidity ranges — joined to ASPCA dog/cat toxicity and to names checked against the GBIF backbone. Includes an 891-record ASPCA toxicity layer and a 20,000+ species taxonomic index. Every record carries a source URL for re-verification.",
     "url": "https://floradb.dataengineered.io/",
     "sameAs": "https://www.kaggle.com/datasets/dataengineered/floradb-houseplants-care-sample",
     "keywords": ["houseplant care dataset", "plant care database", "ASPCA pet toxicity", "toxic plants for cats and dogs", "lux light requirements", "watering schedule", "GBIF taxonomy", "botanical dataset"],
@@ -115,7 +115,7 @@
         "name": "What is the FloraDB Houseplant Care & Pet-Toxicity Dataset?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FloraDB is a curated botanical field dataset of over 270 indoor houseplants combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations."
+          "text": "FloraDB is a curated botanical dataset of 270 indoor houseplants combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with dog and cat toxicity statuses taken from ASPCA listings (or unknown, never assumed safe), clinical symptoms, and GBIF taxonomic citations."
         }
       },
       {
@@ -128,10 +128,10 @@
       },
       {
         "@type": "Question",
-        "name": "Are pet toxicity statuses verified against veterinary clinical data?",
+        "name": "Where do the pet toxicity statuses come from?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database (aspca_verified), detailing whether the plant is toxic to dogs (is_toxic_to_dogs) or cats (is_toxic_to_cats), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects."
+          "text": "From the ASPCA Animal Poison Control Center's toxic and non-toxic plant lists. Where the ASPCA has an entry for the species (aspca_verified), the record takes its dog and cat flags (is_toxic_to_dogs, is_toxic_to_cats) and clinical signs, such as oral irritation or cardiac glycoside effects. Where it has none but lists toxic members of the genus, the plant is flagged toxic as a genus-level inference (aspca_genus_inferred). Otherwise its status is unknown, never assumed safe. No veterinarian has reviewed FloraDB's matching or its genus-level inferences."
         }
       },
       {
@@ -556,7 +556,7 @@
         <div>
           <h1>Houseplants,<br/>pressed into<br/><em class="accent">data</em>.</h1>
           <p class="hero-sub">
-            The <strong>houseplant care dataset</strong> — <strong>270 species</strong> with quantitative light (Lux), watering, and temperature metrics, joined to <strong>ASPCA pet toxicity</strong> and <strong>GBIF-verified</strong> taxonomy.
+            The <strong>houseplant care dataset</strong> — <strong>270 species</strong> with quantitative light (Lux), watering, and temperature metrics, joined to <strong>ASPCA pet toxicity</strong> and to taxonomy <strong>checked against GBIF</strong>.
           </p>
 
           <div class="hero-abstract">
@@ -588,7 +588,7 @@
               <div class="field-row"><span class="field-key">Light</span><span class="field-val"><span class="accent">1,500–5,000</span> lux · bright indirect</span></div>
               <div class="field-row"><span class="field-key">Water</span><span class="field-val">every <span class="accent">7</span> days</span></div>
               <div class="field-row"><span class="field-key">Climate</span><span class="field-val">18–30 °C · 60% humidity</span></div>
-              <div class="field-row"><span class="field-key">Confidence</span><span class="field-val">care = high · verified name</span></div>
+              <div class="field-row"><span class="field-key">Confidence</span><span class="field-val">care = high · GBIF-matched name</span></div>
             </div>
 
             <div class="determination">
@@ -614,7 +614,7 @@
       <div class="method-grid">
         <div class="method-card">
           <div class="method-index">Layer i · Taxonomy</div>
-          <div class="method-title">GBIF-verified names</div>
+          <div class="method-title">Names checked against GBIF</div>
           <p class="method-body">Every name is matched to the <strong>GBIF Taxonomic Backbone</strong> — canonical accepted names, synonyms preserved (<code>Sansevieria → Dracaena</code>), and a <code>gbif_source_url</code> to re-verify each species-level match.</p>
         </div>
         <div class="method-card">
@@ -696,7 +696,7 @@
         <ul class="feature-list">
           <li><strong>270 curated houseplants</strong> across 54 families — quantitative light (Lux), watering days, temperature, and humidity.</li>
           <li><strong>ASPCA pet toxicity</strong> — 891 determinations with clinical signs; dog/cat flags on the care core, never guessed "safe."</li>
-          <li><strong>GBIF-verified taxonomy</strong> + a <strong>20,000+ species</strong> taxonomic index and 683 enriched species (names, native range, image refs).</li>
+          <li><strong>Taxonomy checked against GBIF</strong> + a <strong>20,000+ species</strong> taxonomic index and 683 enriched species (names, native range, image refs).</li>
           <li><strong>Relational SQLite + CSV + JSON</strong> — tables for <code>plants</code>, <code>aspca_toxicity</code>, <code>species_index</code>, <code>species_enrichment</code>, ready for apps and ML.</li>
           <li><strong>Honest quality flags</strong> — <code>care_confidence</code>, <code>toxicity_status</code>, and <code>image_commercial_safe</code> on every row.</li>
           <li><strong>Latest monthly snapshot</strong> · one-time purchase, no recurring fees.</li>
@@ -742,7 +742,7 @@
         <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
           <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">What is the FloraDB Houseplant Care & Pet-Toxicity Dataset?</h4>
           <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            FloraDB is a curated botanical field dataset of over <strong>270 indoor houseplants</strong> combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with verified ASPCA dog and cat toxicity statuses, clinical symptoms, and GBIF taxonomic citations.
+            FloraDB is a curated botanical dataset of <strong>270 indoor houseplants</strong> combining quantitative care parameters (light thresholds in Lux, watering intervals in days, temperature and humidity ranges) with dog and cat toxicity statuses taken from ASPCA listings (or unknown, never assumed safe), clinical symptoms, and GBIF taxonomic citations.
           </p>
         </div>
 
@@ -754,9 +754,9 @@
         </div>
 
         <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
-          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Are pet toxicity statuses verified against veterinary clinical data?</h4>
+          <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Where do the pet toxicity statuses come from?</h4>
           <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            Yes. Every plant entry is cross-referenced with the ASPCA Animal Poison Control Center toxic plant database (<code>aspca_verified</code>), detailing whether the plant is toxic to dogs (<code>is_toxic_to_dogs</code>) or cats (<code>is_toxic_to_cats</code>), alongside specific clinical toxicity symptoms such as oral irritation or cardiac glycoside effects.
+            From the ASPCA Animal Poison Control Center's toxic and non-toxic plant lists. Where the ASPCA has an entry for the species (<code>aspca_verified</code>), the record takes its dog and cat flags (<code>is_toxic_to_dogs</code>, <code>is_toxic_to_cats</code>) and clinical signs, such as oral irritation or cardiac glycoside effects. Where it has none but lists toxic members of the genus, the plant is flagged toxic as a genus-level inference (<code>aspca_genus_inferred</code>). Otherwise its status is <code>unknown</code>, never assumed safe. No veterinarian has reviewed FloraDB's matching or its genus-level inferences.
           </p>
         </div>
 

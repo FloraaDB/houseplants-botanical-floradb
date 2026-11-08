@@ -45,7 +45,7 @@ SITE = Site(base_url="https://floradb.dataengineered.io", brand="FloraDB",
             mono="'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace",
             heading_class="serif")
 
-STATUS_LABELS = {"aspca_verified": "ASPCA-verified", "aspca_genus_inferred": "inferred from the genus", "unknown": "not verified"}
+STATUS_LABELS = {"aspca_verified": "ASPCA species entry", "aspca_genus_inferred": "inferred from the genus", "unknown": "not verified"}
 METRICS = [("min_lux_threshold", "Minimum light", "lux"), ("max_lux_threshold", "Maximum light", "lux"),
            ("watering_frequency_days", "Watering interval", "days"), ("min_temp_celsius", "Minimum temperature", "°C"),
            ("max_temp_celsius", "Maximum temperature", "°C"), ("ideal_humidity_percent", "Ideal humidity", "%")]
@@ -86,9 +86,9 @@ def compute(db_path):
     s["tox_nontoxic"] = q("select count(*) from plants where is_toxic_to_cats=0 and is_toxic_to_dogs=0")[0][0]
     s["tox_toxic_pct"] = pct(s["tox_toxic"], s["tox_known"])
     s["tox_rows"] = [
-        ("Toxic, ASPCA-verified", q("select count(*) from plants where toxicity_status='aspca_verified' and (is_toxic_to_cats=1 or is_toxic_to_dogs=1)")[0][0]),
+        ("Toxic, ASPCA species entry", q("select count(*) from plants where toxicity_status='aspca_verified' and (is_toxic_to_cats=1 or is_toxic_to_dogs=1)")[0][0]),
         ("Toxic, inferred from the genus", q("select count(*) from plants where toxicity_status='aspca_genus_inferred' and (is_toxic_to_cats=1 or is_toxic_to_dogs=1)")[0][0]),
-        ("Non-toxic, ASPCA-verified", q("select count(*) from plants where toxicity_status='aspca_verified' and is_toxic_to_cats=0 and is_toxic_to_dogs=0")[0][0]),
+        ("Non-toxic, ASPCA species entry", q("select count(*) from plants where toxicity_status='aspca_verified' and is_toxic_to_cats=0 and is_toxic_to_dogs=0")[0][0]),
         ("Non-toxic, inferred from the genus", q("select count(*) from plants where toxicity_status='aspca_genus_inferred' and is_toxic_to_cats=0 and is_toxic_to_dogs=0")[0][0]),
         ("No determination", s["tox_unknown"]),
     ]
@@ -198,12 +198,12 @@ def build_page(s, charts):
     sections.append(section(
         site, "pet-toxicity", "How many common houseplants are toxic to cats or dogs",
         f"Of the {n(s['tox_known'])} care-core houseplants with an ASPCA determination, <strong>{n(s['tox_toxic'])} ({s['tox_toxic_pct']}%)</strong> are toxic to cats or dogs: "
-        f"{n(tr[0][1])} verified against the ASPCA entry for the species and {n(tr[1][1])} inferred from an ASPCA entry for the genus. "
+        f"{n(tr[0][1])} from the ASPCA entry for the species and {n(tr[1][1])} inferred from an ASPCA entry for the genus. "
         f"{n(s['tox_nontoxic'])} are recorded as non-toxic. The other {n(s['tox_unknown'])} of {n(s['plants'])} plants have no determination and are excluded from the share, not assumed safe. {coincide}",
         figure(site, "toxicity-status", charts["toxicity-status"], "Pet toxicity of the care-core houseplants", f"{n(s['plants'])} plants, {n(s['tox_known'])} with a determination"),
         table(["Determination", "Plants", "Share of all plants", "Share of determined plants"],
               [(lbl, n(c), f"{pct(c, s['plants'])}%", f"{pct(c, s['tox_known'])}%" if lbl != "No determination" else "excluded") for lbl, c in tr], {1, 2, 3}),
-        f"One row per plant in the care core. <em>ASPCA-verified</em>: the species has its own entry in the ASPCA toxic and non-toxic plant index. <em>Inferred from the genus</em>: "
+        f"One row per plant in the care core. <em>ASPCA species entry</em>: the species has its own entry in the ASPCA toxic and non-toxic plant index. <em>Inferred from the genus</em>: "
         f"no species entry exists, but every ASPCA entry for the genus carries the same verdict, so it is applied with <code>toxicity_status = aspca_genus_inferred</code>. "
         f"Plants with neither are stored as NULL. Denominator for the headline share: {n(s['tox_known'])} determined plants. ASPCA index crawled {s['aspca_date']}."))
 
@@ -243,7 +243,7 @@ def build_page(s, charts):
         figure(site, "families", charts["families"], "Families with the most plants in the care core", f"top {len(fr)} of {n(s['families'])} families"),
         table(["Family", "Plants", "Share", "With a determination", "Toxic to cats or dogs"],
               [(f, n(c), f"{p}%", n(k), n(t)) for f, c, p, k, t in fr], {1, 2, 3, 4}),
-        "Family per plant is the GBIF backbone family of the accepted name, re-verified against GBIF on each monthly refresh. "
+        "Family per plant is the GBIF backbone family of the accepted name, re-checked against GBIF on each monthly refresh. "
         "The toxicity columns use the same ASPCA determination as the headline section; plants without one count in the family total but not in the toxic column."))
 
     # 4. light
@@ -349,7 +349,7 @@ def build_page(s, charts):
   <p class="crumb"><a href="/">Home</a> &rsaquo; <span>Statistics</span></p>
   <p class="eyebrow">Statistics · snapshot {esc(snap)}</p>
   <h1>Houseplants in numbers</h1>
-  <p class="lede">Aggregate statistics computed from the full FloraDB snapshot: {n(s['plants'])} care-core houseplants with quantitative light, watering, temperature and humidity requirements, joined to the {n(s['aspca_entries'])}-entry ASPCA toxicity index and verified against the GBIF backbone. Every figure states its denominator and is free to cite, quote and embed with a link to this page.</p>
+  <p class="lede">Aggregate statistics computed from the full FloraDB snapshot: {n(s['plants'])} care-core houseplants with quantitative light, watering, temperature and humidity requirements, joined to the {n(s['aspca_entries'])}-entry ASPCA toxicity index and checked against the GBIF backbone. Every figure states its denominator and is free to cite, quote and embed with a link to this page.</p>
   <ul class="tiles">{tile_html}</ul>
   <nav class="toc" aria-label="Contents"><strong>On this page</strong><ol>{contents}</ol></nav>
 
@@ -361,7 +361,7 @@ def build_page(s, charts):
       <li><strong>Source.</strong> The full FloraDB snapshot of {snap}: {n(s['plants'])} care-core plants, {n(s['aspca_entries'])} ASPCA index entries (crawled {s['aspca_date']}), {n(s['species_index'])} GBIF-accepted species in the taxonomic index and {n(s['enriched'])} enriched species. Every row keeps its source URL and retrieval time; see the <a href="/DATA_DICTIONARY.md">data dictionary</a>.</li>
       <li><strong>Nothing is estimated.</strong> Toxicity is the ASPCA verdict for the species or, when every entry of the genus agrees, for the genus, and is otherwise NULL and excluded from the share. Care values are the curated guideline per plant. Where a denominator is smaller than {n(s['plants'])}, the section says so.</li>
       <li><strong>Not veterinary advice.</strong> Toxicity data is informational. If a pet ingests a plant, contact a veterinarian or ASPCA Animal Poison Control.</li>
-      <li><strong>Refresh.</strong> The care core is re-verified against GBIF monthly; the ASPCA index is re-crawled on a manual, roughly quarterly cadence. This page and its charts are regenerated with each snapshot, so figures move. Cite the snapshot date.</li>
+      <li><strong>Refresh.</strong> The care core is re-checked against GBIF monthly; the ASPCA index is re-crawled on a manual, roughly quarterly cadence. This page and its charts are regenerated with each snapshot, so figures move. Cite the snapshot date.</li>
       <li><strong>Reuse.</strong> The figures and charts on this page are published under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>: use them in articles, slides and posts with a link to <span translate="no">{site.page_url}</span>. The machine-readable version is <a href="/stats/data.json">data.json</a>. The underlying row-level dataset is a separate <a href="/#pricing">commercial product</a>; a free 100-plant sample is in the <a href="https://github.com/FloraaDB/houseplants-botanical-floradb">public repository</a>.</li>
       <li><strong>Suggested citation.</strong> <span translate="no">FloraDB ({snap[:4]}). <em>Houseplants in numbers</em>, snapshot {snap}. DataEngineered. {site.page_url}</span></li>
       <li><strong>Questions or corrections:</strong> <a href="/#support">contact form</a> or floradb@dataengineered.io.</li>

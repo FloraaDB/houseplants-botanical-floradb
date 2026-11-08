@@ -117,16 +117,22 @@ def toxicity_class(row):
     return 'unverified'
 
 def _toxicity_counts(members):
-    """(verified-toxic count, unverified count) across a list of member rows."""
+    """(toxic count, unverified count) across a list of member rows. The toxic count
+    includes genus-level inferences (_genus_inferred_count says how many)."""
     toxic = sum(1 for m in members if toxicity_class(m).startswith('toxic'))
     unverified = sum(1 for m in members if toxicity_class(m) == 'unverified')
     return toxic, unverified
 
+def _genus_inferred_count(members):
+    """How many of the toxic members are toxic only by inference from an ASPCA genus listing."""
+    return sum(1 for m in members if 'genus-level inference' in toxicity_class(m))
+
 def _toxic_fact(n, toxic_n, unverified_n):
     """'<a> of <n> toxic to pets' -- extended with the unverified count whenever it's
-    non-zero, so an unverified plant is never silently folded into 'not toxic'."""
+    non-zero, so an unverified plant is never silently folded into 'not toxic'. The toxic
+    count includes genus-level inferences, so it never says 'verified'."""
     if unverified_n:
-        return f"{toxic_n} of {n} verified toxic to pets, {unverified_n} unverified"
+        return f"{toxic_n} of {n} toxic to pets, {unverified_n} unverified"
     return f"{toxic_n} of {n} toxic to pets"
 
 def toxicity_badge(tclass):
@@ -203,7 +209,7 @@ def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
         else:
             facts.append(f"watering every {water_lo}–{water_hi} days")
     facts.append(_toxic_fact(n, toxic_n, unverified_n))
-    lead = f"{fam_name} spans {_plural(n, 'houseplant')} in FloraDB (" + ", ".join(facts) + ")."
+    lead = f"{fam_name} spans {_plural(n, 'houseplant')} in the FloraDB free sample (" + ", ".join(facts) + ")."
     return fit_desc(lead)
 
 def family_share_summary(members):
@@ -224,15 +230,17 @@ def family_share_summary(members):
 
 def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     """Unique, data-derived <p> profile computed only from the family's own member
-    records: count + representative species, light range, watering-interval range,
-    how many are ASPCA pet-toxic. Only populated fields are used; nothing invented."""
+    records (the free sample's): count + representative species, light range,
+    watering-interval range, how many are toxic to pets and how many of those only by a
+    genus-level inference. Only populated fields are used; nothing invented."""
     esc = html.escape
     n = len(members)
     toxic_n, unverified_n = _toxicity_counts(members)
+    genus_n = _genus_inferred_count(members)
     reps = sorted({m.get('common_name', '').strip() for m in members if has(m.get('common_name'))})[:2]
 
     sentences = []
-    s1 = f"{data(fam_name)} is represented in FloraDB by {_plural(n, 'houseplant')}"
+    s1 = f"{data(fam_name)} is represented in the FloraDB free sample by {_plural(n, 'houseplant')}"
     if reps:
         s1 += f", including {_oxford([data(r) for r in reps])}"
     s1 += "."
@@ -247,11 +255,12 @@ def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
         else:
             sentences.append(f"Watering intervals range from every {water_lo} to every {water_hi} days.")
 
+    genus_note = f" ({genus_n} inferred from the ASPCA listing for the genus)" if genus_n else ""
     if unverified_n:
-        sentences.append(f"{toxic_n} of {n} members verified toxic to pets, {unverified_n} unverified.")
+        sentences.append(f"{toxic_n} of {n} members toxic to pets{genus_note}, {unverified_n} unverified.")
     else:
         verb = "is" if toxic_n == 1 else "are"
-        sentences.append(f"{toxic_n} of {n} {verb} toxic to cats or dogs, per ASPCA data.")
+        sentences.append(f"{toxic_n} of {n} {verb} toxic to cats or dogs{genus_note}, per ASPCA data.")
 
     return ('<p style="color:var(--text-muted); font-size:1.05rem; margin-top:20px; '
             'max-width:74ch; line-height:1.75;">' + " ".join(f"<span>{s}</span>" for s in sentences) + '</p>')
@@ -417,6 +426,13 @@ def main():
         dog_display, dog_color = _flag_display(p.get('is_toxic_to_dogs'), genus_inferred)
         cat_display, cat_color = _flag_display(p.get('is_toxic_to_cats'), genus_inferred)
         pet_status_badge = toxicity_badge(tclass)
+        # JSON-LD says where the toxicity comes from, never that it was verified
+        if unverified:
+            ld_tox = "and no ASPCA dog/cat toxicity determination"
+        elif genus_inferred:
+            ld_tox = "and a dog/cat toxicity flag inferred from the ASPCA listing for its genus"
+        else:
+            ld_tox = "and the ASPCA dog/cat toxicity determination for the species"
         if genus_inferred and (dog_toxic or cat_toxic):
             genus = sci.split()[0] if sci else sci
             symptoms_display = (f"Toxicity is inferred from the ASPCA listing for the genus {data_raw(genus)}; "
@@ -514,7 +530,7 @@ def main():
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "{sci} ({common}) Botanical Care & Pet-Toxicity Record",
-    "description": "Normalized botanical care parameters for {sci} ({common}): light requirements of {min_lux} to {max_lux} Lux, watering interval of {water_days} days, ideal humidity {humidity}%, and ASPCA dog/cat toxicity verification.",
+    "description": "Normalized botanical care parameters for {sci} ({common}): light requirements of {min_lux} to {max_lux} Lux, watering interval of {water_days} days, ideal humidity {humidity}%, {ld_tox}.",
     "url": "{page_url}",
     "creator": {{"@type": "Organization", "name": "FloraDB", "url": "https://floradb.dataengineered.io"}},
     "license": "https://creativecommons.org/licenses/by-nc/4.0/",
@@ -648,7 +664,7 @@ def main():
         </div>
 
         <div class="card">
-          <h3 class="serif" style="font-size:1.3rem; margin-bottom:16px; border-bottom:1px solid var(--rule-color); padding-bottom:10px;">Taxonomic & Field Verification</h3>
+          <h3 class="serif" style="font-size:1.3rem; margin-bottom:16px; border-bottom:1px solid var(--rule-color); padding-bottom:10px;">GBIF Taxonomy & Range</h3>
           <div class="metric-row">
             <span class="metric-label">GBIF Usage Key</span>
             <span class="metric-val">{gbif_key or 'N/A'}</span>
@@ -774,7 +790,7 @@ def main():
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Botanical Family: {fam_name}",
-    "description": "Taxonomic houseplant collection containing {total_members} determinations within the {fam_name} family.",
+    "description": "{_plural(total_members, 'houseplant')} of the {fam_name} family in the FloraDB free sample.",
     "url": "{page_url}"
   }}
   </script>
@@ -834,7 +850,7 @@ def main():
     <section class="hero">
       <span class="mono" style="font-size:0.8rem; color:var(--sepia);">BOTANICAL FAMILY HUB</span>
       <h1 class="serif" translate="no" style="font-size: 2.8rem; font-weight: 700; margin-top: 6px;">{fam_name}</h1>
-      <p style="color: var(--text-muted); max-width: 700px; margin-top: 8px;">Taxonomic classification grouping verified indoor houseplant specimens with standardized quantitative care profiles and clinical pet toxicity thresholds.</p>
+      <p style="color: var(--text-muted); max-width: 700px; margin-top: 8px;">Houseplants of this botanical family in the FloraDB free sample, with quantitative care values and ASPCA pet-toxicity data where available.</p>
 
       <div class="stat-bar">
         <div class="stat-box">

@@ -4,7 +4,7 @@
 
 # 🌿 FloraDB — Houseplant Care & Pet-Toxicity Dataset
 
-**270 curated houseplants · quantitative light / water / temperature metrics · ASPCA dog & cat toxicity · GBIF-verified names · 20,000+ species taxonomic index**
+**270 curated houseplants · quantitative light / water / temperature metrics · ASPCA dog & cat toxicity · names checked against GBIF · 20,000+ species taxonomic index**
 
 [![Sample: 100 plants](https://img.shields.io/badge/Free%20Sample-100%20plants-brightgreen.svg)](samples/floradb_sample.csv)
 [![🤗 Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-sample%20dataset-ffd21e.svg)](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample)
@@ -26,7 +26,7 @@
 
 A structured dataset that turns subjective houseplant care advice — *"bright indirect light"*, *"water when dry"* — into **quantitative engineering metrics** (Lux thresholds, watering-day intervals, temperature and humidity ranges), joined to **ASPCA dog/cat toxicity** and grounded on the **GBIF Taxonomic Backbone**, with a **source URL on every record** so any fact can be re-verified.
 
-This is a **curated care + safety** dataset — strong on quantitative care, verified taxonomy, and pet toxicity. Care metrics are **category-normalized** (a light category maps to a standard Lux range), not per-plant instrument readings, and toxicity is **ASPCA-sourced or explicitly `unknown` — never guessed safe**. The honest [field-coverage table](#field-coverage-the-honest-numbers) below shows exactly what is and isn't populated. No hype — just what's in the box.
+This is a **curated care + safety** dataset — strong on quantitative care, taxonomy checked against GBIF, and pet toxicity. Care metrics are **category-normalized** (a light category maps to a standard Lux range), not per-plant instrument readings, and toxicity is **ASPCA-sourced or explicitly `unknown` — never guessed safe**. The honest [field-coverage table](#field-coverage-the-honest-numbers) below shows exactly what is and isn't populated. No hype — just what's in the box.
 
 ## What's inside
 
@@ -39,7 +39,7 @@ This is a **curated care + safety** dataset — strong on quantitative care, ver
 | Enriched species (names/images/range) | **683** | (joined) |
 | Formats | SQLite · CSV · JSON | CSV |
 
-The free [`samples/floradb_sample.csv`](samples/floradb_sample.csv) is 100 plants across 28 families — a real taste of the schema and quality (a deliberate mix of verified, genus-inferred, and unknown toxicity so you see the honest flags). Explore it interactively in the [🤗 Sample Explorer](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers), or load it straight from the [🤗 sample dataset](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample). The full dataset is available at **[floradb](https://floradb.dataengineered.io)**.
+The free [`samples/floradb_sample.csv`](samples/floradb_sample.csv) is 100 plants across 28 families — a real taste of the schema and quality (a deliberate mix of species-level, genus-inferred, and unknown toxicity so you see the honest flags). Explore it interactively in the [🤗 Sample Explorer](https://huggingface.co/spaces/Ichlibitiche/dataset-sample-explorers), or load it straight from the [🤗 sample dataset](https://huggingface.co/datasets/Ichlibitiche/floradb-houseplants-care-sample). The full dataset is available at **[floradb](https://floradb.dataengineered.io)**.
 
 ## Field coverage (the honest numbers)
 
@@ -50,12 +50,12 @@ Measured across all **270** care-core plants. Published up front so you can deci
 | Scientific name (GBIF-accepted) | 100% | | Native range | 96% |
 | Common name / family | 100% | | Vernacular name (English) | 80% |
 | Light category + Lux range | 100% | | Pet toxicity determined | 63% |
-| Watering / temp / humidity | 100% | | — species-verified (ASPCA) | 124 |
+| Watering / temp / humidity | 100% | | — species-level (ASPCA) | 124 |
 | Representative image ref | 99% | | — genus-inferred (conservative) | 45 |
 
 **Two quality tiers** (both in the full dataset):
 - **Full care core** — all **270** plants with quantitative care metrics.
-- **Verified tier** — **124** plants with species-level **ASPCA** toxicity determinations and GBIF-verified names (all but *Pilea involucrata*, which GBIF matches only to its genus).
+- **Species-level tier** — **124** plants with species-level **ASPCA** toxicity determinations and GBIF-matched names (all but *Pilea involucrata*, which GBIF matches only to its genus).
 
 ### Data-quality flags — the honest part
 Every row is self-describing so you can filter on confidence:
@@ -71,7 +71,7 @@ Every record is traceable and re-verifiable:
 | :--- | :--- |
 | `scientific_name` | GBIF-accepted canonical name |
 | `gbif_usage_key` | GBIF backbone key |
-| `gbif_source_url` | Exact GBIF species page the taxonomy was verified against |
+| `gbif_source_url` | Exact GBIF species page the taxonomy was checked against |
 | `toxicity_status` | Where the toxicity determination came from (ASPCA / genus / unknown) |
 | `dataset_version` | Snapshot id (`2026.07`) |
 
@@ -88,7 +88,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field.
 
 **[→ Get it at floradb](https://floradb.dataengineered.io)** · or use the [contact form](https://floradb.dataengineered.io/#support) (floradb@dataengineered.io) for custom work.
 
-> 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, GBIF-verified taxonomy + ASPCA toxicity on demand, with care metrics for the 100 sample plants.
+> 🔄 **Prefer live, self-serve lookups?** Run the [Houseplant Care & Pet-Toxicity Lookup on Apify](https://apify.com/dataengineered/houseplant-care-toxicity-lookup) — pay-per-result, names checked against GBIF + ASPCA toxicity on demand, with care metrics for the 100 sample plants.
 
 ## Use cases
 

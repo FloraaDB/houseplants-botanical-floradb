@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>FloraDB — Jeu de données sur l’entretien des plantes d’intérieur &amp; leur toxicité pour les animaux</title>
-<meta content="Jeu de données de 270 plantes d’intérieur : mesures quantitatives de lumière (lux) et d’arrosage, toxicité chiens/chats ASPCA et taxonomie vérifiée par GBIF." name="description"/>
+<meta content="Jeu de données de 270 plantes d’intérieur : mesures quantitatives de lumière (lux) et d’arrosage, toxicité chiens/chats ASPCA et noms confrontés à GBIF." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="2VE0Ll5xPaIkGjSTkvTenDhcKRLJGPFgVqekvGOIw-4" name="google-site-verification"/>
 <link href="https://floradb.dataengineered.io/fr/" rel="canonical"/>
@@ -28,7 +28,7 @@
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <!-- Open Graph / Social Meta -->
 <meta content="FloraDB — Jeu de données sur l’entretien des plantes d’intérieur &amp; leur toxicité pour les animaux" property="og:title"/>
-<meta content="270 plantes d’intérieur avec mesures quantitatives de lumière et d’arrosage, toxicité chiens/chats ASPCA et taxonomie vérifiée par GBIF. URL source sur chaque fiche." property="og:description"/>
+<meta content="270 plantes d’intérieur avec mesures quantitatives de lumière et d’arrosage, toxicité chiens/chats ASPCA et noms confrontés à GBIF. URL source sur chaque fiche." property="og:description"/>
 <meta content="https://floradb.dataengineered.io/fr/" property="og:url"/>
 <meta content="Jeu de données FloraDB sur les plantes d’intérieur" property="og:site_name"/>
 <meta content="website" property="og:type"/>
@@ -58,7 +58,7 @@
   "@type": "Product",
   "image": "https://floradb.dataengineered.io/og-image.png",
   "name": "Jeu de données FloraDB sur l’entretien des plantes d’intérieur — Snapshot complet",
-  "description": "270 plantes d’intérieur sélectionnées avec des mesures quantitatives de lumière, d’arrosage et de température, la toxicité pour les chiens et les chats selon l’ASPCA et une taxonomie vérifiée par GBIF, plus une couche de toxicité ASPCA de 891 fiches et un index taxonomique de 20 000+ espèces. SQLite relationnel, plus CSV et JSON.",
+  "description": "270 plantes d’intérieur sélectionnées avec des mesures quantitatives de lumière, d’arrosage et de température, la toxicité pour les chiens et les chats selon l’ASPCA et des noms confrontés à GBIF, plus une couche de toxicité ASPCA de 891 fiches et un index taxonomique de 20 000+ espèces. SQLite relationnel, plus CSV et JSON.",
   "brand": {
     "@type": "Brand",
     "name": "FloraDB"
@@ -151,7 +151,7 @@
   "@type": "Dataset",
   "name": "FloraDB — Jeu de données sur l’entretien des plantes d’intérieur & leur toxicité pour les animaux",
   "alternateName": "FloraDB Houseplant Dataset",
-  "description": "Un jeu de données sélectionné de 270 plantes d’intérieur avec des mesures d’entretien quantitatives — seuils de lumière (lux), intervalles d’arrosage en jours, plages de température et d’humidité — relié à la toxicité pour les chiens et les chats selon l’ASPCA et à une taxonomie vérifiée par GBIF. Comprend une couche de toxicité ASPCA de 891 fiches et un index taxonomique de 20 000+ espèces. Chaque fiche comporte une URL source pour la revérification.",
+  "description": "Un jeu de données sélectionné de 270 plantes d’intérieur avec des mesures d’entretien quantitatives — seuils de lumière (lux), intervalles d’arrosage en jours, plages de température et d’humidité — relié à la toxicité pour les chiens et les chats selon l’ASPCA et à des noms confrontés au GBIF Taxonomic Backbone. Comprend une couche de toxicité ASPCA de 891 fiches et un index taxonomique de 20 000+ espèces. Chaque fiche comporte une URL source pour la revérification.",
   "url": "https://floradb.dataengineered.io/fr/",
   "sameAs": [
     "https://www.kaggle.com/datasets/dataengineered/floradb-houseplants-care-sample",
@@ -211,7 +211,7 @@
       "name": "Qu’est-ce que le jeu de données FloraDB sur l’entretien des plantes d’intérieur & leur toxicité pour les animaux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FloraDB est un jeu de données botaniques de terrain sélectionné, portant sur plus de 270 plantes d’intérieur, qui associe des paramètres d’entretien quantitatifs (seuils de lumière en lux, intervalles d’arrosage en jours, plages de température et d’humidité) à des statuts de toxicité pour les chiens et les chats vérifiés auprès de l’ASPCA, à des symptômes cliniques et à des références taxonomiques GBIF."
+        "text": "FloraDB est un jeu de données botaniques sélectionné portant sur 270 plantes d’intérieur, qui associe des paramètres d’entretien quantitatifs (seuils de lumière en lux, intervalles d’arrosage en jours, plages de température et d’humidité) à des statuts de toxicité pour les chiens et les chats tirés des listes de l’ASPCA (ou inconnus, jamais présumés sans danger), à des symptômes cliniques et à des références taxonomiques GBIF."
       }
     },
     {
@@ -224,10 +224,10 @@
     },
     {
       "@type": "Question",
-      "name": "Les statuts de toxicité pour les animaux sont-ils vérifiés à partir de données cliniques vétérinaires ?",
+      "name": "D’où viennent les statuts de toxicité pour les animaux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Chaque fiche de plante est recoupée avec la base de données des plantes toxiques de l’ASPCA Animal Poison Control Center (aspca_verified), qui indique si la plante est toxique pour les chiens (is_toxic_to_dogs) ou les chats (is_toxic_to_cats), ainsi que les symptômes cliniques d’intoxication précis, comme une irritation buccale ou des effets des glycosides cardiotoniques."
+        "text": "Des listes de plantes toxiques et non toxiques de l’ASPCA Animal Poison Control Center. Lorsque l’ASPCA a une entrée pour l’espèce (aspca_verified), la fiche en reprend les indicateurs chien et chat (is_toxic_to_dogs, is_toxic_to_cats) et les signes cliniques, comme une irritation buccale ou les effets des glycosides cardiotoniques. Lorsqu’elle n’en a pas mais recense des membres toxiques du genre, la plante est signalée comme toxique par déduction au niveau du genre (aspca_genus_inferred). Sinon, son statut est unknown, jamais présumé sans danger. Aucun vétérinaire n’a examiné les rapprochements effectués par FloraDB ni ses déductions au niveau du genre."
       }
     },
     {
@@ -649,7 +649,7 @@
 <div>
 <h1>Des plantes d’intérieur,<br/>pressées en<br/><em class="accent">données</em>.</h1>
 <p class="hero-sub">
-            Le <strong>jeu de données sur l’entretien des plantes d’intérieur</strong> — <strong>270 espèces</strong> avec des mesures quantitatives de lumière (lux), d’arrosage et de température, reliées à la <strong>toxicité pour les animaux selon l’ASPCA</strong> et à une taxonomie <strong>vérifiée par GBIF</strong>.
+            Le <strong>jeu de données sur l’entretien des plantes d’intérieur</strong> — <strong>270 espèces</strong> avec des mesures quantitatives de lumière (lux), d’arrosage et de température, reliées à la <strong>toxicité pour les animaux selon l’ASPCA</strong> et à une taxonomie <strong>confrontée à GBIF</strong>.
           </p>
 <div class="hero-abstract">
 <span class="abstract-label">Résumé</span>
@@ -677,7 +677,7 @@
 <div class="field-row"><span class="field-key">Lumière</span><span class="field-val"><span class="accent">1 500–5 000</span> lux · lumière vive indirecte</span></div>
 <div class="field-row"><span class="field-key">Arrosage</span><span class="field-val">tous les <span class="accent">7</span> jours</span></div>
 <div class="field-row"><span class="field-key">Climat</span><span class="field-val">18–30 °C · 60% d’humidité</span></div>
-<div class="field-row"><span class="field-key">Confiance</span><span class="field-val">care = high · nom vérifié</span></div>
+<div class="field-row"><span class="field-key">Confiance</span><span class="field-val">care = high · nom avec correspondance GBIF</span></div>
 </div>
 <div class="determination">
 <span class="accession">det. GBIF 2868241 · rev. 2026.07</span>
@@ -700,7 +700,7 @@
 <div class="method-grid">
 <div class="method-card">
 <div class="method-index">Couche i · Taxonomie</div>
-<div class="method-title">Noms vérifiés par GBIF</div>
+<div class="method-title">Noms confrontés à GBIF</div>
 <p class="method-body">Chaque nom est rapproché du <strong>GBIF Taxonomic Backbone</strong> — noms acceptés canoniques, synonymes conservés (<code>Sansevieria → Dracaena</code>) et une <code>gbif_source_url</code> pour revérifier chaque correspondance au rang de l’espèce.</p>
 </div>
 <div class="method-card">
@@ -776,7 +776,7 @@
 <ul class="feature-list">
 <li><strong>270 plantes d’intérieur sélectionnées</strong> réparties dans 54 familles — lumière (lux), jours d’arrosage, température et humidité quantifiés.</li>
 <li><strong>Toxicité pour les animaux ASPCA</strong> — 891 déterminations avec signes cliniques ; indicateurs chien/chat dans le noyau d’entretien, jamais de « sans danger » deviné.</li>
-<li><strong>Taxonomie vérifiée par GBIF</strong> + un index taxonomique de <strong>20 000+ espèces</strong> et 683 espèces enrichies (noms, aire de répartition naturelle, références d’images).</li>
+<li><strong>Taxonomie confrontée à GBIF</strong> + un index taxonomique de <strong>20 000+ espèces</strong> et 683 espèces enrichies (noms, aire de répartition naturelle, références d’images).</li>
 <li><strong>SQLite relationnel + CSV + JSON</strong> — tables <code>plants</code>, <code>aspca_toxicity</code>, <code>species_index</code>, <code>species_enrichment</code>, prêtes pour les applications et le ML.</li>
 <li><strong>Indicateurs de qualité honnêtes</strong> — <code>care_confidence</code>, <code>toxicity_status</code> et <code>image_commercial_safe</code> sur chaque ligne.</li>
 <li><strong>Snapshot mensuel le plus récent</strong> · achat unique, aucun frais récurrent.</li>
@@ -815,7 +815,7 @@
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
 <h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Qu’est-ce que le jeu de données FloraDB sur l’entretien des plantes d’intérieur &amp; leur toxicité pour les animaux ?</h4>
 <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            FloraDB est un jeu de données botaniques de terrain sélectionné, portant sur plus de <strong>270 plantes d’intérieur</strong>, qui associe des paramètres d’entretien quantitatifs (seuils de lumière en lux, intervalles d’arrosage en jours, plages de température et d’humidité) à des statuts de toxicité pour les chiens et les chats vérifiés auprès de l’ASPCA, à des symptômes cliniques et à des références taxonomiques GBIF.
+            FloraDB est un jeu de données botaniques sélectionné portant sur <strong>270 plantes d’intérieur</strong>, qui associe des paramètres d’entretien quantitatifs (seuils de lumière en lux, intervalles d’arrosage en jours, plages de température et d’humidité) à des statuts de toxicité pour les chiens et les chats tirés des listes de l’ASPCA (ou inconnus, jamais présumés sans danger), à des symptômes cliniques et à des références taxonomiques GBIF.
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
@@ -825,9 +825,9 @@
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">
-<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">Les statuts de toxicité pour les animaux sont-ils vérifiés à partir de données cliniques vétérinaires ?</h4>
+<h4 class="serif" style="font-size: 1.15rem; font-weight: 700; color: var(--text-ink);">D’où viennent les statuts de toxicité pour les animaux ?</h4>
 <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            Oui. Chaque fiche de plante est recoupée avec la base de données des plantes toxiques de l’ASPCA Animal Poison Control Center (<code>aspca_verified</code>), qui indique si la plante est toxique pour les chiens (<code>is_toxic_to_dogs</code>) ou les chats (<code>is_toxic_to_cats</code>), ainsi que les symptômes cliniques d’intoxication précis, comme une irritation buccale ou des effets des glycosides cardiotoniques.
+            Des listes de plantes toxiques et non toxiques de l’ASPCA Animal Poison Control Center. Lorsque l’ASPCA a une entrée pour l’espèce (<code>aspca_verified</code>), la fiche en reprend les indicateurs chien et chat (<code>is_toxic_to_dogs</code>, <code>is_toxic_to_cats</code>) et les signes cliniques, comme une irritation buccale ou les effets des glycosides cardiotoniques. Lorsqu’elle n’en a pas mais recense des membres toxiques du genre, la plante est signalée comme toxique par déduction au niveau du genre (<code>aspca_genus_inferred</code>). Sinon, son statut est <code>unknown</code>, jamais présumé sans danger. Aucun vétérinaire n’a examiné les rapprochements effectués par FloraDB ni ses déductions au niveau du genre.
           </p>
 </div>
 <div style="border-left: 3px solid var(--accent); padding-left: 20px; background: var(--bg-paper); padding: 20px; border-radius: 4px; border: 1px solid var(--rule-color); border-left: 3px solid var(--accent);">

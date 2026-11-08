@@ -8,6 +8,10 @@ All notable changes to the FloraDB dataset snapshots.
 > `toxicity_status = aspca_verified` (125 in 2026.10); see 2026-11-06 and
 > 2026-11-07. Each entry's numbers describe the snapshot it was written for.
 
+## Site update — 2026-11-09
+
+- **Kaggle publish instructions** (`kaggle/README.md`, section 1): the first-publish command uploaded from `-p kaggle/dataset`, which section 3 already says fails on Windows: the CLI's resume-cache file name keeps the `/`, and the command stops with `Errno 2` before the dataset is created. Section 1 now stages the files in a one-word folder, as section 3 does. No site or data change.
+
 ## Site update — 2026-11-08
 
 - **Family pages' share summary** (`og:description`, the 28 family pages in all 5 languages): it said "N verified determinations with quantitative light/water parameters and ASPCA pet safety profiles", with N the family's plant count. The family pages are built from the free sample, and not every plant in it has an ASPCA determination: Acanthaceae has 6 plants in the sample, 3 of them without one, as the same page's description says. The summary now gives the family's plant count in the free sample and how many of those plants have an ASPCA pet-toxicity determination (species- or genus-level, as `/stats/` counts them), e.g. "6 houseplants in the free sample with quantitative light/water parameters; 3 of 6 with an ASPCA pet-toxicity determination." The one-plant families no longer read "1 verified determinations". `scripts/generate_seo_pages.py` writes it from the family's rows (`family_share_summary`) and names how many have light and watering values should a row ever lack them (all 100 have them today). Hand-translated for es/de/fr/pt-br (2 new segments per language); the retired segment is removed from `locales/*.json`. `sitemap.xml`: lastmod 2026-11-08 on the 140 changed pages. `i18n_common.py check`: 665 pages, 0 errors; every language publishes 133/133 pages.

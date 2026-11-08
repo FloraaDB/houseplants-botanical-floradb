@@ -13,7 +13,7 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 | `scientific_name` | string | GBIF-accepted canonical Latin binomial | 100% |
 | `synonym_scientific_name` | string | Widely-used horticultural/trade synonym, where it differs | 11% |
 | `common_name` | string | Primary English common name | 100% |
-| `family` | string | Botanical family (GBIF-verified) | 100% |
+| `family` | string | Botanical family (GBIF backbone) | 100% |
 | `light_requirement_level` | enum | `Low` · `Medium to Low` · `Medium` · `Medium to Bright` · `Bright Indirect` · `Direct Sun` · `Low to Bright` | 100% |
 | `min_lux` | integer | Minimum light for active growth, in Lux (normalized from the light category) | 100% |
 | `max_lux` | integer | Maximum tolerated light before leaf scorch, in Lux | 100% |
@@ -32,16 +32,16 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 | `image_license` | string | License of the referenced image | 98% |
 | `image_commercial_safe` | boolean | `1` = CC0/CC-BY/CC-BY-SA (commercial OK); `0` = NC/ND/all-rights-reserved | 98% |
 | `gbif_usage_key` | integer | GBIF backbone usage key; blank when GBIF matches the name only above species rank | 100% |
-| `gbif_source_url` | string | GBIF species page the taxonomy was verified against; blank with `gbif_usage_key` | 100% |
+| `gbif_source_url` | string | GBIF species page the taxonomy was checked against; blank with `gbif_usage_key` | 100% |
 | `dataset_version` | string | Snapshot id, e.g. `2026.07` | 100% |
 
 \* Share of the full care core (270 plants) with a non-empty value.
-† Toxicity is determined for 63% (species-verified or conservatively genus-inferred); the rest are `unknown` by design.
+† Toxicity is determined for 63% (from the ASPCA entry for the species, or conservatively genus-inferred); the rest are `unknown` by design.
 
 ## Sources & collection methodology
 
 **Sources**
-- **GBIF — Global Biodiversity Information Facility** ([gbif.org](https://www.gbif.org), API `api.gbif.org/v1`) — Taxonomic Backbone used to verify scientific names, resolve synonyms to accepted names, assign botanical family, and supply vernacular names and native range. *GBIF Backbone Taxonomy is licensed CC BY 4.0.*
+- **GBIF — Global Biodiversity Information Facility** ([gbif.org](https://www.gbif.org), API `api.gbif.org/v1`) — Taxonomic Backbone used to check scientific names, resolve synonyms to accepted names, assign botanical family, and supply vernacular names and native range. *GBIF Backbone Taxonomy is licensed CC BY 4.0.*
 - **ASPCA — Animal Poison Control, Toxic and Non-Toxic Plants** ([aspca.org](https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants)) — source of the dog/cat/horse toxicity determinations and clinical ingestion signs. *Toxicity facts are credited to ASPCA.*
 - **Image references** via GBIF occurrence media (e.g. iNaturalist) — one representative image URL per species under its own license (`image_license`, mostly CC BY-NC). *Images are referenced, not redistributed.*
 - **Curated horticultural references** — the quantitative care metrics are a normalization of standard horticultural knowledge, not a single scraped database.
@@ -51,7 +51,7 @@ the ASPCA toxicity layer, the 20,000+ species taxonomic index, and enrichment.
 2. **Toxicity (ASPCA).** Ingested politely, honoring the site's `robots.txt` 10-second crawl-delay with a descriptive User-Agent. `toxicity_status` records the origin of each determination — `aspca_verified` (species listed), `aspca_genus_inferred` (conservative, safe-direction only), or `unknown` — and toxicity is **never guessed "safe."**
 3. **Care (category-normalized).** A standardized light category maps to a fixed Lux band; watering interval, temperature range, and humidity come from plant-type and family profiles. Every row is graded by `care_confidence`.
 
-All collection was rate-limited and politely identified. **Update frequency: monthly** (GBIF re-verification each month; ASPCA toxicity re-crawled quarterly).
+All collection was rate-limited and politely identified. **Update frequency: monthly** (names re-checked against GBIF each month; ASPCA toxicity re-crawled quarterly).
 
 ## Notes
 

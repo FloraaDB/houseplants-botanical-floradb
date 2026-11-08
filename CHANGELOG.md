@@ -2,9 +2,16 @@
 
 All notable changes to the FloraDB dataset snapshots.
 
-> Counts are stated as **minimums** (e.g. `20,000+`). The dataset is refreshed
-> on a recurring schedule, so the live figures only grow — the numbers below
-> stay accurate between snapshots.
+> Counts written with a `+` (e.g. `20,000+`) are **minimums**; the others are
+> exact. A refresh can lower a figure as well as raise it: the 2026.11 edition
+> has 683 enriched species (702 in 2026.10) and 124 plants with
+> `toxicity_status = aspca_verified` (125 in 2026.10); see 2026-11-06 and
+> 2026-11-07. Each entry's numbers describe the snapshot it was written for.
+
+## Site update — 2026-11-08
+
+- **Family pages' share summary** (`og:description`, the 28 family pages in all 5 languages): it said "N verified determinations with quantitative light/water parameters and ASPCA pet safety profiles", with N the family's plant count. The family pages are built from the free sample, and not every plant in it has an ASPCA determination: Acanthaceae has 6 plants in the sample, 3 of them without one, as the same page's description says. The summary now gives the family's plant count in the free sample and how many of those plants have an ASPCA pet-toxicity determination (species- or genus-level, as `/stats/` counts them), e.g. "6 houseplants in the free sample with quantitative light/water parameters; 3 of 6 with an ASPCA pet-toxicity determination." The one-plant families no longer read "1 verified determinations". `scripts/generate_seo_pages.py` writes it from the family's rows (`family_share_summary`) and names how many have light and watering values should a row ever lack them (all 100 have them today). Hand-translated for es/de/fr/pt-br (2 new segments per language); the retired segment is removed from `locales/*.json`. `sitemap.xml`: lastmod 2026-11-08 on the 140 changed pages. `i18n_common.py check`: 665 pages, 0 errors; every language publishes 133/133 pages.
+- **Changelog header**: it said the live figures "only grow", so the numbers below "stay accurate between snapshots". A refresh can lower a figure too: the 2026.11 edition has 683 enriched species (702 in 2026.10) and 124 `aspca_verified` plants (125 in 2026.10). The header now says so, says that only counts written with a `+` are minimums, and says each entry's numbers describe the snapshot it was written for. No data or page change.
 
 ## Site update — 2026-11-07
 

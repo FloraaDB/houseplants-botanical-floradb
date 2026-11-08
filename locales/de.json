@@ -731,6 +731,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "505f295dabab9a6e": {
+  "src": "{0} houseplants in the free sample with quantitative light/water parameters; {1} of {2} with an ASPCA pet-toxicity determination.",
+  "t": "{0} Zimmerpflanzen aus den kostenlosen Beispieldaten mit quantitativen Licht- und Wasserparametern; {1} von {2} mit ASPCA-Bestimmung der Giftigkeit für Haustiere.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
+ },
  "50c54250999ebd73": {
   "src": "One-time snapshot · CSV / SQLite / JSON · No recurring fees",
   "t": "Einmaliger Snapshot · CSV / SQLite / JSON · Keine wiederkehrenden Gebühren",
@@ -934,12 +940,6 @@
   "t": "Pflanzenfamilien",
   "by": "claude-opus-5-5",
   "at": "2026-10-04"
- },
- "60d5f3b7a487f02f": {
-  "src": "{0} verified determinations with quantitative light/water parameters and ASPCA pet safety profiles.",
-  "t": "{0} verifizierte Bestimmungen mit quantitativen Licht- und Wasserparametern und ASPCA-Profilen zur Haustiersicherheit.",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
  },
  "611b13f79fb4a4e4": {
   "src": "The median care-core houseplant wants <0>{1} to {2} lux</0>, water every {3} days, {4} to {5} °C and {6} humidity. {7} plants ({8}) target {9} humidity; {10} ({11}) target {12} or less.",
@@ -2140,6 +2140,12 @@
   "t": "{0} Bestimmungen",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "e6116cf26c994052": {
+  "src": "{0} houseplant in the free sample with quantitative light/water parameters; {1} of {2} with an ASPCA pet-toxicity determination.",
+  "t": "{0} Zimmerpflanze aus den kostenlosen Beispieldaten mit quantitativen Licht- und Wasserparametern; {1} von {2} mit ASPCA-Bestimmung der Giftigkeit für Haustiere.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
  },
  "e6420c5b168b9810": {
   "src": "The downloadable FloraDB snapshot includes a normalized relational SQLite database file ({0}) alongside clean CSV and JSON exports ({1}), ready for direct import into Python pandas, R, SQL pipelines, or modern web applications.",

@@ -206,6 +206,22 @@ def family_description(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     lead = f"{fam_name} spans {_plural(n, 'houseplant')} in FloraDB (" + ", ".join(facts) + ")."
     return fit_desc(lead)
 
+def family_share_summary(members):
+    """og:description for a family hub, stating only counts its member rows support. The
+    hubs are built from the free sample, so the plant count is the sample's. A plant counts
+    as determined when its ASPCA flags give a verdict (species-level or genus-level, as
+    /stats/ counts determinations); blank flags never count."""
+    n = len(members)
+    _, unverified_n = _toxicity_counts(members)
+    with_care = sum(1 for m in members
+                    if _num(m.get('min_lux')) is not None and _num(m.get('max_lux')) is not None
+                    and _num(m.get('watering_frequency_days')) is not None)
+    if with_care == n:
+        lead = f"{_plural(n, 'houseplant')} in the free sample with quantitative light/water parameters"
+    else:
+        lead = f"{_plural(n, 'houseplant')} in the free sample, {with_care} with quantitative light/water parameters"
+    return f"{lead}; {n - unverified_n} of {n} with an ASPCA pet-toxicity determination."
+
 def family_profile(fam_name, members, lux_lo, lux_hi, water_lo, water_hi):
     """Unique, data-derived <p> profile computed only from the family's own member
     records: count + representative species, light range, watering-interval range,
@@ -749,7 +765,7 @@ def main():
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
 
   <meta property="og:title" content="Botanical Family: {fam_name} — FloraDB Collection" />
-  <meta property="og:description" content="{total_members} verified determinations with quantitative light/water parameters and ASPCA pet safety profiles." />
+  <meta property="og:description" content="{html.escape(family_share_summary(members))}" />
   <meta property="og:url" content="{page_url}" />
   <meta property="og:type" content="website" />
 
